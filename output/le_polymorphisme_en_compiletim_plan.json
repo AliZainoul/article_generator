@@ -1,0 +1,163 @@
+{
+  "introduction": "Le polymorphisme en compiletime, bien que moins courant explicitement qu'en runtime en Python, est un concept important pour comprendre comment le langage gère la flexibilité et la généricité du code. Cet article explore comment le polymorphisme en compiletime se manifeste en Python, en mettant l'accent sur des techniques telles que le duck typing, les generics introduits via `typing`, et comment ils contribuent à la robustesse et à la maintenabilité du code. Nous examinerons des exemples concrets et des cas d'utilisation pratiques pour démystifier ce concept et montrer comment il peut être exploité efficacement.",
+  "sections": [
+    {
+      "title": "Duck Typing: Le Polymorphisme Implicite en Python",
+      "subsections": [
+        {
+          "title": "Définition et Principe du Duck Typing",
+          "description": "Explication du concept de duck typing : 'Si ça marche comme un canard et que ça fait coin coin, alors c'est un canard'. Comment Python utilise cette approche pour le polymorphisme sans vérification de type explicite lors de la compilation."
+        },
+        {
+          "title": "Exemple de Duck Typing en Action",
+          "description": "Illustration du duck typing avec un exemple concret : création de différentes classes (e.g., 'Duck', 'Person') qui possèdent une méthode 'quack()'. Démonstration de comment une fonction peut accepter n'importe quel objet ayant cette méthode, sans se soucier de son type exact."
+        },
+        {
+          "title": "Avantages et Inconvénients du Duck Typing",
+          "description": "Discussion des avantages (flexibilité, simplicité) et des inconvénients (erreurs potentielles détectées uniquement en runtime) du duck typing."
+        }
+      ]
+    },
+    {
+      "title": "Generics et Type Hints: Introduction du Polymorphisme explicite",
+      "subsections": [
+        {
+          "title": "Introduction aux Generics avec 'typing'",
+          "description": "Présentation du module 'typing' et de son utilisation pour introduire des generics en Python. Explication de l'annotation des types et comment cela aide les outils d'analyse statique à détecter les erreurs."
+        },
+        {
+          "title": "Utilisation de TypeVar pour Définir des Types Génériques",
+          "description": "Démonstration de l'utilisation de 'TypeVar' pour créer des types génériques et comment ils peuvent être utilisés dans les signatures de fonctions et de classes. Exemple : une fonction qui inverse une liste de n'importe quel type."
+        },
+        {
+          "title": "Contraintes de Type avec 'typing.Protocol'",
+          "description": "Explication de comment 'typing.Protocol' permet de définir des interfaces implicites et comment elles peuvent être utilisées pour contraindre les types génériques, offrant ainsi une forme de polymorphisme plus structurée."
+        }
+      ]
+    },
+    {
+      "title": "Surcharge de Méthodes (Method Overloading) et Dispatching en Python",
+      "subsections": [
+        {
+          "title": "Le Concept de Surcharge de Méthodes en Python",
+          "description": "Explication de pourquoi la surcharge de méthodes telle qu'on la connaît dans d'autres langages (Java, C++) n'existe pas nativement en Python, et comment on peut simuler des comportements similaires."
+        },
+        {
+          "title": "Utilisation de Decorators pour le Dispatching",
+          "description": "Présentation de bibliothèques comme 'singledispatch' de 'functools' qui permettent de dispatcher l'exécution d'une fonction en fonction du type de ses arguments. Exemple : une fonction 'process' qui se comporte différemment selon que l'argument est un entier, une chaîne de caractères ou un objet."
+        },
+        {
+          "title": "Limites et Alternatives au Dispatching",
+          "description": "Discussion des limitations de l'approche par dispatching (complexité accrue, moins performant que la surcharge statique) et exploration d'alternatives comme le duck typing et les generics."
+        }
+      ]
+    },
+    {
+      "title": "Méta-programmation et Polymorphisme: Un Aperçu Avancé",
+      "subsections": [
+        {
+          "title": "Utilisation de Métaclasses pour Modifier le Comportement des Classes",
+          "description": "Introduction aux métaclasses et comment elles peuvent être utilisées pour modifier dynamiquement la création et le comportement des classes. Exemple : une métaclasse qui ajoute automatiquement une méthode à toutes les classes qu'elle crée."
+        },
+        {
+          "title": "Manipulation d'Attributs avec '__getattr__' et '__setattr__'",
+          "description": "Explication de comment les méthodes spéciales '__getattr__' et '__setattr__' peuvent être utilisées pour intercepter l'accès aux attributs et modifier leur comportement. Exemple : une classe qui simule des attributs dynamiques."
+        },
+        {
+          "title": "Impact de la Méta-programmation sur le Polymorphisme",
+          "description": "Discussion de comment la méta-programmation peut permettre de créer des formes de polymorphisme très flexibles mais aussi potentiellement complexes à comprendre et à maintenir."
+        }
+      ]
+    },
+    {
+      "title": "L'Importance des Tests et de la Validation Statique",
+      "subsections": [
+        {
+          "title": "Tests Unitaires et Polymorphisme",
+          "description": "Comment écrire des tests unitaires efficaces pour du code utilisant le polymorphisme, en particulier avec le duck typing. Importance de tester différents types d'objets pour assurer la robustesse."
+        },
+        {
+          "title": "Utilisation de 'mypy' pour la Validation Statique",
+          "description": "Présentation de 'mypy', un outil de vérification de type statique pour Python, et comment il peut aider à détecter les erreurs de type avant l'exécution. Exemple d'utilisation de 'mypy' pour détecter une erreur dans du code utilisant des generics."
+        },
+        {
+          "title": "Intégration Continue et Analyse de Code",
+          "description": "Comment intégrer l'analyse statique et les tests unitaires dans un pipeline d'intégration continue pour garantir la qualité du code et détecter les problèmes de polymorphisme le plus tôt possible."
+        }
+      ]
+    },
+    {
+      "title": "Considérations de Performance avec le Polymorphisme en Python",
+      "subsections": [
+        {
+          "title": "Impact du Duck Typing sur la Performance",
+          "description": "Discussion de comment le duck typing peut affecter la performance, en particulier en comparaison avec des langages à typage statique. Mesures à prendre pour minimiser cet impact."
+        },
+        {
+          "title": "Optimisation du Code Polymorphe",
+          "description": "Techniques d'optimisation spécifiques pour du code utilisant le polymorphisme, comme la réduction du nombre d'appels dynamiques et l'utilisation de structures de données optimisées."
+        },
+        {
+          "title": "Profiling et Benchmarking",
+          "description": "Importance du profiling et du benchmarking pour identifier les goulots d'étranglement dans du code polymorphe et valider l'efficacité des optimisations."
+        }
+      ]
+    },
+    {
+      "title": "Cas d'utilisation pratiques",
+      "subsections": [
+        {
+          "title": "Frameworks Web (Django, Flask)",
+          "description": "Django et Flask utilisent le polymorphisme pour gérer les requêtes et réponses HTTP. Le système de routage accepte différentes vues (fonctions ou classes) tant qu'elles respectent une interface commune. Les ORM de Django utilisent aussi le polymorphisme pour permettre aux développeurs d'interagir avec différentes bases de données de manière uniforme."
+        },
+        {
+          "title": "Bibliothèques de Data Science (NumPy, Pandas)",
+          "description": "NumPy et Pandas utilisent le polymorphisme pour gérer différents types de données (entiers, flottants, chaînes de caractères) dans leurs tableaux et DataFrames. Les opérations vectorisées de NumPy fonctionnent sur n'importe quel type de données numérique, et Pandas permet de combiner des colonnes de types différents dans un même DataFrame."
+        },
+        {
+          "title": "Bibliothèques d'interface graphique (Tkinter, PyQt)",
+          "description": "Tkinter et PyQt utilisent le polymorphisme pour gérer les différents types de widgets (boutons, labels, champs de texte) et d'événements (clics, frappes au clavier). Chaque widget a une interface commune (méthodes pour définir sa taille, sa position, son apparence) et peut réagir à différents événements."
+        }
+      ]
+    },
+    {
+      "title": "Exercices avec solutions",
+      "subsections": [
+        {
+          "title": "Exercise 1: Polymorphic Function for Area Calculation",
+          "description": "Create a function `calculate_area` that accepts different geometric shapes (e.g., Circle, Rectangle, Triangle) as input and calculates their area. Use duck typing to ensure the objects passed have the necessary 'area' method.",
+          "solution": "```python\nimport math\n\nclass Circle:\n    def __init__(self, radius):\n        self.radius = radius\n\n    def area(self):\n        return math.pi * self.radius ** 2\n\nclass Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\nclass Triangle:\n    def __init__(self, base, height):\n        self.base = base\n        self.height = height\n\n    def area(self):\n        return 0.5 * self.base * self.height\n\ndef calculate_area(shape):\n    return shape.area()\n\n# Example usage\ncircle = Circle(5)\nrectangle = Rectangle(4, 6)\ntriangle = Triangle(3, 8)\n\nprint(f\"Circle area: {calculate_area(circle)}\")\nprint(f\"Rectangle area: {calculate_area(rectangle)}\")\nprint(f\"Triangle area: {calculate_area(triangle)}\")\n```"
+        },
+        {
+          "title": "Exercise 2: Generic Data Processing Function",
+          "description": "Write a generic function `process_data` that can process a list of any type (e.g., integers, strings, custom objects). The function should apply a given transformation function to each element in the list and return the processed list. Use `typing.List` and `typing.Callable` for type hinting.",
+          "solution": "```python\nfrom typing import List, Callable, TypeVar\n\nT = TypeVar('T')\nU = TypeVar('U')\n\ndef process_data(data: List[T], transformation: Callable[[T], U]) -> List[U]:\n    return [transformation(item) for item in data]\n\n# Example usage\ndef square(x: int) -> int:\n    return x * x\n\ndef uppercase(s: str) -> str:\n    return s.upper()\n\nnumbers = [1, 2, 3, 4, 5]\nsquared_numbers = process_data(numbers, square)\nprint(f\"Squared numbers: {squared_numbers}\")\n\nwords = ['hello', 'world']\nuppercased_words = process_data(words, uppercase)\nprint(f\"Uppercased words: {uppercased_words}\")\n```"
+        },
+        {
+          "title": "Exercise 3: Polymorphic Sorting with Custom Comparison",
+          "description": "Implement a function `sort_list` that can sort a list of objects using a custom comparison function. The comparison function should be passed as an argument to `sort_list`. Demonstrate how to sort a list of custom objects (e.g., Person objects) based on different criteria (e.g., age, name).",
+          "solution": "```python\nfrom typing import List, Callable\n\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __repr__(self):\n        return f\"Person(name='{self.name}', age={self.age})\"\n\ndef sort_list(data: List[object], comparison_function: Callable[[object, object], int]) -> List[object]:\n    return sorted(data, key=comparison_function)\n\n# Custom comparison functions\ndef compare_by_age(person: Person) -> int:\n    return person.age\n\ndef compare_by_name(person: Person) -> str:\n    return person.name\n\n# Example usage\npersons = [\n    Person('Alice', 30),\n    Person('Bob', 25),\n    Person('Charlie', 35)\n]\n\nsorted_by_age = sort_list(persons, key=compare_by_age)\nprint(f\"Sorted by age: {sorted_by_age}\")\n\nsorted_by_name = sort_list(persons, key=compare_by_name)\nprint(f\"Sorted by name: {sorted_by_name}\")\n```"
+        }
+      ]
+    },
+    {
+      "title": "Résumé et Comparaisons",
+      "subsections": [
+        {
+          "title": "Résumé des Techniques de Polymorphisme en Compiletime en Python",
+          "description": "Récapitulation des différentes techniques abordées : duck typing, generics avec 'typing', dispatching, et méta-programmation. Souligner les avantages et inconvénients de chacune."
+        },
+        {
+          "title": "Comparaison avec le Polymorphisme en Runtime",
+          "description": "Contraste entre le polymorphisme en compiletime et le polymorphisme en runtime (e.g., héritage, interfaces). Expliquer quand utiliser l'un ou l'autre en fonction des besoins du projet."
+        },
+        {
+          "title": "Bonnes Pratiques et Recommandations",
+          "description": "Conseils sur la manière d'écrire du code polymorphe propre, maintenable et performant en Python. Mettre l'accent sur l'importance des tests et de la validation statique."
+        }
+      ]
+    }
+  ],
+  "exercices": [],
+  "conclusion": "Bien que le polymorphisme en compiletime ne soit pas aussi explicite qu'en runtime en Python, il existe des moyens de l'exploiter pour créer du code plus robuste et flexible. Le duck typing offre une grande simplicité, tandis que les generics et les outils d'analyse statique permettent de détecter les erreurs plus tôt. En comprenant ces techniques et en les utilisant judicieusement, les développeurs Python peuvent améliorer la qualité et la maintenabilité de leurs projets."
+}

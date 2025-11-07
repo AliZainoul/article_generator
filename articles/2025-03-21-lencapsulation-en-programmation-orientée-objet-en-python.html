@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>L'encapsulation en Programmation Orientée Objet en Python | Formateur</title>
+    <meta name="description" content="Découvrez tout sur L'encapsulation en Programmation Orientée Objet en Python dans cet article détaillé." />
+    <meta property="og:title" content="L'encapsulation en Programmation Orientée Objet en Python | Formateur" />
+    <meta property="og:description" content="Découvrez tout sur L'encapsulation en Programmation Orientée Objet en Python dans cet article détaillé." />
+    <meta name="twitter:title" content="L'encapsulation en Programmation Orientée Objet en Python | Formateur" />
+    <meta name="twitter:description" content="Découvrez tout sur L'encapsulation en Programmation Orientée Objet en Python dans cet article détaillé." />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">L'encapsulation en Programmation Orientée Objet en Python</h1>
+      </div>
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">Introduction</h2>
+    <p><p>L'encapsulation est un concept fondamental de la Programmation Orientée Objet (POO) en Python. Elle consiste à regrouper les données (attributs) et les méthodes qui les manipulent au sein d'une même unité, appelée classe.  Imaginez une forteresse : les données sont le trésor à l'intérieur, et l'encapsulation fournit les murs et les gardes pour les protéger.</p>
+
+<p>L'encapsulation vise principalement à masquer l'implémentation interne d'un objet et à contrôler l'accès à ses données via une interface bien définie.  Cela permet de prévenir les modifications non intentionnelles ou incorrectes des données, garantissant ainsi l'intégrité et la stabilité de l'application. Pensez à une voiture : vous n'avez pas besoin de comprendre tous les détails complexes du moteur pour la conduire. Vous interagissez avec la voiture via le volant, les pédales et les autres commandes (les méthodes) qui fournissent une interface simple et sécurisée.</p>
+
+<p>En Python, l'encapsulation est mise en œuvre grâce à des conventions de nommage et au contrôle d'accès aux attributs et aux méthodes.  Contrairement à certains langages comme Java ou C++, Python ne dispose pas de mots-clés <code class="language-python">private</code>, <code class="language-python">protected</code> ou <code class="language-python">public</code>. Au lieu de cela, Python utilise la convention du "name mangling" en préfixant les attributs par un ou deux underscores (<code class="language-python">_</code> ou <code class="language-python">__</code>) pour signaler qu'un attribut est destiné à un usage interne.  Voici un exemple :</p>
+
+<pre><code class="language-python">
+class BankAccount:
+    def __init__(self, initial_balance):
+        self.__balance = initial_balance  # "Private" attribute (convention)
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Invalid amount for deposit.")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds or invalid amount.")
+
+    def get_balance(self):
+        return self.__balance
+
+# Example usage
+account = BankAccount(1000)
+account.deposit(500)
+account.withdraw(200)
+print(account.get_balance())  # Output: 1300
+# Attempting to access the attribute directly is discouraged!
+# print(account.__balance) # This will raise an AttributeError, illustrating name mangling.
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">__balance</code> est un attribut que nous souhaitons protéger.  Bien qu'il soit techniquement accessible (via <code class="language-python">_BankAccount__balance</code>), la convention est de ne pas y accéder directement depuis l'extérieur de la classe. Les méthodes <code class="language-python">deposit</code>, <code class="language-python">withdraw</code>, et <code class="language-python">get_balance</code> fournissent une interface contrôlée pour interagir avec le solde du compte, permettant d'ajouter des validations et de garantir la cohérence des données. Cette approche permet d'éviter que le solde ne soit modifié par inadvertance ou avec des valeurs incorrectes.</p>
+
+<p>Cet article explorera en détail les avantages de l'encapsulation, les différentes techniques pour l'implémenter en Python, et comment l'utiliser efficacement pour concevoir des applications robustes et maintenables. Nous examinerons également la manière dont l'encapsulation interagit avec d'autres concepts de la POO tels que l'héritage et le polymorphisme, afin de créer des designs orientés objet solides.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">1. Les bases de l'encapsulation en Python</h2>
+    <p><p>L'encapsulation est l'un des piliers de la Programmation Orientée Objet (POO). En Python, elle permet de regrouper les données (attributs) et les méthodes (fonctions) qui les manipulent au sein d'une même classe. L'objectif principal est de masquer l'état interne d'un objet et de contrôler l'accès à cet état via des méthodes spécifiques, offrant ainsi un meilleur contrôle, une plus grande sécurité et une réduction de la complexité.</p>
+
+<p>En Python, l'encapsulation est mise en œuvre principalement par convention, grâce à des préfixes de nommage. Contrairement à d'autres langages tels que Java ou C++, Python ne possède pas de mot-clé pour déclarer un attribut comme étant strictement privé. Au lieu de cela, on utilise des underscores pour indiquer le niveau d'accessibilité souhaité. Ces conventions sont un accord tacite entre les développeurs, indiquant comment les attributs et méthodes d'une classe doivent être utilisés.</p>
+
+<p>Voici les conventions de nommage principales en Python pour l'encapsulation :</p>
+<ul>
+    <li><strong>Attributs publics:</strong> Ils sont accessibles de partout, à l'intérieur comme à l'extérieur de la classe. Ils sont nommés de manière standard, sans préfixe particulier (e.g., <code class="language-python">nom_attribut</code>).</li>
+    <li><strong>Attributs protégés:</strong> Ils sont destinés à être utilisés par la classe elle-même et ses sous-classes. Ils sont préfixés par un simple underscore (e.g., <code class="language-python">_nom_attribut</code>). Bien que Python n'empêche pas techniquement l'accès direct à ces attributs depuis l'extérieur de la classe, le simple underscore signale qu'il ne faut pas y accéder directement. Il s'agit donc d'une convention forte.</li>
+    <li><strong>Attributs privés:</strong> Ils sont destinés à être utilisés uniquement à l'intérieur de la classe. Ils sont préfixés par un double underscore (e.g., <code class="language-python">__nom_attribut</code>). Python effectue une transformation de nom ("name mangling") pour rendre l'accès à ces attributs plus difficile depuis l'extérieur de la classe. Il ne s'agit pas d'une protection absolue, mais d'un mécanisme de dissuasion.</li>
+</ul>
+
+<p>Illustrons ces concepts avec un exemple concret :</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.public_attribute = "Public"  # Accessible from anywhere
+        self._protected_attribute = "Protected"  # Convention: use within the class and its subclasses
+        self.__private_attribute = "Private"  # Name mangling: more difficult to access directly
+
+    def display_attributes(self):
+        print(f"Public attribute: {self.public_attribute}")
+        print(f"Protected attribute: {self._protected_attribute}")
+        print(f"Private attribute: {self.__private_attribute}")  # Accessible within the class
+</code></pre>
+
+<p>Maintenant, essayons d'accéder à ces attributs depuis l'extérieur de la classe :</p>
+
+<pre><code class="language-python">
+obj = MyClass()
+print(obj.public_attribute)
+print(obj._protected_attribute)
+
+# print(obj.__private_attribute)  # This will raise an AttributeError
+
+# Accessing the "private" attribute using name mangling:
+print(obj._MyClass__private_attribute)  # This works, but it's strongly discouraged!
+</code></pre>
+
+<p>Comme le montre l'exemple, tenter d'accéder directement à <code class="language-python">obj.__private_attribute</code> provoque une exception <code class="language-python">AttributeError</code>. Cela est dû au mécanisme de "name mangling" de Python, qui renomme en interne l'attribut en <code class="language-python">_MyClass__private_attribute</code>. Bien qu'il soit techniquement possible d'accéder à l'attribut privé en utilisant ce nom modifié, il est fortement déconseillé de le faire, car cela viole le principe d'encapsulation et peut rendre le code plus difficile à maintenir et à comprendre. L'intention du double underscore est de signaler clairement que l'attribut ne doit pas être accédé directement de l'extérieur de la classe.</p>
+
+<p>En conclusion, l'encapsulation en Python, bien qu'implémentée de manière différente par rapport à d'autres langages, reste un concept essentiel pour écrire du code propre, maintenable et robuste. Elle permet de contrôler l'accès aux données, de prévenir les modifications accidentelles et de faciliter l'évolution du code en interne sans affecter l'interface publique de la classe. En respectant les conventions de nommage, les développeurs peuvent écrire du code plus prévisible et plus facile à comprendre pour les autres.</p>
+</p>
+    <h3>1.1 Qu'est-ce que l'encapsulation ?</h3>
+    <p><p>L'encapsulation, un des piliers de la programmation orientée objet, est un mécanisme permettant de regrouper les données (attributs) et les méthodes (fonctions) qui opèrent sur ces données au sein d'une même unité : la classe. Son objectif premier est de masquer l'état interne d'un objet et d'empêcher un accès direct et non contrôlé aux attributs depuis l'extérieur de la classe.  Cela permet de contrôler la manière dont les données sont modifiées et utilisées, ce qui améliore la robustesse, la maintenabilité et la flexibilité du code.</p>
+
+<p>En Python, l'encapsulation est implémentée par convention, et non par application stricte. Le langage ne rend pas impossible l'accès direct aux attributs, mais encourage fortement les développeurs à respecter certaines conventions de nommage afin d'indiquer qu'un attribut est considéré comme privé ou protégé. La convention la plus courante consiste à préfixer le nom de l'attribut avec un ou deux underscores (<code class="language-python">_</code> ou <code class="language-python">__</code>).</p>
+
+<p>Illustrons cela avec un exemple simple :</p>
+
+<pre><code class="language-python">
+class Thermostat:
+    def __init__(self, temperature):
+        self._temperature = temperature  # Single underscore: protected attribute
+
+    def get_temperature(self):
+        return self._temperature
+
+    def set_temperature(self, temperature):
+        if temperature < -273.15:  # Absolute zero in Celsius
+            raise ValueError("Temperature cannot be below absolute zero.")
+        self._temperature = temperature
+
+# Usage
+thermostat = Thermostat(25)
+print(thermostat.get_temperature())
+thermostat.set_temperature(30)
+print(thermostat.get_temperature())
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">_temperature</code> est précédé d'un simple underscore.  Ceci indique qu'il est destiné à être traité comme un attribut protégé et qu'il ne devrait pas être modifié directement depuis l'extérieur de la classe.  Les méthodes <code class="language-python">get_temperature()</code> et <code class="language-python">set_temperature()</code>, souvent appelées "getters" et "setters", fournissent une interface contrôlée pour accéder et modifier la température. Le setter inclut une validation pour s'assurer que la température est physiquement possible.</p>
+
+<p>Python offre également une convention utilisant un double underscore (<code class="language-python">__</code>) pour préfixer les noms d'attributs.  Ceci déclenche un mécanisme appelé "name mangling" (littéralement, "déformation de nom"). Bien que cela ne rende pas l'attribut totalement inaccessible, cela complique son accès direct depuis l'extérieur de la classe, offrant ainsi un niveau d'encapsulation plus fort, bien que toujours contournable. Voici un exemple :</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.__private_attribute = 10  # Double underscore: name mangling
+
+    def get_private_attribute(self):
+        return self.__private_attribute
+
+# Usage
+obj = MyClass()
+print(obj.get_private_attribute())
+# print(obj.__private_attribute) # This would raise an AttributeError
+print(obj._MyClass__private_attribute) # Accessing the name-mangled attribute (not recommended)
+</code></pre>
+
+<p>Dans ce cas, tenter d'accéder directement à <code class="language-python">__private_attribute</code> via <code class="language-python">obj.__private_attribute</code> provoquerait une exception <code class="language-python">AttributeError</code>. Python renomme l'attribut en interne en <code class="language-python">_MyClass__private_attribute</code>, ce qui rend son accès direct moins évident. Il est crucial de comprendre que cela ne constitue pas une protection absolue, car l'attribut reste accessible en utilisant le nom modifié (<code class="language-python">_MyClass__private_attribute</code>). Cependant, cette technique dissuade fortement son utilisation inappropriée et est particulièrement utile pour éviter les conflits de noms dans les classes héritées, en particulier dans les grands projets.</p>
+
+<p>En résumé, l'encapsulation en Python s'appuie sur des conventions de nommage, à savoir l'utilisation d'un underscore simple et d'un double underscore, pour signaler la visibilité souhaitée des attributs. Bien que ces conventions n'empêchent pas techniquement l'accès direct aux attributs, elles encouragent une programmation responsable et contribuent à une meilleure organisation et maintenabilité du code. L'utilisation de getters et de setters est une pratique recommandée pour contrôler l'accès et la modification des données internes d'un objet, assurant ainsi une plus grande cohérence et robustesse du code.</p>
+</p>
+    <h3>1.2 L'importance de l'encapsulation</h3>
+    <p><p>L'encapsulation est un pilier fondamental de la programmation orientée objet (POO) qui permet de structurer le code de manière modulaire et maintenable. Son intérêt majeur réside dans sa capacité à masquer la complexité interne d'une classe et à contrôler l'accès à ses données, offrant ainsi une meilleure organisation et une protection accrue contre les erreurs potentielles. Elle contribue à la création de code plus robuste et facile à comprendre.</p>
+
+<p>Concrètement, l'encapsulation consiste à regrouper les données (attributs) et les méthodes (fonctions) qui manipulent ces données au sein d'une même entité : la classe. Cela favorise la création d'unités de code autonomes, réutilisables et cohérentes. L'objectif principal est de masquer les détails d'implémentation internes d'une classe, en ne révélant que son interface publique. Cette interface publique est constituée des méthodes que les autres classes peuvent utiliser pour interagir avec la classe encapsulée, sans avoir à connaître son fonctionnement interne.</p>
+
+<p>Prenons l'exemple d'une classe représentant un lecteur audio. L'implémentation interne de la lecture de fichiers audio, comme le décodage du format audio (MP3, WAV, etc.), peut être complexe et susceptible d'évoluer. En encapsulant ces détails, on isole les parties du programme qui utilisent le lecteur audio de ces complexités. Ainsi, si la méthode de décodage des fichiers audio est modifiée, les classes qui utilisent le lecteur audio n'auront pas besoin d'être modifiées, à condition que l'interface publique (par exemple, les méthodes <code class="language-python">play()</code>, <code class="language-python">pause()</code>, <code class="language-python">stop()</code>) reste stable.</p>
+
+<pre><code class="language-python">
+class AudioPlayer:
+    def __init__(self, file_path):
+        # The file path is considered a protected attribute
+        self._file_path = file_path
+        self._is_playing = False
+
+    def play(self):
+        # Simulate playing the audio file
+        if not self._is_playing:
+            print(f"Playing audio file: {self._file_path}")
+            self._is_playing = True
+        else:
+            print("Audio is already playing.")
+
+    def pause(self):
+        # Simulate pausing the audio file
+        if self._is_playing:
+            print("Pausing audio file.")
+            self._is_playing = False
+        else:
+            print("Audio is not playing.")
+
+    def stop(self):
+        # Simulate stopping the audio file
+        if self._is_playing:
+            print("Stopping audio file.")
+            self._is_playing = False
+        else:
+            print("Audio is not playing.")
+
+    def _decode_audio(self):
+        # This is a protected method used for decoding the audio
+        print("Decoding audio internally...")
+        # Add the actual decoding logic here
+        return "Decoded Audio Data"
+
+# Usage
+player = AudioPlayer("my_song.mp3")
+player.play() # Outputs: Playing audio file: my_song.mp3
+player.pause() # Outputs: Pausing audio file.
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">_file_path</code> et la méthode <code class="language-python">_decode_audio()</code> sont précédés d'un underscore (<code class="language-python">_</code>). En Python, cette convention indique que ces éléments sont considérés comme "protégés", signifiant qu'ils sont destinés à un usage interne à la classe et ne devraient pas être directement manipulés depuis l'extérieur. Bien que Python ne possède pas de mots-clés tels que <code class="language-python">private</code> ou <code class="language-python">protected</code> comme dans d'autres langages (Java, C++), cette convention de nommage est un signal fort pour les développeurs, leur indiquant que ces éléments font partie de l'implémentation interne et qu'il est préférable de ne pas y accéder directement. Modifier ces éléments en dehors de la classe pourrait entraîner un comportement inattendu ou des erreurs. L'encapsulation, même implémentée par convention, améliore la modularité, la lisibilité et la maintenabilité du code Python.</p>
+
+<p>En résumé, l'encapsulation est un principe fondamental de la POO qui promeut un code plus clair, plus flexible et plus robuste. Elle permet de masquer la complexité interne, de contrôler l'accès aux données sensibles, et de simplifier la maintenance et l'évolution du code. Bien que Python ne force pas l'encapsulation via des mécanismes de contrôle d'accès stricts, l'utilisation de conventions comme le préfixe "_" pour les attributs et méthodes "protégés" permet de profiter des avantages de l'encapsulation en termes de conception, d'organisation et de réduction des risques d'erreurs.</p>
+</p>
+    <h3>1.3 Conventions de nommage pour l'encapsulation en Python</h3>
+    <p><p>En Python, l'encapsulation est mise en œuvre principalement par convention. On utilise des préfixes spéciaux dans les noms des attributs et des méthodes pour indiquer leur accessibilité prévue. Contrairement à d'autres langages orientés objet, il n'existe pas de mots-clés comme <code class="language-python">private</code> ou <code class="language-python">protected</code>.</p>
+
+<p>Un simple underscore (<code class="language-python">_</code>) en préfixe d'un nom suggère que l'attribut ou la méthode est destiné à être utilisé en interne à la classe ou au module. Bien que Python n'empêche pas son accès depuis l'extérieur, c'est une convention forte signalant qu'il ne fait pas partie de l'API publique. On parle d'attribut ou de méthode "protégé".</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self._internal_state = "Internal Value" # Protected attribute
+
+    def _update_state(self, new_state): # Protected method
+        """
+        Updates the internal state of the object.
+        This method is intended for internal use.
+        """
+        self._internal_state = new_state
+
+    def get_state(self):
+        return self._internal_state
+
+# Example Usage
+obj = MyClass()
+print(obj.get_state()) # Accessing the state via a public method
+# print(obj._internal_state) # Possible but discouraged
+
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, <code class="language-python">_internal_state</code> et <code class="language-python">_update_state</code> sont considérés comme protégés. L'accès direct à <code class="language-python">_internal_state</code> depuis l'extérieur de la classe est possible, mais déconseillé. Il est important de noter que Python ne fournit aucun mécanisme de protection réel; c'est uniquement une convention.</p>
+
+<p>Un double underscore (<code class="language-python">__</code>) en préfixe d'un nom déclenche un mécanisme appelé "name mangling" (renommage de nom). Python renomme l'attribut ou la méthode pour qu'il soit plus difficile d'y accéder directement depuis l'extérieur de la classe. Le nom est modifié en <code class="language-python">_NomDeLaClasse__NomDeLAttribut</code>. Ceci est destiné à éviter les conflits de noms dans les sous-classes, surtout en cas d'héritage multiple.</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.__secret_attribute = "This is a secret"
+
+    def get_secret(self):
+        return self.__secret_attribute
+
+# Example Usage
+obj = MyClass()
+# print(obj.__secret_attribute) # This would raise an AttributeError
+print(obj.get_secret()) # Accessing the attribute via a method
+print(obj._MyClass__secret_attribute) # Accessing the mangled name (possible, but not recommended)
+
+class SubClass(MyClass):
+    def __init__(self):
+        super().__init__()
+        self.__secret_attribute = "Subclass secret" # This does not override the parent's attribute
+
+sub_obj = SubClass()
+print(sub_obj.get_secret()) # Accessing the parent's attribute through inheritance
+print(sub_obj._MyClass__secret_attribute) # Accessing the parent's mangled name
+print(sub_obj._SubClass__secret_attribute) # Accessing the subclass's mangled name
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">__secret_attribute</code> est sujet au "name mangling". Tenter d'y accéder directement via <code class="language-python">obj.__secret_attribute</code> lèvera une exception <code class="language-python">AttributeError</code>. Cependant, l'attribut est toujours accessible en utilisant son nom modifié: <code class="language-python">obj._MyClass__secret_attribute</code>. L'objectif principal du "name mangling" est d'éviter les conflits de noms dans les classes héritées, et non d'offrir une sécurité absolue. Il est important de noter que le "name mangling" n'est pas appliqué aux noms qui commencent et se terminent par deux underscores (ex: <code class="language-python">__init__</code>).</p>
+
+<p>Il est crucial de comprendre que ces conventions de nommage en Python ne sont pas des mécanismes d'application stricts comme les modificateurs d'accès (<code class="language-python">private</code>, <code class="language-python">protected</code>) dans d'autres langages. Elles reposent sur la coopération entre les développeurs. L'utilisation appropriée de <code class="language-python">_</code> et <code class="language-python">__</code> améliore la lisibilité et la maintenabilité du code en indiquant clairement l'intention concernant l'utilisation des attributs et des méthodes. Le respect de ces conventions favorise un code plus propre et plus facile à comprendre pour les autres développeurs.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">2. Attributs privés et protégés en Python</h2>
+    <p><p>En Python, l'encapsulation repose principalement sur des conventions, car le langage n'impose pas de mécanismes de protection stricts comme en Java ou C++. Python utilise des conventions de nommage pour signaler qu'un attribut ou une méthode est destiné à un usage interne. On distingue deux niveaux de protection : "protégé" et "privé", chacun étant indiqué par un préfixe spécifique dans le nom de l'attribut ou de la méthode.</p>
+
+<p>Un attribut ou une méthode est considéré comme <strong>protégé</strong> s'il commence par un simple underscore (<code class="language-python">_</code>). C'est une indication pour les autres développeurs que cet attribut ou cette méthode est destiné à être utilisé à l'intérieur de la classe ou de ses sous-classes. Bien que Python n'empêche pas l'accès direct à un attribut protégé, il est considéré comme une mauvaise pratique de le faire en dehors de la classe ou de ses sous-classes. C'est un contrat social entre développeurs.</p>
+
+<pre><code class="language-python">
+class DataProcessor:
+    def __init__(self, data):
+        self._raw_data = data  # Protected attribute
+        self._sanitized_data = self._sanitize_data()
+
+    def _sanitize_data(self): # Protected method
+        # Perform data cleaning operations
+        sanitized_data = [x for x in self._raw_data if isinstance(x, int)]
+        return sanitized_data
+
+    def get_sanitized_data(self):
+        return self._sanitized_data
+
+# Example usage
+processor = DataProcessor([1, 2, "hello", 3, 4.5, 5])
+print(processor.get_sanitized_data()) # Output: [1, 2, 3, 5]
+# print(processor._raw_data) # Possible, but not recommended
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">_raw_data</code> et <code class="language-python">_sanitize_data</code> sont considérés comme protégés. On peut y accéder de l'extérieur, mais il est implicitement convenu qu'il ne faut pas le faire. La méthode <code class="language-python">_sanitize_data</code> est aussi protégée et ne devrait pas être appelée directement depuis l'extérieur de la classe.</p>
+
+<p>Un attribut ou une méthode est considéré comme <strong>privé</strong> s'il commence par un double underscore (<code class="language-python">__</code>). Python utilise un mécanisme de "name mangling" (renommage de nom) pour rendre l'accès à ces attributs plus difficile, mais pas impossible. Le nom d'un attribut privé est transformé en <code class="language-python">_NomClasse__NomAttribut</code>. L'objectif est principalement d'éviter les conflits de noms avec les attributs des sous-classes, plutôt que de fournir une sécurité d'accès absolue.</p>
+
+<pre><code class="language-python">
+class SecuritySystem:
+    def __init__(self, access_code):
+        self.__access_code = access_code  # Private attribute
+
+    def authenticate(self, code):
+        if code == self.__access_code:
+            return True
+        else:
+            return False
+
+# Example Usage
+system = SecuritySystem("Secret123")
+# print(system.__access_code)  # This will raise an AttributeError
+print(system.authenticate("Secret123"))
+# Output: True
+print(system._SecuritySystem__access_code)
+# Accessing the private attribute using name mangling - possible, but strongly discouraged
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">__access_code</code> est un attribut privé. Tenter d'y accéder directement via <code class="language-python">system.__access_code</code> provoquera une <code class="language-python">AttributeError</code>. Cependant, il est toujours possible d'y accéder en utilisant le nom modifié (<code class="language-python">_SecuritySystem__access_code</code>), bien que cela soit fortement déconseillé et considéré comme une violation de l'encapsulation. Cette technique contourne le mécanisme de protection et peut rendre le code plus difficile à maintenir.</p>
+
+<p>En résumé, Python offre des mécanismes d'encapsulation basés sur des conventions de nommage, plutôt que sur des restrictions d'accès strictes. Les attributs protégés (<code class="language-python">_</code>) et privés (<code class="language-python">__</code>) servent à indiquer l'intention du concepteur de la classe quant à l'utilisation interne de ces attributs, mais ne garantissent pas une protection absolue. Le "name mangling" pour les attributs privés vise principalement à éviter les conflits de noms dans l'héritage. L'adhésion à ces conventions est cruciale pour maintenir un code propre, lisible, et facile à maintenir, favorisant la collaboration entre développeurs.</p>
+</p>
+    <h3>2.1 Attributs protégés (Protected Attributes)</h3>
+    <p><p>En Python, les attributs protégés sont signalés par une convention de nommage plutôt que par un mécanisme d'application strict du langage. On utilise un simple underscore (<code class="language-python">_</code>) comme préfixe au nom de l'attribut pour indiquer qu'il est destiné à un usage interne à la classe ou à ses sous-classes. L'interpréteur Python ne restreint pas l'accès à ces attributs. Il s'agit plutôt d'un signal clair aux autres développeurs : "Attention, cet attribut est interne et son utilisation directe hors de la classe est déconseillée."</p>
+
+<p>Prenons l'exemple d'une classe représentant un compte bancaire :</p>
+
+<pre><code class="language-python">
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self._balance = balance  # Protected attribute
+
+    def deposit(self, amount):
+        """
+        Deposits money into the account.
+        """
+        self._balance += amount
+
+    def withdraw(self, amount):
+        """
+        Withdraws money from the account.
+        """
+        if amount <= self._balance:
+            self._balance -= amount
+        else:
+            print("Insufficient funds")
+
+    def _apply_interest(self, rate):
+        """
+        Applies interest to the balance (protected method).
+        """
+        self._balance *= (1 + rate)
+
+    def get_balance(self):
+        """
+        Returns the current balance.
+        """
+        return self._balance
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">_balance</code> est un attribut protégé. L'accès direct à <code class="language-python">_balance</code> depuis l'extérieur de la classe n'est pas interdit, mais fortement déconseillé.  Il est préférable d'utiliser les méthodes publiques de la classe, comme <code class="language-python">deposit</code> et <code class="language-python">withdraw</code>, pour interagir avec le solde du compte. La méthode <code class="language-python">_apply_interest</code> est également protégée, suggérant qu'elle est destinée à être utilisée en interne par la classe ou ses sous-classes et non directement par le code client.</p>
+
+<p>Les sous-classes peuvent accéder aux attributs protégés de leurs classes parentes. Cela permet une certaine flexibilité dans la conception de l'héritage, tout en maintenant une indication claire que ces attributs ne font pas partie de l'API publique et peuvent être modifiés dans les versions futures sans préavis.</p>
+
+<pre><code class="language-python">
+class SavingsAccount(BankAccount):
+    def __init__(self, account_number, balance, interest_rate):
+        super().__init__(account_number, balance)
+        self._interest_rate = interest_rate  # Protected attribute
+
+    def apply_monthly_interest(self):
+        """
+        Applies monthly interest to the savings account.
+        """
+        self._apply_interest(self._interest_rate / 12)
+
+    def get_interest_rate(self):
+        """
+        Returns the interest rate.
+        """
+        return self._interest_rate
+</code></pre>
+
+<p>Ici, <code class="language-python">SavingsAccount</code>, une sous-classe de <code class="language-python">BankAccount</code>, accède à la méthode protégée <code class="language-python">_apply_interest</code> de la classe mère et définit son propre attribut protégé <code class="language-python">_interest_rate</code>. Cela illustre comment les attributs et méthodes protégés peuvent être utilisés dans une hiérarchie d'héritage pour implémenter des fonctionnalités spécifiques aux sous-classes tout en respectant les conventions d'encapsulation.</p>
+
+<p>En résumé, les attributs protégés en Python sont un mécanisme de convention, servant de signal aux développeurs concernant l'usage prévu d'un attribut. Ils encouragent une encapsulation propre et contribuent à une meilleure organisation du code, sans pour autant imposer de restrictions d'accès au niveau de l'interpréteur.</p>
+</p>
+    <h3>2.2 Attributs privés (Private Attributes)</h3>
+    <p><p>En Python, les attributs privés sont définis par convention en préfixant leur nom avec deux underscores (<code class="language-python">__</code>). Cette convention signale que l'attribut est destiné à être utilisé uniquement au sein de la classe où il est défini. Techniquement, Python effectue une opération appelée "name mangling" pour ces attributs.</p>
+
+<p>Le "name mangling" transforme le nom de l'attribut privé en <code class="language-python">_NomClasse__nomAttribut</code>. Ce mécanisme a pour but principal d'éviter les conflits de noms d'attributs, notamment dans le contexte de l'héritage, où une sous-classe pourrait redéfinir un attribut avec le même nom. Bien que cela offre une certaine forme d'encapsulation, il est important de noter que ce n'est pas une protection d'accès stricte comme dans d'autres langages de programmation.</p>
+
+<p>Prenons un exemple pour illustrer le concept :</p>
+
+<pre><code class="language-python">
+class Robot:
+    def __init__(self, name):
+        self.name = name
+        self.__internal_code = "XYZ123"  # Private attribute
+
+    def get_name(self):
+        return self.name
+
+    def __get_internal_code(self):  # Private method
+        return self.__internal_code
+
+    def access_internal_code(self):
+        return self.__get_internal_code()
+
+
+my_robot = Robot("Robby")
+print(my_robot.get_name())  # Output: Robby
+
+# print(my_robot.__internal_code)  # This will raise an AttributeError
+
+print(my_robot.access_internal_code())  # Output: XYZ123
+
+print(my_robot._Robot__internal_code)  # Output: XYZ123 - Accessing the attribute using name mangling (Not recommended)
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">__internal_code</code> est un attribut privé de la classe <code class="language-python">Robot</code>. Si l'on essaie d'accéder directement à cet attribut depuis l'extérieur de la classe en utilisant <code class="language-python">my_robot.__internal_code</code>, une exception <code class="language-python">AttributeError</code> sera levée. Cependant, grâce au "name mangling", il est techniquement possible d'accéder à l'attribut en utilisant <code class="language-python">my_robot._Robot__internal_code</code>. Il est <strong>fortement déconseillé</strong> de le faire, car cela contourne l'encapsulation et peut rendre le code plus difficile à maintenir.</p>
+
+<p>De même, la méthode <code class="language-python">__get_internal_code</code> est une méthode privée. Tenter de l'appeler directement depuis l'extérieur de la classe provoquerait également une exception. Cependant, elle est accessible indirectement via la méthode publique <code class="language-python">access_internal_code</code>. Cela démontre comment on peut contrôler l'accès aux attributs privés et à la logique interne d'une classe par le biais d'une interface publique, respectant ainsi les principes d'encapsulation.</p>
+
+<p>En résumé, bien que Python ne fournisse pas une application stricte de la confidentialité des attributs, l'utilisation des attributs privés (avec le double underscore) est une convention importante. Elle indique que ces attributs sont destinés à être utilisés uniquement à l'intérieur de la classe. Le respect de cette convention contribue à un code plus propre, plus maintenable et moins sujet aux erreurs, en favorisant une meilleure encapsulation et en limitant les dépendances externes à l'implémentation interne de la classe.</p>
+</p>
+    <h3>2.3 Accès et modification des attributs privés</h3>
+    <p><p>Bien que les attributs préfixés par un double underscore <code class="language-python">__</code> soient souvent perçus comme "privés" en Python, il est crucial de comprendre qu'il s'agit davantage d'une convention que d'une application stricte de confidentialité. Python utilise un mécanisme de "name mangling" (renommage de nom) pour rendre ces attributs moins accessibles directement depuis l'extérieur de la classe. L'encapsulation, dans ce contexte, repose sur l'idée que les développeurs respecteront cette convention et utiliseront des méthodes d'accès, telles que les "getters" et "setters", pour interagir avec ces attributs.</p>
+
+<p>Les méthodes "getter" (accesseurs) sont utilisées pour récupérer la valeur d'un attribut, tandis que les méthodes "setter" (mutateurs) permettent de modifier cette valeur. L'avantage principal de cette approche est d'offrir un contrôle centralisé sur la manière dont les attributs sont consultés et mis à jour. On peut ainsi implémenter des validations pour s'assurer que les nouvelles valeurs sont conformes à certaines règles, effectuer des transformations sur les données avant de les stocker ou de les retourner, et même déclencher des effets de bord, comme la mise à jour d'un journal ou la notification d'autres parties du système.</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self, value):
+        # __my_attribute is 'private' due to name mangling
+        self.__my_attribute = value
+
+    def get_my_attribute(self):
+        # Getter method to access __my_attribute
+        return self.__my_attribute
+
+    def set_my_attribute(self, new_value):
+        # Setter method to modify __my_attribute with validation
+        if new_value > 0:
+            self.__my_attribute = new_value
+        else:
+            print("Error: Value must be positive")
+
+# Example usage
+obj = MyClass(10)
+print(obj.get_my_attribute())  # Output: 10
+
+obj.set_my_attribute(20)
+print(obj.get_my_attribute())  # Output: 20
+
+obj.set_my_attribute(-5)  # Output: Error: Value must be positive
+print(obj.get_my_attribute())  # Output: 20 (value remains unchanged)
+</code></pre>
+
+<p>Il est important de noter que, bien que le "name mangling" rende l'accès direct plus complexe, il ne l'empêche pas totalement. On peut accéder à un attribut "privé" en utilisant <code class="language-python">_NomClasse__nom_attribut</code>. Cependant, contourner les "getters" et "setters" de cette manière est généralement considéré comme une mauvaise pratique, car cela viole le principe d'encapsulation et peut entraîner des comportements inattendus ou des incohérences dans l'état de l'objet.</p>
+
+<p>En résumé, l'utilisation de "getters" et "setters" en Python, bien que n'étant pas une obligation syntaxique pour les attributs "privés", représente une approche recommandée pour maintenir l'intégrité des données, contrôler l'accès aux attributs et faciliter la maintenance du code à long terme. Ils permettent d'appliquer des règles de validation et de transformation, assurant ainsi la cohérence de l'état de l'objet et une meilleure encapsulation.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">3. Getters et Setters en Python</h2>
+    <p><p>En Python, l'accès direct aux attributs d'une classe est généralement autorisé. Cependant, pour un contrôle plus fin, il est souvent préférable de maîtriser la façon dont ces attributs sont consultés et modifiés. C'est là qu'interviennent les getters et les setters. Bien qu'ils ne soient pas aussi strictement appliqués qu'en Java, ils permettent d'encapsuler la logique d'accès et de modification des attributs, offrant ainsi plus de flexibilité et de contrôle sur l'état interne de vos objets.</p>
+
+<p>Un getter est une méthode permettant d'accéder à la valeur d'un attribut. Il offre un point de contrôle pour potentiellement effectuer des opérations supplémentaires (comme la validation ou la transformation) avant de retourner la valeur réelle. Un setter, à l'inverse, est une méthode permettant de modifier la valeur d'un attribut. Son rôle est de valider la nouvelle valeur, effectuer des actions annexes (comme notifier d'autres objets) ou même empêcher la modification en fonction de certaines conditions.</p>
+
+<p>L'implémentation des getters et setters en Python se fait couramment via la fonction <code class="language-python">property()</code> ou, plus élégamment, avec le décorateur <code class="language-python">@property</code>. Voici un exemple d'utilisation de <code class="language-python">property()</code>:</p>
+
+<pre><code class="language-python">
+class TemperatureConverter:
+    def __init__(self, celsius):
+        self._celsius = celsius  # "Protected" attribute (convention)
+
+    # Getter method
+    def get_celsius(self):
+        print("Getting celsius value")
+        return self._celsius
+
+    # Setter method
+    def set_celsius(self, value):
+        if value < -273.15:
+            raise ValueError("Temperature below absolute zero!")
+        print("Setting celsius value")
+        self._celsius = value
+
+    # Using property() to define the property
+    celsius = property(get_celsius, set_celsius)
+
+    # Method to convert Celsius to Fahrenheit
+    def to_fahrenheit(self):
+        return (self._celsius * 9/5) + 32
+
+# Example Usage
+converter = TemperatureConverter(25)
+print(converter.celsius)  # Accessing the value using the getter
+converter.celsius = 30    # Setting the value using the setter
+print(converter.to_fahrenheit())
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">_celsius</code> est précédé d'un underscore (<code class="language-python">_</code>), une convention Python pour indiquer qu'il est "protégé" (interne à la classe). Les méthodes <code class="language-python">get_celsius</code> et <code class="language-python">set_celsius</code> gèrent respectivement l'accès en lecture et en écriture de cet attribut. La fonction <code class="language-python">property()</code> associe ces méthodes à une propriété nommée <code class="language-python">celsius</code>, permettant d'y accéder comme s'il s'agissait d'un attribut direct.</p>
+
+<p>Une approche plus moderne et plus lisible consiste à utiliser le décorateur <code class="language-python">@property</code>:</p>
+
+<pre><code class="language-python">
+class Distance:
+    def __init__(self, meters):
+        self._meters = meters
+
+    @property
+    def meters(self):
+        print("Getting meters")
+        return self._meters
+
+    @meters.setter
+    def meters(self, value):
+        if value < 0:
+            raise ValueError("Distance cannot be negative")
+        print("Setting meters")
+        self._meters = value
+
+    def to_kilometers(self):
+        return self._meters / 1000
+
+# Example Usage
+distance = Distance(100)
+print(distance.meters)
+distance.meters = 200
+print(distance.to_kilometers())
+</code></pre>
+
+<p>Ici, le décorateur <code class="language-python">@property</code> définit le getter pour l'attribut <code class="language-python">meters</code>, tandis que <code class="language-python">@meters.setter</code> définit le setter correspondant. Cette syntaxe est plus concise et améliore la lisibilité du code. Le code client peut accéder à <code class="language-python">distance.meters</code> comme s'il s'agissait d'un attribut ordinaire, mais en réalité, les méthodes getter et setter sont appelées en coulisses.</p>
+
+<p>En conclusion, l'utilisation des getters et des setters en Python, bien que facultative, offre un mécanisme puissant pour contrôler l'accès aux attributs d'une classe. Ils permettent d'ajouter une logique de validation, de masquer l'implémentation interne et de modifier le comportement d'une classe sans impacter le code client existant. Ils favorisent une meilleure encapsulation et contribuent à une conception plus robuste et maintenable.</p>
+</p>
+    <h3>3.1 Définition des Getters</h3>
+    <p><p>En programmation orientée objet, un getter (ou accesseur) est une méthode permettant d'accéder à la valeur d'un attribut d'un objet. L'objectif premier d'un getter est de contrôler l'accès aux attributs d'une classe, offrant ainsi la possibilité de masquer l'implémentation interne et de prévenir toute modification directe et non supervisée des attributs.</p>
+
+<p>En Python, la méthode la plus répandue pour définir un getter consiste à employer la fonction intégrée <code class="language-python">property()</code> ou le décorateur <code class="language-python">@property</code>. Ces outils permettent de définir une méthode qui se comporte comme un attribut, simplifiant ainsi la syntaxe et rendant l'accès aux valeurs plus intuitif.</p>
+
+<p>Voici un exemple illustrant l'utilisation du décorateur <code class="language-python">@property</code> :</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width  # Convention: underscore indicates a "protected" attribute
+        self._height = height
+
+    @property
+    def width(self):
+        # Getter method for width
+        return self._width
+
+    @property
+    def height(self):
+        # Getter method for height
+        return self._height
+
+    @property
+    def area(self):
+        # Calculate area dynamically
+        return self._width * self._height
+
+# Example usage:
+rectangle = Rectangle(10, 5)
+print(f"Width: {rectangle.width}")   # Access width using the getter
+print(f"Height: {rectangle.height}") # Access height using the getter
+print(f"Area: {rectangle.area}")     # Access area using a getter that performs a calculation
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">width</code>, <code class="language-python">height</code> et <code class="language-python">area</code> sont des propriétés (getters). On y accède comme s'il s'agissait d'attributs ordinaires (par exemple, <code class="language-python">rectangle.width</code>), mais en réalité, l'accès est géré par les méthodes décorées avec <code class="language-python">@property</code>.  Notez que <code class="language-python">area</code> calcule la valeur à la volée.</p>
+
+<p>L'utilisation de getters permet d'ajouter une logique additionnelle lors de l'accès à un attribut. Par exemple, on peut effectuer des validations, des conversions ou des calculs avant de renvoyer la valeur.  Cela encourage une meilleure encapsulation et préserve l'intégrité des données.</p>
+
+<p>Un autre avantage des getters est la capacité de modifier l'implémentation interne de la classe sans impacter le code client. Pourvu que l'interface (le nom de la propriété) reste inchangée, le code client continuera de fonctionner sans modification, même si la manière dont la valeur est obtenue est modifiée.</p>
+
+<p>Les getters peuvent également servir à implémenter des propriétés en lecture seule, empêchant ainsi toute modification accidentelle de l'attribut depuis l'extérieur de la classe. Ceci renforce la robustesse du code et la clarté de son intention.</p>
+</p>
+    <h3>3.2 Définition des Setters</h3>
+    <p><p>Un <em>setter</em> est une méthode de classe qui permet de modifier la valeur d'un attribut. Contrairement à un accès direct, un setter offre la possibilité d'intercepter l'opération d'affectation et d'y intégrer une logique personnalisée, comme la validation de données ou la transformation de la valeur avant son affectation. En Python, la définition d'un setter se fait généralement à l'aide du décorateur <code class="language-python">@property_name.setter</code>.</p>
+
+<p>L'intérêt principal d'un setter réside dans sa capacité à garantir l'intégrité des données en encapsulant la logique de modification d'un attribut. Il permet de contrôler les valeurs qui peuvent être assignées à un attribut, assurant ainsi la cohérence de l'état de l'objet.</p>
+
+<p>Prenons l'exemple d'une classe <code class="language-python">Person</code> avec un attribut <code class="language-python">age</code>. Nous pouvons définir un setter pour nous assurer que l'âge ne soit jamais une valeur négative :</p>
+
+<pre><code class="language-python">
+class Person:
+    def __init__(self, name, age):
+        self._name = name  # Convention: underscore prefix indicates "protected" attribute
+        self._age = age
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        if not isinstance(age, int):
+            raise TypeError("Age must be an integer")
+        if age < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+</code></pre>
+
+<p>Dans cet exemple, le décorateur <code class="language-python">@age.setter</code> est utilisé pour définir le setter de l'attribut <code class="language-python">age</code>. Avant d'affecter la nouvelle valeur à <code class="language-python">self._age</code>, une double vérification est effectuée. Premièrement, on s'assure que la valeur est bien un entier. Deuxièmement, on vérifie que l'âge n'est pas négatif. Si l'une de ces conditions n'est pas remplie, une exception (<code class="language-python">TypeError</code> ou <code class="language-python">ValueError</code>) est levée.</p>
+
+<p>Voici un exemple d'utilisation de cette classe :</p>
+
+<pre><code class="language-python">
+person = Person("Alice", 30)
+print(person.age)  # Output: 30
+
+person.age = 35
+print(person.age)  # Output: 35
+
+try:
+    person.age = -5
+except ValueError as e:
+    print(e)  # Output: Age cannot be negative
+
+try:
+    person.age = "wrong type"
+except TypeError as e:
+    print(e)  # Output: Age must be an integer
+</code></pre>
+
+<p>Dans cet exemple, on essaie d'abord d'affecter une valeur négative à l'attribut <code class="language-python">age</code>, ce qui lève une exception <code class="language-python">ValueError</code>. Ensuite, on tente d'affecter une chaîne de caractères, ce qui déclenche une exception <code class="language-python">TypeError</code>. Le nom est accessible en lecture seule car il n'y a pas de setter défini pour cet attribut, ce qui empêche sa modification après l'initialisation de l'objet.</p>
+
+<p>En résumé, les setters en Python permettent de contrôler et de valider les modifications des attributs d'une classe, ce qui contribue à une meilleure encapsulation et à une plus grande robustesse du code. Définis à l'aide du décorateur <code class="language-python">@attribute.setter</code>, ils offrent un moyen élégant d'intégrer une logique personnalisée lors de l'affectation d'une nouvelle valeur à un attribut, assurant ainsi l'intégrité des données manipulées par la classe.</p>
+</p>
+    <h3>3.3 Exemple concret avec @property</h3>
+    <p><p>En Python, les propriétés permettent de contrôler l'accès aux attributs d'une classe, offrant ainsi un mécanisme d'encapsulation. Le décorateur <code class="language-python">@property</code>, combiné avec <code class="language-python">@attribute.setter</code>, fournit une approche élégante pour implémenter des getters et des setters personnalisés, permettant la validation des données et l'exécution de logique supplémentaire lors de l'accès ou de la modification d'un attribut.</p>
+
+<p>Prenons l'exemple d'une classe <code class="language-python">Book</code> représentant un livre. Nous utiliserons <code class="language-python">@property</code> pour définir un getter pour l'attribut <code class="language-python">title</code> et <code class="language-python">@title.setter</code> pour implémenter un setter qui valide que le titre est une chaîne de caractères non vide.</p>
+
+<pre><code class="language-python">
+class Book:
+    def __init__(self, title, author):
+        # Initialize the book with a title and author
+        self._title = title
+        self._author = author
+
+    @property
+    def title(self):
+        # Getter for the title attribute
+        return self._title
+
+    @title.setter
+    def title(self, new_title):
+        # Setter for the title attribute with validation
+        if not isinstance(new_title, str):
+            raise ValueError("Title must be a string")
+        if not new_title:
+            raise ValueError("Title cannot be empty")
+        self._title = new_title
+
+    @property
+    def author(self):
+        # Getter for the author attribute
+        return self._author
+
+    # No setter for author to make it read-only after initialization
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">_title</code> est l'attribut interne qui stocke la valeur du titre. La méthode <code class="language-python">title()</code> décorée avec <code class="language-python">@property</code> agit comme un getter, permettant d'accéder à la valeur de <code class="language-python">_title</code>. La méthode <code class="language-python">title()</code> décorée avec <code class="language-python">@title.setter</code> sert de setter, permettant de définir une nouvelle valeur pour <code class="language-python">_title</code>, mais seulement après avoir vérifié que la nouvelle valeur est bien une chaîne de caractères non vide. Si la nouvelle valeur ne respecte pas ces conditions, une exception <code class="language-python">ValueError</code> est levée, empêchant ainsi l'affectation d'une valeur invalide. L'absence de setter pour l'attribut <code class="language-python">author</code> rend cet attribut accessible en lecture seule après l'initialisation de l'objet.</p>
+
+<p>Voici un exemple d'utilisation de cette classe :</p>
+
+<pre><code class="language-python">
+book = Book("The Lord of the Rings", "J.R.R. Tolkien")
+print(book.title)  # Output: The Lord of the Rings
+
+book.title = "The Hobbit"
+print(book.title)  # Output: The Hobbit
+
+try:
+    book.title = 123  # This will raise a ValueError
+except ValueError as e:
+    print(e)  # Output: Title must be a string
+
+try:
+    book.title = ""  # This will raise a ValueError
+except ValueError as e:
+    print(e)  # Output: Title cannot be empty
+
+print(book.author) # Output: J.R.R. Tolkien
+</code></pre>
+
+<p>Cet exemple démontre comment les décorateurs <code class="language-python">@property</code> et <code class="language-python">@attribute.setter</code> permettent de contrôler l'accès et la modification des attributs d'une classe. Cette approche renforce l'encapsulation en Programmation Orientée Objet, garantissant l'intégrité des données et le respect des règles métier définies au sein de la classe. L'utilisation de propriétés offre une interface propre et intuitive pour interagir avec les attributs d'un objet, tout en permettant une validation et une gestion centralisée des données.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">4. Name Mangling en détail</h2>
+    <p><p>Le "name mangling" (renommage de nom) est une transformation subtile que Python applique aux noms des attributs de classe, influençant leur stockage et leur accessibilité. Ce mécanisme entre en jeu lorsqu'un attribut est préfixé par deux underscores (<code class="language-python">__</code>), signalant une intention de le rendre "privé". Il est crucial de comprendre que Python ne met pas en œuvre une confidentialité rigide comme on la trouve dans des langages tels que Java ou C++. Le "name mangling" sert principalement à minimiser les risques de conflits de noms, en particulier dans les scénarios d'héritage.</p>
+
+<p>Lorsqu'un attribut de classe commence par deux underscores (et ne se termine pas par deux underscores, car cette convention est réservée aux méthodes spéciales ou "magiques" de Python), Python modifie son nom de manière interne. Le nouveau nom prend la forme <code class="language-python">_NomDeLaClasse__NomDeLAttribut</code>. L'attribut n'est donc pas rendu totalement inaccessible, mais son nom est transformé de façon à décourager son accès direct depuis l'extérieur de la classe ou d'une classe dérivée. C'est une forme d'encapsulation faible, basée sur une convention.</p>
+
+<p>Prenons l'exemple suivant pour illustrer le "name mangling" :</p>
+
+<pre><code class="language-python">
+class MyData:
+    def __init__(self):
+        # __secret_value will be name mangled
+        self.__secret_value = 42
+
+    def get_secret_value(self):
+        return self.__secret_value
+
+data_object = MyData()
+
+# Trying to access the attribute directly will raise an AttributeError
+# print(data_object.__secret_value)
+
+# Accessing the attribute using the mangled name (generally discouraged)
+print(data_object._MyData__secret_value)
+
+# The preferred way: accessing the attribute through a method
+print(data_object.get_secret_value())
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">__secret_value</code> est transformé en <code class="language-python">_MyData__secret_value</code>. Une tentative d'accès direct via <code class="language-python">data_object.__secret_value</code> résultera en une exception <code class="language-python">AttributeError</code>, car l'attribut avec ce nom n'existe pas. L'accès est possible via <code class="language-python">data_object._MyData__secret_value</code>, mais cette approche est fortement déconseillée. L'objectif est d'encourager l'utilisation de méthodes d'accès (getters et setters) comme <code class="language-python">get_secret_value()</code> pour interagir avec ces attributs, renforçant ainsi l'encapsulation.</p>
+
+<p>L'intérêt du "name mangling" se manifeste particulièrement dans le contexte de l'héritage. Il contribue à éviter les collisions de noms entre les attributs d'une classe parent et ceux d'une classe enfant. Observons cet exemple :</p>
+
+<pre><code class="language-python">
+class ParentClass:
+    def __init__(self):
+        self.__message = "Hello from Parent"
+
+    def get_message(self):
+        return self.__message
+
+class ChildClass(ParentClass):
+    def __init__(self):
+        super().__init__()
+        # This __message will be name mangled differently than ParentClass.__message
+        self.__message = "Hello from Child"
+
+    def get_child_message(self):
+        return self.__message
+
+parent = ParentClass()
+child = ChildClass()
+
+print(parent.get_message()) # Output: Hello from Parent
+print(child.get_message()) # Output: Hello from Parent (inherited from ParentClass)
+print(child.get_child_message()) # Output: Hello from Child
+# print(child.__message) # AttributeError: 'ChildClass' object has no attribute '__message'
+print(child._ChildClass__message) # Output: Hello from Child
+print(child._ParentClass__message) # Output: Hello from Parent
+</code></pre>
+
+<p>Dans cet exemple, les deux classes, <code class="language-python">ParentClass</code> et <code class="language-python">ChildClass</code>, possèdent un attribut nommé <code class="language-python">__message</code>. Grâce au "name mangling", ces attributs sont stockés avec des noms distincts (<code class="language-python">_ParentClass__message</code> et <code class="language-python">_ChildClass__message</code>), ce qui empêche un remplacement involontaire de l'attribut de la classe parent par celui de la classe enfant. L'attribut <code class="language-python">__message</code> de la classe parent reste accessible via <code class="language-python">child._ParentClass__message</code>, tandis que l'attribut <code class="language-python">__message</code> de la classe enfant est accessible via <code class="language-python">child._ChildClass__message</code>. Cela illustre comment le "name mangling" favorise l'indépendance des attributs au sein d'une hiérarchie de classes.</p>
+
+<p>En conclusion, le "name mangling" en Python est un mécanisme de protection des attributs de classe qui vise principalement à réduire les collisions de noms dans les situations d'héritage. Bien qu'il ne constitue pas une garantie de confidentialité absolue, il s'agit d'une convention de nommage qui encourage une encapsulation plus rigoureuse et une conception plus claire des classes, contribuant ainsi à la robustesse et à la maintenabilité du code.</p>
+</p>
+    <h3>4.1 Fonctionnement du Name Mangling</h3>
+    <p><p>Le "name mangling" est une technique utilisée par Python pour renommer les attributs de classe qui commencent par deux underscores (<code class="language-python">__</code>). Il ne s'agit pas d'une mesure de sécurité à proprement parler, mais plutôt d'un mécanisme visant à réduire les risques de conflits de noms, en particulier dans le contexte de l'héritage.</p>
+
+<p>En pratique, lorsqu'un attribut d'une classe est préfixé par deux underscores (et n'est pas suffixé par deux underscores, car cela réserverait une signification spéciale en Python pour les méthodes "magic"), Python transforme son nom. Plus précisément, le nom de l'attribut devient <code class="language-python">_ClassName__attributeName</code>, où <code class="language-python">ClassName</code> correspond au nom de la classe dans laquelle l'attribut est défini. Ainsi, l'attribut n'est pas rendu totalement inaccessible, mais son accès accidentel depuis l'extérieur de la classe est rendu plus difficile.</p>
+
+<p>Voici un exemple pour illustrer le fonctionnement du "name mangling":</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.__my_attribute = 10  # Attribut avec name mangling
+
+    def get_my_attribute(self):
+        return self.__my_attribute
+
+# Création d'une instance de la classe
+obj = MyClass()
+
+# Accès direct à l'attribut (tentative)
+# print(obj.__my_attribute)  # AttributeError: 'MyClass' object has no attribute '__my_attribute'
+
+# Accès à l'attribut via la méthode getter
+print(obj.get_my_attribute())  # Output: 10
+
+# Accès à l'attribut via le nom mangled (déconseillé)
+print(obj._MyClass__my_attribute)  # Output: 10
+</code></pre>
+
+<p>Dans cet exemple, tenter d'accéder à <code class="language-python">__my_attribute</code> directement via <code class="language-python">obj.__my_attribute</code> génère une <code class="language-python">AttributeError</code>. Cependant, l'attribut reste accessible via son nom "mangled" (<code class="language-python">obj._MyClass__my_attribute</code>), bien que cette pratique soit fortement déconseillée. L'accès privilégié se fait via la méthode <code class="language-python">get_my_attribute()</code>.</p>
+
+<p>En résumé, le "name mangling" est un outil favorisant l'encapsulation et contribuant à éviter les collisions de noms, sans pour autant garantir une sécurité absolue. Il encourage une programmation plus rigoureuse et mieux structurée en indiquant clairement que certains attributs sont destinés à un usage interne à la classe. Il s'agit donc d'une convention forte, plus que d'une protection inviolable.</p>
+</p>
+    <h3>4.2 Pourquoi utiliser le Name Mangling ?</h3>
+    <p><p>Le <em>name mangling</em>, ou renommage de noms, est un mécanisme spécifique à Python qui permet une forme limitée d'encapsulation. Il ne s'agit pas d'une protection d'accès inviolable, mais plutôt d'une technique pour minimiser les conflits de noms d'attributs, particulièrement utile dans le contexte de l'héritage et des grandes bases de code.</p>
+
+<p>En Python, le <em>name mangling</em> s'applique automatiquement à tout attribut ou méthode d'une classe dont le nom commence par deux traits de soulignement (<code class="language-python">__</code>) et ne se termine pas par deux autres traits de soulignement. L'interpréteur Python transforme alors le nom de cet attribut en ajoutant un préfixe de la forme <code class="language-python">_NomClasse</code>. Par exemple, un attribut nommé <code class="language-python">__ma_variable</code> dans une classe <code class="language-python">MaClasse</code> sera renommé en interne en <code class="language-python">_MaClasse__ma_variable</code>.</p>
+
+<p>L'utilisation principale du <em>name mangling</em> est de réduire le risque de collisions de noms, spécialement dans les structures de classes héritées. Sans cette fonctionnalité, une sous-classe pourrait facilement, et souvent involontairement, écraser un attribut "privé" de sa classe parente. Le <em>name mangling</em> complexifie cela significativement, même si cela ne le rend pas impossible.</p>
+
+<p>Prenons l'exemple suivant pour illustrer ce concept :</p>
+
+<pre><code class="language-python">
+class Base:
+    def __init__(self):
+        self.__secret = "Base's secret"  # Attribute name will be mangled
+        self.public = "Base's public"
+
+    def get_secret(self):
+        return self.__secret
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()
+        self.__secret = "Derived's secret"  # This is a different attribute due to name mangling
+        self.public = "Derived's public"
+
+    def get_secret(self):
+        return self.__secret
+
+base = Base()
+derived = Derived()
+
+print(base.public)  # Output: Base's public
+print(derived.public) # Output: Derived's public
+
+# Attempting to access the "private" attribute directly will raise an AttributeError
+# print(base.__secret)  # This will raise an AttributeError
+
+print(base.get_secret())    # Output: Base's secret
+print(derived.get_secret()) # Output: Derived's secret
+
+# Accessing the mangled names (for demonstration purposes only, not recommended in practice)
+print(base._Base__secret)    # Output: Base's secret
+print(derived._Derived__secret) # Output: Derived's secret
+print(derived._Base__secret)    # Output: Base's secret - inherited from Base
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">__secret</code> est défini à la fois dans la classe <code class="language-python">Base</code> et dans la classe <code class="language-python">Derived</code>. Grâce au <em>name mangling</em>, Python les considère comme deux attributs distincts : <code class="language-python">_Base__secret</code> et <code class="language-python">_Derived__secret</code>.  En revanche, l'attribut <code class="language-python">public</code> est écrasé dans la classe dérivée, car il n'est pas sujet au <em>name mangling</em>.</p>
+
+<p>Il est crucial de comprendre que le <em>name mangling</em> n'est pas une garantie de confidentialité au sens strict du terme. Il sert principalement de convention, signalant aux autres développeurs qu'un attribut est destiné à un usage interne à la classe. Un programmeur expérimenté peut toujours accéder à ces attributs en utilisant leur nom transformé (<code class="language-python">_NomClasse__attribut</code>), comme illustré dans l'exemple. Cependant, il est généralement déconseillé de le faire, car cela va à l'encontre du principe d'encapsulation.</p>
+
+<p>En conclusion, le <em>name mangling</em> est un mécanisme utile pour limiter les conflits de noms, spécialement dans les situations d'héritage. Il ne fournit pas une sécurité absolue, mais encourage plutôt une utilisation responsable des attributs et le respect des conventions d'encapsulation. Il contribue à la lisibilité et à la maintenabilité du code en signalant clairement les attributs internes à une classe.</p>
+</p>
+    <h3>4.3 Accéder aux attributs 'mangled'</h3>
+    <p><p>Bien que le "name mangling" rende l'accès direct aux attributs préfixés par deux underscores (<code class="language-python">__</code>) plus complexe depuis l'extérieur de la classe, il ne constitue pas une barrière de sécurité infranchissable. Python renomme ces attributs pour éviter les conflits de noms dans les héritages, mais il ne les rend pas totalement inaccessibles. Il est possible d'accéder aux attributs "mangled" en utilisant la nomenclature <code class="language-python">_ClassName__attributeName</code>.</p>
+
+<p>Prenons l'exemple suivant pour illustrer ce concept :</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.public_data = "Accessible data"
+        self.__sensitive_data = "Sensitive information"
+
+    def get_sensitive_data(self):
+        return self.__sensitive_data
+
+# Example usage
+obj = MyClass()
+print(obj.public_data)  # Output: Accessible data
+
+# Attempting to access the mangled attribute directly (discouraged)
+print(obj._MyClass__sensitive_data)  # Output: Sensitive information
+
+# Accessing the data through a public method (recommended)
+print(obj.get_sensitive_data())  # Output: Sensitive information
+</code></pre>
+
+<p>Il est <strong>crucial</strong> de comprendre que l'accès direct aux attributs "mangled" de cette façon est <strong>fortement déconseillé</strong> en dehors des cas de tests unitaires ou de debugging. Le "name mangling" est avant tout un mécanisme de prévention des collisions de noms et d'indication de la visibilité interne, et non une mesure de sécurité. Accéder directement à ces attributs viole le principe d'encapsulation et peut entraîner une rupture du fonctionnement interne de la classe si celle-ci est modifiée ultérieurement. Il est préférable d'utiliser les méthodes publiques (comme <code class="language-python">get_sensitive_data()</code> dans l'exemple) fournies par la classe pour interagir avec ses données internes.  Cela permet de maintenir l'intégrité de l'abstraction et d'éviter des dépendances inutiles sur l'implémentation interne.</p>
+
+<p>En résumé, bien que l'accès aux attributs "mangled" soit techniquement possible, il est préférable de considérer cette pratique comme à éviter, sauf dans des situations très spécifiques et avec une parfaite compréhension des implications.  Respecter le principe d'encapsulation favorise l'écriture de code plus robuste, maintenable, et adaptable aux évolutions futures.  L'utilisation appropriée des méthodes publiques offre une interface stable et contrôlée pour interagir avec les données internes de l'objet, ce qui est essentiel pour un code de qualité.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">5. Avantages de l'encapsulation en Python</h2>
+    <p><p>L'encapsulation offre plusieurs avantages clés dans la programmation orientée objet en Python. Elle contribue à améliorer la maintenabilité, la flexibilité et la robustesse du code.</p>
+
+<p>L'un des principaux avantages est le <strong>regroupement des données et des méthodes</strong> qui opèrent sur ces données au sein d'une même unité, la classe. Cela permet d'organiser le code de manière logique et de faciliter sa compréhension. En Python, l'encapsulation est réalisée par convention, en utilisant des préfixes avec des underscores pour indiquer le niveau d'accès souhaité. Un simple underscore (<code class="language-python">_</code>) suggère que l'attribut est protégé et ne doit pas être accédé directement depuis l'extérieur de la classe. Un double underscore (<code class="language-python">__</code>) déclenche le "name mangling", rendant l'attribut plus difficile à accéder directement, bien que toujours possible. Cette approche encourage les utilisateurs de la classe à interagir avec les données via des méthodes dédiées, préservant ainsi l'intégrité de l'objet.</p>
+
+<p>Un autre avantage significatif est le <strong>contrôle de l'accès aux données</strong>. En encapsulant les attributs et en fournissant des méthodes d'accès (getters) et de modification (setters), on peut implémenter des règles de validation et de contrôle. Par exemple, un setter peut vérifier qu'une valeur assignée à un attribut respecte certaines contraintes, ou effectuer des actions supplémentaires comme la journalisation (logging) ou la notification. Cela permet de prévenir les erreurs et de maintenir la cohérence de l'état de l'objet, tout en offrant un point centralisé pour la gestion des données.</p>
+
+<pre><code class="language-python">
+class SmartHouseDevice:
+    def __init__(self, device_name, initial_state="off"):
+        # Protected attribute: intended to be accessed within the class and its subclasses
+        self._device_name = device_name
+        # Private attribute (name mangling): harder to access from outside the class
+        self.__device_state = initial_state
+
+    def get_device_name(self):
+        return self._device_name
+
+    def get_device_state(self):
+        return self.__device_state
+
+    def set_device_state(self, new_state):
+        # Input validation to ensure the state is valid
+        if new_state in ("on", "off"):
+            print(f"Changing device state of {self._device_name} from {self.__device_state} to {new_state}")
+            self.__device_state = new_state
+        else:
+            print("Invalid state. State must be 'on' or 'off'.")
+
+# Example usage
+my_device = SmartHouseDevice("Smart Light")
+print(f"Device Name: {my_device.get_device_name()}")
+print(f"Initial State: {my_device.get_device_state()}")
+my_device.set_device_state("on")
+print(f"Current State: {my_device.get_device_state()}")
+my_device.set_device_state("invalid") # Attempts to set an invalid state
+# Demonstrating name mangling: accessing the "private" attribute (not recommended)
+# print(my_device.__device_state) # This would raise an AttributeError
+print(my_device._SmartHouseDevice__device_state) # Accessing the name-mangled attribute (generally discouraged)
+</code></pre>
+
+<p>De plus, l'encapsulation permet une plus grande <strong>flexibilité lors de la modification du code</strong>. Si la représentation interne des données d'une classe doit être modifiée, cela peut être fait sans affecter le code qui utilise cette classe, à condition que l'interface publique (les méthodes) reste la même. Par exemple, on pourrait changer la manière dont l'état d'un appareil est stocké (par exemple, en utilisant un entier au lieu d'une chaîne de caractères) sans impacter le code qui appelle <code class="language-python">get_device_state()</code> ou <code class="language-python">set_device_state()</code>. Cela facilite la maintenance et l'évolution du code, car les modifications internes sont isolées.</p>
+
+<p>Enfin, l'encapsulation contribue à la <strong>réduction de la complexité</strong> du code. En cachant les détails d'implémentation et en fournissant une interface simple et claire, elle permet aux développeurs de se concentrer sur l'utilisation des objets plutôt que sur leur fonctionnement interne. Cela rend le code plus facile à comprendre, à maintenir et à réutiliser, et permet de construire des systèmes plus complexes et robustes.</p>
+</p>
+    <h3>5.1 Modularité et Maintenance</h3>
+    <p><p>L'encapsulation favorise une meilleure modularité en Python, permettant de concevoir des systèmes où les composants (classes et objets) sont indépendants les uns des autres. Cette indépendance est cruciale car elle réduit les interdépendances complexes, simplifiant ainsi le développement et la maintenance du code.</p>
+
+<p>Imaginez un système de gestion de fichiers. Sans encapsulation, chaque partie du programme (interface utilisateur, logique de traitement, stockage) pourrait accéder directement aux données internes des autres. Cela créerait un système fragile où une modification mineure dans un composant pourrait casser l'ensemble. Avec l'encapsulation, chaque composant expose uniquement une interface bien définie (méthodes publiques), masquant les détails d'implémentation internes. Cela permet de modifier un composant sans affecter les autres, tant que l'interface reste la même. Cette approche est fondamentale pour le développement de systèmes complexes et maintenables.</p>
+
+<p>Considérons l'exemple d'une classe représentant un capteur de température :</p>
+
+<pre><code class="language-python">
+class TemperatureSensor:
+    def __init__(self, sensor_id):
+        # __sensor_id is a private attribute, only accessible within the class
+        self.__sensor_id = sensor_id  
+        # __temperature is a private attribute to store temperature readings
+        self.__temperature = None      
+
+    def read_temperature(self):
+        # Simulate reading temperature from hardware
+        self.__temperature = self.__simulate_temperature_reading()
+        return self.__temperature
+
+    def get_sensor_id(self):
+        # Returns the sensor ID
+        return self.__sensor_id
+
+    def __simulate_temperature_reading(self):
+        # Simulate a temperature reading (implementation detail)
+        import random
+        # Generates a random temperature between 15 and 30 degrees
+        return random.uniform(15, 30)
+
+# Example usage
+sensor = TemperatureSensor("SN001")
+temperature = sensor.read_temperature()
+print(f"Temperature read from sensor {sensor.get_sensor_id()}: {temperature:.2f}°C")
+</code></pre>
+
+<p>Dans cet exemple, les attributs <code class="language-python">__sensor_id</code> et <code class="language-python">__temperature</code> sont considérés comme privés (bien que Python utilise une convention de nommage pour signaler qu'ils ne doivent pas être directement accédés depuis l'extérieur de la classe). L'accès et la modification de la température sont gérés par la méthode <code class="language-python">read_temperature()</code>. Si la méthode de simulation de la température (<code class="language-python">__simulate_temperature_reading()</code>) doit être modifiée, cela n'affectera pas le reste du code qui utilise la classe <code class="language-python">TemperatureSensor</code>, tant que l'interface publique (<code class="language-python">read_temperature()</code> et <code class="language-python">get_sensor_id()</code>) reste inchangée. C'est un exemple concret de la manière dont l'encapsulation protège le code contre les changements imprévus.</p>
+
+<p>La modularité induite par l'encapsulation simplifie la maintenance du code. Les bugs sont plus faciles à isoler et à corriger, et les nouvelles fonctionnalités peuvent être ajoutées sans risque de perturber le fonctionnement des parties existantes du système. De plus, l'encapsulation permet de masquer la complexité interne, offrant une vue simplifiée des composants aux utilisateurs, ce qui facilite leur compréhension et leur utilisation. Cela est particulièrement utile dans les grands projets où différents développeurs travaillent sur différentes parties du code.</p>
+
+<p>En résumé, l'encapsulation n'est pas seulement une question de protection des données ; c'est une stratégie essentielle pour construire des systèmes Python robustes, modulaires et facilement maintenables. En limitant l'accès direct aux données internes et en définissant des interfaces claires, elle permet de découpler les composants, facilitant ainsi la gestion de la complexité et l'évolution du code au fil du temps. L'encapsulation est donc un pilier de la programmation orientée objet en Python, contribuant à la création de code plus propre, plus sûr et plus facile à maintenir.</p>
+</p>
+    <h3>5.2 Contrôle d'accès aux données</h3>
+    <p><p>L'encapsulation offre un contrôle précis sur l'accès aux données au sein d'une classe. En Python, bien qu'il n'existe pas de mot-clé <code class="language-python">private</code> comme dans d'autres langages, on utilise la convention du "name mangling" (préfixe avec un ou deux underscores) pour signaler qu'un attribut ou une méthode est destiné à être utilisé en interne. Cette convention, combinée à l'utilisation de méthodes "getter" et "setter", permet de réguler la manière dont les données sont consultées et modifiées, assurant ainsi l'intégrité et la cohérence de l'état de l'objet.  Il est important de noter que le "name mangling" n'empêche pas l'accès direct, mais le rend plus difficile et indique clairement l'intention du développeur.</p>
+
+<p>Les méthodes "getter" (accesseurs) permettent de récupérer la valeur d'un attribut, tandis que les méthodes "setter" (mutateurs) permettent de modifier sa valeur. L'avantage principal réside dans la possibilité d'intégrer une logique de validation ou de transformation des données avant qu'elles ne soient utilisées ou stockées. Ceci est particulièrement utile pour éviter des erreurs, garantir la cohérence des données ou effectuer des actions supplémentaires lors de l'accès ou de la modification d'un attribut.</p>
+
+<p>Prenons l'exemple d'une classe représentant un produit avec un prix. On peut s'assurer que le prix ne soit jamais négatif en utilisant un setter :</p>
+
+<pre><code class="language-python">
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.__price = price  # Price is "protected" by convention
+
+    def get_price(self):
+        # Getter method to access the price
+        return self.__price
+
+    def set_price(self, new_price):
+        # Setter method to modify the price with validation
+        if new_price >= 0:
+            self.__price = new_price
+        else:
+            print("Price cannot be negative.")
+
+# Example usage
+product = Product("Computer", 1000)
+print(f"Initial price: {product.get_price()}") # Initial price: 1000
+
+product.set_price(-100) # Price cannot be negative.
+print(f"Price after modification attempt: {product.get_price()}") # Price after modification attempt: 1000
+
+product.set_price(1200)
+print(f"Price after valid modification: {product.get_price()}") # Price after valid modification: 1200
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">__price</code> est préfixé par un double underscore, signalant qu'il est destiné à un usage interne.  Techniquement, Python renomme cet attribut en <code class="language-python">_Product__price</code>.  L'accès et la modification de cet attribut sont contrôlés par les méthodes <code class="language-python">get_price</code> et <code class="language-python">set_price</code>. Le setter <code class="language-python">set_price</code> effectue une validation pour s'assurer que le nouveau prix est positif, empêchant ainsi d'assigner une valeur invalide à l'attribut.  Sans cette validation, le prix du produit pourrait devenir négatif, ce qui n'aurait aucun sens dans ce contexte.</p>
+
+<p>Python offre également une manière élégante de gérer les getters et setters via la propriété <code class="language-python">property()</code> ou le décorateur <code class="language-python">@property</code>. Cela permet d'accéder à l'attribut comme s'il était public, tout en conservant la logique de validation ou de transformation derrière les méthodes getter et setter.  Reprenons l'exemple précédent en utilisant le décorateur <code class="language-python">@property</code> :</p>
+
+<pre><code class="language-python">
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.__price = price
+
+    @property
+    def price(self):
+        # Getter method using @property decorator
+        return self.__price
+
+    @price.setter
+    def price(self, new_price):
+        # Setter method using @property decorator
+        if new_price >= 0:
+            self.__price = new_price
+        else:
+            print("Price cannot be negative.")
+
+# Example usage
+product = Product("Phone", 800)
+print(f"Initial price: {product.price}") # Initial price: 800
+
+product.price = -50 # Price cannot be negative.
+print(f"Price after modification attempt: {product.price}") # Price after modification attempt: 800
+
+product.price = 900
+print(f"Price after valid modification: {product.price}") # Price after valid modification: 900
+</code></pre>
+
+<p>Avec cette approche, on accède au prix en utilisant <code class="language-python">product.price</code>, comme s'il s'agissait d'un attribut public. Cependant, la logique définie dans les méthodes décorées <code class="language-python">@property</code> et <code class="language-python">@price.setter</code> est exécutée lors de l'accès ou de la modification, permettant ainsi de contrôler l'accès aux données et d'assurer leur intégrité. En résumé, l'encapsulation, à travers l'utilisation de conventions et de mécanismes comme les getters/setters et les propriétés, permet de créer du code plus robuste et maintenable en contrôlant l'accès et la modification des données et en permettant l'ajout de logique métier autour de ces accès.</p>
+</p>
+    <h3>5.3 Réduction de la complexité</h3>
+    <p><p>L'encapsulation réduit significativement la complexité du code Python en dissimulant les détails d'implémentation internes d'une classe et en exposant uniquement une interface publique claire et bien définie. Cette abstraction permet aux utilisateurs de la classe de se concentrer sur le rôle de l'objet plutôt que sur les mécanismes internes de son fonctionnement. En d'autres termes, elle simplifie l'interaction avec les objets et diminue la charge cognitive nécessaire pour comprendre et utiliser le code.</p>
+
+<p>Pour illustrer ce concept, prenons l'exemple d'une classe représentant un moteur de voiture. Un utilisateur (le conducteur) n'a pas besoin de connaître les détails complexes du fonctionnement interne du moteur (comme l'injection de carburant, le contrôle de l'allumage, ou la gestion de l'échappement). Il doit seulement savoir comment démarrer, accélérer et arrêter le moteur. L'encapsulation permet de masquer ces détails et de fournir une interface simple à travers des méthodes publiques.</p>
+
+<pre><code class="language-python">
+class CarEngine:
+    def __init__(self):
+        # These are considered "private" attributes, using the Python naming convention
+        self._fuel_level = 50  # Fuel level in percentage
+        self._engine_temperature = 20 # Temperature in Celsius
+
+    def start_engine(self):
+        """Starts the engine if fuel level is sufficient and temperature is within range."""
+        if self._fuel_level > 10 and self._engine_temperature < 100:
+            print("Engine started successfully!")
+        else:
+            print("Engine failed to start. Check fuel or temperature.")
+
+    def accelerate(self, speed_increase):
+        """Increases the engine speed."""
+        if self._fuel_level > 0:
+            print(f"Accelerating by {speed_increase} km/h")
+            self._fuel_level -= 5 # Reduce fuel level
+        else:
+            print("Cannot accelerate. Fuel level is too low.")
+
+    def stop_engine(self):
+        """Stops the engine."""
+        print("Engine stopped.")
+
+    def get_fuel_level(self):
+        """Returns the current fuel level."""
+        return self._fuel_level
+
+    def get_engine_temperature(self):
+        """Returns the current engine temperature."""
+        return self._engine_temperature
+
+# Example Usage
+my_engine = CarEngine()
+my_engine.start_engine()
+my_engine.accelerate(30)
+print(f"Fuel Level: {my_engine.get_fuel_level()}%")
+print(f"Engine Temperature: {my_engine.get_engine_temperature()}°C")
+my_engine.stop_engine()
+</code></pre>
+
+<p>Dans cet exemple, les attributs <code class="language-python">_fuel_level</code> et <code class="language-python">_engine_temperature</code> sont préfixés par un underscore (la convention Python pour indiquer un attribut "protégé" ou "privé").  Bien que Python ne possède pas de véritable mécanisme d'accès privé, cette convention signale aux utilisateurs de la classe qu'ils ne sont pas censés modifier ces attributs directement. L'interaction se fait via les méthodes publiques <code class="language-python">start_engine()</code>, <code class="language-python">accelerate()</code>, <code class="language-python">stop_engine()</code>, <code class="language-python">get_fuel_level()</code> et <code class="language-python">get_engine_temperature()</code>. Cela simplifie l'utilisation de la classe, réduit les risques d'erreurs dues à une manipulation incorrecte des données internes, et permet de modifier l'implémentation interne sans impacter le code utilisant la classe (tant que l'interface publique reste inchangée).</p>
+
+<p>En résumé, l'encapsulation réduit la complexité en établissant une abstraction claire et en contrôlant l'accès aux données internes d'un objet.  Cela se traduit par un code plus facile à comprendre, à maintenir et à réutiliser, car les détails d'implémentation sont isolés et les interactions sont gérées via une interface publique stable. De plus, cela favorise la modularité et réduit le couplage entre les différentes parties du code.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">6. Inconvénients et limitations de l'encapsulation en Python</h2>
+    <p><p>Bien que l'encapsulation offre de nombreux avantages en termes d'organisation et de sécurité du code, elle présente aussi des inconvénients et des limitations en Python.</p>
+
+<p><strong>Complexité accrue du code:</strong> Une encapsulation trop rigoureuse peut entraîner une complexité inutile. La création systématique de méthodes getter et setter (accesseurs et mutateurs) pour chaque attribut, en particulier lorsque ces méthodes ne contiennent qu'une logique minimale, peut rendre le code verbeux, difficile à lire et à maintenir. Dans certains cas, un accès direct aux attributs pourrait être plus simple et plus lisible. Trouver un juste milieu entre la protection des données et la simplicité du code est donc essentiel.  Il est important d'évaluer si la valeur ajoutée par l'encapsulation justifie la complexité introduite.</p>
+
+<pre><code class="language-python">
+class DataContainer:
+    def __init__(self, data):
+        self._data = data
+
+    def get_data(self):
+        return self._data
+
+    def set_data(self, data):
+        self._data = data
+
+# Example usage
+container = DataContainer(10)
+print(container.get_data())
+container.set_data(20)
+print(container.get_data())
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, l'utilisation de getter et setter simples n'apporte pas une grande valeur ajoutée par rapport à l'accès direct à l'attribut <code class="language-python">_data</code>. Dans de tels cas, une encapsulation moins stricte pourrait être préférable, ou l'utilisation de propriétés Python pourrait être envisagée pour un code plus propre.</p>
+
+<p><strong>Convention plutôt qu'application stricte:</strong> L'encapsulation en Python repose principalement sur des conventions de nommage (l'utilisation de préfixes avec un ou deux underscores) plutôt que sur un mécanisme de contrôle d'accès strict, contrairement à d'autres langages comme Java avec le mot-clé <code class="language-python" class="language-java">private</code>. Cela signifie que les attributs désignés comme "protégés" ou "privés" peuvent toujours être consultés ou modifiés de l'extérieur de la classe, même si cela est déconseillé. La sécurité des données repose donc en grande partie sur la discipline et la bonne volonté des développeurs à respecter ces conventions.</p>
+
+<pre><code class="language-python">
+class DataContainer:
+    def __init__(self, value):
+        self._internal_value = value  # Convention for "protected" attribute
+        self.__secret_value = value * 2  # Convention for "private" attribute (name mangling)
+
+    def get_secret_value(self):
+        return self.__secret_value # Accessing the "private" attribute internally
+
+container = DataContainer(10)
+print(container._internal_value)  # Accessing "protected" attribute - possible, but discouraged
+# print(container.__secret_value)  # This would raise an AttributeError
+
+print(container._DataContainer__secret_value) # Accessing "private" attribute using name mangling - possible, but strongly discouraged
+print(container.get_secret_value()) # Correct way to access the "private" attribute
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">_internal_value</code> est considéré comme "protégé" par convention. L'attribut <code class="language-python">__secret_value</code> subit une transformation de nom ("name mangling"), ce qui rend son accès direct plus complexe, mais pas impossible. Cette flexibilité peut être vue comme un avantage ou un inconvénient, selon le contexte et les besoins de l'application.</p>
+
+<p><strong>Performance:</strong> L'utilisation intensive de getters et setters, surtout s'ils contiennent une logique complexe (par exemple, des validations, des calculs), peut potentiellement impacter les performances du code, bien que cet impact soit souvent minime dans la plupart des applications courantes. L'accès direct aux attributs est généralement plus rapide que l'appel de méthodes. Il est donc important de mesurer et d'optimiser si des problèmes de performance significatifs sont constatés.</p>
+
+<p><strong>Difficulté de débogage:</strong> L'encapsulation peut parfois compliquer le débogage, car les valeurs des attributs internes sont moins directement visibles. Il peut être nécessaire d'utiliser des outils de débogage, des points d'arrêt ou d'ajouter temporairement des instructions <code class="language-python">print()</code> dans les getters et setters pour examiner les valeurs des attributs et suivre le flux d'exécution. Cependant, une conception soignée et une encapsulation appropriée devraient, à long terme, faciliter le débogage en isolant les problèmes et en rendant le code plus modulaire.</p>
+
+<p>En conclusion, bien que l'encapsulation soit un principe fondamental de la programmation orientée objet, il est crucial de l'appliquer judicieusement en Python, en tenant compte de ses limitations et des compromis nécessaires entre la protection des données, la complexité du code et la performance. La clé est de trouver l'équilibre optimal qui répond le mieux aux exigences spécifiques du projet et de l'équipe de développement.</p>
+</p>
+    <h3>6.1 Convention vs. Application stricte</h3>
+    <p><p>Bien que l'encapsulation soit un principe fondamental de la programmation orientée objet, son application en Python se base davantage sur des conventions que sur une application stricte. Contrairement à des langages comme Java ou C++, Python n'impose pas de contrôle d'accès rigide via des mots-clés comme <code class="language-python">private</code> ou <code class="language-python">protected</code>.</p>
+
+<p>En Python, on utilise la convention de nommage pour signaler si un attribut ou une méthode doit être considéré comme interne à la classe. Un simple underscore (<code class="language-python">_</code>) en préfixe d'un nom indique un attribut "protégé", suggérant qu'il ne devrait pas être accédé directement depuis l'extérieur de la classe. Un double underscore (<code class="language-python">__</code>) signale un attribut "privé". L'interpréteur Python effectue alors une modification de nom (name mangling) pour éviter les conflits de noms dans les sous-classes.</p>
+
+<p>Il est essentiel de comprendre que ces conventions ne sont pas des règles absolues. Il est techniquement possible d'accéder et de modifier des attributs préfixés par un simple ou double underscore depuis l'extérieur de la classe. Cependant, cette pratique est fortement déconseillée, car elle peut compromettre la logique interne de l'objet et potentiellement corrompre son état. Voici un exemple illustrant cette flexibilité et ses dangers :</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self._protected_attribute = 10  # Single underscore: protected
+        self.__private_attribute = 20  # Double underscore: private
+
+    def get_private_attribute(self):
+        return self.__private_attribute
+
+obj = MyClass()
+
+# Accessing the "protected" attribute (discouraged but possible)
+print(obj._protected_attribute)  # Output: 10
+
+# Accessing the "private" attribute (name mangling is in effect)
+# print(obj.__private_attribute)  # This would raise an AttributeError
+
+# Accessing the "private" attribute using name mangling (still possible, but highly discouraged)
+print(obj._MyClass__private_attribute)  # Output: 20
+
+# Accessing the private attribute using a getter method
+print(obj.get_private_attribute()) # Output: 20
+
+# Modifying the "protected" attribute (very bad practice)
+obj._protected_attribute = 100
+print(obj._protected_attribute)  # Output: 100
+
+# Demonstrating name mangling:
+print(obj.__dict__) # Prints the object's dictionary, showing the mangled name of __private_attribute
+# Expected Output (similar to): {'_protected_attribute': 100, '_MyClass__private_attribute': 20}
+</code></pre>
+
+<p>Cette flexibilité offre des avantages et des inconvénients. D'une part, elle permet une introspection et une personnalisation avancées des objets. D'autre part, elle exige une grande discipline de la part des développeurs pour éviter toute modification involontaire des attributs internes, qui pourrait nuire à l'intégrité de l'objet. Le respect des conventions de nommage est donc primordial pour garantir la cohérence et la fiabilité du code Python.</p>
+</p>
+    <h3>6.2 Complexité accrue (dans certains cas)</h3>
+    <p><p>Bien que l'encapsulation soit un principe fondamental de la programmation orientée objet, une application excessive, notamment par l'utilisation systématique de getters et setters, peut paradoxalement augmenter la complexité du code, réduisant ainsi les avantages attendus en termes de maintenabilité et de lisibilité.</p>
+
+<p>Un exemple typique d'augmentation inutile de la complexité est lorsque les getters et setters se contentent de renvoyer ou de modifier directement la valeur d'un attribut, sans ajouter de logique métier supplémentaire. Dans ce cas, l'encapsulation n'apporte aucune valeur ajoutée et surcharge inutilement le code.</p>
+
+<p>Prenons l'exemple suivant :</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # Convention: _radius is considered "protected"
+
+    def get_radius(self):
+        return self._radius
+
+    def set_radius(self, radius):
+        if radius > 0:
+            self._radius = radius
+        else:
+            raise ValueError("Radius must be positive")
+
+# Example usage
+circle = Circle(5)
+print(circle.get_radius()) # Output: 5
+circle.set_radius(7)
+print(circle.get_radius()) # Output: 7
+</code></pre>
+
+<p>Dans cet exemple, les méthodes <code class="language-python">get_radius</code> et <code class="language-python">set_radius</code> réalisent des opérations simples : l'une renvoie la valeur de <code class="language-python">_radius</code>, l'autre la modifie après une validation élémentaire. Bien que la validation dans le setter soit utile, si ce type de logique est absent, il est légitime de s'interroger sur la nécessité d'utiliser des getters et setters. Dans ce cas, l'utilisation de propriétés Python pourrait offrir un code plus concis et lisible.</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, radius):
+        if radius > 0:
+            self._radius = radius
+        else:
+            raise ValueError("Radius must be positive")
+
+# Example usage
+circle = Circle(5)
+print(circle.radius) # Output: 5
+circle.radius = 7
+print(circle.radius) # Output: 7
+</code></pre>
+
+<p>L'utilisation des propriétés Python permet de simplifier l'accès et la modification des attributs, tout en conservant la possibilité d'intégrer une logique de validation.  Lorsque la logique est triviale (simple accès ou modification), il peut être préférable de permettre un accès direct à l'attribut, quitte à refactoriser ultérieurement si des exigences d'encapsulation plus strictes se manifestent.  Par exemple, on pourrait initialement utiliser un accès direct et implémenter une propriété uniquement lorsque la nécessité d'une validation se présente.</p>
+
+<p>En conclusion, il est essentiel de trouver un équilibre entre l'encapsulation et la simplicité du code. L'encapsulation ne doit pas être une fin en soi, mais plutôt un moyen d'améliorer la structure, la maintenabilité et la lisibilité du code. Il est important d'évaluer attentivement si l'ajout de getters et setters apporte une réelle valeur ajoutée ou s'il ne fait qu'introduire une complexité inutile.  Une bonne pratique consiste à commencer simple et à complexifier uniquement lorsque c'est nécessaire, en se basant sur les besoins réels du projet.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">7. Cas d'utilisation pratiques de l'encapsulation</h2>
+    <p><p>L'encapsulation, bien plus qu'un concept théorique, se révèle un outil puissant et polyvalent dans le développement de logiciels. Elle permet de structurer le code de manière à le rendre plus robuste, plus facile à maintenir et plus intuitif. Découvrons ensemble quelques exemples concrets de son application.</p>
+
+<p><strong>1. Protection des données sensibles:</strong></p>
+<p>L'une des applications les plus courantes de l'encapsulation est la protection des données sensibles. Prenons l'exemple d'une classe représentant une connexion à une base de données. On peut encapsuler les informations de connexion, telles que le nom d'utilisateur, le mot de passe et l'adresse du serveur, et fournir une interface contrôlée pour interagir avec la base de données. Cela permet d'éviter un accès direct et non contrôlé à ces informations sensibles.</p>
+
+<pre><code class="language-python">
+class DatabaseConnection:
+    def __init__(self, host, database, user, password):
+        # Encapsulating connection details using private attributes
+        self.__host = host
+        self.__database = database
+        self.__user = user
+        self.__password = password  # Consider encrypting this in a real application for enhanced security
+
+    def connect(self):
+        # Establish a connection to the database
+        # This is a simplified example; robust error handling and logging are recommended in a production environment
+        try:
+            # In a real-world scenario, use a dedicated database library (e.g., psycopg2 for PostgreSQL, pymysql for MySQL)
+            print(f"Connecting to database {self.__database} on host {self.__host} as user {self.__user}")
+            self.__connection = True # Simulate a successful connection
+            return True
+        except Exception as e:
+            print(f"Connection failed: {e}")
+            return False
+
+    def execute_query(self, query):
+        # Execute a query against the database (requires an active connection)
+        if not hasattr(self, '__connection') or not self.__connection:
+            print("Not connected to the database. Please connect first.")
+            return None
+
+        # Execute the query (simplified example)
+        print(f"Executing query: {query}")
+        return "Query executed successfully" # Simulate successful execution
+
+    def close(self):
+        # Close the database connection
+        if hasattr(self, '__connection') and self.__connection:
+            print("Closing database connection")
+            self.__connection = False
+        else:
+            print("No active connection to close.")
+
+# Example Usage:
+db = DatabaseConnection("localhost", "mydatabase", "myuser", "mypassword")
+if db.connect():
+    result = db.execute_query("SELECT * FROM users;")
+    print(result)
+    db.close()
+</code></pre>
+
+<p>Dans cet exemple, les attributs préfixés par <code class="language-python">__</code> (double underscore) sont considérés comme "privés". Bien que Python ne les rende pas totalement inaccessibles, il est fortement conseillé de ne pas y accéder directement depuis l'extérieur de la classe. L'accès aux données se fait via les méthodes <code class="language-python">connect()</code>, <code class="language-python">execute_query()</code> et <code class="language-python">close()</code>, ce qui permet de contrôler et de valider la manière dont la base de données est utilisée.</p>
+
+<p><strong>2. Simplification de l'interface d'une classe complexe:</strong></p>
+<p>Lorsqu'une classe gère une logique interne complexe avec de nombreux attributs et méthodes, l'encapsulation permet de masquer cette complexité et de ne présenter qu'une interface simplifiée et facile à utiliser pour l'utilisateur de la classe. Cela améliore la lisibilité et réduit le risque d'erreurs dues à une manipulation incorrecte des détails internes.</p>
+
+<p><strong>3. Contrôle de la modification des attributs:</strong></p>
+<p>L'encapsulation offre un contrôle précis sur la manière dont les attributs d'un objet sont modifiés. On peut empêcher la modification directe d'un attribut et forcer l'utilisation de méthodes spécifiques (getters et setters) qui effectuent des validations ou des transformations avant de modifier la valeur. Cela permet de garantir l'intégrité des données et d'appliquer des règles métier.</p>
+
+<pre><code class="language-python">
+class BankAccount:
+    def __init__(self, account_number, initial_balance):
+        # Encapsulating account details
+        self.__account_number = account_number
+        self.__balance = initial_balance
+
+    def get_balance(self):
+        # Return the current balance
+        return self.__balance
+
+    def deposit(self, amount):
+        # Deposit money into the account
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited {amount}. New balance: {self.__balance}")
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdraw(self, amount):
+        # Withdraw money from the account
+        if amount > 0 and amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew {amount}. New balance: {self.__balance}")
+        else:
+            print("Insufficient funds or invalid withdrawal amount.")
+
+    def get_account_number(self):
+        # Allow read-only access to the account number
+        return self.__account_number
+
+# Example Usage:
+account = BankAccount("1234567890", 1000)
+print(f"Account Number: {account.get_account_number()}")
+print(f"Initial balance: {account.get_balance()}") # Get the initial balance
+
+account.deposit(500) # Deposit money
+
+account.withdraw(200) # Withdraw money
+
+print(f"Final balance: {account.get_balance()}")
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">__balance</code>, représentant le solde du compte, est protégé. Il ne peut pas être modifié directement depuis l'extérieur de la classe. Les modifications doivent obligatoirement passer par les méthodes <code class="language-python">deposit()</code> et <code class="language-python">withdraw()</code>, qui s'assurent que les opérations sont valides (montant positif, solde suffisant, etc.). L'attribut <code class="language-python">__account_number</code> est accessible en lecture seule via <code class="language-python">get_account_number()</code>, mais sa modification est impossible, renforçant ainsi la sécurité et l'intégrité des informations du compte.</p>
+
+<p>Ces exemples illustrent comment l'encapsulation contribue à créer du code plus sûr, plus facile à maintenir et plus agréable à utiliser. En contrôlant l'accès aux données, en cachant la complexité interne et en validant les opérations, elle joue un rôle essentiel dans la construction d'applications robustes, évolutives et fiables.</p>
+</p>
+    <h3>7.1 Gestion des comptes bancaires</h3>
+    <p><p>L'encapsulation trouve une application concrète dans la gestion de comptes bancaires. Elle permet de contrôler l'accès et la modification des données sensibles comme le solde, garantissant ainsi l'intégrité des informations financières.</p>
+
+<p>Considérons une classe <code class="language-python">CreditAccount</code>. L'attribut <code class="language-python">_credit_limit</code> est encapsulé et ne peut être modifié que via des méthodes spécifiques, assurant que la limite de crédit reste dans des bornes acceptables. On utilise une convention de nommage (préfixe avec un underscore) pour indiquer que l'attribut est "protected", bien que Python ne l'empêche pas d'être accédé directement de l'extérieur de la classe.  Une encapsulation plus forte pourrait être implémentée avec des "name mangling" (double underscore) ou des propriétés.</p>
+
+<pre><code class="language-python">
+class CreditAccount:
+    def __init__(self, account_number, credit_limit):
+        self._account_number = account_number  # Not truly private, but conventionally protected
+        self._credit_limit = credit_limit  # Protected attribute
+        self._balance = 0.0
+
+    def deposit(self, amount):
+        """Deposits money into the account."""
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited ${amount}. New balance: ${self._balance}")
+        else:
+            print("Invalid deposit amount.")
+
+    def withdraw(self, amount):
+        """Withdraws money from the account, respecting the credit limit."""
+        if 0 < amount <= (self._balance + self._credit_limit):
+            self._balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self._balance}")
+        else:
+            print("Withdrawal amount exceeds available credit or is invalid.")
+
+    def get_balance(self):
+        """Returns the current balance."""
+        return self._balance
+
+    def set_credit_limit(self, new_limit):
+         """Sets a new credit limit, with validation."""
+         if new_limit > 0 and new_limit <= 10000: #Arbitrary upper limit
+            self._credit_limit = new_limit
+            print(f"Credit limit updated to ${new_limit}")
+         else:
+            print("Invalid credit limit.  Must be positive and less than $10000")
+
+
+# Example Usage
+my_account = CreditAccount("1234567890", 1000)
+my_account.deposit(500)
+my_account.withdraw(750)
+print(f"Current Balance: ${my_account.get_balance()}") # Accessing balance via getter
+my_account.set_credit_limit(1500) #Attempting to set a new credit limit
+my_account.withdraw(1750)
+print(f"Current Balance: ${my_account.get_balance()}")
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">deposit()</code> et <code class="language-python">withdraw()</code> agissent comme des setters contrôlés. Ils vérifient que les montants déposés ou retirés sont valides et que le solde ne dépasse pas la limite de crédit. La méthode <code class="language-python">set_credit_limit()</code> permet de modifier la limite de crédit, mais uniquement si la nouvelle limite est dans une plage acceptable, illustrant l'importance de la validation dans l'encapsulation.  On pourrait aussi utiliser des propriétés (<code class="language-python">@property</code>) pour un contrôle d'accès plus idiomatique en Python.</p>
+
+<p>L'encapsulation, dans ce contexte, empêche la manipulation directe de <code class="language-python">_balance</code> et <code class="language-python">_credit_limit</code>, ce qui pourrait entraîner des erreurs ou des incohérences. Cette approche garantit la cohérence et la fiabilité des données du compte, tout en offrant une interface claire et contrôlée pour interagir avec l'objet. En regroupant les données et les méthodes qui les manipulent, l'encapsulation simplifie également la maintenance et l'évolution du code.</p>
+</p>
+    <h3>7.2 Validation des données utilisateur</h3>
+    <p><p>L'encapsulation s'avère particulièrement utile pour la validation des données saisies par l'utilisateur, garantissant ainsi l'intégrité des informations stockées au sein de nos objets. Prenons l'exemple d'une classe <code class="language-python">User</code> où l'adresse email doit impérativement respecter un format spécifique.</p>
+
+<p>Pour ce faire, nous pouvons déclarer l'attribut <code class="language-python">__email</code> comme privé et implémenter un setter dédié afin de valider l'adresse email avant de procéder à son assignation. Cette approche empêche l'instanciation d'objets <code class="language-python">User</code> avec des adresses email non valides, renforçant ainsi la fiabilité de notre application.</p>
+
+<pre><code class="language-python">
+import re
+
+class User:
+    def __init__(self, username, email):
+        """
+        Initializes a new User object.
+
+        Args:
+            username (str): The username of the user.
+            email (str): The email address of the user.
+        """
+        self.username = username
+        self.email = email  # Calls the setter method
+
+    @property
+    def email(self):
+        """
+        Getter method for the email attribute.
+
+        Returns:
+            str: The email address of the user.
+        """
+        return self.__email
+
+    @email.setter
+    def email(self, value):
+        """
+        Setter method for the email attribute.  Validates the email format before assignment.
+
+        Args:
+            value (str): The email address to set.
+
+        Raises:
+            ValueError: If the email format is invalid.
+        """
+        if not self.is_valid_email(value):
+            raise ValueError("Invalid email format")
+        self.__email = value
+
+    def is_valid_email(self, email):
+        """
+        Validates the email format using a regular expression.
+
+        Args:
+            email (str): The email address to validate.
+
+        Returns:
+            bool: True if the email format is valid, False otherwise.
+        """
+        # Basic email format validation using regex
+        pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        return re.match(pattern, email) is not None
+
+# Example usage:
+try:
+    user1 = User("john_doe", "john.doe@example.com")
+    print(f"User email: {user1.email}")
+
+    user2 = User("jane_doe", "invalid-email") # This will raise a ValueError
+except ValueError as e:
+    print(f"Error: {e}")
+</code></pre>
+
+<p>Dans l'exemple ci-dessus :</p>
+
+<ul>
+    <li>L'attribut <code class="language-python">__email</code> est déclaré comme privé, ce qui signifie qu'il est accessible uniquement via les méthodes <code class="language-python">email()</code> (getter) et <code class="language-python">email()</code> (setter).</li>
+    <li>Le setter <code class="language-python">@email.setter</code> est utilisé pour effectuer une validation de l'adresse email à l'aide d'une expression régulière (regex) définie dans la méthode <code class="language-python">is_valid_email()</code>.</li>
+    <li>Si l'adresse email fournie ne correspond pas au format attendu, une exception de type <code class="language-python">ValueError</code> est levée, empêchant ainsi l'assignation d'une valeur incorrecte à l'attribut <code class="language-python">__email</code>.</li>
+</ul>
+
+<p>Ce mécanisme garantit que seules les adresses email valides sont stockées dans l'objet <code class="language-python">User</code>, améliorant ainsi la qualité des données et la robustesse de l'application. La validation des données utilisateur est un cas d'utilisation courant et important de l'encapsulation, permettant de maintenir un état cohérent et prévisible des objets.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">8. Exercices d'encapsulation en Python</h2>
+    <p><p>L'encapsulation est un concept fondamental de la programmation orientée objet. Pour s'assurer de bien comprendre son application en Python, voici quelques exercices pratiques.</p>
+
+<p><strong>Exercice 1: Simulation de température avec accès contrôlé</strong></p>
+<p>Créez une classe <code class="language-python">Temperature</code> qui encapsule la température en degrés Celsius. La température doit être stockée comme un attribut privé. Implémentez des méthodes pour obtenir la température (en Celsius et Fahrenheit) et pour la modifier, avec une validation pour s'assurer que la température reste dans une plage réaliste (par exemple, entre -273.15 °C et 100 °C). Pour rendre l'attribut véritablement privé, utilisez le "name mangling" de Python avec un double underscore.</p>
+
+<pre><code class="language-python">
+class Temperature:
+    def __init__(self, celsius=0):
+        # Initialize temperature in Celsius.
+        self.__celsius = celsius
+
+    def get_celsius(self):
+        # Get the temperature in Celsius.
+        return self.__celsius
+
+    def set_celsius(self, value):
+        # Set the temperature in Celsius, with validation.
+        if value < -273.15:
+            raise ValueError("Temperature cannot be below absolute zero.")
+        if value > 100:
+            raise ValueError("Temperature cannot exceed boiling point of water.")
+        self.__celsius = value
+
+    def get_fahrenheit(self):
+        # Convert Celsius to Fahrenheit.
+        return (self.__celsius * 9/5) + 32
+
+# Example usage:
+temp = Temperature(25)
+print(f"Temperature in Celsius: {temp.get_celsius()}")
+print(f"Temperature in Fahrenheit: {temp.get_fahrenheit()}")
+
+try:
+    temp.set_celsius(-300)
+except ValueError as e:
+    print(e)
+
+# Trying to access the "private" attribute directly (name mangling)
+# Note: This is generally discouraged, but it demonstrates how Python handles "private" attributes
+try:
+    print(temp.__celsius)  # This will raise an AttributeError
+except AttributeError as e:
+    print("Cannot directly access private attribute.")
+
+# Accessing the "private" attribute using the mangled name (discouraged)
+print(temp._Temperature__celsius)  # This works, but it's not recommended
+</code></pre>
+
+<p><strong>Exercice 2: Gestion de batterie avec attribut protégé</strong></p>
+<p>Concevez une classe <code class="language-python">Battery</code> pour un appareil électronique. L'attribut de capacité de la batterie (en mAh) doit être protégé. Ajoutez des méthodes pour charger la batterie, utiliser de l'énergie (décharger) et vérifier le niveau de la batterie. Empêchez la décharge au-delà de 0% et la charge au-delà de 100%. L'utilisation d'un simple underscore indique une convention de protection, mais ne restreint pas l'accès comme le ferait un attribut privé avec double underscore.</p>
+
+<pre><code class="language-python">
+class Battery:
+    def __init__(self, capacity):
+        # Initialize battery with given capacity.
+        self._capacity = capacity
+        self._level = capacity  # Current battery level
+
+    def charge(self, amount):
+        # Charge the battery, not exceeding the maximum capacity.
+        self._level = min(self._capacity, self._level + amount)
+        print(f"Battery charged. Current level: {self._level}")
+
+    def discharge(self, amount):
+        # Discharge the battery, not going below 0.
+        self._level = max(0, self._level - amount)
+        print(f"Battery discharged. Current level: {self._level}")
+
+    def get_level(self):
+        # Get the current battery level.
+        return self._level
+
+# Example usage:
+battery = Battery(2000)
+battery.discharge(500)
+battery.charge(1000)
+print(f"Current battery level: {battery.get_level()}")
+
+# Directly accessing the "protected" attribute (allowed, but not recommended)
+print(battery._capacity)
+</code></pre>
+
+<p><strong>Exercice 3:  Contrôle d'accès avec décorateur <code class="language-python">@property</code></strong></p>
+<p>Créez une classe <code class="language-python">Configuration</code> pour gérer des paramètres d'application. Utilisez le décorateur <code class="language-python">@property</code> pour créer des propriétés en lecture seule pour certains paramètres critiques (par exemple, la version de l'application, le nom de l'utilisateur). Implémentez des méthodes pour modifier d'autres paramètres, avec validation si nécessaire. L'utilisation de <code class="language-python">@property</code> permet de définir des getters, setters et deleters pour contrôler l'accès aux attributs.</p>
+
+<pre><code class="language-python">
+class Configuration:
+    def __init__(self, app_version, username):
+        # Initialize configuration with application version and username.
+        self._app_version = app_version
+        self._username = username
+        self._settings = {}
+
+    @property
+    def app_version(self):
+        # Read-only property for application version.
+        return self._app_version
+
+    @property
+    def username(self):
+        # Read-only property for username.
+        return self._username
+
+    def set_setting(self, key, value):
+        # Set a configuration setting.
+        # Add validation logic if needed, e.g., checking data types.
+        self._settings[key] = value
+
+    def get_setting(self, key):
+        # Get a configuration setting.
+        return self._settings.get(key)
+
+# Example usage:
+config = Configuration("1.2.3", "admin")
+print(f"App Version: {config.app_version}")
+print(f"Username: {config.username}")
+
+config.set_setting("timeout", 30)
+print(f"Timeout: {config.get_setting('timeout')}")
+
+# Trying to set the app_version directly (will raise an AttributeError)
+try:
+    config.app_version = "2.0"
+except AttributeError as e:
+    print("Cannot set the app_version directly because it's a read-only property.")
+</code></pre>
+
+<p>Ces exercices illustrent différentes manières d'appliquer l'encapsulation en Python, en utilisant des attributs privés/protégés et des propriétés. La maîtrise de ces techniques permet de créer des classes plus robustes et maintenables, en contrôlant l'accès aux données et en assurant leur intégrité.</p>
+</p>
+    <h3>8.1 Exercise 1: Temperature Conversion</h3>
+    <p><p>L'encapsulation trouve une illustration éloquente dans la conversion de température. Nous allons concevoir une classe dédiée à la gestion de la conversion Celsius-Fahrenheit, tout en assurant la protection de la valeur Celsius.</p>
+<pre><code class="language-python">
+class Temperature:
+    def __init__(self, celsius):
+        """
+        Initializes the Temperature object with a Celsius value.
+
+        The celsius attribute is made private using double underscores to enforce encapsulation.
+        """
+        self.__celsius = celsius  # Private attribute
+
+    def get_fahrenheit(self):
+        """
+        Converts the private Celsius temperature to Fahrenheit.
+
+        Returns:
+            float: The temperature in Fahrenheit.
+        """
+        return (self.__celsius * 9/5) + 32
+
+    def set_fahrenheit(self, fahrenheit):
+        """
+        Converts Fahrenheit to Celsius and updates the private Celsius value.
+
+        Args:
+            fahrenheit (float): The temperature in Fahrenheit.
+
+        Raises:
+            ValueError: If the input is not a valid number.
+        """
+        try:
+            fahrenheit = float(fahrenheit)  # Ensure it's a number
+            self.__celsius = (fahrenheit - 32) * 5/9
+        except ValueError:
+            print("Invalid input: Fahrenheit must be a number.")
+
+    def get_celsius(self):
+        """
+        Returns the Celsius temperature.
+
+        Returns:
+            float: The temperature in Celsius.
+        """
+        return self.__celsius
+</code></pre>
+<p>Ici, <code class="language-python">__celsius</code> est désigné comme un attribut privé. Son accès direct depuis l'extérieur de la classe est donc interdit. Les méthodes <code class="language-python">get_fahrenheit</code> et <code class="language-python">set_fahrenheit</code> agissent comme des interfaces, permettant une interaction contrôlée avec la température. La méthode <code class="language-python">set_fahrenheit</code> intègre une validation rigoureuse pour garantir que la valeur fournie est numérique avant de procéder à la conversion et à la mise à jour de l'attribut <code class="language-python">__celsius</code>.</p>
+<p>Voici une démonstration de l'utilisation de cette classe :</p>
+<pre><code class="language-python">
+# Example usage
+temperature = Temperature(25)  # Initialize with 25 Celsius
+
+print(f"Celsius: {temperature.get_celsius()}")
+print(f"Fahrenheit: {temperature.get_fahrenheit()}")
+
+temperature.set_fahrenheit(77) # Set Fahrenheit to 77
+
+print(f"Celsius after setting Fahrenheit: {temperature.get_celsius()}")
+
+temperature.set_fahrenheit("abc") # Try to set with invalid input
+</code></pre>
+<p>L'encapsulation joue un rôle crucial dans la protection des données internes de la classe, assurant ainsi que les opérations sont exécutées de manière contrôlée et prévisible. Cela offre également une flexibilité essentielle pour les modifications futures, sans perturber le code qui utilise la classe. De plus, l'utilisation de méthodes getter et setter permet d'ajouter des validations ou des transformations de données avant d'accéder ou de modifier l'attribut <code class="language-python">__celsius</code>, renforçant ainsi la robustesse et la maintenabilité du code.</p>
+</p>
+    <h3>8.2 Exercise 2: Password Management</h3>
+    <p><p>Cet exercice illustre comment l'encapsulation peut être utilisée pour gérer des informations sensibles, comme des mots de passe, en Python. L'objectif principal est de protéger le mot de passe en appliquant un hachage avant de le stocker.</p>
+<pre><code class="language-python">
+import hashlib
+import secrets
+
+class Password:
+    def __init__(self, password):
+        self.__salt = secrets.token_hex(16)  # Generate a random salt
+        self.__hashed_password = self._hash_password(password, self.__salt)
+
+    def _hash_password(self, password, salt):
+        """Hashes the password using SHA-256 with a salt."""
+        salted_password = salt + password
+        hashed_password = hashlib.sha256(salted_password.encode('utf-8')).hexdigest()
+        return hashed_password
+
+    def set_password(self, new_password):
+        """Sets a new password after hashing it with a new salt."""
+        self.__salt = secrets.token_hex(16)  # Generate a new random salt
+        self.__hashed_password = self._hash_password(new_password, self.__salt)
+
+    def verify_password(self, plain_password):
+        """Verifies if the plain password matches the stored hash."""
+        hashed_password = self._hash_password(plain_password, self.__salt)
+        return hashed_password == self.__hashed_password
+</code></pre>
+<p>Dans cet exemple, la classe <code class="language-python">Password</code> encapsule les attributs <code class="language-python">__hashed_password</code> et <code class="language-python">__salt</code>, les rendant privés. Le mot de passe est combiné avec un "sel" (salt) unique, puis haché à l'aide de la bibliothèque <code class="language-python">hashlib</code> (SHA-256 dans ce cas) avant d'être stocké.  L'utilisation d'un "sel" rend l'attaque par table arc-en-ciel plus difficile. La méthode <code class="language-python">verify_password</code> permet de vérifier si un mot de passe en clair correspond au hachage stocké. Il est important de noter que l'algorithme de hachage utilisé ici (SHA-256) est un exemple, et des méthodes plus robustes comme bcrypt ou Argon2 sont fortement recommandées pour les applications réelles. La bibliothèque <code class="language-python">secrets</code> est utilisée pour générer un sel aléatoire.</p>
+<pre><code class="language-python">
+# Example Usage
+password = Password("monMotDePasseSecret")
+# Note: Accessing a 'private' member is generally discouraged but shown here for demonstration purposes.
+# It's prefixed with _ClassName to indicate it's intended for internal use.
+print(f"Hashed password: {password._Password__hashed_password}")
+is_valid = password.verify_password("monMotDePasseSecret")
+print(f"Password verification: {is_valid}")
+
+password.set_password("nouveauMotDePasse")
+is_valid = password.verify_password("nouveauMotDePasse")
+print(f"Password verification after setting a new password: {is_valid}")
+</code></pre>
+<p>L'exemple d'utilisation montre comment créer une instance de la classe <code class="language-python">Password</code>, comment vérifier un mot de passe et comment le modifier. L'accès direct à <code class="language-python">password._Password__hashed_password</code> est possible mais déconseillé; il est utilisé ici à des fins de démonstration pour montrer que le mot de passe est bien haché. L'encapsulation, ici, permet de masquer la complexité du hachage et de fournir une interface simple pour gérer et vérifier les mots de passe.</p>
+<p>Ce type d'encapsulation renforce significativement la sécurité en empêchant l'accès direct au mot de passe en clair et en le stockant sous une forme hachée et "salée", ce qui le rend beaucoup plus difficile à compromettre en cas de fuite de données. L'ajout d'un "sel" unique pour chaque mot de passe est une pratique essentielle pour contrer les attaques courantes.</p>
+</p>
+    <h3>8.3 Exercise 3: Student Grade Management</h3>
+    <p><p>Dans cet exercice, nous allons créer une classe <code class="language-python">Student</code> pour gérer les notes d'un étudiant. Nous utiliserons l'encapsulation pour protéger l'accès direct à la liste des notes et garantir que les notes ajoutées sont valides (entre 0 et 100).</p>
+
+<p>Voici l'implémentation de la classe <code class="language-python">Student</code> :</p>
+
+<pre><code class="language-python">
+class Student:
+    def __init__(self, name):
+        """
+        Initializes a new Student object.
+
+        Args:
+            name (str): The name of the student.
+        """
+        self.name = name
+        self.__grades = []  # Private attribute to store grades
+
+    def add_grade(self, grade):
+        """
+        Adds a grade to the student's list of grades.
+        Grades must be between 0 and 100.
+
+        Args:
+            grade (int): The grade to add.
+        """
+        if 0 <= grade <= 100:
+            self.__grades.append(grade)
+        else:
+            print("Invalid grade. Grade must be between 0 and 100.")
+
+    def get_average_grade(self):
+        """
+        Calculates the average grade of the student.
+        Returns 0 if no grades are available.
+
+        Returns:
+            float: The average grade, or 0 if no grades are available.
+        """
+        if not self.__grades:
+            return 0
+        return sum(self.__grades) / len(self.__grades)
+
+    def get_grades(self):
+        """
+        Returns a copy of the grades list to avoid direct modification.
+
+        Returns:
+            list: A copy of the grades list.
+        """
+        return self.__grades[:]  # Returns a shallow copy
+
+# Example Usage
+student = Student("Alice")
+student.add_grade(85)
+student.add_grade(92)
+student.add_grade(105)  # Invalid grade, will print a message
+student.add_grade(78)
+
+print(f"Student: {student.name}")
+print(f"Grades: {student.get_grades()}")
+print(f"Average Grade: {student.get_average_grade()}")
+</code></pre>
+
+<p>Dans cet exemple :</p>
+
+<ul>
+    <li><code class="language-python">__grades</code> est un attribut privé (double underscore) contenant la liste des notes. Il ne peut être accédé directement de l'extérieur de la classe. L'accès se fait via les méthodes de la classe.</li>
+    <li>La méthode <code class="language-python">add_grade</code> permet d'ajouter une note à la liste, mais seulement si elle est comprise entre 0 et 100. Ceci implémente une validation des données, assurant l'intégrité des données stockées.</li>
+    <li>La méthode <code class="language-python">get_average_grade</code> calcule la moyenne des notes, fournissant une information synthétique sur la performance de l'étudiant.</li>
+    <li>La méthode <code class="language-python">get_grades</code> retourne une copie de la liste des notes (shallow copy). Ceci évite que l'appelant puisse modifier directement la liste interne de l'objet <code class="language-python">Student</code>, préservant ainsi l'encapsulation et le contrôle sur les données.</li>
+</ul>
+
+<p>L'encapsulation protège les données internes de la classe <code class="language-python">Student</code>, garantissant que les notes sont toujours valides et que la liste des notes ne peut être modifiée que par les méthodes de la classe. Cela permet de maintenir la cohérence et l'intégrité des données au sein de l'objet <code class="language-python">Student</code>.</p>
+
+<p>L'utilisation de <code class="language-python">self.__grades[:]</code> dans <code class="language-python">get_grades</code> crée une copie superficielle de la liste. Si les éléments de la liste étaient des objets mutables, les modifications apportées à ces objets seraient visibles via la copie et l'original. Pour une encapsulation plus robuste, en particulier avec des objets mutables, une copie profonde (avec <code class="language-python">copy.deepcopy()</code>) pourrait être envisagée. Cependant, pour cet exemple simple avec des nombres (qui sont immuables), une copie superficielle est suffisante et plus performante.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">9. Résumé et Comparaisons</h2>
+    <p><p>L'encapsulation est un pilier fondamental de la programmation orientée objet (POO). Elle consiste à regrouper les données (attributs) et les méthodes (fonctions) qui opèrent sur ces données au sein d'une même unité, que l'on appelle une classe. L'objectif principal est de masquer l'état interne d'un objet et de contrôler l'accès à ses attributs, empêchant ainsi les modifications directes et non contrôlées depuis l'extérieur de la classe. Ceci permet de favoriser une meilleure gestion des données, une plus grande flexibilité et une réduction des risques d'erreurs.</p>
+
+<p>En Python, l'encapsulation est mise en œuvre par convention, en utilisant des préfixes de soulignement pour indiquer le niveau d'accessibilité des attributs et des méthodes. Un simple soulignement (<code class="language-python">_</code>) est utilisé comme indication qu'un attribut ou une méthode est "protégé" et ne doit pas être accédé directement depuis l'extérieur de la classe. Un double soulignement (<code class="language-python">__</code>) indique qu'un attribut ou une méthode est "privé" et que son nom sera modifié par Python (name mangling) afin de décourager davantage l'accès direct. Il est crucial de comprendre que ces conventions ne sont pas des mécanismes de restriction d'accès stricts comme dans certains autres langages de programmation (Java, C++), mais plutôt des directives pour les développeurs.</p>
+
+<p>Voici un exemple concret illustrant l'encapsulation en Python :</p>
+
+<pre><code class="language-python">
+class Vehicle:
+    def __init__(self, brand, model, color, year):
+        self.brand = brand        # Public attribute: accessible from anywhere
+        self._model = model      # Protected attribute: should be accessed within the class or its subclasses
+        self.__color = color      # Private attribute: name mangled, access discouraged from outside the class
+        self.__year = year        # Private attribute
+
+    def get_color(self):
+        # Public method to access the "private" color attribute
+        return self.__color
+
+    def set_year(self, year):
+         # Public method to modify the "private" year attribute
+        if year > 1900 and year <= 2024:
+            self.__year = year
+        else:
+            print("Invalid year")
+
+    def _display_model(self):
+        # "Protected" method: intended for internal use
+        print(f"Model: {self._model}")
+
+    def drive(self):
+        print(f"The {self.brand} is moving.")
+
+# Creating an instance of the Vehicle class
+my_vehicle = Vehicle("Toyota", "Camry", "Red", 2020)
+
+# Accessing a public attribute
+print(f"Brand: {my_vehicle.brand}")
+
+# Accessing a "protected" attribute (possible, but discouraged)
+print(f"Model (accessed directly): {my_vehicle._model}")
+
+# Trying to access a "private" attribute directly (raises an AttributeError due to name mangling)
+# print(my_vehicle.__color)
+
+# Accessing the "private" attribute using a getter method
+print(f"Color (accessed via getter): {my_vehicle.get_color()}")
+
+# Calling a "protected" method (possible, but discouraged)
+my_vehicle._display_model()
+
+# Calling a public method
+my_vehicle.drive()
+
+#Demonstrating name mangling
+print(my_vehicle._Vehicle__color) # Accessing the private attribute using name mangling (Discouraged!)
+
+my_vehicle.set_year(2023) # Setting a new year
+print(my_vehicle._Vehicle__year) # Accessing the updated year using name mangling (Discouraged!)
+</code></pre>
+
+<p>Dans cet exemple, l'attribut <code class="language-python">brand</code> est un attribut public et est accessible librement. L'attribut <code class="language-python">_model</code> est considéré comme protégé, indiquant qu'il est préférable de l'utiliser uniquement à l'intérieur de la classe ou de ses sous-classes. L'attribut <code class="language-python">__color</code> est déclaré comme privé, et Python modifie son nom en interne (name mangling) pour rendre l'accès direct depuis l'extérieur de la classe plus difficile. Techniquement, il est toujours possible d'accéder à un attribut "privé" en utilisant le "name mangling" (par exemple, <code class="language-python">_Vehicle__color</code>), mais cette pratique est fortement déconseillée car elle viole le principe d'encapsulation et peut rendre le code plus difficile à maintenir.</p>
+
+<p>L'encapsulation est souvent comparée à d'autres concepts fondamentaux de la POO, comme l'abstraction. L'abstraction se concentre sur la simplification de la complexité en masquant les détails d'implémentation et en ne présentant que les informations essentielles à l'utilisateur. L'encapsulation, en revanche, se concentre sur la protection des données et le contrôle de l'accès aux attributs et méthodes d'une classe. Bien que distincts, ces deux concepts sont complémentaires et sont fréquemment utilisés ensemble pour concevoir des classes robustes, modulaires et maintenables. En résumé, l'abstraction se soucie de ce que fait un objet, tandis que l'encapsulation se soucie de comment il le fait et comment ses données sont protégées.</p>
+
+<p>En conclusion, l'encapsulation en Python, bien qu'implémentée par des conventions plutôt que par des mécanismes de restriction d'accès stricts, est un outil puissant pour organiser et protéger les données au sein de vos classes. En utilisant de manière judicieuse les préfixes de soulignement, vous pouvez améliorer significativement la lisibilité, la maintenabilité et la robustesse de votre code orienté objet, contribuant ainsi à la création d'applications plus fiables et plus faciles à faire évoluer.</p>
+</p>
+    <h3>9.1 Résumé des concepts clés</h3>
+    <p><p>L'encapsulation en Python repose principalement sur des conventions de nommage, offrant ainsi une indication claire de l'intention du développeur concernant la visibilité et l'accès aux attributs d'une classe. Contrairement à d'autres langages, Python n'impose pas de mécanismes d'application stricts pour l'encapsulation.</p>
+
+<p>Un simple underscore (<code class="language-python">_</code>) préfixant un attribut suggère qu'il est "protégé". Bien que Python ne restreigne pas l'accès externe à ces attributs, la convention veut qu'ils soient considérés comme des éléments internes, destinés à un usage exclusif par la classe elle-même ou ses sous-classes. Modifier directement ces attributs depuis l'extérieur est déconseillé, car cela pourrait compromettre le fonctionnement interne de la classe.</p>
+
+<p>Un double underscore (<code class="language-python">__</code>) préfixant un attribut indique qu'il est "privé". Python applique alors un mécanisme appelé "name mangling". Le nom de l'attribut est transformé en ajoutant un préfixe de la forme <code class="language-python">_NomDeLaClasse</code>. Cela complique l'accès direct à l'attribut, mais ne le rend pas impossible. L'objectif principal du name mangling est d'éviter les conflits de noms d'attributs lors de l'héritage.</p>
+
+<pre><code class="language-python">
+class MyWidget:
+    def __init__(self):
+        self._internal_state = 0  # A protected attribute
+        self.__secret_value = "This is a secret"  # A private attribute
+
+    def get_secret_value(self):
+        return self.__secret_value
+
+    def _internal_method(self):
+        # Only meant to be called from within the class or subclasses
+        print("Internal method called")
+
+widget = MyWidget()
+print(widget._internal_state)  # Accessing a protected attribute (discouraged but possible)
+# print(widget.__secret_value) # This will raise an AttributeError
+print(widget.get_secret_value()) # Accessing a private attribute through a getter
+print(widget._MyWidget__secret_value) # Accessing a name-mangled attribute (strongly discouraged)
+</code></pre>
+
+<p>L'utilisation de "getters" et "setters" (méthodes d'accès et de modification) est une pratique répandue pour contrôler l'accès et la manipulation des attributs d'une classe. Les getters permettent de récupérer la valeur d'un attribut, tandis que les setters permettent de la modifier, potentiellement en effectuant des validations ou des transformations préalables. Cette approche offre une flexibilité accrue et contribue à maintenir l'intégrité des données.</p>
+
+<pre><code class="language-python">
+class Dimensions:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+
+    def get_width(self):
+        return self._width
+
+    def set_width(self, width):
+        if width > 0:
+            self._width = width
+        else:
+            print("Width must be positive")
+
+    def get_height(self):
+        return self._height
+
+    def set_height(self, height):
+        if height > 0:
+            self._height = height
+        else:
+            print("Height must be positive")
+
+# Example usage
+dimensions = Dimensions(10, 5)
+print(f"Width: {dimensions.get_width()}")
+dimensions.set_width(-5)
+dimensions.set_width(20)
+print(f"New width: {dimensions.get_width()}")
+</code></pre>
+
+<p>En conclusion, l'encapsulation en Python est une question de discipline et de communication claire entre les développeurs. L'utilisation des conventions de nommage (<code class="language-python">_</code> et <code class="language-python">__</code>) ainsi que l'implémentation de getters et setters facilitent la gestion de l'accès aux attributs et contribuent à un code plus robuste et maintenable. Bien que Python n'impose pas de restrictions rigides, le respect de ces conventions est essentiel pour un code propre et conforme aux bonnes pratiques de la programmation orientée objet.</p>
+</p>
+    <h3>9.2 Comparaison avec d'autres langages</h3>
+    <p><p>L'encapsulation en Python offre une approche distincte par rapport à des langages comme Java ou C++. Alors que ces derniers s'appuient sur des mots-clés tels que <code class="language-python" class="language-java">private</code>, <code class="language-python" class="language-java">protected</code> et <code class="language-python" class="language-java">public</code> pour appliquer un contrôle d'accès rigoureux, Python privilégie les conventions de nommage et la collaboration entre développeurs.</p>
+
+<p>En Java, un attribut déclaré <code class="language-python" class="language-java">private</code> est strictement inaccessible depuis l'extérieur de la classe. Python, en revanche, adopte une approche plus souple. L'utilisation d'un simple underscore (<code class="language-python">_nom_attribut</code>) en préfixe d'un attribut indique qu'il est destiné à un usage interne ou protégé. Bien qu'il reste techniquement possible d'y accéder ou de le modifier depuis l'extérieur de la classe, cette convention signale aux autres développeurs qu'il est préférable de ne pas le faire. Il s'agit donc plus d'une directive de conception que d'une règle imposée par l'interpréteur.</p>
+
+<p>L'exemple suivant illustre cette différence de manière concrète. Voici comment on pourrait implémenter l'encapsulation en Java:</p>
+
+<pre><code class="language-python" class="language-java">
+public class Example {
+    private int secretValue;
+
+    public Example(int value) {
+        this.secretValue = value;
+    }
+
+    public int getSecretValue() {
+        return secretValue;
+    }
+
+    public void setSecretValue(int value) {
+        this.secretValue = value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example example = new Example(10);
+        // example.secretValue = 20; // This would cause a compilation error
+        System.out.println(example.getSecretValue()); // Access via the getter
+        example.setSecretValue(20); // Modification via the setter
+        System.out.println(example.getSecretValue());
+    }
+}
+</code></pre>
+
+<p>L'équivalent en Python serait:</p>
+
+<pre><code class="language-python">
+class Example:
+    def __init__(self, value):
+        self._secret_value = value  # Convention: "protected" attribute
+
+    def get_secret_value(self):
+        return self._secret_value
+
+    def set_secret_value(self, value):
+        self._secret_value = value
+
+example = Example(10)
+print(example.get_secret_value()) # Access via the "getter" method
+example._secret_value = 20  # Technically possible, but not recommended
+print(example.get_secret_value())
+example.set_secret_value(30)
+print(example.get_secret_value())
+</code></pre>
+
+<p>Comme l'illustre l'exemple Python, il est possible d'accéder et de modifier directement <code class="language-python">_secret_value</code>. L'utilisation d'un double underscore (<code class="language-python">__nom_attribut</code>) déclenche le "name mangling", qui rend l'attribut plus difficile à atteindre directement en le renommant en <code class="language-python">_NomDeClasse__nom_attribut</code>. Cependant, cela ne constitue pas une protection robuste comme le <code class="language-python" class="language-java">private</code> de Java, mais plutôt une forme d'obscurcissement du nom.</p>
+
+<pre><code class="language-python">
+class MyClass:
+    def __init__(self):
+        self.__private_attribute = 10
+
+    def get_private_attribute(self):
+        return self.__private_attribute
+
+obj = MyClass()
+print(obj.get_private_attribute()) # Output: 10
+# print(obj.__private_attribute) # This would raise an AttributeError
+print(obj._MyClass__private_attribute) # Accessing the "mangled" name (not recommended)
+</code></pre>
+
+<p>En conclusion, l'encapsulation en Python est une question de conception et de discipline, plus que de contraintes imposées par le langage lui-même. Elle repose sur la volonté des développeurs de respecter les conventions établies, tandis que d'autres langages proposent des mécanismes plus stricts pour garantir l'intégrité des données.  L'approche Python met l'accent sur la flexibilité et la confiance au sein de l'équipe de développement.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">Conclusion</h2>
+    <p><p>En conclusion, l'encapsulation est un pilier de la programmation orientée objet en Python. Bien que sa mise en œuvre repose largement sur des conventions, elle procure des avantages notables en termes de modularité, de maintenabilité et de protection des données. L'encapsulation en Python, bien que moins rigide que dans d'autres langages, joue un rôle déterminant dans la création d'applications robustes et structurées.</p>
+
+<p>L'utilisation de conventions de nommage, comme le simple underscore (<code class="language-python">_</code>) pour suggérer un accès "protégé" et le double underscore (<code class="language-python">__</code>) pour activer le 'name mangling', représente une première approche de l'encapsulation. Bien que ces conventions ne rendent pas les attributs véritablement privés, elles indiquent clairement l'intention du développeur de ne pas les manipuler directement depuis l'extérieur de la classe.</p>
+
+<p>Les getters et les setters, implémentés via des méthodes ou des propriétés (à l'aide du décorateur <code class="language-python">@property</code>), offrent une interface contrôlée pour l'accès et la modification des attributs d'un objet. Ceci permet d'intégrer une logique de validation, de transformation ou de calcul avant d'accéder ou de modifier un attribut. L'exemple suivant illustre une classe simple utilisant un getter et un setter pour gérer l'accès à un attribut:</p>
+
+<pre><code class="language-python">
+class Article:
+    def __init__(self, title, content):
+        self._title = title  # Protected attribute
+        self.__content = content  # Name mangled attribute
+
+    @property
+    def title(self):
+        """Getter for the title attribute."""
+        return self._title
+
+    @title.setter
+    def title(self, new_title):
+        """Setter for the title attribute with validation."""
+        if not isinstance(new_title, str):
+            raise ValueError("Title must be a string.")
+        self._title = new_title
+
+    def get_content(self):
+        """Method to access the name-mangled attribute (less common)."""
+        return self.__content
+
+    def set_content(self, new_content):
+        """Setter for the name-mangled content attribute."""
+        if not isinstance(new_content, str):
+            raise ValueError("Content must be a string.")
+        self.__content = new_content
+
+# Example Usage
+my_article = Article("Encapsulation in Python", "This article explains...")
+print(my_article.title)  # Accessing title using the getter
+my_article.title = "Encapsulation Demystified"  # Setting title using the setter
+print(my_article.title)
+
+# Trying to set an invalid title
+try:
+    my_article.title = 123
+except ValueError as e:
+    print(e)
+
+print(my_article.get_content()) #Accessing the __content attribute using a getter method
+
+my_article.set_content("Updated content of the article") # Setting content using the setter method
+print(my_article.get_content())
+</code></pre>
+
+<p>Enfin, il est crucial de comprendre le mécanisme de 'name mangling' pour éviter des erreurs lors de la manipulation des attributs préfixés par un double underscore. Bien que ce mécanisme n'offre pas une protection absolue, il complique l'accès accidentel à ces attributs depuis l'extérieur de la classe.</p>
+
+<p>En combinant ces différentes approches, vous pouvez implémenter une encapsulation efficace dans vos projets Python, améliorant ainsi la clarté, la robustesse et la maintenabilité de votre code. Gardez à l'esprit que l'encapsulation est avant tout une question de discipline et d'adhésion aux meilleures pratiques de programmation.</p>
+</p>
+  </section>
+</div>
+
+
+<!-- End of Course Marker -->
+<div class="course-end-marker" style="margin: 4rem auto; text-align: center; max-width: 600px">
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #fb5168 50%, transparent); margin: 2rem auto;"></div>
+  <p style="color: #fb5168; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; opacity: 0.9;">
+    That's all folks
+  </p>
+</div></div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>

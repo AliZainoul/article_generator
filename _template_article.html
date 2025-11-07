@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>Les Listes en Python | Formateur</title>
+    <meta
+      name="description"
+      content="Découvrez les listes en Python, une structure de données mutable et flexible."
+    />
+    <meta property="og:title" content="Les Listes en Python | Formateur" />
+    <meta
+      property="og:description"
+      content="Découvrez les listes en Python, une structure de données mutable et flexible."
+    />
+    <meta name="twitter:title" content="Les Listes en Python | Formateur" />
+    <meta
+      name="twitter:description"
+      content="Découvrez les listes en Python, une structure de données mutable et flexible."
+    />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <script src="/src/js/code-preprocessor.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">Les Listes en Python</h1>
+      </div>
+
+      <!-- 1. INTRODUCTION -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">1. Introduction</h2>
+
+          <h3>1.1 Définition</h3>
+          <p>
+            Une liste en Python est une structure de données fondamentale qui
+            offre une grande flexibilité pour stocker et manipuler des séquences
+            d'éléments. C'est l'une des structures de données les plus utilisées
+            dans le langage <code class="language-python">Python</code>.
+          </p>
+
+          <h3>1.2 Contextualisation</h3>
+          <p>Comparaison avec d'autres structures de données Python :</p>
+          <ul>
+            <li>
+              <strong><code class="language-python">Listes</code></strong> :
+              <code class="language-python">Mutables</code>, ordonnées,
+              permettent les doublons, non hashables.
+            </li>
+            <li>
+              <strong><code class="language-python">Tuples</code></strong> :
+              <code class="language-python">Immuables</code>, ordonnés,
+              permettent les doublons, hashables.
+            </li>
+            <li>
+              <strong><code class="language-python">Ensembles</code></strong> :
+              <code class="language-python">Mutables</code>, non ordonnés, pas
+              de doublons
+            </li>
+            <li>
+              <strong><code class="language-python">Dictionnaires</code></strong>
+              : <code class="language-python">Mutables</code>, ordonnés (depuis
+              Python 3.7), paires clé-valeur uniques
+            </li>
+          </ul>
+
+          <h3>1.3 Cas d'utilisation</h3>
+          <p>Les listes sont particulièrement adaptées pour :</p>
+          <ul>
+            <li>
+              Stocker des collections d'éléments ordonnés
+            </li>
+            <li>
+              Manipuler dynamiquement des données (ajout, suppression,
+              modification)
+            </li>
+            <li>
+              Représenter des séquences de valeurs qui peuvent changer
+            </li>
+            <li>
+              Implémenter des structures comme des piles ou des files d'attente
+            </li>
+            <li>
+              Stocker des résultats intermédiaires dans des algorithmes
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 2. CARACTÉRISTIQUES FONDAMENTALES -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">2. Caractéristiques Fondamentales</h2>
+
+          <h3>2.1 Propriétés de mutabilité</h3>
+          <p>
+            Les listes en Python sont des structures de données
+            <code class="language-python">mutables</code>, ce qui signifie
+            qu'elles peuvent être modifiées après leur création. Cette propriété
+            permet d'ajouter, supprimer ou modifier des éléments sans avoir à
+            créer une nouvelle liste.
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# Demonstrating mutability of lists
+my_list = [1, 2, 3]
+print(f"Original list: {my_list}")
+
+# Modifying elements
+my_list[0] = 10
+print(f"After modifying first element: {my_list}")
+
+# Adding elements
+my_list.append(4)
+print(f"After appending: {my_list}")
+
+# Removing elements
+my_list.remove(2)
+print(f"After removing element 2: {my_list}")
+        </code></pre>
+
+        <section>
+          <h3>2.2 Ordonnancement</h3>
+          <p>
+            Les listes sont des collections
+            <code class="language-python">ordonnées</code>, ce qui signifie que
+            l'ordre d'insertion des éléments est préservé. Cette propriété
+            permet d'accéder aux éléments par leur position (index) et garantit
+            que l'ordre des éléments reste constant sauf modification explicite.
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# Demonstrating ordered nature of lists
+fruits = ["apple", "banana", "orange"]
+print(f"Original order: {fruits}")
+
+# Order is preserved when iterating
+print("Iterating through the list:")
+for i, fruit in enumerate(fruits):
+print(f"Position {i}: {fruit}")
+
+# Changing order explicitly
+fruits.reverse()
+print(f"After reversing: {fruits}")
+</code></pre>
+
+        <section>
+          <h3>2.3 Indexation et accès</h3>
+          <p>
+            Les listes Python offrent plusieurs méthodes d'accès aux éléments :
+          </p>
+          <ul>
+            <li>
+              <strong>Indexation</strong> : Accès direct aux éléments par leur
+              position
+            </li>
+            <li>
+              <strong>Slicing</strong> : Extraction de sous-listes</li>
+            <li>
+              <strong>Dépacking</strong> : Assignation des éléments à plusieurs
+              variables
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Indexing, slicing and unpacking
+numbers = [10, 20, 30, 40, 50]
+
+# Indexing (positive and negative)
+first = numbers[0]      # 10
+last = numbers[-1]      # 50
+
+# Slicing
+subset = numbers[1:4]   # [20, 30, 40]
+even_positions = numbers[::2]  # [10, 30, 50]
+
+# Unpacking
+a, b, *rest = numbers
+print(f"a = {a}, b = {b}, rest = {rest}")  # a = 10, b = 20, rest = [30, 40, 50]
+</code></pre>
+      </div>
+
+      <!-- 3. CRÉATION ET CONSTRUCTEUR -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">3. Création et Constructeur</h2>
+
+          <h3>3.1 Syntaxe de création</h3>
+          <p>
+            En Python, les listes peuvent être créées de plusieurs manières :
+          </p>
+          <ul>
+            <li>
+              Utilisation des crochets
+              <code class="language-python">[]</code> (notation littérale)
+            </li>
+            <li>
+              Utilisation du constructeur
+              <code class="language-python">list()</code>
+            </li>
+            <li>Compréhensions de liste</li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Different ways to create lists
+
+# Empty list
+empty_list1 = []
+empty_list2 = list()
+
+# List with initial values
+numbers = [1, 2, 3, 4, 5]
+mixed_types = [1, "hello", 3.14, True]
+
+# Using the list() constructor with other iterables
+from_tuple = list((1, 2, 3))
+from_string = list("Python")
+from_range = list(range(5))
+
+# List comprehension
+squares = [x**2 for x in range(1, 6)]
+
+print(f"From tuple: {from_tuple}")
+print(f"From string: {from_string}")
+print(f"From range: {from_range}")
+print(f"Squares: {squares}")
+</code></pre>
+
+        <section>
+          <h3>3.2 Conversion</h3>
+          <p>
+            Le constructeur <code class="language-python">list()</code> permet
+            de convertir d'autres types de données itérables en listes :
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# Converting other data types to lists
+
+# From tuple
+tuple_data = (10, 20, 30)
+list_from_tuple = list(tuple_data)
+
+# From string
+string_data = "Hello"
+list_from_string = list(string_data)
+
+# From set
+set_data = {1, 2, 3, 4}
+list_from_set = list(set_data)
+
+# From dictionary (gets the keys)
+dict_data = {"a": 1, "b": 2, "c": 3}
+list_from_dict_keys = list(dict_data)
+list_from_dict_values = list(dict_data.values())
+list_from_dict_items = list(dict_data.items())
+
+print(f"From tuple: {list_from_tuple}")
+print(f"From string: {list_from_string}")
+print(f"From set: {list_from_set}")
+print(f"From dict keys: {list_from_dict_keys}")
+print(f"From dict values: {list_from_dict_values}")
+print(f"From dict items: {list_from_dict_items}")
+</code></pre>
+      </div>
+
+      <!-- 4. OPÉRATIONS DE BASE -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">4. Opérations de Base</h2>
+
+          <h3>4.1 Accès aux éléments</h3>
+          <p>
+            Les listes Python offrent plusieurs méthodes d'accès et de
+            manipulation des éléments :
+          </p>
+          <ul>
+            <li>
+              <strong>Accès direct</strong> : Par index positif ou négatif
+            </li>
+            <li>
+              <strong>Modification</strong> : Assignation directe par index
+            </li>
+            <li>
+              <strong>Ajout</strong> : Méthodes append(), insert(), extend()
+            </li>
+            <li>
+              <strong>Suppression</strong> : Méthodes remove(), pop(), clear()
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Basic list operations
+fruits = ["apple", "banana", "orange", "grape"]
+
+# Accessing elements
+first_fruit = fruits[0]    # "apple"
+last_fruit = fruits[-1]    # "grape"
+
+# Modifying elements
+fruits[1] = "pear"
+
+# Adding elements
+fruits.append("mango")           # Add at the end
+fruits.insert(2, "kiwi")        # Add at specific position
+fruits.extend(["lemon", "lime"]) # Add multiple elements
+
+# Removing elements
+fruits.remove("grape")           # Remove by value
+popped_fruit = fruits.pop()      # Remove and return last element
+popped_at_index = fruits.pop(1)  # Remove at specific index
+
+print(f"Final list: {fruits}")
+</code></pre>
+
+        <section>
+          <h3>4.2 Méthodes de recherche</h3>
+          <p>
+            Python fournit plusieurs méthodes pour rechercher des éléments dans
+            une liste :
+          </p>
+          <ul>
+            <li><strong>index()</strong> : Trouve la position d'un élément</li>
+            <li>
+              <strong>count()</strong> : Compte les occurrences d'un élément
+            </li>
+            <li><strong>in</strong> : Vérifie la présence d'un élément</li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Search operations in lists
+numbers = [1, 2, 3, 2, 4, 2, 5]
+
+# Finding index of an element
+first_position = numbers.index(2)      # Returns 1 (first occurrence)
+
+# Counting occurrences
+count_twos = numbers.count(2)          # Returns 3
+
+# Checking existence
+is_present = 4 in numbers             # Returns True
+is_absent = 6 in numbers              # Returns False
+
+print(f"Position of 2: {first_position}")
+print(f"Count of 2: {count_twos}")
+print(f"Is 4 present? {is_present}")
+print(f"Is 6 present? {is_absent}")
+</code></pre>
+
+        <section>
+          <h3>4.3 Opérations de tri</h3>
+          <p>Les listes Python peuvent être triées de différentes manières :</p>
+          <ul>
+            <li><strong>sort()</strong> : Trie la liste en place</li>
+            <li><strong>sorted()</strong> : Crée une nouvelle liste triée</li>
+            <li><strong>reverse()</strong> : Inverse l'ordre des éléments</li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Sorting operations
+numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# Sorting in place
+numbers_copy = numbers.copy()
+numbers_copy.sort()
+print(f"Sorted in place: {numbers_copy}")
+
+# Creating new sorted list
+sorted_numbers = sorted(numbers)
+print(f"New sorted list: {sorted_numbers}")
+
+# Reverse sorting
+numbers_copy.sort(reverse=True)
+print(f"Reverse sorted: {numbers_copy}")
+
+# Custom sorting
+words = ["banana", "apple", "Cherry", "date"]
+words.sort()                    # Case-sensitive sort
+print(f"Default sort: {words}")
+
+words.sort(key=str.lower)       # Case-insensitive sort
+print(f"Case-insensitive sort: {words}")
+</code></pre>
+      </div>
+
+      <!-- 5. COMPRÉHENSIONS DE LISTE -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">5. Compréhensions de Liste</h2>
+
+          <h3>5.1 Syntaxe de base</h3>
+          <p>
+            Les compréhensions de liste sont une syntaxe concise et puissante
+            pour créer des listes en Python. Elles permettent de transformer,
+            filtrer et générer des données en une seule expression.
+          </p>
+          <p>
+            La syntaxe de base est :
+            <code class="language-python"
+              >[expression for item in iterable]</code
+            >
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# Basic list comprehension examples
+
+# Creating a list of squares
+squares = [x**2 for x in range(1, 11)]
+print(f"Squares: {squares}")
+
+# Creating a list of even numbers
+even_numbers = [x for x in range(20) if x % 2 == 0]
+print(f"Even numbers: {even_numbers}")
+
+# Creating a list with string manipulation
+names = ["Alice", "Bob", "Charlie", "David"]
+greetings = [f"Hello, {name}!" for name in names]
+print(f"Greetings: {greetings}")
+</code></pre>
+
+        <section>
+          <h3>5.2 Compréhensions avec conditions</h3>
+          <p>
+            Les compréhensions de liste peuvent inclure des conditions pour
+            filtrer les éléments :
+          </p>
+          <ul>
+            <li>
+              Filtrage simple :
+              <code class="language-python"
+                >[expression for item in iterable if condition]</code
+              >
+            </li>
+            <li>
+              Expressions conditionnelles :
+              <code class="language-python"
+                >[expression_if if condition else expression_else for item in
+                iterable]</code
+              >
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# List comprehensions with conditions
+
+# Filtering with a condition
+numbers = list(range(1, 21))
+odd_numbers = [x for x in numbers if x % 2 != 0]
+print(f"Odd numbers: {odd_numbers}")
+
+# Using conditional expressions
+classify = ["even" if x % 2 == 0 else "odd" for x in range(10)]
+print(f"Classification: {classify}")
+
+# Combining multiple conditions
+divisible_by_2_and_3 = [x for x in range(1, 31) if x % 2 == 0 and x % 3 == 0]
+print(f"Divisible by both 2 and 3: {divisible_by_2_and_3}")
+</code></pre>
+
+        <section>
+          <h3>5.3 Compréhensions imbriquées</h3>
+          <p>
+            Les compréhensions de liste peuvent être imbriquées pour créer des
+            structures plus complexes comme des matrices ou pour traiter des
+            données multidimensionnelles.
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# Nested list comprehensions
+
+# Creating a matrix (2D list)
+matrix = [[i * j for j in range(1, 6)] for i in range(1, 6)]
+for row in matrix:
+print(row)
+
+# Flattening a 2D list
+matrix_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix_2d for num in row]
+print(f"Flattened matrix: {flattened}")
+
+# Creating a dictionary with list comprehension
+keys = ["a", "b", "c"]
+values = [1, 2, 3]
+dict_from_comp = {k: v for k, v in zip(keys, values)}
+print(f"Dictionary from comprehension: {dict_from_comp}")
+</code></pre>
+      </div>
+
+      <!-- 6. COPIE ET RÉFÉRENCES -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">6. Copie et Références</h2>
+
+          <h3>6.1 Références et assignation</h3>
+          <p>
+            En Python, les variables de liste sont des références à des objets
+            en mémoire. Lorsqu'une liste est assignée à une nouvelle variable,
+            les deux variables font référence au même objet. Cela signifie que
+            les modifications apportées via une variable affectent l'autre.
+          </p>
+        </section>
+
+          <pre><code class="language-python">
+# References and assignment
+
+# Creating a list
+original = [1, 2, 3, 4, 5]
+
+# Assigning to a new variable (creates a reference, not a copy)
+reference = original
+
+# Modifying through the reference
+reference.append(6)
+
+# Both variables show the change
+print(f"Original: {original}")
+print(f"Reference: {reference}")
+
+# Checking if they reference the same object
+print(f"Same object? {original is reference}")
+</code></pre>
+
+        <section>
+          <h3>6.2 Méthodes de copie</h3>
+          <p>
+            Pour créer une copie indépendante d'une liste, Python offre
+            plusieurs méthodes :
+          </p>
+          <ul>
+            <li>
+              <strong>Copie superficielle</strong> :
+              <code class="language-python">list.copy()</code>,
+              <code class="language-python">list[:]</code>, ou
+              <code class="language-python">list(list)</code>
+            </li>
+            <li>
+              <strong>Copie profonde</strong> :
+              <code class="language-python">copy.deepcopy(list)</code> pour les
+              listes contenant des objets imbriqués
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Different ways to copy lists
+import copy
+
+# Original list with nested elements
+original = [1, 2, [3, 4], 5]
+
+# Shallow copy methods
+copy_method = original.copy()
+slice_copy = original[:]
+list_constructor = list(original)
+
+# Deep copy
+deep_copy = copy.deepcopy(original)
+
+# Modifying the nested list in the original
+original[2][0] = 99
+
+print(f"Original: {original}")
+print(f"Copy method: {copy_method}")
+print(f"Slice copy: {slice_copy}")
+print(f"List constructor: {list_constructor}")
+print(f"Deep copy: {deep_copy}")
+</code></pre>
+      </div>
+
+      <!-- 7. ITÉRATION -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">7. Itération</h2>
+
+          <h3>7.1 Boucles et itération</h3>
+          <p>
+            Les listes Python sont itérables, ce qui permet de parcourir leurs
+            éléments de différentes manières :
+          </p>
+          <ul>
+            <li>Boucle <code class="language-python">for</code> classique</li>
+            <li>
+              Boucle <code class="language-python">for</code> avec
+              <code class="language-python">enumerate()</code> pour accéder aux
+              indices
+            </li>
+            <li>
+              Boucle <code class="language-python">while</code> avec compteur
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Different ways to iterate through lists
+fruits = ["apple", "banana", "cherry", "date"]
+
+# Basic for loop
+print("Basic for loop:")
+for fruit in fruits:
+print(f"- {fruit}")
+
+# For loop with enumerate
+print("\nFor loop with enumerate:")
+for index, fruit in enumerate(fruits):
+print(f"{index}: {fruit}")
+
+# While loop with counter
+print("\nWhile loop:")
+i = 0
+while i < len(fruits):
+print(f"[{i}] {fruits[i]}")
+i += 1
+</code></pre>
+
+        <section>
+          <h3>7.2 Fonctions d'ordre supérieur</h3>
+          <p>
+            Python offre plusieurs fonctions d'ordre supérieur pour travailler
+            avec les listes :
+          </p>
+          <ul>
+            <li>
+              <strong>map()</strong> : Applique une fonction à chaque élément
+            </li>
+            <li>
+              <strong>filter()</strong> : Filtre les éléments selon une
+              condition
+            </li>
+            <li>
+              <strong>reduce()</strong> : Réduit la liste à une seule valeur
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Higher-order functions with lists
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Using map() to square each number
+squared = list(map(lambda x: x**2, numbers))
+print(f"Squared: {squared}")
+
+# Using filter() to get even numbers
+even = list(filter(lambda x: x % 2 == 0, numbers))
+print(f"Even numbers: {even}")
+
+# Using reduce() to calculate sum
+total = reduce(lambda x, y: x + y, numbers)
+print(f"Sum: {total}")
+
+# Combining map and filter
+even_squared = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, numbers)))
+print(f"Even squared: {even_squared}")
+</code></pre>
+      </div>
+
+      <!-- 8. PERFORMANCE -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">8. Performance</h2>
+
+          <h3>8.1 Complexité temporelle</h3>
+          <p>
+            La complexité temporelle des opérations sur les listes Python est
+            importante à comprendre pour écrire du code efficace :
+          </p>
+          <ul>
+            <li><strong>Accès par index</strong> : O(1) - Temps constant</li>
+            <li>
+              <strong>Recherche (in, index)</strong> : O(n) - Temps linéaire
+            </li>
+            <li>
+              <strong
+                >Insertion/Suppression en fin de liste (append/pop)</strong
+              >
+              : O(1) - Temps constant amorti
+            </li>
+            <li>
+              <strong>Insertion/Suppression au début ou au milieu</strong> :
+              O(n) - Temps linéaire
+            </li>
+            <li>
+              <strong>Tri (sort)</strong> : O(n log n) - Temps quasi-linéaire
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Performance demonstration
+import time
+
+# Function to measure execution time
+def measure_time(func, *args):
+start = time.time()
+result = func(*args)
+end = time.time()
+return (end - start) * 1000  # Convert to milliseconds
+
+# Create a large list
+large_list = list(range(100000))
+
+# Measure access time (O(1))
+access_time = measure_time(lambda lst: lst[50000], large_list)
+print(f"Access time: {access_time:.4f} ms")
+
+# Measure search time (O(n))
+search_time = measure_time(lambda lst: 99999 in lst, large_list)
+print(f"Search time: {search_time:.4f} ms")
+
+# Measure append time (O(1) amortized)
+append_time = measure_time(lambda lst: lst.append(100000), large_list.copy())
+print(f"Append time: {append_time:.4f} ms")
+
+# Measure insert at beginning time (O(n))
+insert_time = measure_time(lambda lst: lst.insert(0, -1), large_list.copy())
+print(f"Insert at beginning time: {insert_time:.4f} ms")
+</code></pre>
+
+        <section>
+          <h3>8.2 Optimisations</h3>
+          <p>
+            Quelques conseils pour optimiser l'utilisation des listes en Python
+            :
+          </p>
+          <ul>
+            <li>
+              Préférer les compréhensions de liste aux boucles pour la création
+              et la transformation
+            </li>
+            <li>
+              Utiliser
+              <code class="language-python">collections.deque</code> pour les
+              insertions/suppressions fréquentes au début
+            </li>
+            <li>Préallouer la taille des listes lorsque c'est possible</li>
+            <li>
+              Utiliser <code class="language-python">numpy.array</code> pour les
+              opérations numériques intensives
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Optimization examples
+import time
+from collections import deque
+
+# Comparing list vs deque for frequent insertions at the beginning
+def test_list_insertions(n):
+lst = []
+start = time.time()
+for i in range(n):
+lst.insert(0, i)
+return time.time() - start
+
+def test_deque_insertions(n):
+dq = deque()
+start = time.time()
+for i in range(n):
+dq.appendleft(i)
+return time.time() - start
+
+# Run comparison
+n = 10000
+list_time = test_list_insertions(n)
+deque_time = test_deque_insertions(n)
+
+print(f"List insertions: {list_time:.4f} seconds")
+print(f"Deque insertions: {deque_time:.4f} seconds")
+print(f"Deque is {list_time/deque_time:.1f}x faster")
+
+# Preallocating list size
+start = time.time()
+growing_list = []
+for i in range(10000):
+growing_list.append(i)
+growing_time = time.time() - start
+
+start = time.time()
+preallocated = [None] * 10000
+for i in range(10000):
+preallocated[i] = i
+preallocated_time = time.time() - start
+
+print(f"Growing list: {growing_time:.4f} seconds")
+print(f"Preallocated: {preallocated_time:.4f} seconds")
+</code></pre>
+      </div>
+
+      <!-- 9. CAS D'UTILISATION PRATIQUES -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">9. Cas d'Utilisation Pratiques</h2>
+
+          <h3>9.1 Implémentation de structures de données</h3>
+          <p>
+            Les listes Python peuvent être utilisées pour implémenter diverses
+            structures de données :
+          </p>
+          <ul>
+            <li>
+              <strong>Pile (Stack)</strong> : Utilisation de
+              <code class="language-python">append()</code> et
+              <code class="language-python">pop()</code>
+            </li>
+            <li>
+              <strong>File (Queue)</strong> : Utilisation de
+              <code class="language-python">append()</code> et
+              <code class="language-python">pop(0)</code> (mais
+              <code class="language-python">collections.deque</code> est plus
+              efficace)
+            </li>
+            <li>
+              <strong>Graphe</strong> : Représentation par liste d'adjacence
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Implementing data structures with lists
+
+# Stack implementation
+class Stack:
+def __init__(self):
+self.items = []
+
+def push(self, item):
+self.items.append(item)
+
+def pop(self):
+if not self.is_empty():
+return self.items.pop()
+return None
+
+def peek(self):
+if not self.is_empty():
+return self.items[-1]
+return None
+
+def is_empty(self):
+return len(self.items) == 0
+
+def size(self):
+return len(self.items)
+</code></pre>
+
+          <pre><code class="language-python">
+# Implementing data structures with lists
+
+# Queue implementation (inefficient with large data)
+class Queue:
+def __init__(self):
+self.items = []
+
+def enqueue(self, item):
+self.items.append(item)
+
+def dequeue(self):
+if not self.is_empty():
+return self.items.pop(0)  # O(n) operation
+return None
+
+def is_empty(self):
+return len(self.items) == 0
+
+def size(self):
+return len(self.items)
+
+
+</code></pre>
+          <pre><code class="language-python">
+# Implementing data structures with lists
+
+
+# Graph representation using adjacency list
+class Graph:
+def __init__(self):
+self.adjacency_list = {}
+
+def add_vertex(self, vertex):
+if vertex not in self.adjacency_list:
+self.adjacency_list[vertex] = []
+
+def add_edge(self, vertex1, vertex2):
+self.add_vertex(vertex1)
+self.add_vertex(vertex2)
+self.adjacency_list[vertex1].append(vertex2)
+self.adjacency_list[vertex2].append(vertex1)  # For undirected graph
+
+def get_neighbors(self, vertex):
+return self.adjacency_list.get(vertex, [])
+</code></pre>
+        <section>
+          <h3>9.2 Manipulation de données</h3>
+          <p>
+            Les listes sont couramment utilisées pour la manipulation et
+            l'analyse de données :
+          </p>
+          <ul>
+            <li>Traitement de données tabulaires</li>
+            <li>Analyse statistique</li>
+            <li>Transformation et nettoyage de données</li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Data manipulation examples
+
+# Sample dataset: Student records [name, age, grade]
+students = [
+["Alice", 22, 85],
+["Bob", 19, 92],
+["Charlie", 21, 78],
+["Diana", 20, 95],
+["Eve", 22, 88]
+]
+
+# Extracting columns
+names = [student[0] for student in students]
+ages = [student[1] for student in students]
+grades = [student[2] for student in students]
+
+# Basic statistics
+avg_age = sum(ages) / len(ages)
+avg_grade = sum(grades) / len(grades)
+max_grade = max(grades)
+min_grade = min(grades)
+
+print(f"Average age: {avg_age:.1f}")
+print(f"Average grade: {avg_grade:.1f}")
+print(f"Grade range: {min_grade} - {max_grade}")
+
+# Filtering data
+high_performers = [student for student in students if student[2] >= 90]
+print(f"High performers: {high_performers}")
+
+# Transforming data (adding pass/fail status)
+with_status = [[*student, "Pass" if student[2] >= 80 else "Fail"] for student in students]
+
+# Sorting by grade
+sorted_by_grade = sorted(students, key=lambda student: student[2], reverse=True)
+print("Top students:")
+for student in sorted_by_grade[:3]:
+print(f"{student[0]}: {student[2]}")
+</code></pre>
+      </div>
+
+      <!-- 10. EXERCICES -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">10. Exercices</h2>
+
+          <h3>10.1 Exercice 1: Manipulation de base</h3>
+          <p>
+            Créez une liste de nombres de 1 à 10, puis effectuez les opérations
+            suivantes :
+          </p>
+          <ul>
+            <li>Ajoutez le nombre 11 à la fin de la liste</li>
+            <li>Insérez le nombre 0 au début de la liste</li>
+            <li>Supprimez le nombre 5 de la liste</li>
+            <li>Triez la liste en ordre décroissant</li>
+            <li>
+              Créez une nouvelle liste contenant uniquement les nombres pairs de
+              la liste originale
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Exercice 1: Solution
+
+# Créer une liste de nombres de 1 à 10
+numbers = list(range(1, 11))
+print(f"Liste initiale: {numbers}")
+
+# 1. Ajouter 11 à la fin
+numbers.append(11)
+print(f"Après ajout de 11: {numbers}")
+
+# 2. Insérer 0 au début
+numbers.insert(0, 0)
+print(f"Après insertion de 0: {numbers}")
+
+# 3. Supprimer le nombre 5
+numbers.remove(5)
+print(f"Après suppression de 5: {numbers}")
+
+# 4. Trier en ordre décroissant
+numbers.sort(reverse=True)
+print(f"Après tri décroissant: {numbers}")
+
+# 5. Créer une liste des nombres pairs
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(f"Nombres pairs: {even_numbers}")
+</code></pre>
+
+        <section>
+          <h3>10.2 Exercice 2: Manipulation avancée</h3>
+          <p>
+            Vous avez une liste de dictionnaires représentant des produits dans
+            un inventaire. Chaque dictionnaire contient les clés 'nom', 'prix',
+            et 'quantité'. Réalisez les opérations suivantes :
+          </p>
+          <ul>
+            <li>
+              Créez une liste des noms de produits dont la quantité est
+              inférieure à 5
+            </li>
+            <li>
+              Calculez la valeur totale de l'inventaire (prix × quantité pour
+              chaque produit)
+            </li>
+            <li>Trouvez le produit le plus cher</li>
+            <li>
+              Ajoutez une clé 'valeur' à chaque dictionnaire, contenant le prix
+              × quantité
+            </li>
+            <li>Triez les produits par valeur décroissante</li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Exercice 2: Solution
+
+# Liste de produits
+produits = [
+{"nom": "Ordinateur", "prix": 1200, "quantité": 5},
+{"nom": "Écran", "prix": 250, "quantité": 8},
+{"nom": "Clavier", "prix": 80, "quantité": 12},
+{"nom": "Souris", "prix": 50, "quantité": 25},
+{"nom": "Disque dur", "prix": 120, "quantité": 3},
+{"nom": "Câble HDMI", "prix": 15, "quantité": 4}
+]
+
+# 1. Liste des produits avec quantité < 5
+produits_faible_stock = [p["nom"] for p in produits if p["quantité"] < 5]
+print(f"Produits en faible quantité: {produits_faible_stock}")
+
+# 2. Valeur totale de l'inventaire
+valeur_totale = sum(p["prix"] * p["quantité"] for p in produits)
+print(f"Valeur totale de l'inventaire: {valeur_totale} €")
+
+# 3. Produit le plus cher
+produit_plus_cher = max(produits, key=lambda p: p["prix"])
+print(f"Produit le plus cher: {produit_plus_cher['nom']} ({produit_plus_cher['prix']} €)")
+
+# 4. Ajouter la clé 'valeur' à chaque produit
+for produit in produits:
+produit["valeur"] = produit["prix"] * produit["quantité"]
+
+# 5. Trier par valeur décroissante
+produits_tries = sorted(produits, key=lambda p: p["valeur"], reverse=True)
+
+# Afficher les résultats
+print("\nProduits triés par valeur:")
+for p in produits_tries:
+print(f"{p['nom']}: {p['valeur']} € ({p['quantité']} × {p['prix']} €)")
+</code></pre>
+
+        <section>
+          <h3>10.3 Exercice 3: Traitement de données</h3>
+          <p>
+            Vous disposez d'une liste de chaînes de caractères représentant des
+            données de température. Chaque chaîne est au format
+            "ville:température". Effectuez les opérations suivantes :
+          </p>
+          <ul>
+            <li>
+              Convertissez cette liste en une liste de tuples (ville,
+              température)
+            </li>
+            <li>Calculez la température moyenne</li>
+            <li>Trouvez la ville la plus chaude et la plus froide</li>
+            <li>
+              Regroupez les villes par plage de température (0-10°C, 11-20°C,
+              21-30°C)
+            </li>
+          </ul>
+        </section>
+
+          <pre><code class="language-python">
+# Exercice 3: Solution
+
+# Données de température
+donnes_temp = [
+"Paris:21", "Lyon:19", "Marseille:25", "Lille:14", 
+"Bordeaux:22", "Strasbourg:16", "Nantes:20", "Toulouse:24"
+]
+
+# 1. Conversion en tuples (ville, température)
+temperatures = [(ville_temp.split(":")[0], int(ville_temp.split(":")[1])) 
+for ville_temp in donnes_temp]
+print("Données converties:")
+for ville, temp in temperatures:
+print(f"{ville}: {temp}°C")
+
+# 2. Température moyenne
+temp_values = [temp for _, temp in temperatures]
+temp_moyenne = sum(temp_values) / len(temp_values)
+print(f"\nTempérature moyenne: {temp_moyenne:.1f}°C")
+
+# 3. Ville la plus chaude et la plus froide
+ville_plus_chaude = max(temperatures, key=lambda x: x[1])
+ville_plus_froide = min(temperatures, key=lambda x: x[1])
+print(f"Ville la plus chaude: {ville_plus_chaude[0]} ({ville_plus_chaude[1]}°C)")
+print(f"Ville la plus froide: {ville_plus_froide[0]} ({ville_plus_froide[1]}°C)")
+
+# 4. Regroupement par plage de température
+plages_temp = {
+"0-10°C": [],
+"11-20°C": [],
+"21-30°C": []
+}
+
+for ville, temp in temperatures:
+if 0 <= temp <= 10:
+plages_temp["0-10°C"].append(ville)
+elif 11 <= temp <= 20:
+plages_temp["11-20°C"].append(ville)
+elif 21 <= temp <= 30:
+plages_temp["21-30°C"].append(ville)
+
+print("\nVilles par plage de température:")
+for plage, villes in plages_temp.items():
+print(f"{plage}: {', '.join(villes)}")
+</code></pre>
+      </div>
+
+      <!-- 11. Résumé et Comparaisons -->
+      <div class="content_box">
+        <section>
+          <h2 class="python-code__heading">11. Résumé et Comparaisons</h2>
+          <p>Points clés à retenir sur les listes Python :</p>
+          <ul>
+            <li>
+              Structure de données
+              <code class="language-python">mutable</code> et
+              <code class="language-python">ordonnée</code>
+            </li>
+            <li>
+              Accès <code class="language-python">indexé</code> et support du
+              <code class="language-python">slicing</code>
+            </li>
+            <li>Nombreuses méthodes intégrées pour la manipulation</li>
+            <li>
+              Support des opérations de base (<code class="language-python"
+                >concaténation</code
+              >, <code class="language-python">répétition</code>)
+            </li>
+            <li>
+              Différentes façons de copier (<code class="language-python"
+                >référence</code
+              >, <code class="language-python">shallow copy</code>,
+              <code class="language-python">deep copy</code>)
+            </li>
+            <li>
+              Syntaxe concise avec les
+              <code class="language-python">list comprehensions</code>
+            </li>
+          </ul>
+
+          <h3>Bonnes Pratiques</h3>
+          <ul>
+            <li>Utilisez des noms descriptifs pour vos listes</li>
+            <li>
+              Privilégiez les listes homogènes pour une meilleure performance
+            </li>
+            <li>
+              Évitez de modifier les listes pendant l'<code
+                class="language-python"
+                >itération</code
+              >
+            </li>
+            <li>
+              Préférez <code class="language-python">extend()</code> à
+              <code class="language-python">+</code> pour concatener des listes
+            </li>
+            <li>
+              Utilisez les
+              <code class="language-python">list comprehensions</code> pour un
+              code plus concis
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 12. Conclusion -->
+      <div class="content_box">
+        <section>
+          <h2 class="heading">12. Conclusion</h2>
+          <p>
+            Les listes sont l'une des structures de données les plus
+            polyvalentes et les plus utilisées en Python. Leur flexibilité et
+            leur large éventail de méthodes intégrées en font un outil essentiel
+            pour tout développeur Python.
+          </p>
+          <p>Points clés à retenir :</p>
+          <ul>
+            <li>
+              Les listes sont <strong>mutables</strong>,
+              <strong>ordonnées</strong> et peuvent contenir des éléments de
+              types différents
+            </li>
+            <li>
+              Elles offrent un accès rapide par index et de nombreuses méthodes
+              de manipulation
+            </li>
+            <li>
+              Les compréhensions de liste fournissent une syntaxe élégante pour
+              créer et transformer des listes
+            </li>
+            <li>
+              Les listes sont particulièrement adaptées au traitement de données
+              séquentielles
+            </li>
+            <li>
+              Comprendre les performances des opérations sur les listes est
+              crucial pour écrire du code efficace
+            </li>
+          </ul>
+          <p>
+            Maîtriser les listes et leurs opérations vous permettra de résoudre
+            efficacement une grande variété de problèmes de programmation.
+          </p>
+        </section>
+      </div>
+
+      <!-- End of Course Marker -->
+      <div
+        class="course-end-marker"
+        style="margin: 4rem auto; text-align: center; max-width: 600px"
+      >
+        <div
+          style="
+            height: 2px;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              #fb5168 50%,
+              transparent
+            );
+            margin: 2rem auto;
+          "
+        ></div>
+        <p
+          style="
+            color: #fb5168;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.9;
+          "
+        >
+          That's all folks
+        </p>
+      </div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>

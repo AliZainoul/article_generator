@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>Les properties en POO | Formateur</title>
+    <meta name="description" content="Découvrez tout sur Les properties en POO dans cet article détaillé." />
+    <meta property="og:title" content="Les properties en POO | Formateur" />
+    <meta property="og:description" content="Découvrez tout sur Les properties en POO dans cet article détaillé." />
+    <meta name="twitter:title" content="Les properties en POO | Formateur" />
+    <meta name="twitter:description" content="Découvrez tout sur Les properties en POO dans cet article détaillé." />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.clearcode.fr/#organization",
+          "name": "ClearCode",
+          "url": "https://www.clearcode.fr",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.clearcode.fr/assets/images/og-image.png",
+            "width": 1200,
+            "height": 630
+          },
+          "description": "Formations en mathématiques et programmation IT"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Cours",
+              "item": "https://www.clearcode.fr/cours"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Programming",
+              "item": "https://www.clearcode.fr/cours/programming"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Python",
+              "item": "https://www.clearcode.fr/cours/programming/python"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Data Structures",
+              "item": "https://www.clearcode.fr/cours/programming/python/data-structures"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Mutable",
+              "item": "https://www.clearcode.fr/cours/programming/python/data-structures/mutable"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Les properties en POO",
+              "item": "https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "Les properties en POO",
+          "description": "Découvrez les listes en Python, une structure de données mutable et flexible.",
+          "image": "https://www.clearcode.fr/assets/images/og-image.png",
+          "author": {
+            "@type": "Organization",
+            "name": "ClearCode"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "ClearCode",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.clearcode.fr/assets/images/og-image.png",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          "url": "https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+          },
+          "inLanguage": "fr"
+        }
+      ]
+    }
+    </script>
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+    <link
+      rel="canonical"
+      href="https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+    />
+    <link
+      rel="alternate"
+      href="https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+      hreflang="fr"
+    />
+    <meta
+      name="twitter:url"
+      content="https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+    />
+    <meta
+      property="og:url"
+      content="https://www.clearcode.fr/cours/programming/python/data-structures/mutable/lists"
+    />
+    <meta name="robots" content="index, follow" />
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">Les properties en POO</h1>
+      </div><div class="content_box">
+  <section>
+    <h2 class="heading">Introduction</h2>
+    <p><p>En Python, les <strong>properties</strong> constituent un mécanisme essentiel de la programmation orientée objet (POO) pour encapsuler les attributs d'une classe. Elles offrent un contrôle précis sur la manière dont les attributs sont accédés, modifiés ou supprimés, tout en maintenant une syntaxe propre et intuitive pour les utilisateurs de la classe. Les properties permettent de définir un comportement personnalisé lors de ces opérations, assurant ainsi l'intégrité et la cohérence des données.</p>
+
+<p>Prenons l'exemple d'une classe représentant un rectangle. On pourrait vouloir garantir que la longueur et la largeur soient toujours des valeurs positives. Sans une <strong>property</strong>, il serait possible d'accéder directement aux attributs <code class="language-python">longueur</code> et <code class="language-python">largeur</code> et de leur attribuer des valeurs négatives, ce qui n'aurait aucun sens. Les properties évitent ce problème en interdisant l'accès direct aux attributs et en imposant une validation lors de leur modification.</p>
+
+<p>En Python, une <strong>property</strong> est définie en utilisant la fonction intégrée <code class="language-python">property()</code> ou, plus couramment, grâce au décorateur <code class="language-python">@property</code>. Ces méthodes permettent d'associer un attribut à des fonctions spécifiques, appelées <strong>getter</strong>, <strong>setter</strong> et <strong>deleter</strong>. Ces fonctions contrôlent respectivement l'accès en lecture (getter), l'accès en écriture (setter) et la suppression (deleter) de l'attribut.</p>
+
+<p>Voici un exemple simple de l'utilisation du décorateur <code class="language-python">@property</code> dans une classe <code class="language-python">Circle</code> pour contrôler l'accès à l'attribut <code class="language-python">radius</code> (rayon) :</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # Prefix with _ to indicate it's a "protected" attribute
+
+    @property
+    def radius(self):
+        # Getter method: returns the radius of the circle
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        # Setter method: ensures the radius is a positive value
+        if value <= 0:
+            raise ValueError("Radius must be a positive value.")
+        self._radius = value
+
+    @property
+    def area(self):
+        # Computed property: calculates the area of the circle
+        return 3.14159 * self._radius ** 2
+
+# Example usage:
+circle = Circle(5)
+print(f"Radius: {circle.radius}")  # Access using circle.radius
+print(f"Area: {circle.area}") # Access using circle.area
+circle.radius = 10
+print(f"Radius after setting: {circle.radius}")
+print(f"Area after setting: {circle.area}")
+
+try:
+    circle.radius = -1  # Attempt to set an invalid radius
+except ValueError as e:
+    print(e)  # Prints "Radius must be a positive value."
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">radius</code> est une <strong>property</strong>. L'utilisateur accède au rayon du cercle en utilisant <code class="language-python">circle.radius</code>, comme s'il s'agissait d'un attribut public normal. Cependant, en réalité, la méthode <strong>getter</strong> est appelée en coulisses. De même, lorsqu'une nouvelle valeur est affectée à <code class="language-python">circle.radius</code>, la méthode <strong>setter</strong> est invoquée, ce qui permet de valider la valeur avant de la stocker. L'attribut <code class="language-python">area</code> est une autre property qui calcule la surface du cercle à la demande.</p>
+
+<p>Les <strong>properties</strong> ne se limitent pas à la validation des données. Elles peuvent également être utilisées pour effectuer des calculs à la demande, comme illustré avec l'attribut <code class="language-python">area</code>, ou pour déclencher d'autres actions lors de l'accès ou de la modification d'un attribut. Voici quelques cas d'utilisation courants des properties :</p>
+
+<ul>
+    <li><code class="language-python">Validation</code> : Assurer que les valeurs attribuées à un attribut respectent certaines contraintes.</li>
+    <li><code class="language-python">Calcul à la demande</code> : Calculer une valeur en fonction d'autres attributs, sans avoir à la stocker explicitement.</li>
+    <li><code class="language-python">Encapsulation</code> : Masquer la complexité interne d'une classe et fournir une interface simple et intuitive.</li>
+    <li><code class="language-python">Effets de bord</code> : Déclencher d'autres actions lors de l'accès ou de la modification d'un attribut (par exemple, mettre à jour un cache ou notifier d'autres objets).</li>
+</ul>
+
+<p>L'utilisation judicieuse des <strong>properties</strong> contribue à améliorer la robustesse, la maintenabilité et la lisibilité du code orienté objet en Python.  Elles permettent de créer des classes plus flexibles et plus faciles à utiliser. Cet article explorera plus en détail les différentes facettes des <strong>properties</strong> et leur implémentation pratique, en présentant des exemples concrets et des bonnes pratiques.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">1. Comprendre le concept de Property en Python</h2>
+    <p><p>En Python, une <i>property</i> est un attribut de classe qui permet d'implémenter des comportements spécifiques lors de l'accès, la modification ou la suppression d'un attribut. Elle offre un contrôle précis sur la façon dont les attributs d'une classe sont gérés, permettant ainsi de masquer la complexité interne et d'encapsuler la logique métier.</p>
+
+<p>Considérons un exemple simple : une classe représentant un rectangle avec des attributs pour la largeur et la hauteur. On peut vouloir s'assurer que la largeur et la hauteur sont toujours positives. Une <i>property</i> peut être utilisée pour valider et contrôler ces valeurs.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width, height):
+        # Initialize width and height with a protected naming convention
+        self._width = width
+        self._height = height
+
+    def get_width(self):
+        # Getter method for width
+        return self._width
+
+    def set_width(self, value):
+        # Setter method for width with validation
+        if value <= 0:
+            raise ValueError("Width must be positive")
+        self._width = value
+
+    def get_height(self):
+        # Getter method for height
+        return self._height
+
+    def set_height(self, value):
+        # Setter method for height with validation
+        if value <= 0:
+            raise ValueError("Height must be positive")
+        self._height = value
+
+    # Creating a property for width and height
+    width = property(get_width, set_width)
+    height = property(get_height, set_height)
+
+    def area(self):
+        # Method to calculate the area of the rectangle
+        return self._width * self._height
+
+# Example usage
+rect = Rectangle(5, 10)
+print(f"Width: {rect.width}")
+print(f"Height: {rect.height}")
+print(f"Area: {rect.area()}")
+
+rect.width = 7
+print(f"New width: {rect.width}")
+
+try:
+    rect.height = -2
+except ValueError as e:
+    print(e)  # Output: Width must be positive
+</code></pre>
+
+<p>Dans cet exemple, <code>width</code> et <code>height</code> sont des <i>properties</i>. La fonction <code>property()</code> prend comme arguments les méthodes getter et setter (dans cet ordre). Lorsqu'on accède à <code>rect.width</code>, la méthode <code>get_width()</code> est appelée. Lorsqu'on assigne une valeur à <code>rect.width</code>, la méthode <code>set_width()</code> est appelée, permettant ainsi de valider la valeur avant de la stocker.</p>
+
+<p>Une syntaxe plus concise et moderne pour définir des <i>properties</i> est l'utilisation des décorateurs. Cela rend le code plus lisible et plus facile à maintenir.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width, height):
+        # Initialize width and height with a protected naming convention
+        self._width = width
+        self._height = height
+
+    @property
+    def width(self):
+        # Getter method for width using the @property decorator
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        # Setter method for width using the @width.setter decorator
+        if value <= 0:
+            raise ValueError("Width must be positive")
+        self._width = value
+
+    @property
+    def height(self):
+        # Getter method for height using the @property decorator
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        # Setter method for height using the @height.setter decorator
+        if value <= 0:
+            raise ValueError("Height must be positive")
+        self._height = value
+
+    def area(self):
+        # Method to calculate the area of the rectangle
+        return self._width * self._height
+</code></pre>
+
+<p>L'utilisation du décorateur <code>@property</code> transforme la méthode <code>width()</code> en un getter pour la <i>property</i> <code>width</code>. Le décorateur <code>@width.setter</code> définit la méthode <code>width()</code> comme le setter pour cette même <i>property</i>. Cette syntaxe est plus intuitive et plus courante en Python.</p>
+
+<p>En plus des getters et setters, une <i>property</i> peut également avoir un deleter, qui est une méthode appelée lorsqu'on supprime l'attribut en utilisant <code>del rect.width</code>. Pour ajouter un deleter, on utilise le décorateur <code>@width.deleter</code>.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width, height):
+        # Initialize width and height with a protected naming convention
+        self._width = width
+        self._height = height
+
+    @property
+    def width(self):
+        # Getter method for width using the @property decorator
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        # Setter method for width using the @width.setter decorator
+        if value <= 0:
+            raise ValueError("Width must be positive")
+        self._width = value
+
+    @width.deleter
+    def width(self):
+        # Deleter method for width using the @width.deleter decorator
+        print("Deleting width")
+        self._width = None
+
+    @property
+    def height(self):
+        # Getter method for height using the @property decorator
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        # Setter method for height using the @height.setter decorator
+        if value <= 0:
+            raise ValueError("Height must be positive")
+        self._height = value
+
+    def area(self):
+        # Method to calculate the area of the rectangle
+        return self._width * self._height
+
+# Example usage
+rect = Rectangle(5, 10)
+del rect.width  # Output: Deleting width
+print(rect.width)  # Output: None
+</code></pre>
+
+<p>En résumé, les <i>properties</i> en Python sont un outil puissant pour encapsuler et contrôler l'accès aux attributs d'une classe. Elles permettent d'ajouter une logique métier à l'accès, à la modification et à la suppression des attributs, tout en conservant une interface propre et intuitive pour les utilisateurs de la classe.</p>
+
+<p>Voici un récapitulatif des avantages des <i>properties</i> :</p>
+<ul>
+    <li><strong>Encapsulation</strong> : Masquent l'implémentation interne des attributs.</li>
+    <li><strong>Validation</strong> : Permettent de valider les données avant de les assigner.</li>
+    <li><strong>Calculs dynamiques</strong> : Peuvent effectuer des calculs à la volée lors de l'accès à un attribut.</li>
+    <li><strong>Flexibilité</strong> : Offrent la possibilité de modifier le comportement des attributs sans casser le code existant.</li>
+</ul>
+
+<p>Les <i>properties</i> sont particulièrement utiles dans les cas suivants :</p>
+<ol>
+    <li>Lorsque vous souhaitez valider les données avant de les stocker.</li>
+    <li>Lorsque vous avez besoin de calculer une valeur dynamiquement en fonction d'autres attributs.</li>
+    <li>Lorsque vous souhaitez masquer la complexité interne d'une classe.</li>
+    <li>Lorsque vous devez contrôler l'accès à certains attributs.</li>
+</ol>
+</p>
+    <h3>1.1 Définition et motivation</h3>
+    <p><p>En Python, une <em>property</em> est un objet qui permet de gérer l'accès à un attribut de classe de manière contrôlée. Elle fournit une interface élégante pour obtenir (getter), modifier (setter), et supprimer (deleter) la valeur d'un attribut, tout en permettant d'encapsuler une logique personnalisée autour de ces opérations.</p>
+
+<p>La motivation principale derrière l'utilisation des properties réside dans l'encapsulation, un principe fondamental de la programmation orientée objet. L'encapsulation consiste à masquer l'état interne d'un objet et à fournir une interface publique (méthodes et properties) pour interagir avec lui. Les properties offrent un contrôle précis sur la façon dont les attributs sont consultés et modifiés, contribuant ainsi à maintenir l'intégrité des données et à prévenir les erreurs potentielles. Elles permettent de valider les données, de déclencher des actions supplémentaires lors de l'accès ou de la modification, et de masquer la complexité interne.</p>
+
+<p>Considérons l'exemple d'une classe <code>Circle</code> représentant un cercle. Il est crucial de s'assurer que le rayon d'un cercle est toujours une valeur positive. Sans property, on pourrait simplement définir un attribut <code>radius</code> accessible directement, mais cela exposerait l'attribut à des modifications non contrôlées, compromettant ainsi l'intégrité de la classe.</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius  # Problem: no validation of the radius
+
+# Creating a circle with a negative radius (which is nonsensical)
+c = Circle(-5)
+print(c.radius)  # Prints -5
+</code></pre>
+
+<p>En utilisant une property, on peut intercepter l'accès à l'attribut <code>radius</code> et effectuer des validations nécessaires pour garantir que le rayon reste une valeur valide.</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # Use a "private" variable to store the radius
+
+    def get_radius(self):
+        return self._radius
+
+    def set_radius(self, radius):
+        if radius <= 0:
+            raise ValueError("Radius must be positive")
+        self._radius = radius
+
+    def delete_radius(self):
+        del self._radius
+
+    radius = property(get_radius, set_radius, delete_radius, "Radius of the circle")
+
+# Creating a circle
+c = Circle(5)
+print(c.radius)
+
+# Trying to set a negative radius
+try:
+    c.radius = -5
+except ValueError as e:
+    print(e)
+
+# Setting a valid radius
+c.radius = 10
+print(c.radius)
+
+# Deleting the radius (not commonly used, but possible)
+del c.radius
+try:
+    print(c.radius)
+except AttributeError as e:
+    print(e)
+</code></pre>
+
+<p>Dans cet exemple, on définit une variable "privée" <code>_radius</code> pour stocker la valeur du rayon. La property <code>radius</code> utilise les méthodes <code>get_radius</code> (getter), <code>set_radius</code> (setter) et <code>delete_radius</code> (deleter) pour contrôler l'accès à cette variable. La méthode <code>set_radius</code> effectue une validation pour s'assurer que le rayon est positif. Si l'on tente de définir un rayon négatif, une exception <code>ValueError</code> est levée. Ceci permet de garantir l'intégrité des données et d'éviter les erreurs potentielles. La property permet de présenter <code>_radius</code> comme un attribut public (<code>radius</code>) tout en contrôlant son accès.</p>
+
+<p>Il existe également une manière plus moderne et concise de définir des properties en utilisant des décorateurs:</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, radius):
+        if radius <= 0:
+            raise ValueError("Radius must be positive")
+        self._radius = radius
+
+    @radius.deleter
+    def radius(self):
+        del self._radius
+</code></pre>
+
+<p>En résumé, les properties en Python offrent un mécanisme puissant pour encapsuler l'accès aux attributs d'une classe, permettant ainsi de contrôler leur comportement et de maintenir l'intégrité des données. Elles sont un outil essentiel pour écrire du code propre, robuste, flexible et maintenable en programmation orientée objet.</p>
+
+<p>Voici quelques avantages clés de l'utilisation des properties:</p>
+
+<ul>
+    <li><strong>Encapsulation</strong> : Masquent l'implémentation interne et protègent les données.</li>
+    <li><strong>Validation</strong> : Permettent de valider les données avant de les affecter à un attribut.</li>
+    <li><strong>Abstraction</strong> : Offrent une interface uniforme pour accéder et modifier les attributs, même si l'implémentation interne change.</li>
+    <li><strong>Flexibilité</strong> : Permettent d'ajouter une logique personnalisée lors de l'accès, de la modification ou de la suppression d'un attribut.</li>
+</ul>
+</p>
+    <h3>1.2 Avantages de l'utilisation des properties</h3>
+    <p><p>L'utilisation des properties en Python offre plusieurs avantages significatifs, contribuant à un code plus propre, plus maintenable et plus robuste. Explorons ces avantages en détail.</p>
+
+<p><strong>Encapsulation des attributs</strong>: Les properties permettent de contrôler l'accès aux attributs d'une classe. Au lieu d'accéder directement à <code class="language-python">instance.attribute</code>, vous passez par <code class="language-python">instance.property</code>, ce qui offre un niveau d'abstraction crucial. Cela signifie que vous pouvez modifier l'implémentation interne de la classe (par exemple, changer le nom d'un attribut interne) sans impacter le code client qui utilise la classe.</p>
+
+<pre><code class="language-python">
+class Person:
+    def __init__(self, name):
+        self._name = name  # convention: _name is considered a "private" attribute
+
+    def get_name(self):
+        print("Fetching name")
+        return self._name
+
+    def set_name(self, new_name):
+        print("Setting name")
+        self._name = new_name
+
+    name = property(get_name, set_name)
+
+# Usage
+person = Person("Alice")
+print(person.name)  # Output: Fetching name \n Alice
+person.name = "Bob" # Output: Setting name
+print(person.name)  # Output: Fetching name \n Bob
+</code></pre>
+
+<p><strong>Validation des données</strong>: Les properties permettent d'intégrer une logique de validation lors de la modification d'un attribut. Cela garantit que les valeurs attribuées à l'attribut respectent certaines contraintes, prévenant ainsi des erreurs et assurant un état cohérent de l'objet. Ceci est particulièrement utile pour maintenir l'intégrité des données.</p>
+
+<pre><code class="language-python">
+class Account:
+    def __init__(self, balance):
+        self._balance = balance
+
+    def get_balance(self):
+        return self._balance
+
+    def set_balance(self, amount):
+        if amount < 0:
+            raise ValueError("Balance cannot be negative")
+        self._balance = amount
+
+    balance = property(get_balance, set_balance)
+
+# Usage
+account = Account(100)
+print(account.balance) # Output: 100
+try:
+    account.balance = -50  # This will raise a ValueError
+except ValueError as e:
+    print(e) # Output: Balance cannot be negative
+account.balance = 200
+print(account.balance) # Output: 200
+</code></pre>
+
+<p><strong>Implémentation de logique complexe</strong>: Les properties ne se limitent pas à la simple lecture et écriture d'attributs. Elles permettent d'exécuter une logique plus complexe lors de l'accès (getter) ou de la modification (setter) d'un attribut. Cela peut inclure des calculs, la mise à jour d'autres attributs, ou même des interactions avec des ressources externes. Elles offrent une manière élégante de cacher la complexité d'implémentation.</p>
+
+<pre><code class="language-python">
+class Product:
+    def __init__(self, price, discount):
+        self._price = price
+        self._discount = discount
+
+    def get_discounted_price(self):
+        return self._price * (1 - self._discount)
+
+    def set_discount(self, new_discount):
+        if not 0 <= new_discount <= 1:
+            raise ValueError("Discount must be between 0 and 1")
+        self._discount = new_discount
+
+    discounted_price = property(fget=get_discounted_price) #read-only property
+    discount = property(fget=lambda self: self._discount, fset=set_discount) #access to discount
+
+# Usage
+product = Product(100, 0.2)
+print(product.discounted_price) # Output: 80.0
+product.discount = 0.3
+print(product.discounted_price) # Output: 70.0
+try:
+    product.discount = 1.5
+except ValueError as e:
+    print(e) # Output: Discount must be between 0 and 1
+</code></pre>
+
+<p><strong>Simplification de l'API</strong>: Les properties permettent de présenter une API plus simple et intuitive aux utilisateurs de la classe. En utilisant la notation d'attribut (<code class="language-python">instance.property</code>) au lieu d'appels de méthode (<code class="language-python">instance.get_property()</code>), le code devient plus lisible et plus naturel. Cela améliore l'expérience de développement et réduit la complexité pour les consommateurs de la classe, tout en conservant la flexibilité interne.</p>
+
+<p>En résumé, les properties sont un outil puissant en Python pour l'encapsulation, la validation des données, l'implémentation de logique complexe et la simplification de l'API. Elles contribuent à un code plus propre, plus maintenable et plus facile à utiliser, améliorant ainsi la qualité globale du logiciel. Elles permettent d'allier la simplicité d'accès aux attributs avec la puissance du contrôle offert par les méthodes.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">2. Création de Properties avec la fonction `property()`</h2>
+    <p><p>La fonction <code class="language-python">property()</code> est une fonction intégrée de Python utilisée pour créer des propriétés (properties) dans une classe. Elle permet de gérer l'accès aux attributs d'une manière plus contrôlée. Elle prend jusqu'à quatre arguments optionnels : <code class="language-python">fget</code> (getter), <code class="language-python">fset</code> (setter), <code class="language-python">fdel</code> (deleter) et <code class="language-python">doc</code> (docstring).</p>
+
+<p>Voici un exemple qui illustre l'utilisation de la fonction <code class="language-python">property()</code> :</p>
+
+<pre><code class="language-python">
+class Car:
+    def __init__(self, brand):
+        self._brand = brand  # Protected attribute
+
+    def get_brand(self):
+        print("Getting the brand")  # Getting message
+        return self._brand
+
+    def set_brand(self, new_brand):
+        print("Setting the brand")  # Setting message
+        self._brand = new_brand
+
+    def del_brand(self):
+        print("Deleting the brand")  # Deleting message
+        del self._brand
+
+    brand = property(get_brand, set_brand, del_brand, "Car brand")
+
+# Example usage
+my_car = Car("Renault")
+print(my_car.brand)
+my_car.brand = "Peugeot"
+print(my_car.brand)
+del my_car.brand
+</code></pre>
+
+<p>Dans cet exemple :</p>
+<ul>
+    <li><code class="language-python">get_brand</code> : est la méthode getter qui est appelée lorsqu'on accède à l'attribut <code class="language-python">brand</code>.</li>
+    <li><code class="language-python">set_brand</code> : est la méthode setter qui est appelée lorsqu'on modifie la valeur de l'attribut <code class="language-python">brand</code>.</li>
+    <li><code class="language-python">del_brand</code> : est la méthode deleter qui est appelée lorsqu'on supprime l'attribut <code class="language-python">brand</code>.</li>
+    <li><code class="language-python">"Car brand"</code> : est la docstring de la property, fournissant une description de l'attribut.</li>
+</ul>
+
+<p>Lorsqu'on accède à <code class="language-python">my_car.brand</code>, la méthode <code class="language-python">get_brand</code> est exécutée. Lorsqu'on assigne une valeur à <code class="language-python">my_car.brand</code>, la méthode <code class="language-python">set_brand</code> est exécutée. Et lorsqu'on utilise <code class="language-python">del my_car.brand</code>, la méthode <code class="language-python">del_brand</code> est exécutée.</p>
+
+<p>Il est également possible de créer une property en lecture seule en ne fournissant que la méthode getter.  Cela empêche la modification ou la suppression de l'attribut via la property.</p>
+
+<pre><code class="language-python">
+class Circle:
+    def __init__(self, diameter):
+        self._diameter = diameter
+
+    def get_radius(self):
+        return self._diameter / 2
+
+    radius = property(get_radius)
+
+# Example usage
+my_circle = Circle(10)
+print(my_circle.radius)
+# Attempting to modify (will raise an AttributeError)
+# my_circle.radius = 6
+</code></pre>
+
+<p>Dans ce cas, tenter de modifier <code class="language-python">my_circle.radius</code> lèvera une <code class="language-python">AttributeError</code> car aucun setter n'a été défini pour la property <code class="language-python">radius</code>.</p>
+
+<p>La fonction <code class="language-python">property()</code> offre une manière flexible de définir des getters, des setters et des deleters, permettant un contrôle précis sur l'accès et la modification des attributs d'une classe. Ceci contribue à améliorer l'encapsulation et la lisibilité du code, en particulier dans des classes complexes nécessitant une logique spécifique lors de l'accès aux attributs.</p>
+</p>
+    <h3>2.1 Syntaxe de la fonction `property()`</h3>
+    <p><p>La fonction <code class="language-python">property()</code> est un outil puissant en Python pour créer des properties, offrant un contrôle précis sur l'accès aux attributs d'une classe. Elle permet de définir des méthodes getter, setter et deleter pour gérer la lecture, l'écriture et la suppression d'attributs. La syntaxe générale de la fonction <code class="language-python">property()</code> est la suivante :</p>
+
+<pre><code class="language-python">
+property(fget=None, fset=None, fdel=None, doc=None)
+</code></pre>
+
+<p>Chaque argument a une signification spécifique :</p>
+
+<ul>
+    <li><code class="language-python">fget</code> (optionnel) : Une fonction sans argument qui est appelée pour obtenir la valeur de l'attribut (getter).  Elle doit retourner la valeur de l'attribut.</li>
+    <li><code class="language-python">fset</code> (optionnel) : Une fonction avec un argument (la valeur à définir) qui est appelée pour définir la valeur de l'attribut (setter).</li>
+    <li><code class="language-python">fdel</code> (optionnel) : Une fonction sans argument qui est appelée pour supprimer l'attribut (deleter).</li>
+    <li><code class="language-python">doc</code> (optionnel) : Une chaîne de caractères qui sert de documentation (docstring) pour la property. Elle sera affichée par la fonction <code class="language-python">help()</code>.</li>
+</ul>
+
+<p>La fonction <code class="language-python">property()</code> renvoie un objet property. Cet objet est ensuite assigné à un attribut de la classe, transformant cet attribut en une property.  Voici un exemple concret :</p>
+
+<pre><code class="language-python">
+class Book:
+    def __init__(self, title):
+        self._title = title  # Protected attribute
+
+    def get_title(self):
+        # Getter method for the 'title' attribute
+        print("Getting the title")
+        return self._title
+
+    def set_title(self, value):
+        # Setter method for the 'title' attribute with validation
+        print("Setting the title")
+        if not isinstance(value, str):
+            raise TypeError("Title must be a string.")
+        self._title = value
+
+    def del_title(self):
+        # Deleter method for the 'title' attribute
+        print("Deleting the title")
+        del self._title
+
+    title = property(get_title, set_title, del_title, "Book's Title")
+
+# Example Usage
+my_book = Book("The Little Prince")
+print(my_book.title)  # Accessing the title using the getter
+my_book.title = "Twenty Thousand Leagues Under the Sea"  # Setting the title using the setter
+print(my_book.title)
+del my_book.title  # Deleting the title using the deleter
+
+try:
+    my_book.title = 123  # Attempting to set an invalid title
+except TypeError as e:
+    print(e)
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">title</code> est une property qui utilise les méthodes <code class="language-python">get_title</code>, <code class="language-python">set_title</code> et <code class="language-python">del_title</code> pour gérer l'accès et la modification de l'attribut <code class="language-python">_title</code>. La chaîne de caractères "Book's Title" sert de docstring pour la property <code class="language-python">title</code>, accessible via <code class="language-python">help(Book.title)</code>.</p>
+
+<p>L'utilisation de <code class="language-python">property()</code> offre un contrôle précis sur la manière dont les attributs d'une classe sont accédés et modifiés, permettant d'encapsuler la logique métier, d'appliquer des validations et d'assurer l'intégrité des données.  Cela favorise une meilleure abstraction et une plus grande flexibilité dans la conception de classes.</p>
+
+<p>Il est important de noter que les méthodes getter, setter et deleter sont optionnelles.  Vous pouvez créer une property en lecture seule en fournissant uniquement le getter, ou une property en écriture seule en fournissant uniquement le setter.</p>
+</p>
+    <h3>2.2 Exemple d'implémentation avec `property()`</h3>
+    <p><p>La fonction <code class="language-python">property()</code> est une façon explicite de créer des properties en Python. Elle accepte jusqu'à quatre arguments :</p>
+
+<ul>
+    <li><code class="language-python">fget</code> : La méthode getter.</li>
+    <li><code class="language-python">fset</code> : La méthode setter.</li>
+    <li><code class="language-python">fdel</code> : La méthode deleter.</li>
+    <li><code class="language-python">doc</code> : La chaîne de documentation (docstring).</li>
+</ul>
+
+<p>Elle retourne un objet property qui peut être assigné à un nom d'attribut dans une classe.</p>
+
+<p>Considérons la classe <code class="language-python">Author</code> avec un attribut privé <code class="language-python">_first_name</code>. Nous allons créer une property <code class="language-python">first_name</code> pour contrôler l'accès et la modification de cet attribut, incluant une validation des données.</p>
+
+<pre><code class="language-python">
+class Author:
+    def __init__(self, first_name):
+        self._first_name = first_name
+
+    def get_first_name(self):
+        # Getter method for the 'first_name' property
+        print("Getting the first name")
+        return self._first_name
+
+    def set_first_name(self, new_first_name):
+        # Setter method for the 'first_name' property, with validation
+        if not isinstance(new_first_name, str):
+            raise TypeError("The first name must be a string.")
+        if not new_first_name:
+            raise ValueError("The first name cannot be empty.")
+        print("Setting the first name")
+        self._first_name = new_first_name
+
+    def del_first_name(self):
+        # Deleter method for the 'first_name' property
+        print("Deleting the first name")
+        del self._first_name
+
+    first_name = property(get_first_name, set_first_name, del_first_name, "Author's first name.")
+
+# Example usage
+author = Author("Victor")
+print(author.first_name)  # Accessing the property using the getter
+author.first_name = "Jules"  # Setting the property using the setter
+print(author.first_name)
+del author.first_name  # Deleting the property using the deleter
+</code></pre>
+
+<p>Dans cet exemple :</p>
+
+<ul>
+    <li><code class="language-python">get_first_name</code> est la méthode getter.</li>
+    <li><code class="language-python">set_first_name</code> est la méthode setter, incluant une validation pour s'assurer que le prénom est une chaîne de caractères non vide.</li>
+    <li><code class="language-python">del_first_name</code> est la méthode deleter.</li>
+    <li><code class="language-python">first_name = property(get_first_name, set_first_name, del_first_name, "Author's first name.")</code> crée l'objet property et l'associe aux méthodes correspondantes. Le dernier argument est la chaîne de documentation.</li>
+</ul>
+
+<p>Lorsqu'on accède à <code class="language-python">author.first_name</code>, la méthode <code class="language-python">get_first_name</code> est appelée. Lorsqu'on assigne une valeur à <code class="language-python">author.first_name</code>, la méthode <code class="language-python">set_first_name</code> est appelée (avec validation).  Enfin, lorsqu'on utilise <code class="language-python">del author.first_name</code>, la méthode <code class="language-python">del_first_name</code> est exécutée. La chaîne de documentation est accessible via <code class="language-python">Author.first_name.__doc__</code>.</p>
+
+<p>L'utilisation de <code class="language-python">property()</code> offre un contrôle précis sur l'accès et la modification des attributs d'une classe, tout en conservant une syntaxe propre et intuitive.  La validation des données dans le setter assure l'intégrité des données de l'objet.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">3. Utilisation des Décorateurs `@property`, `@nom.setter`, `@nom.deleter`</h2>
+    <p><p>Les décorateurs <code>@property</code>, <code>@nom.setter</code> et <code>@nom.deleter</code> offrent une approche élégante et Pythonique pour contrôler l'accès et la modification des attributs d'une classe. Ils permettent d'encapsuler la logique d'accès, de modification et de suppression d'attributs, tout en conservant une syntaxe intuitive comme si l'on accédait directement à un attribut public.</p>
+
+<p>Le décorateur <code>@property</code> transforme une méthode en une propriété. Cela signifie que vous pouvez accéder à la méthode comme s'il s'agissait d'un attribut, sans utiliser de parenthèses. C'est particulièrement utile pour calculer des valeurs à la demande, masquer la complexité interne, ou valider des données avant de les renvoyer.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, length, width):
+        self._length = length  # Use _length to indicate it's intended as a protected attribute
+        self._width = width    # Use _width to indicate it's intended as a protected attribute
+
+    @property
+    def area(self):
+        # Calculates and returns the area of the rectangle.
+        return self._length * self._width
+
+# Example usage
+my_rectangle = Rectangle(10, 5)
+print(my_rectangle.area)  # Accessing area like an attribute (output: 50)
+</code></pre>
+
+<p>Dans cet exemple, <code>area</code> est une propriété.  Lorsqu'on accède à <code>my_rectangle.area</code>, la méthode <code>area()</code> est exécutée en coulisses pour calculer et retourner la valeur de l'aire. L'utilisateur n'a pas besoin d'appeler une méthode directement.</p>
+
+<p>Le décorateur <code>@nom.setter</code> permet de définir une méthode qui sera appelée lorsqu'on essaiera de modifier la valeur de la propriété <code>nom</code>.  C'est essentiel pour implémenter un contrôle d'accès en écriture. Il permet d'ajouter de la validation, de normaliser les données entrantes, ou de déclencher d'autres actions lors de la modification d'un attribut.</p>
+
+<pre><code class="language-python">
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        # Returns the name of the person.
+        return self._name
+
+    @name.setter
+    def name(self, new_name):
+        # Validates the new name before setting it.
+        if not isinstance(new_name, str):
+            raise TypeError("Name must be a string.")
+        if not new_name:
+            raise ValueError("Name cannot be empty.")
+        self._name = new_name.strip()  # Remove leading/trailing whitespace
+
+# Example usage
+person = Person("  John Doe  ")
+print(person.name)  # Output:   John Doe
+
+person.name = "Jane Smith"
+print(person.name)  # Output: Jane Smith
+
+try:
+    person.name = 123  # Raises TypeError
+except TypeError as e:
+    print(e)
+
+try:
+    person.name = ""  # Raises ValueError
+except ValueError as e:
+    print(e)
+</code></pre>
+
+<p>Ici, le setter pour la propriété <code>name</code> effectue une validation : il vérifie que le nouveau nom est une chaîne de caractères non vide avant de l'affecter à l'attribut <code>_name</code>. Il supprime également les espaces superflus au début et à la fin du nom.</p>
+
+<p>Le décorateur <code>@nom.deleter</code> permet de définir une méthode qui sera appelée lorsqu'on essaiera de supprimer la propriété <code>nom</code> à l'aide de l'instruction <code>del</code>.  Il est utile pour empêcher la suppression accidentelle d'un attribut important, libérer des ressources associées, ou effectuer d'autres actions de nettoyage.</p>
+
+<pre><code class="language-python">
+class Configuration:
+    def __init__(self, filename):
+        self._filename = filename
+
+    @property
+    def filename(self):
+        # Returns the filename.
+        return self._filename
+
+    @filename.setter
+    def filename(self, new_filename):
+        # Sets the filename.
+        self._filename = new_filename
+
+    @filename.deleter
+    def filename(self):
+        # Prevents deletion of the filename attribute.
+        print("Deleting the filename is not allowed.")
+        # In a real-world scenario, you might perform cleanup actions here,
+        # such as closing the configuration file or saving changes.
+
+# Example usage
+config = Configuration("app.conf")
+print(config.filename)
+
+del config.filename  # Calls the deleter method
+</code></pre>
+
+<p>Dans cet exemple, le deleter pour la propriété <code>filename</code> empêche la suppression directe de l'attribut et affiche un message. On pourrait également inclure une logique pour sauvegarder la configuration avant d'empêcher la suppression du nom de fichier.</p>
+
+<p>L'utilisation combinée de <code>@property</code>, <code>@nom.setter</code> et <code>@nom.deleter</code> permet un contrôle précis sur la manière dont les attributs d'une classe sont accédés, modifiés et supprimés, contribuant ainsi à une meilleure encapsulation et à une conception plus robuste et maintenable. Ceci est un aspect clé de la programmation orientée objet en Python.</p>
+
+<p>Voici une liste des avantages clés de l'utilisation des properties :</p>
+<ul>
+    <li><strong>Encapsulation</strong> : Masque la complexité interne de la classe et protège les attributs.</li>
+    <li><strong>Contrôle d'accès</strong> : Permet de contrôler comment les attributs sont lus, modifiés et supprimés.</li>
+    <li><strong>Validation des données</strong> : Valide les données avant qu'elles ne soient affectées aux attributs.</li>
+    <li><strong>Calcul à la demande</strong> : Permet de calculer des valeurs à la demande, au lieu de les stocker directement.</li>
+    <li><strong>Flexibilité</strong> : Permet de modifier l'implémentation interne d'une classe sans affecter le code qui l'utilise.</li>
+</ul>
+</p>
+    <h3>3.1 Syntaxe des décorateurs</h3>
+    <p><p>Le décorateur <code class="language-python">@property</code> est utilisé pour définir la méthode getter d'une property. Il transforme une méthode en un attribut accessible en lecture seule. Cela permet d'accéder à la valeur de l'attribut d'une manière plus intuitive et propre. Voici un exemple:</p>
+
+<pre><code class="language-python">
+class Thermostat:
+    def __init__(self, temperature):
+        self._temperature = temperature  # Private attribute to store temperature
+
+    @property
+    def temperature(self):
+        # Returns the temperature
+        return self._temperature
+</code></pre>
+
+<p>Dans cet exemple, le décorateur <code class="language-python">@property</code> est appliqué à la méthode <code class="language-python">temperature</code>. Cela signifie que vous pouvez accéder à la température comme un attribut, en utilisant <code class="language-python">thermostat.temperature</code>, au lieu d'appeler une méthode comme <code class="language-python">thermostat.temperature()</code>. L'attribut <code class="language-python">_temperature</code> est conventionnellement préfixé d'un underscore, indiquant qu'il s'agit d'un attribut interne qui ne devrait pas être accédé directement en dehors de la classe.</p>
+
+<p>Pour définir la méthode setter, qui permet de modifier la valeur de l'attribut, on utilise le décorateur <code class="language-python">@nom.setter</code>, où <code class="language-python">nom</code> est le nom de la property. Ce décorateur permet de contrôler et de valider la nouvelle valeur avant de la définir sur l'attribut. Voici comment ajouter un setter à l'exemple précédent:</p>
+
+<pre><code class="language-python">
+class Thermostat:
+    def __init__(self, temperature):
+        self._temperature = temperature
+
+    @property
+    def temperature(self):
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, new_temperature):
+        # Check if the new temperature is valid
+        if new_temperature < -273.15:
+            raise ValueError("Temperature cannot be below absolute zero.")
+        self._temperature = new_temperature
+</code></pre>
+
+<p>Dans ce cas, <code class="language-python">@temperature.setter</code> est utilisé pour la méthode <code class="language-python">temperature</code>. Maintenant, vous pouvez modifier la température en utilisant une simple affectation, par exemple <code class="language-python">thermostat.temperature = 25</code>.  Le setter effectue une validation pour s'assurer que la nouvelle température est valide (supérieure au zéro absolu) avant de mettre à jour l'attribut privé <code class="language-python">_temperature</code>. Si la validation échoue, une exception <code class="language-python">ValueError</code> est levée.</p>
+
+<p>Enfin, le décorateur <code class="language-python">@nom.deleter</code> est utilisé pour définir la méthode deleter. Il permet de contrôler ce qui se passe lorsqu'on tente de supprimer l'attribut. Voici un exemple d'ajout d'un deleter:</p>
+
+<pre><code class="language-python">
+class Thermostat:
+    def __init__(self, temperature):
+        self._temperature = temperature
+
+    @property
+    def temperature(self):
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, new_temperature):
+        if new_temperature < -273.15:
+            raise ValueError("Temperature cannot be below absolute zero.")
+        self._temperature = new_temperature
+
+    @temperature.deleter
+    def temperature(self):
+        # Reset temperature to default value
+        self._temperature = 20
+        print("Temperature reset to default value.")
+</code></pre>
+
+<p>Avec le décorateur <code class="language-python">@temperature.deleter</code>, lorsque l'instruction <code class="language-python">del thermostat.temperature</code> est exécutée, la méthode <code class="language-python">temperature</code> décorée avec <code class="language-python">@temperature.deleter</code> est appelée. Dans cet exemple, la température est réinitialisée à une valeur par défaut (20), et un message est affiché pour indiquer que l'attribut a été "supprimé" (en réalité, il est réinitialisé). Il est important de noter que <code class="language-python">del</code> ne supprime pas nécessairement l'attribut de l'objet, mais appelle simplement le deleter.</p>
+
+<p>L'utilisation de ces décorateurs offre plusieurs avantages:</p>
+<ul>
+    <li><strong>Encapsulation</strong> : Ils permettent de masquer l'implémentation interne de la classe, protégeant ainsi l'état de l'objet.</li>
+    <li><strong>Contrôle d'accès</strong> : Ils fournissent un contrôle précis sur la façon dont les attributs sont lus, modifiés et supprimés.</li>
+    <li><strong>Validation</strong> : Ils permettent de valider les données entrantes, garantissant ainsi la cohérence de l'état de l'objet.</li>
+    <li><strong>Lisibilité</strong> : Ils rendent le code plus propre et plus facile à comprendre, en utilisant une syntaxe intuitive pour accéder aux attributs.</li>
+</ul>
+<p>Les décorateurs <code class="language-python">@property</code>, <code class="language-python">@nom.setter</code> et <code class="language-python">@nom.deleter</code> sont des outils puissants pour l'encapsulation, la gestion des états d'objets et l'écriture de code Python plus propre et maintenable.</p>
+</p>
+    <h3>3.2 Avantages des décorateurs par rapport à `property()`</h3>
+    <p><p>L'utilisation des décorateurs <code>@property</code>, <code>@nom.setter</code> et <code>@nom.deleter</code> offre une approche plus élégante et intuitive comparée à l'utilisation directe de la fonction <code>property()</code>. Ces décorateurs permettent de définir les getters, setters, et deleters directement à l'intérieur de la définition de la classe, ce qui améliore significativement la lisibilité et la maintenabilité du code.</p>
+
+<p>Prenons l'exemple d'une classe <code>Rectangle</code> qui représente un rectangle avec des dimensions variables. Nous souhaitons contrôler l'accès et la modification de la largeur de ce rectangle tout en validant les nouvelles valeurs.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width):
+        self._width = width
+
+    @property
+    def width(self):
+        # Getter method to get the width of the rectangle
+        return self._width
+
+    @width.setter
+    def width(self, new_width):
+        # Setter method to set the width with validation
+        if new_width <= 0:
+            raise ValueError("Width must be positive")
+        self._width = new_width
+
+    @width.deleter
+    def width(self):
+        # Deleter method to delete the width attribute
+        print("Deleting the width!")
+        del self._width
+</code></pre>
+
+<p>Dans cet exemple, <code>@property</code> définit le getter pour l'attribut <code>width</code>. <code>@width.setter</code> définit le setter, qui inclut une validation pour s'assurer que la largeur est toujours une valeur positive.  Enfin, <code>@width.deleter</code> spécifie le comportement à adopter lors de la suppression de l'attribut <code>width</code>.</p>
+
+<p>Voici un exemple d'utilisation de cette classe :</p>
+
+<pre><code class="language-python">
+my_rectangle = Rectangle(10)
+print(my_rectangle.width)  # Access via the getter
+
+my_rectangle.width = 20  # Modification via the setter
+print(my_rectangle.width)
+
+try:
+    my_rectangle.width = -5  # Invalid modification attempt
+except ValueError as e:
+    print(e)
+
+del my_rectangle.width  # Deletion via the deleter
+
+# Attempt to access after deletion (will generate an error because _width no longer exists)
+# print(my_rectangle.width)
+</code></pre>
+
+<p>Comparativement à la méthode <code>property()</code>, les décorateurs offrent une syntaxe plus concise et intuitive. Le code est plus lisible car les getters, setters et deleters sont définis directement au-dessus des fonctions correspondantes. La syntaxe des décorateurs est donc généralement préférée pour sa clarté et sa maintenabilité.</p>
+
+<p>Voici les avantages spécifiques des décorateurs par rapport à l'utilisation de <code>property()</code>:</p>
+
+<ul>
+    <li><strong>Lisibilité accrue</strong>: Le code est plus facile à comprendre car la relation entre l'attribut et ses méthodes d'accès est explicite.</li>
+    <li><strong>Syntaxe concise</strong>: Les décorateurs réduisent la quantité de code nécessaire pour définir une property.</li>
+    <li><strong>Organisation du code</strong>: Les getters, setters et deleters sont regroupés logiquement dans la définition de la classe.</li>
+</ul>
+
+<p>En résumé, l'utilisation des décorateurs <code>@property</code>, <code>@nom.setter</code>, et <code>@nom.deleter</code> est la méthode privilégiée en Python pour définir des properties. Ils offrent une syntaxe claire, améliorent la lisibilité du code, et permettent un contrôle précis sur l'accès et la modification des attributs d'une classe.</p>
+</p>
+    <h3>3.3 Exemple d'implémentation avec les décorateurs</h3>
+    <p><p>Reprenons l'exemple de la classe <code>Personne</code>. Avec les décorateurs, le getter, le setter et le deleter de l'attribut <code>nom</code> seraient définis directement au sein de la classe, les uns après les autres, ce qui rend le code plus facile à lire et à comprendre.</p>
+<pre><code class="language-python">
+class Personne:
+    def __init__(self, nom):
+        self._nom = nom
+
+    @property
+    def nom(self):
+        # Getter for the 'nom' attribute
+        return self._nom
+
+    @nom.setter
+    def nom(self, nouveau_nom):
+        # Setter for the 'nom' attribute, with validation
+        if not isinstance(nouveau_nom, str):
+            raise TypeError("Le nom doit être une chaîne de caractères.")
+        self._nom = nouveau_nom
+
+    @nom.deleter
+    def nom(self):
+        # Deleter for the 'nom' attribute
+        del self._nom
+
+# Example usage
+personne = Personne("Alice")
+print(personne.nom)
+
+personne.nom = "Bob"
+print(personne.nom)
+
+del personne.nom
+
+try:
+    print(personne.nom)
+except AttributeError:
+    print("L'attribut 'nom' a été supprimé.")
+</code></pre>
+<p>Dans cet exemple, <code>@property</code> transforme la méthode <code>nom()</code> en un getter, permettant d'accéder à <code>self._nom</code> comme s'il s'agissait d'un attribut. <code>@nom.setter</code> définit une méthode pour modifier la valeur de <code>self._nom</code>, incluant ici une validation. Enfin, <code>@nom.deleter</code> permet de supprimer l'attribut <code>self._nom</code>. L'avantage majeur est la centralisation de la logique d'accès et de modification directement dans la définition de la classe, améliorant la lisibilité et la maintenabilité du code.</p>
+<p>Considérons un autre exemple avec une classe <code>Article</code> et un attribut <code>prix</code>. On pourrait vouloir s'assurer que le prix ne soit jamais négatif.</p>
+<pre><code class="language-python">
+class Article:
+    def __init__(self, prix):
+        self._prix = prix
+
+    @property
+    def prix(self):
+        # Getter for the 'prix' attribute
+        return self._prix
+
+    @prix.setter
+    def prix(self, nouveau_prix):
+        # Setter for the 'prix' attribute, with validation
+        if not isinstance(nouveau_prix, (int, float)):
+            raise TypeError("Le prix doit être un nombre.")
+        if nouveau_prix < 0:
+            raise ValueError("Le prix ne peut pas être négatif.")
+        self._prix = nouveau_prix
+
+    @prix.deleter
+    def prix(self):
+        # Deleter for the 'prix' attribute
+        del self._prix
+
+# Example usage
+article = Article(50.0)
+print(article.prix)
+
+article.prix = 75.0
+print(article.prix)
+
+try:
+    article.prix = -10
+except ValueError as e:
+    print(e)
+</code></pre>
+<p>Cet exemple illustre comment les décorateurs <code>@property</code>, <code>@nom.setter</code> et <code>@nom.deleter</code> offrent une manière élégante et concise de contrôler l'accès et la modification des attributs d'une classe, tout en permettant d'intégrer des validations et des comportements spécifiques.</p>
+<p>En résumé, l'utilisation des propriétés avec les décorateurs offre les avantages suivants:</p>
+<ul>
+    <li><code class="language-python">Encapsulation</code> : Protège les attributs internes de la classe.</li>
+    <li><code class="language-python">Validation</code> : Permet de valider les données avant de les affecter à un attribut.</li>
+    <li><code class="language-python">Readability</code> : Améliore la lisibilité du code en centralisant la logique d'accès aux attributs.</li>
+    <li><code class="language-python">Maintainability</code> : Facilite la maintenance du code en regroupant la logique des getters, setters et deleters.</li>
+</ul>
+<p>Il est important de noter que le nom de l'attribut "privé" (par convention préfixé par un underscore, comme <code>_nom</code> ou <code>_prix</code>) est une convention de nommage et n'empêche pas l'accès direct à l'attribut depuis l'extérieur de la classe. Les propriétés permettent de contrôler cet accès.</p>
+<p>De plus, l'utilisation de <code>del</code> dans le deleter n'est pas obligatoire. On pourrait choisir de simplement définir une action à effectuer lors de la suppression "logique" de l'attribut, sans forcément le supprimer de la mémoire. Par exemple, on pourrait définir une valeur par défaut ou lever une exception si l'attribut est accédé après sa "suppression".</p>
+<pre><code class="language-python">
+class Produit:
+    def __init__(self, nom, prix):
+        self._nom = nom
+        self._prix = prix
+        self._est_supprime = False  # Indicateur de suppression logique
+
+    @property
+    def prix(self):
+        if self._est_supprime:
+            raise AttributeError("Le prix a été supprimé.")
+        return self._prix
+
+    @prix.setter
+    def prix(self, nouveau_prix):
+        if self._est_supprime:
+            raise AttributeError("Le prix a été supprimé et ne peut être modifié.")
+        if not isinstance(nouveau_prix, (int, float)):
+            raise TypeError("Le prix doit être un nombre.")
+        if nouveau_prix < 0:
+            raise ValueError("Le prix ne peut pas être négatif.")
+        self._prix = nouveau_prix
+
+    @prix.deleter
+    def prix(self):
+        print("Suppression logique du prix.")
+        self._est_supprime = True
+
+# Example
+produit = Produit("Ordinateur", 1200)
+print(produit.prix)
+
+del produit.prix
+try:
+    print(produit.prix)
+except AttributeError as e:
+    print(e)
+</code></pre>
+<p>Dans cet exemple, l'attribut <code>_prix</code> n'est pas réellement supprimé de la mémoire avec <code>del</code>. Au lieu de cela, un indicateur <code>_est_supprime</code> est mis à <code>True</code>, et le getter et le setter lèvent une exception si l'attribut est accédé après sa "suppression". Cela permet un contrôle plus fin du cycle de vie de l'attribut.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">4. Validation des données avec les Properties</h2>
+    <p><p>Les <code>properties</code> en Python offrent bien plus qu'un simple contrôle d'accès aux attributs. Elles permettent d'implémenter une <strong>validation des données</strong> robuste avant même que les valeurs ne soient affectées aux attributs. Cette approche garantit que les attributs d'un objet conservent uniquement des valeurs valides, en accord avec les règles métier de votre application.</p>
+
+<p>Prenons l'exemple concret d'une classe représentant un capteur. Ce capteur possède une plage de valeurs acceptables, et il est impératif de s'assurer que la valeur du capteur reste toujours à l'intérieur de cette plage.</p>
+
+<pre><code class="language-python">
+class Sensor:
+    def __init__(self, sensor_id, min_value, max_value):
+        # Initializes the sensor with a sensor ID, minimum value, and maximum value.
+        self._sensor_id = sensor_id
+        self._value = None  # Initial value
+        self._min_value = min_value
+        self._max_value = max_value
+
+    @property
+    def value(self):
+        # Returns the current value of the sensor.
+        return self._value
+
+    @value.setter
+    def value(self, new_value):
+        # Validates the new value and sets it if it's within the acceptable range.
+        if not self._min_value <= new_value <= self._max_value:
+            raise ValueError(f"Value must be between {self._min_value} and {self._max_value}")
+        self._value = new_value
+
+    @property
+    def sensor_id(self):
+        # Returns the sensor ID (read-only).
+        return self._sensor_id
+</code></pre>
+
+<p>Dans cet exemple, la <code>property</code> <code>value</code> intègre un setter qui effectue la validation de la nouvelle valeur. Si la valeur proposée se situe en dehors de la plage autorisée, définie par <code>_min_value</code> et <code>_max_value</code>, une exception <code>ValueError</code> est levée. Cela empêche l'affectation d'une valeur non valide à l'attribut <code>_value</code>, assurant ainsi l'intégrité des données.</p>
+
+<p>Voici un exemple d'utilisation de cette classe :</p>
+
+<pre><code class="language-python">
+# Create a sensor with a valid range
+my_sensor = Sensor("temp_sensor", 10, 30)
+
+# Set a valid value
+my_sensor.value = 25
+print(f"Sensor value: {my_sensor.value}")
+
+# Attempt to set an invalid value
+try:
+    my_sensor.value = 5  # Value outside the valid range
+except ValueError as e:
+    print(f"Error: {e}")
+
+# The sensor_id cannot be modified
+print(f"Sensor ID: {my_sensor.sensor_id}")
+</code></pre>
+
+<p>Ce code démontre de manière claire comment les <code>properties</code> permettent de valider les données en entrée, garantissant ainsi l'intégrité des données au sein de l'objet. De plus, l'absence de setter pour <code>sensor_id</code> signifie que sa valeur ne peut pas être modifiée après l'initialisation, ce qui rend cet attribut en lecture seule. Cette approche offre une protection supplémentaire contre les modifications non intentionnelles.</p>
+
+<p>En résumé, la validation des données via les <code>properties</code> est une technique puissante pour créer des classes Python robustes et fiables. Elle contribue significativement à améliorer la qualité de votre code et à faciliter la détection des erreurs potentielles, assurant ainsi un comportement prévisible et stable de vos objets.</p>
+
+<ul>
+    <li><code class="language-python">value.setter</code> : Permet de définir une méthode pour modifier la valeur de l'attribut, incluant la logique de validation.</li>
+    <li><code class="language-python">ValueError</code> : Exception levée lorsqu'une valeur non valide est détectée.</li>
+</ul>
+</p>
+    <h3>4.1 Implémentation de la validation dans le Setter</h3>
+    <p><p>Le setter d'une property représente un emplacement stratégique pour implémenter la validation des données. Avant d'assigner une nouvelle valeur à l'attribut sous-jacent, il est possible d'effectuer des vérifications pour s'assurer que cette valeur respecte les critères de validité définis. Cette approche permet de maintenir l'intégrité des données de l'objet et d'éviter des erreurs inattendues qui pourraient survenir ultérieurement dans le programme.</p>
+
+<p>La validation peut porter sur plusieurs aspects tels que le type de données, la plage de valeurs autorisées, la longueur d'une chaîne de caractères, ou toute autre contrainte spécifique à l'attribut. Lorsqu'une validation échoue, il est recommandé de lever une exception, comme <code class="language-python">ValueError</code> ou <code class="language-python">TypeError</code>, afin de signaler que la valeur fournie est incorrecte.</p>
+
+<p>Considérons l'exemple d'une classe <code class="language-python">Point</code> qui représente un point dans un espace 2D. Nous allons valider que les coordonnées <code class="language-python">x</code> et <code class="language-python">y</code> sont bien des nombres et qu'elles se situent dans une plage de valeurs prédéfinie.</p>
+
+<pre><code class="language-python">
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @property
+    def x(self):
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        # Validate the type of the value
+        if not isinstance(value, (int, float)):
+            raise TypeError("x must be a number")
+        # Validate the range of the value
+        if not -100 <= value <= 100:
+            raise ValueError("x must be between -100 and 100")
+        self._x = value
+
+    @property
+    def y(self):
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        # Validate the type of the value
+        if not isinstance(value, (int, float)):
+            raise TypeError("y must be a number")
+        # Validate the range of the value
+        if not -100 <= value <= 100:
+            raise ValueError("y must be between -100 and 100")
+        self._y = value
+
+# Example usage
+try:
+    point = Point(10, 20)
+    print(f"Point coordinates: ({point.x}, {point.y})")
+
+    point.x = 50
+    print(f"Updated x coordinate: {point.x}")
+
+    point.y = 150  # Raises ValueError
+except ValueError as e:
+    print(f"ValueError: {e}")
+except TypeError as e:
+    print(f"TypeError: {e}")
+</code></pre>
+
+<p>Dans cet exemple, les setters de <code class="language-python">x</code> et <code class="language-python">y</code> effectuent deux vérifications : ils s'assurent que la valeur est un nombre (de type <code>int</code> ou <code>float</code>) et qu'elle est comprise entre -100 et 100. Si une de ces validations échoue, une exception est levée. Ainsi, l'objet <code class="language-python">Point</code> contient toujours des données valides, ce qui contribue à la robustesse du code.</p>
+
+<p>En intégrant la validation directement dans le setter de la property, la logique de validation est centralisée, garantissant que toute tentative de modification de l'attribut est soumise à ces règles. Cela simplifie la maintenance du code et réduit le risque d'introduction d'erreurs. De plus, cette approche offre une abstraction claire, masquant la complexité de la validation aux utilisateurs de la classe et leur fournissant une interface plus propre et plus facile à utiliser.</p>
+
+<p>Voici quelques avantages clés de l'implémentation de la validation dans les setters :</p>
+<ul>
+    <li><code class="language-python">Intégrité des données</code> : Garantit que l'objet contient toujours des données valides et cohérentes.</li>
+    <li><code class="language-python">Centralisation de la logique</code> : La logique de validation est regroupée au même endroit, ce qui facilite sa maintenance et sa modification.</li>
+    <li><code class="language-python">Réduction des erreurs</code> : Diminue le risque d'introduire des erreurs dues à des données incorrectes.</li>
+    <li><code class="language-python">Abstraction</code> : Masque la complexité de la validation aux utilisateurs de la classe.</li>
+</ul>
+</p>
+    <h3>4.2 Gestion des erreurs et exceptions</h3>
+    <p><p>La gestion des erreurs et des exceptions est un aspect essentiel de la programmation robuste en Python.  La structure <code class="language-python">try...except</code> est l'outil principal pour gérer les exceptions. Le code susceptible de lever une exception est placé à l'intérieur du bloc <code class="language-python">try</code>. Si une exception se produit, l'exécution du bloc <code class="language-python">try</code> est interrompue, et le contrôle est transféré au bloc <code class="language-python">except</code> correspondant.</p>
+
+<p>Voici un exemple qui démontre comment gérer les exceptions lors de l'affectation d'une valeur non valide à une property:</p>
+
+<pre><code class="language-python">
+class Address:
+    def __init__(self, number, street):
+        self._number = number
+        self._street = street
+
+    @property
+    def number(self):
+        return self._number
+
+    @number.setter
+    def number(self, value):
+        try:
+            value = int(value) # Convert to int
+            if value <= 0:
+                raise ValueError("Street number must be a positive integer.")
+            self._number = value
+        except ValueError as e:
+            print(f"Validation error: {e}") # Print the error message
+        except TypeError:
+            print("Error: Street number must be a number.") # Print the error message
+
+    @property
+    def street(self):
+        return self._street
+
+    @street.setter
+    def street(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Street name must be a string.")
+        if not value: # Check if the string is empty
+            raise ValueError("Street name cannot be empty.")
+        self._street = value
+</code></pre>
+
+<p>Dans cet exemple, la property <code class="language-python">number</code> valide que la valeur affectée est un entier positif. Si ce n'est pas le cas, une exception <code class="language-python">ValueError</code> ou <code class="language-python">TypeError</code> est levée.  Le bloc <code class="language-python">except</code> capture ces exceptions, affiche un message d'erreur approprié, et empêche l'affectation de la valeur invalide. De même, la property <code class="language-python">street</code> vérifie que la valeur est bien une chaîne de caractères non vide.</p>
+
+<p>Utilisation :</p>
+
+<pre><code class="language-python">
+# Create an Address object
+my_address = Address(10, "Avenue des Champs-Élysées")
+
+# Try to set an invalid value for 'number'
+my_address.number = -5 # This will trigger the ValueError
+
+# Try to set an invalid value for 'number'
+my_address.number = "abc" # This will trigger the ValueError
+
+# Try to set a valid value for 'number'
+my_address.number = 20
+print(my_address.number)
+
+# Try to set an invalid value for 'street'
+try:
+    my_address.street = 123  # This will raise a TypeError
+except TypeError as e:
+    print(f"Error: {e}")
+
+try:
+    my_address.street = ""  # This will raise a ValueError
+except ValueError as e:
+    print(f"Error: {e}")
+</code></pre>
+
+<p>Plusieurs blocs <code class="language-python">except</code> peuvent être utilisés pour gérer différents types d'exceptions. Cela permet d'adapter la gestion des erreurs en fonction du type d'erreur rencontré, offrant ainsi une gestion plus granulaire et précise. Une bonne gestion des exceptions contribue à rendre le code plus robuste et plus facile à maintenir.  Il est également possible d'utiliser un bloc <code class="language-python">finally</code> qui sera toujours exécuté, que l'exception soit capturée ou non. Ceci est utile pour effectuer un nettoyage (libérer des ressources par exemple).</p>
+
+<p>Voici quelques bonnes pratiques pour la validation des données avec les properties et la gestion des exceptions :</p>
+
+<ul>
+    <li><strong>Validation précoce</strong> : Validez les données dès que possible pour éviter de propager des états invalides dans votre application.</li>
+    <li><strong>Messages d'erreur clairs</strong> : Fournissez des messages d'erreur précis et informatifs pour faciliter le débogage.</li>
+    <li><strong>Gestion spécifique des exceptions</strong> : Utilisez des blocs <code class="language-python">except</code> spécifiques pour chaque type d'exception afin de gérer les erreurs de manière appropriée.</li>
+    <li><strong>Nettoyage des ressources</strong> : Utilisez un bloc <code class="language-python">finally</code> pour garantir que les ressources sont libérées, même en cas d'exception.</li>
+</ul>
+
+<p>En conclusion, l'utilisation des blocs <code class="language-python">try...except</code> est essentielle pour gérer les erreurs de validation des données dans les properties. Cela permet de garantir l'intégrité des données et de fournir un retour d'information clair à l'utilisateur en cas de problème. La gestion des exceptions doit être envisagée dès la conception de la classe pour anticiper les erreurs potentielles et les gérer de manière appropriée. L'utilisation judicieuse des properties, combinée à une gestion rigoureuse des exceptions, est un élément clé de la programmation orientée objet en Python.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">5. Properties en Lecture Seule et en Écriture Seule</h2>
+    <p><p>Les properties offrent un contrôle précis sur l'accès aux attributs d'une classe. Bien qu'elles soient souvent utilisées pour fournir un accès contrôlé en lecture et en écriture, il est également possible de créer des properties en lecture seule ou en écriture seule, limitant ainsi l'interaction avec l'attribut sous-jacent.</p>
+
+<p>Une property en <strong>lecture seule</strong> permet d'accéder à la valeur d'un attribut, mais empêche sa modification directe via l'attribut. Cela peut être utile pour exposer des valeurs calculées, des informations dérivées ou des constantes sans permettre à l'utilisateur de les altérer accidentellement.</p>
+
+<pre><code class="language-python">
+class Computer:
+    def __init__(self, brand, model, initial_price):
+        self._brand = brand  # Convention: _attribute indicates it's "protected"
+        self._model = model
+        self._price = initial_price
+
+    @property
+    def brand(self):
+        return self._brand
+
+    @property
+    def model(self):
+        return self._model
+
+    @property
+    def price(self):
+        return self._price
+
+# Example usage
+my_computer = Computer("Dell", "XPS 13", 1200)
+print(f"Brand: {my_computer.brand}")
+print(f"Model: {my_computer.model}")
+print(f"Price: {my_computer.price}")
+
+# Attempting modification (will raise an AttributeError)
+# my_computer.brand = "Apple"  # This will raise an AttributeError
+</code></pre>
+
+<p>Dans cet exemple, les properties <code>brand</code>, <code>model</code>, et <code>price</code> sont en lecture seule. Tenter de modifier <code>my_computer.brand</code>, par exemple, résultera en une erreur <code>AttributeError</code> car il n'y a pas de setter défini pour cette property. L'absence de setter empêche toute modification externe de l'attribut.</p>
+
+<p>Une property en <strong>écriture seule</strong>, moins courante, permet de modifier un attribut mais empêche de le lire directement. Son utilité est plus limitée, mais elle peut servir pour masquer des données sensibles, pour implémenter des mécanismes d'écriture avec des effets de bord (side effects) sans exposer la valeur directement, ou pour forcer l'utilisation d'une méthode spécifique pour obtenir une information.</p>
+
+<pre><code class="language-python">
+import hashlib
+
+class Password:
+    def __init__(self):
+        self._password_hash = None
+
+    @property
+    def password_hash(self):
+        raise AttributeError("Read access to hashed password is not allowed.")
+
+    @password_hash.setter
+    def password_hash(self, new_password):
+        # Hashing the password before storing it
+        hashed_password = hashlib.sha256(new_password.encode()).hexdigest()
+        self._password_hash = hashed_password
+        print("Password hashed and updated.")
+
+# Example usage
+my_password = Password()
+
+# Setting the password (hashed)
+my_password.password_hash = "MyNewPassword"
+
+# Attempting to read (will raise an AttributeError)
+# print(my_password.password_hash)  # This will raise an AttributeError
+</code></pre>
+
+<p>Dans cet exemple, la property <code>password_hash</code> est en écriture seule. On peut définir sa valeur (qui sera automatiquement hashée), mais tenter d'y accéder en lecture lèvera une <code>AttributeError</code>. Ceci permet de sécuriser le stockage du mot de passe en empêchant son accès direct et non hashé.</p>
+
+<p>En résumé, les properties en lecture seule et en écriture seule offrent une flexibilité accrue dans la gestion de l'accès aux attributs. Elles permettent de contrôler précisément comment les données sont exposées et modifiées au sein d'une classe, contribuant ainsi à une meilleure encapsulation et à une plus grande sécurité du code.</p>
+
+<p>Voici un tableau récapitulatif des utilisations courantes :</p>
+
+<ul>
+    <li><code class="language-python">Lecture Seule</code> : Exposer des valeurs calculées, des informations dérivées ou des constantes tout en empêchant les modifications externes.</li>
+    <li><code class="language-python">Écriture Seule</code> : Masquer des données sensibles, implémenter des mécanismes d'écriture avec des effets de bord, ou forcer l'utilisation de méthodes spécifiques.</li>
+</ul>
+</p>
+    <h3>5.1 Création de Properties en Lecture Seule</h3>
+    <p><p>Une property en lecture seule est une property qui expose une méthode <code class="language-python">getter</code>, mais pas de méthode <code class="language-python">setter</code>. Cela signifie qu'une fois l'attribut initialisé, sa valeur ne peut plus être modifiée directement de l'extérieur de la classe. Pour créer une property en lecture seule, il suffit de définir le getter.</p>
+
+<p>Prenons l'exemple d'une classe <code class="language-python">Circle</code>. Cette classe possède un attribut <code class="language-python">radius</code> qui est défini lors de la création du cercle. Nous voulons que le rayon ne puisse pas être modifié une fois le cercle créé. Nous allons donc créer une property en lecture seule pour l'attribut <code class="language-python">radius</code>.</p>
+
+<pre><code class="language-python">
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius  # Convention for a "private" attribute
+    
+    @property
+    def radius(self):
+        # Getter for the radius property
+        return self._radius
+    
+    @property
+    def area(self):
+        #Calculates the area, making it also a read-only property
+        return math.pi * self._radius**2
+
+# Creating an instance of the Circle class
+my_circle = Circle(5)
+
+# Accessing the radius property (read-only)
+print(my_circle.radius)  # Output: 5
+
+# Accessing the area property (read-only)
+print(my_circle.area) # Output: 78.53981633974483
+
+# Attempting to modify the radius property (will raise an error)
+try:
+    my_circle.radius = 10
+except AttributeError as e:
+    print(e)  # Output: can't set attribute
+</code></pre>
+
+<p>Dans cet exemple, la property <code class="language-python">radius</code> est accessible en lecture seule. Toute tentative de modification de sa valeur en dehors de la classe entraînera une exception <code class="language-python">AttributeError</code>, car aucun setter n'a été défini. De même, la property <code class="language-python">area</code>, qui calcule l'aire du cercle en fonction de son rayon, est également en lecture seule. L'attribut <code class="language-python">_radius</code> est considéré comme protégé et n'est pas censé être accédé directement, bien que Python ne l'empêche pas. Le caractère de soulignement (<code>_</code>) est une convention pour indiquer qu'un attribut est destiné à un usage interne à la classe.</p>
+
+<p>En résumé, pour créer une property en lecture seule, il suffit d'implémenter le getter et d'omettre le setter. Cette technique est utile pour protéger des attributs importants et garantir leur intégrité en empêchant leur modification accidentelle ou non autorisée. On peut utiliser ce mécanisme pour définir des valeurs calculées à partir d'autres attributs, comme illustré avec la property <code class="language-python">area</code>.</p>
+</p>
+    <h3>5.2 Création de Properties en Écriture Seule (rare)</h3>
+    <p><p>Bien que moins courantes, les properties en écriture seule peuvent être utiles dans des scénarios spécifiques. Un tel scénario est celui où l'on souhaite enregistrer un événement ou modifier un état interne sans permettre la lecture directe de cette information de l'extérieur. Cela peut servir à masquer la complexité interne d'un objet ou à imposer un certain contrôle sur la façon dont les données sont modifiées.</p>
+
+<p>Pour créer une property en écriture seule en Python, il suffit de définir uniquement le setter (la méthode décorée avec <code>@property.setter</code>) et d'omettre le getter. Voici un exemple illustratif :</p>
+
+<pre><code class="language-python">
+class Journal:
+    def __init__(self):
+        self._log = []  # Internal log, not directly accessible
+
+    @property
+    def add_entry(self):
+        # This is intentionally left empty to prevent reading.
+        pass
+
+    @add_entry.setter
+    def add_entry(self, message):
+        # Log the message with a timestamp.
+        import datetime
+        timestamp = datetime.datetime.now().isoformat()
+        self._log.append(f'{timestamp}: {message}')
+
+    def display_log(self):
+        # Method to view the log (not through the property).
+        for entry in self._log:
+            print(entry)
+
+# Example Usage
+journal = Journal()
+journal.add_entry = "System started"  # Writing to the log.
+journal.add_entry = "User logged in"  # Writing to the log.
+# journal.add_entry  # This would raise an AttributeError because the getter is missing
+journal.display_log()  # Accessing the log through a method.
+</code></pre>
+
+<p>Dans cet exemple, la classe <code>Journal</code> maintient un journal interne (<code>_log</code>) qui est mis à jour via la property <code>add_entry</code>. On peut affecter une valeur à <code>journal.add_entry</code>, ce qui déclenche le setter et ajoute une entrée au journal. Cependant, tenter de lire la valeur de <code>journal.add_entry</code> provoquerait une erreur, car il n'y a pas de getter défini. La méthode <code>display_log</code> est fournie pour consulter le journal (si besoin), contournant ainsi la property.</p>
+
+<p>Il est crucial de noter que l'utilisation de properties en écriture seule doit être envisagée avec précaution. Elles peuvent rendre le code moins intuitif et plus difficile à déboguer, car la lecture d'une propriété est un comportement attendu par défaut. Une documentation claire et une justification solide sont essentielles si vous choisissez d'adopter cette approche. Dans la plupart des cas, une méthode explicite (par exemple, <code>log_event(message)</code>) est préférable pour une meilleure lisibilité et maintenabilité du code.</p>
+
+<p>Voici quelques points à considérer lors de l'utilisation de properties en écriture seule :</p>
+<ul>
+    <li><strong>Intention claire</strong> : Assurez-vous que l'intention de ne pas permettre la lecture est claire et bien documentée.</li>
+    <li><strong>Alternatives</strong> : Évaluez si une méthode explicite serait plus appropriée et plus lisible.</li>
+    <li><strong>Effets de bord</strong> : Soyez conscient des effets de bord potentiels et assurez-vous qu'ils sont gérés de manière appropriée.</li>
+</ul>
+
+<p>En résumé, bien que les properties en écriture seule puissent avoir leur utilité, elles doivent être utilisées avec discernement et avec une justification claire pour éviter de rendre le code plus confus et moins maintenable.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">6. Héritage et Properties</h2>
+    <p><p>L'héritage est un pilier de la programmation orientée objet (POO), permettant à une classe (la classe enfant ou sous-classe) d'acquérir les attributs et méthodes d'une autre (la classe parent ou super-classe). Les <code>properties</code> interagissent avec l'héritage, offrant un contrôle affiné sur l'accès et la modification des attributs hérités.</p>
+
+<p>Lorsqu'une classe enfant hérite d'une classe parent qui définit des <code>properties</code>, elle hérite de ces <code>properties</code> comme des attributs ordinaires. La puissance réside dans la capacité de redéfinir (<em>override</em>) ces <code>properties</code> dans la classe enfant pour adapter leur comportement.</p>
+
+<p>Illustrons cela avec un exemple. Prenons une classe <code>Animal</code> dotée d'une <code>property</code> pour l'âge.</p>
+
+<pre><code class="language-python">
+class Animal:
+    def __init__(self, age):
+        self._age = age
+
+    @property
+    def age(self):
+        """Returns the animal's age."""
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        """Sets the animal's age, ensuring it's not negative."""
+        if value >= 0:
+            self._age = value
+        else:
+            raise ValueError("Age cannot be negative.")
+
+    def make_sound(self):
+        print("Generic animal sound")
+</code></pre>
+
+<p>Créons maintenant une classe <code>Dog</code> qui hérite de <code>Animal</code> et redéfinit la <code>property</code> <code>age</code> pour introduire une validation spécifique aux chiens.</p>
+
+<pre><code class="language-python">
+class Dog(Animal):
+    def __init__(self, age, breed):
+        super().__init__(age)
+        self.breed = breed
+
+    @Animal.age.setter
+    def age(self, value):
+        """Sets the dog's age, with a maximum age limit."""
+        if value > 20:
+            raise ValueError("Dog's age cannot exceed 20 years.")
+        Animal.age.fset(self, value)  # Call the parent's setter
+
+    def make_sound(self):
+        print("Woof!")
+</code></pre>
+
+<p>Dans cet exemple, <code>Dog</code> hérite de la <code>property</code> <code>age</code> de <code>Animal</code>. On utilise <code>@Animal.age.setter</code> pour accéder au setter original défini dans la classe parent. On peut ensuite ajouter des contraintes spécifiques, comme une limite d'âge maximale pour les chiens, avant d'invoquer le setter de la classe parent via <code>Animal.age.fset(self, value)</code> pour effectuer la mise à jour de l'attribut <code>_age</code>.</p>
+
+<p>Il est crucial de noter que si l'on ne souhaite pas altérer le comportement d'une <code>property</code>, il suffit de l'hériter sans la redéfinir. Dans ce cas, la <code>property</code> de la classe parent sera utilisée telle quelle.</p>
+
+<p>Il est également possible de définir de nouvelles <code>properties</code> dans la classe enfant, basées sur les attributs hérités de la classe parent.</p>
+
+<pre><code class="language-python">
+class Cat(Animal):
+    def __init__(self, age):
+        super().__init__(age)
+
+    @property
+    def human_age(self):
+        """Calculates the approximate human age equivalent for a cat."""
+        return self.age * 7
+
+    def make_sound(self):
+        print("Meow!")
+</code></pre>
+
+<p>Ici, la classe <code>Cat</code> hérite de l'attribut <code>age</code> de <code>Animal</code> et définit une nouvelle <code>property</code>, <code>human_age</code>, qui calcule une approximation de l'âge du chat en années humaines. Cette <code>property</code> utilise la <code>property</code> <code>age</code> héritée de la classe parent.</p>
+
+<p>En résumé, l'héritage et les <code>properties</code> se combinent harmonieusement pour favoriser une conception de classes souple et maintenable. L'héritage facilite la réutilisation du code et l'établissement de relations "est-un" entre les classes, tandis que les <code>properties</code> offrent un contrôle précis sur l'accès et la modification des attributs, permettant une encapsulation et une validation efficaces, même dans le contexte de l'héritage. Les <code>properties</code> offrent notamment les avantages suivants:</p>
+
+<ul>
+    <li><code class="language-python">Encapsulation</code>: Masquer l'implémentation interne des attributs.</li>
+    <li><code class="language-python">Validation</code>: Assurer que les valeurs assignées aux attributs sont valides.</li>
+    <li><code class="language-python">Calcul</code>: Calculer des valeurs à la demande, basées sur d'autres attributs.</li>
+</ul>
+</p>
+    <h3>6.1 Héritage des properties</h3>
+    <p><p>L'un des avantages fondamentaux des properties réside dans leur capacité d'héritage par les classes filles, à l'instar des attributs et méthodes classiques. Cette caractéristique promeut la réutilisation et l'extension de la logique encapsulée dans la classe parente. Une classe fille a la liberté de conserver le comportement hérité d'une property ou de le redéfinir pour satisfaire ses exigences spécifiques.</p>
+
+<p>La redéfinition d'une property héritée se déroule d'une manière similaire à la redéfinition d'une méthode. Il est possible de modifier le getter, le setter ou le deleter, ou même de remplacer complètement la property par une nouvelle implémentation. Cette flexibilité permet d'adapter précisément le comportement des properties aux particularités de chaque classe fille.</p>
+
+<p>Illustrons cela avec un exemple impliquant une classe de base <code>Forme</code> et une classe dérivée <code>Carre</code>. La classe <code>Forme</code> pourrait inclure une property <code>surface</code> calculée, tandis que la classe <code>Carre</code> pourrait redéfinir cette property pour tenir compte de la nature spécifique d'un carré, à savoir que tous ses côtés sont égaux. Un exemple complet suit :</p>
+
+<pre><code class="language-python">
+class Forme:
+    def __init__(self, largeur, hauteur):
+        self._largeur = largeur
+        self._hauteur = hauteur
+
+    @property
+    def surface(self):
+        """Calculates the surface of the shape."""
+        return self._largeur * self._hauteur
+
+    @property
+    def largeur(self):
+        return self._largeur
+
+    @largeur.setter
+    def largeur(self, value):
+        if value <= 0:
+            raise ValueError("La largeur doit être positive.")
+        self._largeur = value
+
+    @property
+    def hauteur(self):
+        return self._hauteur
+
+    @hauteur.setter
+    def hauteur(self, value):
+        if value <= 0:
+            raise ValueError("La hauteur doit être positive.")
+        self._hauteur = value
+
+
+class Carre(Forme):
+    def __init__(self, cote):
+        super().__init__(cote, cote)
+
+    @property
+    def surface(self):
+        """Calculates the surface of the square."""
+        return self._largeur * self._largeur
+
+    @property
+    def cote(self):
+        """Returns the side length of the square."""
+        return self._largeur
+
+    @cote.setter
+    def cote(self, value):
+        """Sets the side length of the square."""
+        if value <= 0:
+            raise ValueError("Le côté doit être positif.")
+        self._largeur = value
+        self._hauteur = value
+
+
+# Example Usage
+carre = Carre(5)
+print(f"Surface du carré : {carre.surface}")
+carre.cote = 10
+print(f"Nouvelle surface du carré : {carre.surface}")
+
+forme = Forme(4,6)
+print(f"Surface de la forme : {forme.surface}")
+
+try:
+    carre.cote = -2
+except ValueError as e:
+    print(e)
+</code></pre>
+
+<p>Dans cet exemple, la classe <code>Carre</code> hérite des attributs <code>largeur</code> et <code>hauteur</code> de la classe <code>Forme</code>, ainsi que de la possibilité d'utiliser la property <code>surface</code>. Cependant, elle redéfinit la property <code>surface</code> pour calculer la surface spécifique d'un carré en utilisant uniquement la longueur du côté. De plus, elle introduit une property <code>cote</code>, qui encapsule la longueur du côté, assurant que la largeur et la hauteur restent égales et facilitant la manipulation de la dimension du carré.  Voici un résumé des points clés illustrés par cet exemple :</p>
+
+<ul>
+    <li><strong>Héritage</strong> : <code>Carre</code> hérite des propriétés de <code>Forme</code>, démontrant la réutilisation du code.</li>
+    <li><strong>Redéfinition</strong> : <code>Carre</code> redéfinit <code>surface</code> pour un calcul spécifique aux carrés.</li>
+    <li><strong>Encapsulation</strong> : La property <code>cote</code> encapsule la logique de définition de la largeur et de la hauteur simultanément.</li>
+</ul>
+
+<p>Ainsi, l'héritage et la redéfinition des properties permettent aux classes filles d'adapter leur comportement tout en conservant une structure cohérente avec la classe parente, ce qui conduit à un code plus propre, plus maintenable et plus expressif.</p>
+</p>
+    <h3>6.2 Redéfinition des properties dans les classes filles</h3>
+    <p><p>L'héritage permet aux classes filles d'hériter des properties définies dans leurs classes parentes. Pour redéfinir une property dans une classe fille, utilisez la même syntaxe que pour la définition d'une nouvelle property. Les décorateurs <code>@property</code>, <code>@nom.setter</code> et <code>@nom.deleter</code> sont utilisés pour personnaliser le comportement de la property héritée.</p>
+
+<p>Il est possible d'étendre ou de modifier le comportement d'une property héritée en appelant la méthode correspondante de la classe parente via <code>super()</code>. Cela permet de réutiliser la logique existante tout en ajoutant des fonctionnalités spécifiques à la classe fille. Il est crucial de bien comprendre comment <code>super()</code> fonctionne pour éviter des comportements inattendus, surtout lors de l'utilisation de l'héritage multiple.</p>
+
+<p>Voici un exemple pour illustrer ce concept :</p>
+
+<pre><code class="language-python">
+class Instrument:
+    def __init__(self, name, price):
+        self._name = name
+        self._price = price
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, new_name):
+        if not isinstance(new_name, str):
+            raise ValueError("Name must be a string.")
+        self._name = new_name
+
+    @property
+    def price(self):
+        return self._price
+
+    @price.setter
+    def price(self, new_price):
+        if not isinstance(new_price, (int, float)):
+            raise ValueError("Price must be a number.")
+        if new_price < 0:
+            raise ValueError("Price cannot be negative.")
+        self._price = new_price
+
+class Guitar(Instrument):
+    def __init__(self, name, price, string_type):
+        super().__init__(name, price)
+        self._string_type = string_type
+
+    @property
+    def price(self):
+        # Increase the price for guitars
+        return super().price * 1.1
+
+    @price.setter
+    def price(self, new_price):
+        # Add specific validation for guitars
+        if new_price > 10000:
+            raise ValueError("The guitar price is too high.")
+        super().price = new_price  # Call the setter of the parent class
+
+    @property
+    def string_type(self):
+        return self._string_type
+
+    @string_type.setter
+    def string_type(self, new_type):
+        self._string_type = new_type
+
+# Example usage
+guitar = Guitar("Stratocaster", 800, "Nylon")
+print(f"Initial guitar price: {guitar.price}")
+
+guitar.price = 900
+print(f"New guitar price: {guitar.price}")
+
+try:
+    guitar.price = 12000
+except ValueError as e:
+    print(e)
+</code></pre>
+
+<p>Dans cet exemple, la classe <code>Guitar</code> hérite de la classe <code>Instrument</code>. La property <code>price</code> est redéfinie dans <code>Guitar</code> pour augmenter le prix de base de 10% et pour ajouter une validation supplémentaire. L'appel à <code>super().price</code> dans le getter permet de réutiliser la logique de la property <code>price</code> de la classe <code>Instrument</code> et d'appliquer la majoration.  Dans le setter, <code>super().price = new_price</code> appelle directement le setter de la classe parente après avoir effectué la validation spécifique à la guitare.</p>
+
+<p>Il est important de noter que l'appel à <code>super()</code> recherche la méthode dans l'ordre de résolution des méthodes (MRO).  Le MRO est l'ordre dans lequel Python recherche les méthodes dans une hiérarchie de classes, et il est calculé automatiquement pour assurer un comportement prévisible lors de l'héritage multiple.</p>
+
+<p>Voici quelques points importants à retenir concernant la redéfinition des properties :</p>
+
+<ul>
+    <li><code class="language-python">@property</code> : Définit la méthode comme un getter.</li>
+    <li><code class="language-python">@nom.setter</code> :  Permet de définir un setter pour la property nommée <code>nom</code>.</li>
+    <li><code class="language-python">super()</code> : Appelle la méthode de la classe parente.  Indispensable pour étendre le comportement sans réécrire la logique existante.</li>
+    <li>L'ordre de résolution des méthodes (MRO) détermine l'ordre dans lequel les classes parentes sont recherchées lors de l'appel à <code>super()</code>.</li>
+</ul>
+
+<p>L'exemple précédent montre une manière simple de redéfinir une property.  Dans des scénarios plus complexes, notamment avec l'héritage multiple, il est crucial de bien comprendre le MRO et l'interaction entre les différentes classes pour éviter des comportements inattendus.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">Conclusion</h2>
+    <p><p>Les properties en Python constituent un mécanisme puissant pour encapsuler l'accès aux attributs d'une classe. Elles permettent de substituer un accès direct à un attribut par l'appel à des méthodes (getter, setter, deleter), offrant ainsi une grande flexibilité pour intégrer des logiques métiers complexes telles que la validation des données ou le calcul d'attributs dérivés. L'avantage principal réside dans la transparence pour l'utilisateur de la classe, qui manipule l'attribut comme si c'était un attribut public, alors qu'en réalité, des opérations spécifiques sont exécutées en arrière-plan.</p>
+
+<p>L'utilisation des décorateurs <code>@property</code>, <code>@nom.setter</code>, et <code>@nom.deleter</code> simplifie grandement la définition des properties. Ces décorateurs permettent d'associer des méthodes aux opérations d'accès, de modification et de suppression d'un attribut. Prenons l'exemple d'une classe représentant une température, où l'on souhaite contrôler les valeurs assignées :</p>
+
+<pre><code class="language-python">
+class Temperature:
+    def __init__(self, celsius):
+        self._celsius = celsius
+
+    @property
+    def celsius(self):
+        # Get the celsius value
+        return self._celsius
+
+    @celsius.setter
+    def celsius(self, new_celsius):
+        # Validate the new celsius value
+        if new_celsius < -273.15:
+            raise ValueError("Temperature cannot be below absolute zero")
+        self._celsius = new_celsius
+
+    @celsius.deleter
+    def celsius(self):
+        # Prevent deletion of the celsius attribute
+        raise AttributeError("Cannot delete the celsius attribute")
+
+
+# Example Usage
+temp = Temperature(25)
+print(temp.celsius) # Accessing the property
+
+temp.celsius = 30 # Setting the property
+print(temp.celsius)
+
+try:
+    temp.celsius = -300  # Attempting to set an invalid value
+except ValueError as e:
+    print(e)
+
+try:
+    del temp.celsius  # Attempting to delete the property
+except AttributeError as e:
+    print(e)
+
+</code></pre>
+
+<p>Dans cet exemple, la propriété <code>celsius</code> encapsule l'attribut <code>_celsius</code>. L'accès à <code>temp.celsius</code> exécute la méthode décorée avec <code>@property</code> (le getter). L'assignation d'une nouvelle valeur à <code>temp.celsius</code> exécute la méthode décorée avec <code>@celsius.setter</code>, qui effectue une validation. Enfin, la tentative de suppression de l'attribut lève une exception, interdisant sa suppression.</p>
+
+<p>Les properties offrent plusieurs avantages clés :</p>
+
+<ul>
+    <li><strong>Encapsulation :</strong> Masquent l'implémentation interne des attributs, protégeant ainsi l'état de l'objet.</li>
+    <li><strong>Validation :</strong> Permettent de valider les données lors de l'assignation, garantissant la cohérence de l'objet.</li>
+    <li><strong>Calcul d'attributs :</strong> Permettent de calculer des attributs à la volée, évitant ainsi de stocker des données redondantes.</li>
+    <li><strong>Flexibilité :</strong> Offrent la possibilité de modifier l'implémentation interne sans impacter le code client.</li>
+</ul>
+
+<p>En conclusion, les properties sont un outil essentiel pour écrire du code Python orienté objet de haute qualité. Elles permettent de respecter les principes d'encapsulation, de contrôle d'accès et de responsabilité unique, conduisant à un code plus propre, plus maintenable et plus robuste.</p>
+</p>
+  </section>
+</div>
+<!-- End of Course Marker -->
+<div class="course-end-marker" style="margin: 4rem auto; text-align: center; max-width: 600px">
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #fb5168 50%, transparent); margin: 2rem auto;"></div>
+  <p style="color: #fb5168; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; opacity: 0.9;">
+    That's all folks
+  </p>
+</div></div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>
