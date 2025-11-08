@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>La syntaxe de base en Python | Formateur</title>
+    <meta name="description" content="Découvrez tout sur La syntaxe de base en Python dans cet article détaillé." />
+    <meta property="og:title" content="La syntaxe de base en Python | Formateur" />
+    <meta property="og:description" content="Découvrez tout sur La syntaxe de base en Python dans cet article détaillé." />
+    <meta name="twitter:title" content="La syntaxe de base en Python | Formateur" />
+    <meta name="twitter:description" content="Découvrez tout sur La syntaxe de base en Python dans cet article détaillé." />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">La syntaxe de base en Python</h1>
+      </div><div class="content_box">
+  <section>
+    <h2 class="heading">Introduction</h2>
+    <p><p>La syntaxe de Python, reconnue pour sa clarté et sa lisibilité, est un atout majeur pour l'apprentissage et la maintenance du code. Que vous soyez un développeur débutant ou expérimenté, une solide compréhension de ses fondements est indispensable. Cet article explore les concepts clés, des variables et types de données aux structures de contrôle et aux fonctions, en mettant l'accent sur la manière dont ils s'articulent pour former des programmes Python robustes.</p>
+
+<p>Nous débuterons avec les variables. Python est un langage à typage dynamique, ce qui signifie que vous n'avez pas à déclarer explicitement le type d'une variable. Le type est déterminé automatiquement lors de l'exécution, en fonction de la valeur affectée. L'affectation s'effectue via l'opérateur <code class="language-python">=</code>. Il est crucial de choisir des noms de variables descriptifs pour améliorer la lisibilité du code.</p>
+
+<pre><code class="language-python">
+# Assigning values to variables of different types
+message = "Hello, Python!"  # String
+number = 10                # Integer
+pi = 3.14                  # Float
+is_true = True             # Boolean
+
+print(message)  # Output: Hello, Python!
+print(number)   # Output: 10
+print(pi)       # Output: 3.14
+print(is_true)  # Output: True
+</code></pre>
+
+<p>Les structures de contrôle sont essentielles pour diriger le flux d'exécution de votre programme. Python propose les instructions conditionnelles <code class="language-python">if</code>, <code class="language-python">elif</code> (contraction de "else if") et <code class="language-python">else</code>, ainsi que les boucles <code class="language-python">for</code> et <code class="language-python">while</code> pour l'itération. L'indentation joue un rôle fondamental dans la définition des blocs de code associés à ces structures.</p>
+
+<pre><code class="language-python">
+# Example of an if-elif-else statement
+score = 75
+if score >= 90:
+    print("Excellent!")
+elif score >= 70:
+    print("Good job!")
+else:
+    print("Needs improvement.")
+
+# Example of a for loop iterating through a list
+colors = ["red", "green", "blue"]
+for color in colors:
+    print(color)
+
+# Example of a while loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+</code></pre>
+
+<p>Les fonctions sont des blocs de code réutilisables conçus pour accomplir des tâches spécifiques. Elles sont définies à l'aide du mot-clé <code class="language-python">def</code>. L'indentation est impérative en Python, car elle délimite les blocs de code, y compris le corps d'une fonction. Les docstrings (chaînes de documentation) sont utilisées pour documenter le rôle d'une fonction.</p>
+
+<pre><code class="language-python">
+# Defining a function with a docstring and parameters
+def add_numbers(x, y):
+    """
+    This function adds two numbers and returns the result.
+    """
+    sum_result = x + y
+    return sum_result
+
+# Calling the function and printing the result
+result = add_numbers(5, 3)
+print(result)  # Output: 8
+</code></pre>
+
+<p>En conclusion, la syntaxe de base de Python se distingue par sa simplicité et son élégance. En maîtrisant les variables, les structures de contrôle et les fonctions, vous serez bien équipé pour écrire des programmes Python clairs, efficaces et maintenables. L'indentation est cruciale, et une pratique régulière est la clé pour développer une compétence solide. Explorez davantage les ressources disponibles et n'hésitez pas à expérimenter pour approfondir votre compréhension.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">1. Basic Concepts</h2>
+    <p><p>Python, en tant que langage interprété, exécute le code ligne par ligne, ce qui facilite grandement le débogage. Contrairement aux langages compilés, il n'y a pas d'étape de compilation intermédiaire. L'interpréteur Python lit et exécute directement le code source.</p>
+
+<p>Les variables en Python sont typées dynamiquement. Cela signifie que vous n'avez pas besoin de déclarer explicitement le type d'une variable. Le type est inféré au moment de l'exécution, en fonction de la valeur qui lui est assignée. Cette flexibilité simplifie l'écriture du code.</p>
+
+<pre><code class="language-python">
+# Assign an integer value to a variable
+x = 10
+print(type(x))  # Output: &lt;class 'int'&gt;
+
+# Assign a string value to the same variable
+x = "Hello"
+print(type(x))  # Output: &lt;class 'str'&gt;
+</code></pre>
+
+<p>L'indentation est <strong>cruciale</strong> en Python. Elle délimite les blocs de code, comme les boucles et les instructions conditionnelles. Au lieu des accolades <code class="language-python">{}</code> utilisées dans d'autres langages, Python utilise l'indentation pour structurer le code. Une indentation incorrecte provoquera des erreurs d'exécution, car elle affecte la façon dont Python interprète les blocs de code.</p>
+
+<pre><code class="language-python">
+def my_function(x):
+    if x > 5:
+        print("x is greater than 5")
+    else:
+        print("x is not greater than 5")
+
+my_function(7) # Output: x is greater than 5
+</code></pre>
+
+<p>Les commentaires sont indispensables pour documenter votre code et le rendre plus facile à comprendre. En Python, on utilise le symbole <code class="language-python">#</code> pour ajouter des commentaires sur une seule ligne. L'interpréteur ignore tout ce qui suit ce symbole sur la ligne. Les docstrings, entourées de triples guillemets, servent à documenter les fonctions et les modules.</p>
+
+<pre><code class="language-python">
+# This is a single-line comment explaining the purpose of the next line
+variable = 42  # Assign the value 42 to the variable
+
+"""
+This is a multi-line comment (docstring).
+It can span across multiple lines and is often used
+to document functions or modules.
+"""
+def another_function():
+    pass
+</code></pre>
+
+<p>Python propose un ensemble riche de types de données intégrés. Parmi les plus courants, on trouve les entiers (<code class="language-python">int</code>), les nombres à virgule flottante (<code class="language-python">float</code>), les chaînes de caractères (<code class="language-python">str</code>), les booléens (<code class="language-python">bool</code>), les listes (<code class="language-python">list</code>), les tuples (<code class="language-python">tuple</code>), les dictionnaires (<code class="language-python">dict</code>) et les ensembles (<code class="language-python">set</code>). Chaque type de données possède ses propres caractéristiques et est adapté à des utilisations spécifiques.</p>
+
+<ul>
+    <li><code class="language-python">int</code>: Représente les nombres entiers, positifs ou négatifs, sans partie fractionnaire (ex: 10, -5, 0).</li>
+    <li><code class="language-python">float</code>: Représente les nombres réels avec une partie fractionnaire (ex: 3.14, -2.5, 0.0).</li>
+    <li><code class="language-python">str</code>: Représente les séquences de caractères, utilisées pour stocker du texte (ex: "Bonjour", "Python", "123").</li>
+    <li><code class="language-python">bool</code>: Représente les valeurs de vérité, soit <code class="language-python">True</code> (vrai) ou <code class="language-python">False</code> (faux).</li>
+    <li><code class="language-python">list</code>: Représente une collection ordonnée et modifiable d'éléments (ex: <code class="language-python">[1, 2, "trois"]</code>).</li>
+    <li><code class="language-python">tuple</code>: Représente une collection ordonnée et non modifiable d'éléments (ex: <code class="language-python">(1, 2, "trois")</code>).</li>
+    <li><code class="language-python">dict</code>: Représente une collection de paires clé-valeur (ex: <code class="language-python">{"nom": "Alice", "age": 30}</code>).</li>
+    <li><code class="language-python">set</code>: Représente une collection non ordonnée d'éléments uniques (ex: <code class="language-python">{1, 2, 3}</code>).</li>
+</ul>
+
+<p>La gestion des entrées et sorties est un aspect fondamental de tout programme. La fonction <code class="language-python">print()</code> est utilisée pour afficher des informations à la console, tandis que la fonction <code class="language-python">input()</code> permet de récupérer des données saisies par l'utilisateur. Il est souvent nécessaire de convertir le type des données saisies avec <code class="language-python">input()</code>.</p>
+
+<pre><code class="language-python">
+# Getting input from the user
+name = input("Enter your name: ")
+
+# Printing a formatted string (f-string)
+print(f"Hello, {name}!")
+
+# Getting a number as input and converting it to an integer
+age = input("Enter your age: ")
+age = int(age) # Convert the string input to an integer
+
+print(f"You are {age} years old.")
+</code></pre>
+
+<p>La maîtrise de ces concepts de base est essentielle pour développer des programmes Python robustes et maintenables. Ils constituent la base sur laquelle vous pourrez construire des applications plus complexes et résoudre des problèmes concrets. Une bonne compréhension de ces éléments vous permettra d'écrire du code plus clair, plus efficace et moins sujet aux erreurs.</p>
+</p>
+    <h3>1.1 Core Features</h3>
+    <p><p>Python offre un ensemble de fonctionnalités essentielles qui le rendent puissant et agréable à utiliser. La compréhension de ces concepts de base est cruciale pour développer du code Python propre et efficace.</p>
+
+<p>Les variables servent à stocker des données. En Python, il n'est pas nécessaire de déclarer explicitement le type d'une variable. L'interpréteur infère automatiquement le type en fonction de la valeur assignée.</p>
+
+<pre><code class="language-python">
+# Assign a string to a variable
+message = "Hello, Python!"
+print(message)
+
+# Assign an integer to a variable
+number = 10
+print(number)
+</code></pre>
+
+<p>Les types de données fondamentaux en Python incluent les entiers (<code class="language-python">int</code>), les nombres à virgule flottante (<code class="language-python">float</code>), les chaînes de caractères (<code class="language-python">str</code>), et les booléens (<code class="language-python">bool</code>).  Les structures de données, telles que les listes (<code class="language-python">list</code>), les tuples (<code class="language-python">tuple</code>) et les dictionnaires (<code class="language-python">dict</code>), permettent de stocker et d'organiser des collections de données.</p>
+
+<pre><code class="language-python">
+# Examples of different data types
+integer_number = 5
+floating_point_number = 5.0
+string_variable = "Python"
+boolean_value = True
+list_example = [1, 2, 3]
+tuple_example = (4, 5, 6)
+dictionary_example = {'key': 'value'}
+
+
+print(type(integer_number))   # Output: &lt;class 'int'&gt;
+print(type(floating_point_number)) # Output: &lt;class 'float'&gt;
+print(type(string_variable))  # Output: &lt;class 'str'&gt;
+print(type(boolean_value))   # Output: &lt;class 'bool'&gt;
+print(type(list_example))    # Output: &lt;class 'list'&gt;
+print(type(tuple_example))   # Output: &lt;class 'tuple'&gt;
+print(type(dictionary_example)) # Output: &lt;class 'dict'&gt;
+</code></pre>
+
+<p>Les opérateurs sont des symboles qui réalisent des opérations sur des variables et des valeurs. Python prend en charge différents types d'opérateurs : les opérateurs arithmétiques (comme <code class="language-python">+</code>, <code class="language-python">-</code>, <code class="language-python">*</code>, <code class="language-python">/</code>, <code class="language-python">%</code>, <code class="language-python">**</code>), les opérateurs de comparaison (comme <code class="language-python">==</code>, <code class="language-python">!=</code>, <code class="language-python">&gt;</code>, <code class="language-python">&lt;</code>, <code class="language-python">&gt;=</code>, <code class="language-python">&lt;=</code>) et les opérateurs logiques (comme <code class="language-python">and</code>, <code class="language-python">or</code>, <code class="language-python">not</code>).</p>
+
+<pre><code class="language-python">
+# Arithmetic operators
+x = 10
+y = 5
+
+print(x + y)  # Addition: 15
+print(x - y)  # Subtraction: 5
+print(x * y)  # Multiplication: 50
+print(x / y)  # Division: 2.0
+print(x % y)  # Modulus: 0
+print(x ** y) # Exponentiation: 100000
+
+# Comparison operators
+print(x == y) # Equal to: False
+print(x != y) # Not equal to: True
+print(x > y)  # Greater than: True
+print(x < y)  # Less than: False
+print(x >= y) # Greater than or equal to: True
+print(x <= y) # Less than or equal to: False
+
+# Logical operators
+a = True
+b = False
+
+print(a and b) # Logical AND: False
+print(a or b)  # Logical OR: True
+print(not a)  # Logical NOT: False
+</code></pre>
+
+<p>Les instructions conditionnelles (comme <code class="language-python">if</code>, <code class="language-python">elif</code>, <code class="language-python">else</code>) permettent de contrôler le flux d'exécution du code en exécutant différents blocs de code selon la valeur de conditions spécifiques.</p>
+
+<pre><code class="language-python">
+# Example of an if-elif-else statement
+age = 20
+
+if age >= 18:
+    print("You are an adult.")
+elif age >= 13:
+    print("You are a teenager.")
+else:
+    print("You are a minor.")
+</code></pre>
+
+<p>Les boucles (comme <code class="language-python">for</code> et <code class="language-python">while</code>) permettent de répéter l'exécution d'un bloc de code un certain nombre de fois, ou jusqu'à ce qu'une condition soit remplie.</p>
+
+<pre><code class="language-python">
+# Example of a for loop
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+# Example of a while loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+</code></pre>
+
+<p>Les fonctions sont des blocs de code réutilisables conçus pour effectuer une tâche spécifique. Elles favorisent la modularité et la lisibilité du code.</p>
+
+<pre><code class="language-python">
+# Defining a function
+def greet(name):
+    """This function greets the person passed in as a parameter.""" # Docstring
+    print("Hello, " + name + "!")
+
+# Calling the function
+greet("Alice")
+
+def add_numbers(x, y):
+    """This function adds two numbers and returns the result."""
+    return x + y
+
+result = add_numbers(5, 3)
+print(result) # Output: 8
+</code></pre>
+
+<p>La maîtrise de ces concepts fondamentaux est essentielle pour écrire du code Python de qualité, efficace et facile à maintenir. Ils constituent la base de tous les programmes Python, des scripts simples aux applications les plus complexes. Une bonne compréhension de ces bases vous permettra de progresser rapidement dans votre apprentissage de Python et de développer des solutions robustes et élégantes.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">Conclusion</h2>
+    <p><p>Nous avons exploré les fondements de la syntaxe Python, un ensemble de règles qui régissent l'écriture du code. La maîtrise de ces concepts est cruciale pour tout développeur Python, qu'il soit débutant ou expérimenté, car elle permet d'écrire un code propre, lisible et maintenable.</p>
+
+<p>L'indentation est un pilier central de la syntaxe Python. Contrairement à d'autres langages qui utilisent des accolades ou des mots-clés pour délimiter les blocs de code, Python utilise l'indentation. Une indentation incorrecte conduit inévitablement à des erreurs d'exécution, les fameuses <code class="language-python">IndentationError</code>.  Il est donc primordial d'être rigoureux sur ce point.</p>
+<pre><code class="language-python">
+def my_function(x):
+    if x > 5:
+        print("x is greater than 5") # This line is correctly indented
+    else:
+        print("x is less than or equal to 5") # Incorrect indentation will cause an IndentationError
+</code></pre>
+
+<p>Les commentaires jouent un rôle essentiel dans la clarté et la compréhensibilité du code. Ils permettent d'expliquer le fonctionnement d'une portion de code, de documenter les décisions de conception, et de faciliter le travail collaboratif.  Python offre deux types de commentaires: les commentaires sur une seule ligne, introduits par le symbole <code class="language-python">#</code>, et les commentaires multilignes, délimités par des triples guillemets (<code class="language-python">"""</code> ou <code class="language-python">'''</code>).</p>
+<pre><code class="language-python">
+# This is a single-line comment.
+def addition(a, b):
+    """
+    This function takes two numbers as input and returns their sum.
+    """
+    return a + b
+</code></pre>
+
+<p>La définition de variables est une autre composante fondamentale. En Python, l'affectation d'une valeur à une variable est simple et intuitive, et le type de la variable est déterminé dynamiquement. Pour une lisibilité optimale, il est recommandé de choisir des noms de variables clairs et descriptifs, reflétant leur rôle dans le programme.</p>
+<pre><code class="language-python">
+number_of_customers = 150  # An integer
+conversion_rate = 0.12  # A float
+message = "Welcome to our site!"  # A string
+is_active = True  # A boolean
+</code></pre>
+
+<p>La maîtrise des opérateurs est également indispensable. Python propose un large éventail d'opérateurs, incluant les opérateurs arithmétiques (<code class="language-python">+</code>, <code class="language-python">-</code>, <code class="language-python">*</code>, <code class="language-python">/</code>, <code class="language-python">//</code>, <code class="language-python">%</code>, <code class="language-python">**</code>), les opérateurs de comparaison (<code class="language-python">==</code>, <code class="language-python">!=</code>, <code class="language-python">></code>, <code class="language-python"><</code>, <code class="language-python">>=</code>, <code class="language-python"><=</code>) et les opérateurs logiques (<code class="language-python">and</code>, <code class="language-python">or</code>, <code class="language-python">not</code>). Ces opérateurs permettent de manipuler les données et d'implémenter une logique conditionnelle complexe.</p>
+<pre><code class="language-python">
+a = 10
+b = 5
+
+sum_result = a + b  # Addition
+product_result = a * b  # Multiplication
+is_equal = a == b  # Comparison (result: False)
+is_greater = a > b # Comparison (result: True)
+</code></pre>
+
+<p>En conclusion, une solide compréhension de l'indentation, des commentaires, des variables et des opérateurs est primordiale pour écrire du code Python propre, efficace, et facilement maintenable. L'assimilation de ces concepts de base est une étape cruciale vers la maîtrise de ce langage puissant et polyvalent. N'hésitez pas à continuer à explorer et à expérimenter avec les nombreuses fonctionnalités offertes par Python.</p>
+</p>
+  </section>
+</div>
+<!-- End of Course Marker -->
+<div class="course-end-marker" style="margin: 4rem auto; text-align: center; max-width: 600px">
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #fb5168 50%, transparent); margin: 2rem auto;"></div>
+  <p style="color: #fb5168; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; opacity: 0.9;">
+    That's all folks
+  </p>
+</div></div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>

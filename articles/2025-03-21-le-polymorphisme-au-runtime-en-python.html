@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>Le polymorphisme au runtime en Python | Formateur</title>
+    <meta name="description" content="Découvrez tout sur Le polymorphisme au runtime en Python dans cet article détaillé." />
+    <meta property="og:title" content="Le polymorphisme au runtime en Python | Formateur" />
+    <meta property="og:description" content="Découvrez tout sur Le polymorphisme au runtime en Python dans cet article détaillé." />
+    <meta name="twitter:title" content="Le polymorphisme au runtime en Python | Formateur" />
+    <meta name="twitter:description" content="Découvrez tout sur Le polymorphisme au runtime en Python dans cet article détaillé." />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <script src="/src/js/code-preprocessor.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">Le polymorphisme au runtime en Python</h1>
+      </div>
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">Introduction</h2>
+    <p><p>Le polymorphisme est un concept clé de la programmation orientée objet (POO) qui permet de traiter des objets de classes différentes de manière uniforme, en utilisant une interface commune. Cette caractéristique favorise la flexibilité, la réutilisabilité et l'extensibilité du code. En Python, le polymorphisme est particulièrement puissant grâce au <em>duck typing</em>, une approche où le type d'un objet est déterminé par sa capacité à se comporter d'une certaine manière, plutôt que par son type déclaré explicitement.</p>
+
+<p>Le polymorphisme au runtime, souvent illustré par l'expression "Si ça marche comme un canard et que ça fait coin coin comme un canard, alors c'est probablement un canard" (<em>"If it walks like a duck and quacks like a duck, then it must be a duck"</em>), se traduit par la possibilité pour une fonction ou une méthode d'accepter des objets de types variés, à condition qu'ils possèdent les méthodes ou attributs requis pour son exécution. En Python, cela signifie que la vérification du type est effectuée au moment de l'exécution, offrant une grande liberté dans la conception des classes et des interfaces.</p>
+
+<p>Pour illustrer ce concept, prenons l'exemple suivant :</p>
+
+<pre><code class="language-python">
+class Duck:
+    def speak(self):
+        return "Quack!"
+
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+def animal_sound(animal):
+    print(animal.speak())
+
+my_duck = Duck()
+my_dog = Dog()
+
+animal_sound(my_duck)  # Prints "Quack!"
+animal_sound(my_dog)  # Prints "Woof!"
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">animal_sound</code> n'effectue aucune vérification explicite du type de l'objet <code class="language-python">animal</code>. Elle se contente d'appeler la méthode <code class="language-python">speak()</code>. Tant que l'objet possède cette méthode, le code s'exécutera correctement, indépendamment du type réel de l'objet. C'est le principe fondamental du <em>duck typing</em>.</p>
+
+<p>Contrairement aux langages à typage statique, où le type d'une variable doit être spécifié à la compilation, Python offre une grande adaptabilité grâce à son typage dynamique. Cette souplesse est particulièrement avantageuse dans les situations où les objets manipulés peuvent varier, facilitant l'ajout de nouveaux types sans nécessiter de modifications des fonctions existantes. Nous allons maintenant explorer plus en détail les mécanismes et les bénéfices de cette forme de polymorphisme, et examiner des applications concrètes dans divers contextes de programmation.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">1. Comprendre le polymorphisme en Python</h2>
+    <p><p>Le polymorphisme, un concept fondamental de la programmation orientée objet, permet de manipuler des objets de différentes classes de manière uniforme. En Python, grâce à son typage dynamique, cette capacité est particulièrement souple. Le polymorphisme en Python repose sur l'idée que des objets de classes distinctes peuvent répondre à la même méthode, chacun avec sa propre implémentation.</p>
+
+<p>Prenons un exemple simple impliquant une classe de base et deux classes dérivées :</p>
+
+<pre><code class="language-python">
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Generic animal sound"
+
+class Cat(Animal):
+    def speak(self):
+        return "Miaow!"
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+# Usage example
+animal = Animal("Animal")
+cat = Cat("Felix")
+dog = Dog("Medor")
+
+print(animal.speak())  # Output: Generic animal sound
+print(cat.speak())     # Output: Miaow!
+print(dog.speak())     # Output: Woof!
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">speak()</code> est définie dans la classe de base <code class="language-python">Animal</code>, puis redéfinie (overridden) dans les classes dérivées <code class="language-python">Cat</code> et <code class="language-python">Dog</code>. Chaque classe fournit une implémentation spécifique de la méthode <code class="language-python">speak()</code>. C'est un exemple classique de polymorphisme d'héritage, où les classes filles adaptent le comportement de la classe mère.</p>
+
+<p>Le polymorphisme ne se limite pas à l'héritage. Le "duck typing" est une forme de polymorphisme très répandue en Python. L'idée est que si un objet "ressemble à un canard" et "cancane comme un canard", alors Python le traitera comme un canard, indépendamment de son type réel. En d'autres termes, ce qui compte, c'est la présence des méthodes attendues, et non l'héritage d'une classe spécifique.  C'est un concept clé de la flexibilité de Python.</p>
+
+<p>Voici un exemple illustrant le "duck typing" :</p>
+
+<pre><code class="language-python">
+class Bird:
+    def fly(self):
+        print("The bird flies.")
+
+class Airplane:
+    def fly(self):
+        print("The airplane flies.")
+
+def make_it_fly(flying_object):
+    flying_object.fly()
+
+# Creating instances
+bird = Bird()
+airplane = Airplane()
+
+# Using the make_it_fly function with both instances
+make_it_fly(bird)     # Output: The bird flies.
+make_it_fly(airplane)  # Output: The airplane flies.
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">Bird</code> et <code class="language-python">Airplane</code> n'ont aucune relation d'héritage. Cependant, ils partagent une méthode commune <code class="language-python">fly()</code>. La fonction <code class="language-python">make_it_fly()</code> peut accepter n'importe quel objet possédant une méthode <code class="language-python">fly()</code>, illustrant ainsi le principe du "duck typing". Le type exact de l'objet n'a pas d'importance, seule la présence de la méthode <code class="language-python">fly()</code> compte pour déterminer si l'objet peut être utilisé.</p>
+
+<p>Enfin, le polymorphisme peut également être simulé grâce au "method overloading" (bien que Python ne le prenne pas en charge nativement comme d'autres langages). On peut simuler le "method overloading" en utilisant des arguments par défaut ou des arguments variables (<code class="language-python">*args</code> et <code class="language-python">**kwargs</code>).</p>
+
+<pre><code class="language-python">
+class Calculator:
+    def add(self, a, b=None, c=None):
+        if b is not None and c is not None:
+            return a + b + c
+        elif b is not None:
+            return a + b
+        else:
+            return a
+
+calculator = Calculator()
+print(calculator.add(5))        # Output: 5
+print(calculator.add(5, 3))     # Output: 8
+print(calculator.add(5, 3, 2))  # Output: 10
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">add()</code> peut prendre un, deux ou trois arguments. Le comportement de la méthode change en fonction du nombre d'arguments fournis, simulant ainsi le "method overloading". Cette flexibilité est une autre manifestation du polymorphisme en Python, permettant d'adapter le comportement d'une méthode en fonction des entrées.</p>
+
+<p>En conclusion, le polymorphisme en Python se manifeste de plusieurs manières, notamment par l'héritage, le "duck typing" et la simulation du "method overloading". Cette souplesse permet d'écrire du code plus générique, adaptable et réutilisable, ce qui est un atout majeur de Python pour la conception de systèmes complexes et maintenables.</p>
+</p>
+    <h3>1.1 Définition du polymorphisme</h3>
+    <p><p>Le polymorphisme, un pilier de la programmation orientée objet (POO), signifie littéralement "plusieurs formes". En Python, il se manifeste par la capacité d'une entité – qu'il s'agisse d'une fonction, d'une méthode ou d'un objet – à adopter divers comportements selon le contexte dans lequel elle est utilisée. Le polymorphisme permet de traiter des objets de différentes classes de manière uniforme, non pas en se basant sur leur type déclaré, mais sur les méthodes et attributs qu'ils possèdent en commun.</p>
+
+<p>Cette souplesse est essentielle pour écrire du code générique et réutilisable. Au lieu de créer des fonctions ou des méthodes spécifiques pour chaque type d'objet, on peut développer du code qui interagit avec n'importe quel objet fournissant une interface ou un ensemble de méthodes attendu. Cela simplifie la manipulation d'objets de classes différentes d'une manière cohérente et prédictible.</p>
+
+<p>Prenons un exemple concret pour illustrer ce concept. Imaginons une fonction conçue pour afficher des informations pertinentes sur un objet. Au lieu de définir une fonction distincte pour chaque type d'objet (par exemple, une fonction pour afficher les détails d'une voiture et une autre pour un vélo), on peut créer une fonction unique capable de fonctionner avec tout objet disposant d'une méthode <code class="language-python">display_info()</code>. Voici une démonstration de ce principe :</p>
+
+<pre><code class="language-python">
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}")
+
+class Car(Vehicle):
+    def __init__(self, brand, model, num_doors):
+        super().__init__(brand, model)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        print(f"Car - Brand: {self.brand}, Model: {self.model}, Doors: {self.num_doors}")
+
+class Bicycle(Vehicle):
+    def __init__(self, brand, model, bike_type):
+        super().__init__(brand, model)
+        self.bike_type = bike_type
+
+    def display_info(self):
+        print(f"Bicycle - Brand: {self.brand}, Model: {self.model}, Type: {self.bike_type}")
+
+def display_vehicle_info(vehicle):
+    # This function accepts any object that has a 'display_info' method
+    vehicle.display_info()
+
+# Create instances of Car and Bicycle
+my_car = Car("Toyota", "Camry", 4)
+my_bicycle = Bicycle("Giant", "Defy", "Road")
+
+# Call the function with different objects
+display_vehicle_info(my_car)
+display_vehicle_info(my_bicycle)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">display_vehicle_info()</code> fonctionne aussi bien avec les objets de la classe <code class="language-python">Car</code> qu'avec ceux de la classe <code class="language-python">Bicycle</code>, car les deux classes implémentent une méthode <code class="language-python">display_info()</code>. Cette méthode, bien que potentiellement différente dans son implémentation pour chaque classe, fournit une interface commune, permettant à la fonction <code class="language-python">display_vehicle_info()</code> de les traiter de manière uniforme. C'est une illustration simple mais efficace du polymorphisme en action.</p>
+
+<p>En résumé, le polymorphisme en Python est la faculté pour un objet de revêtir plusieurs formes. Cette capacité est essentielle pour développer du code plus adaptable, réutilisable et maintenable, car elle permet de traiter des objets de classes différentes de manière uniforme, à condition qu'ils partagent une interface commune, c'est-à-dire un ensemble de méthodes portant le même nom et remplissant une fonction similaire, même si leur implémentation interne peut varier.</p>
+</p>
+    <h3>1.2 Polymorphisme statique vs. dynamique (runtime)</h3>
+    <p><p>Le polymorphisme est la capacité pour une fonction ou une méthode d'agir différemment en fonction du type d'objet sur lequel elle opère. En Python, on distingue traditionnellement deux types de polymorphisme : statique et dynamique. Cependant, étant donné que Python est un langage à typage dynamique, le polymorphisme se manifeste principalement au moment de l'exécution (runtime).</p>
+
+<p>Le <strong>polymorphisme statique</strong>, aussi appelé surcharge de méthode dans d'autres langages, est résolu au moment de la compilation. Dans les langages statiquement typés comme Java ou C++, il est possible de définir plusieurs méthodes avec le même nom, mais avec des signatures différentes (nombre et/ou types d'arguments). Le compilateur détermine quelle méthode appeler en fonction des types des arguments passés. Python, étant un langage à typage dynamique, ne supporte pas la surcharge de méthode au sens strict. Si vous définissez plusieurs méthodes avec le même nom dans une classe, la dernière définition écrase les précédentes.  Il s'agit d'un comportement différent de la surcharge de méthode présente dans les langages statiques.</p>
+
+<pre><code class="language-python">
+class Example:
+    def calculate(self, x):
+        # Calculates the square of x
+        return x * x
+
+    def calculate(self, x, y):
+        # Calculates the product of x and y
+        return x * y
+
+# Only the second definition of calculate is valid. The first one is overwritten.
+instance = Example()
+# Calling instance.calculate(5) would raise a TypeError because the interpreter expects two arguments.
+# instance.calculate(5, 6) would return 30
+try:
+    print(instance.calculate(5))
+except TypeError as e:
+    print(f"Error: {e}") # Output: Error: calculate() missing 1 required positional argument: 'y'
+print(instance.calculate(5, 6)) # Output: 30
+</code></pre>
+
+<p>Le <strong>polymorphisme dynamique</strong>, souvent associé au "duck typing", est résolu au moment de l'exécution. L'interpréteur Python ne vérifie pas le type exact d'un objet avant d'appeler une méthode.  Au lieu de cela, il vérifie si l'objet possède une méthode du nom requis. Si c'est le cas, la méthode est appelée, quel que soit le type de l'objet.  C'est ce qui permet à différents objets, même d'origines différentes, d'être utilisés de manière interchangeable tant qu'ils partagent une interface commune (c'est-à-dire, qu'ils implémentent les mêmes méthodes). C'est un concept fondamental du polymorphisme en Python et permet une grande flexibilité.</p>
+
+<pre><code class="language-python">
+class Guitar:
+    def play(self):
+        # Simulates playing a guitar
+        return "Strumming the guitar"
+
+class Piano:
+    def play(self):
+        # Simulates playing a piano
+        return "Tinkling the piano keys"
+
+def perform(instrument):
+    # Performs using the given instrument by calling its play method
+    return instrument.play()
+
+# Creating instances of different instruments
+my_guitar = Guitar()
+my_piano = Piano()
+
+# The perform function works with both Guitar and Piano because they both have a 'play' method
+print(perform(my_guitar)) # Output: Strumming the guitar
+print(perform(my_piano)) # Output: Tinkling the piano keys
+</code></pre>
+
+<p>Dans cet exemple, les classes <code class="language-python">Guitar</code> et <code class="language-python">Piano</code> ont toutes deux une méthode <code class="language-python">play()</code>. La fonction <code class="language-python">perform()</code> accepte n'importe quel objet en argument et appelle sa méthode <code class="language-python">play()</code>. Le polymorphisme dynamique permet ainsi à la fonction <code class="language-python">perform()</code> de fonctionner avec différents types d'objets, pourvu qu'ils aient une méthode <code class="language-python">play()</code>. Cela illustre la flexibilité et la puissance du polymorphisme au runtime en Python.  En résumé, le polymorphisme dynamique est une caractéristique clé de Python qui favorise la réutilisabilité et l'adaptabilité du code.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">2. Duck Typing: La base du polymorphisme au runtime</h2>
+    <p><p>Le "Duck Typing" est un concept central en Python qui permet au polymorphisme de s'exprimer naturellement au moment de l'exécution (runtime). Au lieu de se focaliser sur le type précis d'un objet, on vérifie si celui-ci possède les méthodes ou attributs nécessaires. L'idée est simple : si un objet "ressemble à un canard" (c'est-à-dire qu'il a les méthodes attendues), alors il est traité "comme un canard", quelle que soit sa classe d'origine.</p>
+
+<p>L'expression consacrée "Si ça marche comme un canard et que ça fait coin-coin comme un canard, alors c'est un canard" illustre parfaitement ce principe. Python se désintéresse de l'héritage ou de l'implémentation d'interfaces formelles ; il se fie uniquement à la présence des méthodes requises pour effectuer une opération.</p>
+
+<p>Illustrons cela avec un exemple. Supposons que nous ayons besoin d'une fonction capable de faire "parler" différents objets. Nous allons créer deux classes, <code class="language-python">Human</code> et <code class="language-python">Dog</code>, qui implémentent une méthode <code class="language-python">speak()</code>, mais avec des comportements distincts.</p>
+
+<pre><code class="language-python">
+class Human:
+    def speak(self):
+        return "Hello, how are you?"
+
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+def make_sound(animal):
+    # No type checking is performed here. The object is assumed to have a 'speak' method.
+    print(animal.speak())
+
+# Create instances of both classes
+human = Human()
+dog = Dog()
+
+# Call the function with both instances
+make_sound(human)  # Output: Hello, how are you?
+make_sound(dog)  # Output: Woof!
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">make_sound</code> ne vérifie pas le type des objets qu'elle reçoit (<code class="language-python">Human</code> ou <code class="language-python">Dog</code>). Elle se contente d'appeler la méthode <code class="language-python">speak()</code> de l'objet passé en argument. Si l'objet possède cette méthode, tout se déroule sans problème. Dans le cas contraire, une exception de type <code class="language-python">AttributeError</code> sera levée au moment de l'exécution, indiquant que l'objet ne possède pas l'attribut ou la méthode attendue.</p>
+
+<p>Cette flexibilité est un avantage majeur du Duck Typing. Elle permet d'écrire du code plus générique et réutilisable, car il est possible de travailler avec différents types d'objets tant qu'ils fournissent les méthodes nécessaires. Cela encourage également le développement modulaire, car les objets peuvent être substitués les uns aux autres sans nécessiter de modifications importantes du code. Cependant, il est crucial d'être vigilant, car les erreurs de type ne sont détectées qu'au moment de l'exécution, ce qui peut compliquer le débogage.</p>
+
+<p>Un autre exemple pertinent concerne les objets qui implémentent la méthode <code class="language-python">__len__()</code>. La fonction intégrée <code class="language-python">len()</code> de Python peut être appliquée à n'importe quel objet qui définit cette méthode, qu'il s'agisse d'une liste, d'une chaîne de caractères ou d'une classe personnalisée. Cela illustre comment le Duck Typing permet à des types d'objets très différents de se comporter de manière polymorphe, en répondant à une interface commune implicite.</p>
+
+<pre><code class="language-python">
+class Book:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __len__(self):
+        return self.pages
+
+my_book = Book(350)
+print(len(my_book))  # Output: 350
+
+my_list = [1, 2, 3, 4, 5]
+print(len(my_list))  # Output: 5
+</code></pre>
+
+<p>En conclusion, le Duck Typing est un mécanisme essentiel du polymorphisme au runtime en Python. Il offre une grande souplesse et facilite l'écriture de code adaptable, mais il exige une attention particulière lors du développement et des tests pour anticiper et gérer les erreurs potentielles au moment de l'exécution. Une bonne couverture de tests unitaires est recommandée pour s'assurer que les objets se comportent comme attendu.</p>
+</p>
+    <h3>2.1 Qu'est-ce que le Duck Typing?</h3>
+    <p><p>Le "duck typing" est un concept central en Python, un pilier du polymorphisme au runtime.  L'idée principale est que le type exact d'un objet importe moins que sa capacité à se comporter d'une manière attendue.  Autrement dit, on se concentre sur ce qu'un objet *fait*, plutôt que sur ce qu'il *est*.</p>
+
+<p>L'expression "duck typing" s'inspire de l'adage: "Si ça marche comme un canard, nage comme un canard et cancane comme un canard, alors c'est probablement un canard."  En termes de programmation, cela signifie que si un objet possède les méthodes et attributs nécessaires pour une opération donnée, il peut être utilisé dans cette opération, même s'il n'est pas explicitement d'un type particulier. Python n'effectue pas de vérification de type stricte au moment de la compilation; il vérifie la présence des méthodes et attributs nécessaires au moment de l'exécution.</p>
+
+<p>Illustrons cela avec un exemple. Imaginons une fonction simple qui interagit avec un objet en appelant sa méthode <code class="language-python">display()</code>.</p>
+
+<pre><code class="language-python">
+def display_something(obj):
+  """
+  Displays something using the 'display' method of the object.
+  """
+  obj.display()
+</code></pre>
+
+<p>Considérons maintenant deux classes différentes, <code class="language-python">TextContent</code> et <code class="language-python">GraphicalImage</code>. Chacune possède une méthode <code class="language-python">display()</code>, mais elles effectuent des actions distinctes:</p>
+
+<pre><code class="language-python">
+class TextContent:
+  """
+  Represents a text message.
+  """
+  def __init__(self, content):
+    self.content = content
+
+  def display(self):
+    """
+    Displays the content of the message.
+    """
+    print("Text:", self.content)
+
+
+class GraphicalImage:
+  """
+  Represents an image.
+  """
+  def __init__(self, file_name):
+    self.file_name = file_name
+
+  def display(self):
+    """
+    Displays the name of the image file.
+    """
+    print("Displaying image:", self.file_name)
+</code></pre>
+
+<p>Nous pouvons utiliser la fonction <code class="language-python">display_something</code> avec ces deux classes sans qu'elles aient une relation d'héritage ou d'interface commune:</p>
+
+<pre><code class="language-python">
+text_message = TextContent("Hello, duck typing!")
+image = GraphicalImage("sunset.png")
+
+display_something(text_message)
+display_something(image)
+</code></pre>
+
+<p>Ce code produira la sortie suivante :</p>
+
+<pre><code class="language-python">
+Text: Hello, duck typing!
+Displaying image: sunset.png
+</code></pre>
+
+<p>La force du "duck typing" réside dans sa flexibilité et son adaptabilité.  Il évite la nécessité de hiérarchies de classes rigides ou d'interfaces formelles. Tant qu'un objet fournit les méthodes et attributs requis, il peut être utilisé de manière interchangeable avec d'autres objets, favorisant ainsi une plus grande réutilisation du code.</p>
+
+<p>Le "duck typing" est très répandu en Python et contribue à son expressivité et à sa capacité à écrire du code concis et adaptable.  Il est crucial de se rappeler que si un objet ne possède pas la méthode ou l'attribut attendu, une exception sera levée au moment de l'exécution.  Par conséquent, il est essentiel de bien comprendre les exigences de chaque fonction ou méthode pour éviter les erreurs potentielles.  Des techniques comme la documentation claire et les tests unitaires aident à garantir que les objets se comportent comme prévu.</p>
+</p>
+    <h3>2.2 Implémentation du Duck Typing en Python</h3>
+    <p><p>Le duck typing est un concept central du polymorphisme en Python. Son principe fondamental est résumé par l'adage : "Si ça ressemble à un canard, nage comme un canard, et cancane comme un canard, alors c'est probablement un canard." En d'autres termes, ce qui importe, ce n'est pas le type spécifique d'un objet, mais plutôt le fait qu'il possède les méthodes et les attributs nécessaires pour effectuer une opération donnée. Python, en tant que langage à typage dynamique, tire pleinement parti du duck typing.</p>
+
+<p>Contrairement aux langages à typage statique, où la vérification des types est effectuée à la compilation, Python effectue cette vérification au moment de l'exécution (runtime). Cela signifie que vous n'êtes pas obligé de déclarer explicitement le type d'une variable ou de contraindre un objet à hériter d'une classe particulière pour pouvoir l'utiliser avec une fonction ou une méthode. La seule exigence est que l'objet possède les méthodes et attributs attendus.</p>
+
+<p>Prenons l'exemple suivant pour illustrer le duck typing :</p>
+
+<pre><code class="language-python">
+class TextDocument:
+    def __init__(self, content):
+        self.content = content
+
+    def display(self):
+        return self.content
+
+class PDFDocument:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def display(self):
+        # Simulate reading PDF content
+        return f"Content from {self.file_path}"
+
+def show_document(document):
+    print(document.display())
+
+# Create instances of both classes
+text_doc = TextDocument("This is a text document.")
+pdf_doc = PDFDocument("sample.pdf")
+
+# Both objects can be passed to the function
+show_document(text_doc) # Output: This is a text document.
+show_document(pdf_doc) # Output: Content from sample.pdf
+</code></pre>
+
+<p>Dans cet exemple, les classes <code class="language-python">TextDocument</code> et <code class="language-python">PDFDocument</code> n'ont aucune relation d'héritage. Cependant, elles partagent une méthode commune, <code class="language-python">display()</code>. La fonction <code class="language-python">show_document()</code> peut accepter n'importe quel objet qui possède cette méthode, illustrant ainsi le duck typing en action. Python se concentre sur la présence et le comportement de la méthode <code class="language-python">display()</code>, et non sur le type spécifique de l'objet.</p>
+
+<p>Le duck typing encourage un code plus flexible, adaptable et réutilisable. Il permet la création d'interfaces implicites, où le contrat entre les différents composants est défini par le comportement attendu plutôt que par des déclarations de type explicites. Cette approche simplifie l'intégration de nouveaux objets et favorise le découplage entre les différentes parties du code. Cependant, il est crucial de reconnaître que le duck typing peut potentiellement conduire à des erreurs d'exécution si un objet ne possède pas les méthodes ou attributs requis. Par conséquent, une pratique de test unitaire rigoureuse est essentielle pour garantir que les objets se comportent comme prévu et que les erreurs potentielles sont détectées et corrigées avant qu'elles n'affectent le fonctionnement du programme.</p>
+
+<p>Pour gérer les erreurs potentielles associées au duck typing, on peut utiliser des mécanismes de gestion des exceptions, tels que les blocs <code class="language-python">try...except</code>. Cela permet d'intercepter les exceptions <code class="language-python">AttributeError</code> qui se produisent lorsqu'une méthode ou un attribut est absent :</p>
+
+<pre><code class="language-python">
+class AudioFile:
+    def __init__(self, filename):
+        self.filename = filename
+
+    def play(self):
+        print(f"Playing audio file: {self.filename}")
+
+class VideoFile:
+    def __init__(self, filename):
+        self.filename = filename
+
+    # VideoFile class does not implement a 'play' method
+
+def play_media(media_object):
+    try:
+        media_object.play()
+    except AttributeError:
+        print("Error: This media type cannot be played.")
+
+audio = AudioFile("song.mp3")
+video = VideoFile("movie.mp4")
+
+play_media(audio) # Output: Playing audio file: song.mp3
+play_media(video) # Output: Error: This media type cannot be played.
+</code></pre>
+
+<p>En conclusion, le duck typing est un élément fondamental du polymorphisme en Python. Il offre une flexibilité considérable et permet d'écrire un code plus générique et adaptable. Bien qu'il requière une attention particulière à la gestion des erreurs potentielles, il contribue de manière significative à la puissance et à l'expressivité du langage Python.</p>
+</p>
+    <h3>2.3 Exemple concret de Duck Typing</h3>
+    <p><p>Le duck typing est un concept central du polymorphisme en Python. Il repose sur l'idée que le type exact d'un objet importe moins que sa capacité à répondre à un ensemble donné de méthodes ou d'attributs. En d'autres termes, si un objet "ressemble à un canard, nage comme un canard et cancane comme un canard, alors c'est un canard" (on s'en fiche de son type véritable).</p>
+
+<p>Pour illustrer ce concept, imaginons deux classes distinctes, <code class="language-python">Oven</code> (Four) et <code class="language-python">Microwave</code> (Micro-ondes). Elles ne partagent aucune hiérarchie d'héritage, mais elles possèdent toutes les deux une méthode pour cuire un plat.</p>
+
+<pre><code class="language-python">
+class Oven:
+    def cook(self, dish):
+        """
+        Simulates baking a dish in the oven.
+        """
+        print(f"Baking {dish} in the oven.")
+
+class Microwave:
+    def cook(self, dish):
+        """
+        Simulates heating a dish in the microwave.
+        """
+        print(f"Heating {dish} in the microwave.")
+</code></pre>
+
+<p>La clé ici est que les deux classes implémentent une méthode nommée <code class="language-python">cook</code>. On peut donc écrire une fonction qui accepte n'importe quel objet ayant une telle méthode, sans se soucier de son type précis.</p>
+
+<pre><code class="language-python">
+def prepare_meal(cooking_device, dish):
+    """
+    Prepares a meal using the given cooking device.
+    It expects the cooking_device to have a 'cook' method.
+    """
+    cooking_device.cook(dish)
+</code></pre>
+
+<p>Voici comment cette fonction peut être utilisée avec nos deux classes:</p>
+
+<pre><code class="language-python">
+oven = Oven()
+microwave = Microwave()
+
+prepare_meal(oven, "pizza")
+prepare_meal(microwave, "popcorn")
+</code></pre>
+
+<p>L'exécution de ce code produira le résultat suivant:</p>
+
+<pre><code class="language-python">
+Baking pizza in the oven.
+Heating popcorn in the microwave.
+</code></pre>
+
+<p>La fonction <code class="language-python">prepare_meal</code> n'a jamais vérifié si <code class="language-python">cooking_device</code> était un <code class="language-python">Oven</code> ou un <code class="language-python">Microwave</code>. Elle a simplement supposé que l'objet avait une méthode <code class="language-python">cook</code> et l'a appelée. C'est le principe fondamental du duck typing. Tant que l'objet se comporte comme attendu (ici, en fournissant une méthode <code class="language-python">cook</code>), la fonction fonctionne correctement.</p>
+
+<p>Le duck typing offre une flexibilité considérable, car il permet d'écrire du code plus générique et réutilisable.  Il est un élément essentiel du polymorphisme en Python, permettant de traiter différents types d'objets de manière uniforme, à condition qu'ils partagent les mêmes interfaces (méthodes).</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">3. Méthodes spéciales (Magic Methods) et Polymorphisme</h2>
+    <p><p>Les méthodes spéciales, souvent appelées "magic methods" ou "dunder methods" (double underscore methods), sont des méthodes prédéfinies en Python qui permettent de définir le comportement des objets de nos classes lorsqu'ils interagissent avec certains opérateurs ou fonctions intégrées. Elles jouent un rôle crucial dans l'implémentation du polymorphisme, car elles permettent à des objets de classes différentes de répondre de manière appropriée à une même opération, rendant le code plus intuitif et expressif.</p>
+
+<p>Par exemple, la méthode <code class="language-python">__add__(self, other)</code> est invoquée lorsque l'opérateur <code class="language-python">+</code> est utilisé. En définissant cette méthode dans une classe, on peut spécifier comment l'opération d'addition doit se comporter pour les instances de cette classe. Cela permet de personnaliser l'opérateur <code class="language-python">+</code> pour qu'il effectue une action spécifique en fonction du type d'objet auquel il est appliqué.</p>
+
+<p>Considérons un exemple avec une classe représentant un vecteur:</p>
+
+<pre><code class="language-python">
+class Vector:
+    def __init__(self, x, y):
+        # Initialize the x and y components of the vector
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        # Define the addition operation for two vectors
+        if isinstance(other, Vector):
+            return Vector(self.x + other.x, self.y + other.y)
+        else:
+            raise TypeError("Can only add Vector objects to Vector objects")
+
+    def __mul__(self, scalar):
+        # Define the multiplication operation with a scalar
+        return Vector(self.x * scalar, self.y * scalar)
+
+    def __str__(self):
+        # Define how the vector should be represented as a string
+        return f"Vector({self.x}, {self.y})"
+
+# Create two Vector objects
+v1 = Vector(2, 3)
+v2 = Vector(4, 5)
+
+# Add the two vectors using the + operator, which calls the __add__ method
+v3 = v1 + v2
+
+# Multiply a vector by a scalar using the * operator, which calls the __mul__ method
+v4 = v1 * 2
+
+# Print the results
+print(v3) # Output: Vector(6, 8)
+print(v4) # Output: Vector(4, 6)
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">__add__</code> permet d'additionner deux objets de la classe <code class="language-python">Vector</code>.  L'opérateur <code class="language-python">+</code>, initialement conçu pour l'addition standard des nombres, est ici redéfini pour s'appliquer à des objets <code class="language-python">Vector</code>, illustrant ainsi le polymorphisme.  De même, la méthode <code class="language-python">__mul__</code> permet de définir la multiplication d'un vecteur par un scalaire.  Si l'on tentait d'additionner un vecteur avec un type d'objet non pris en charge, une exception serait levée, démontrant ainsi le contrôle précis sur les types d'opérations autorisées.</p>
+
+<p>Voici un autre exemple avec la méthode <code class="language-python">__len__</code>, qui est appelée implicitement par la fonction intégrée <code class="language-python">len()</code>:</p>
+
+<pre><code class="language-python">
+class Playlist:
+    def __init__(self, songs):
+        # Initialize the playlist with a list of songs
+        self.songs = songs
+
+    def __len__(self):
+        # Return the number of songs in the playlist
+        return len(self.songs)
+
+    def __getitem__(self, index):
+        # Enable indexing to access songs in the playlist
+        return self.songs[index]
+
+# Create a Playlist object with a list of songs
+my_playlist = Playlist(["Song1", "Song2", "Song3"])
+
+# Get the number of songs in the playlist using the len() function, which calls the __len__ method
+playlist_length = len(my_playlist)
+
+# Access a song by its index using the [] operator, which calls the __getitem__ method
+first_song = my_playlist[0]
+
+# Print the results
+print(playlist_length) # Output: 3
+print(first_song)      # Output: Song1
+</code></pre>
+
+<p>Ici, la fonction <code class="language-python">len()</code>, qui est polymorphique (elle fonctionne sur des chaînes, des listes, des tuples, etc.), est adaptée pour fonctionner avec la classe <code class="language-python">Playlist</code> grâce à la méthode spéciale <code class="language-python">__len__</code>. Sans cette méthode, l'utilisation de <code class="language-python">len(my_playlist)</code> provoquerait une erreur. De plus, la méthode <code class="language-python">__getitem__</code> permet d'accéder aux éléments de la playlist via leur index, comme on le ferait avec une liste standard.</p>
+
+<p>En définissant des méthodes spéciales, on peut donc intégrer nos classes de manière transparente dans le modèle objet de Python, en tirant parti du polymorphisme pour créer du code plus expressif, intuitif et facile à maintenir. Les méthodes spéciales permettent à nos objets de se comporter de manière prévisible et cohérente avec les opérations standard du langage, même lorsque ces opérations sont appliquées à des types d'objets personnalisés, ce qui est un atout majeur pour la conception d'API et de bibliothèques.</p>
+</p>
+    <h3>3.1 Introduction aux méthodes spéciales</h3>
+    <p><p>En Python, les méthodes spéciales, souvent appelées "magic methods" ou "dunder methods" (dunder signifiant "double underscore"), sont des méthodes prédéfinies dont le nom commence et se termine par deux underscores (<code class="language-python">__</code>). Elles permettent de surcharger les opérateurs et les fonctions natives du langage, offrant ainsi un contrôle précis sur le comportement des objets et permettant une intégration profonde avec la syntaxe de Python.</p>
+
+<p>Ces méthodes ne sont pas directement appelées par l'utilisateur, mais invoquées implicitement par Python lorsqu'une opération spécifique est effectuée sur un objet. Par exemple, l'addition de deux objets via l'opérateur <code class="language-python">+</code> déclenche l'appel de la méthode <code class="language-python">__add__</code> de l'objet de gauche.  Si cette méthode n'est pas définie, Python tentera d'appeler la méthode <code class="language-python">__radd__</code> de l'objet de droite, offrant une flexibilité accrue pour la gestion des types.</p>
+
+<p>Voici quelques exemples de méthodes spéciales couramment utilisées :</p>
+<ul>
+    <li><code class="language-python">__init__(self, ...)</code>: Constructeur de la classe. Initialise un nouvel objet avec les attributs spécifiés.</li>
+    <li><code class="language-python">__str__(self)</code>: Définit la représentation en chaîne de caractères "informelle" d'un objet, utilisée par la fonction <code class="language-python">str()</code> et <code class="language-python">print()</code>. Elle doit retourner une chaîne lisible.</li>
+    <li><code class="language-python">__repr__(self)</code>: Définit la représentation "officielle" en chaîne de caractères d'un objet, utilisée pour le débogage, le développement et, idéalement, permettant de recréer l'objet. Si <code class="language-python">__str__</code> n'est pas défini, <code class="language-python">__repr__</code> est utilisé à sa place.</li>
+    <li><code class="language-python">__len__(self)</code>: Définit le comportement de la fonction <code class="language-python">len()</code> appliquée à un objet. Doit retourner un entier représentant la longueur de l'objet.</li>
+    <li><code class="language-python">__add__(self, other)</code>: Définit le comportement de l'opérateur d'addition <code class="language-python">+</code>.  Retourne un nouvel objet représentant la somme.</li>
+    <li><code class="language-python">__mul__(self, other)</code>: Définit le comportement de l'opérateur de multiplication <code class="language-python">*</code>. Retourne un nouvel objet représentant le produit.</li>
+    <li><code class="language-python">__getitem__(self, key)</code>: Permet d'accéder à un élément via son index ou sa clé (par exemple, <code class="language-python">objet[key]</code>). Utile pour implémenter des séquences ou des dictionnaires personnalisés.</li>
+    <li><code class="language-python">__setitem__(self, key, value)</code>: Permet de modifier la valeur d'un élément via son index ou sa clé (par exemple, <code class="language-python">objet[key] = value</code>). Complète <code class="language-python">__getitem__</code> pour les objets mutables.</li>
+    <li><code class="language-python">__delitem__(self, key)</code>: Permet de supprimer un élément via son index ou sa clé (par exemple, <code class="language-python">del objet[key]</code>).</li>
+    <li><code class="language-python">__contains__(self, item)</code>: Définit le comportement de l'opérateur <code class="language-python">in</code> pour tester l'appartenance (par exemple, <code class="language-python">item in objet</code>).</li>
+</ul>
+
+<p>Pour illustrer l'utilisation des méthodes spéciales, considérons une classe simple représentant une fraction :</p>
+
+<pre><code class="language-python">
+class Fraction:
+    def __init__(self, numerator, denominator):
+        # Initialize the numerator and denominator
+        # Raise ValueError if denominator is zero
+        if denominator == 0:
+            raise ValueError("Denominator cannot be zero.")
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __str__(self):
+        # Return a user-friendly string representation of the fraction
+        return f"{self.numerator}/{self.denominator}"
+
+    def __repr__(self):
+        # Return a string representation that can recreate the object
+        return f"Fraction({self.numerator}, {self.denominator})"
+
+    def __add__(self, other_fraction):
+        # Implement the addition of two fractions
+        # a/b + c/d = (ad + bc) / bd
+        new_numerator = self.numerator * other_fraction.denominator + other_fraction.numerator * self.denominator
+        new_denominator = self.denominator * other_fraction.denominator
+        return Fraction(new_numerator, new_denominator)
+
+    def __eq__(self, other_fraction):
+        # Implement equality check between two fractions
+        # Compare the fractions after reducing them to their simplest form
+        return self.numerator * other_fraction.denominator == other_fraction.numerator * self.denominator
+
+
+# Create two fraction objects
+fraction1 = Fraction(1, 2)
+fraction2 = Fraction(1, 4)
+
+# Add the two fractions using the + operator (which calls __add__)
+fraction_sum = fraction1 + fraction2
+
+# Print the result using print (which calls __str__)
+print(fraction_sum)  # Output: 6/8
+
+# Print the result using repr
+print(repr(fraction1)) # Output: Fraction(1, 2)
+
+# Check for equality
+print(fraction1 == fraction2) # Output: False
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">__init__</code> initialise la fraction et gère le cas d'un dénominateur nul, <code class="language-python">__str__</code> définit comment la fraction est affichée de manière conviviale, <code class="language-python">__repr__</code> fournit une représentation formelle, <code class="language-python">__add__</code> permet d'additionner deux fractions, et <code class="language-python">__eq__</code> permet de comparer deux fractions. En définissant ces méthodes spéciales, nous pouvons utiliser les opérateurs et fonctions natives de Python de manière intuitive et naturelle avec nos propres objets, améliorant ainsi la lisibilité et la maintenabilité du code.</p>
+
+<p>L'utilisation judicieuse des méthodes spéciales est essentielle pour créer des classes Python qui se comportent de manière prévisible et cohérente avec les conventions du langage. Elles facilitent l'écriture de code expressif et permettent d'exploiter pleinement le polymorphisme, un concept clé de la programmation orientée objet en Python.</p>
+</p>
+    <h3>3.2 Utilisation des méthodes spéciales pour le polymorphisme</h3>
+    <p><p>En Python, les méthodes spéciales, souvent appelées "magic methods" ou "dunder methods" (pour "double underscore methods"), jouent un rôle essentiel dans l'implémentation du polymorphisme. Elles permettent à vos objets de se comporter comme des types natifs du langage, en définissant des opérations telles que l'addition, la soustraction, la comparaison, la gestion des attributs et bien d'autres.</p>
+
+<p>Prenons l'exemple de la classe <code class="language-python">Rectangle</code>. On peut redéfinir l'opérateur d'addition (<code class="language-python">+</code>) pour permettre d'additionner deux instances de <code class="language-python">Rectangle</code>, créant ainsi un nouveau rectangle dont la surface est la somme des surfaces des deux rectangles originaux. Cela illustre le polymorphisme, car l'opérateur <code class="language-python">+</code> se comporte différemment selon le type d'objet auquel il s'applique.  Cette capacité à modifier le comportement des opérateurs est un aspect puissant du polymorphisme en Python.</p>
+
+<pre><code class="language-python">
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def __add__(self, other):
+        # Defines the addition operation between two Rectangle objects
+        if isinstance(other, Rectangle):
+            new_area = self.area() + other.area()
+            # For simplicity, assume the new rectangle has the same width as the first one
+            new_height = new_area / self.width
+            return Rectangle(self.width, new_height)
+        else:
+            raise TypeError("Unsupported operand type for +: Rectangle and {}".format(type(other)))
+
+    def __str__(self):
+        return "Rectangle with width {} and height {}".format(self.width, self.height)
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.width, self.height)
+
+
+# Example usage
+rect1 = Rectangle(5, 10)
+rect2 = Rectangle(3, 7)
+
+rect3 = rect1 + rect2  # Using the overloaded + operator
+print(rect3) # Output: Rectangle with width 5 and height 14.2
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">__add__</code> est une méthode spéciale qui surcharge l'opérateur <code class="language-python">+</code>. Lorsque l'on écrit <code class="language-python">rect1 + rect2</code>, Python appelle en réalité la méthode <code class="language-python">rect1.__add__(rect2)</code>. La méthode <code class="language-python">__str__</code> est également une méthode spéciale, utilisée pour définir une représentation sous forme de chaîne de caractères "conviviale" d'un objet <code class="language-python">Rectangle</code>, utile pour l'affichage. La méthode <code class="language-python">__repr__</code>, quant à elle, fournit une représentation de l'objet plus orientée vers le débogage et le développement, souvent utilisée pour recréer l'objet.</p>
+
+<p>De même, on peut implémenter d'autres méthodes spéciales telles que <code class="language-python">__sub__</code> (soustraction), <code class="language-python">__mul__</code> (multiplication), <code class="language-python">__truediv__</code> (division), <code class="language-python">__floordiv__</code> (division entière), <code class="language-python">__mod__</code> (modulo), <code class="language-python">__pow__</code> (puissance), <code class="language-python">__len__</code> (pour la fonction <code class="language-python">len()</code>), <code class="language-python">__eq__</code> (égalité), <code class="language-python">__ne__</code> (différent de), <code class="language-python">__lt__</code> (inférieur à), <code class="language-python">__gt__</code> (supérieur à), <code class="language-python">__le__</code> (inférieur ou égal à), <code class="language-python">__ge__</code> (supérieur ou égal à), et bien d'autres, afin de définir le comportement de nos objets dans divers contextes. En utilisant judicieusement ces méthodes, on peut créer des classes qui s'intègrent naturellement avec le reste du langage Python et qui exploitent pleinement le polymorphisme, permettant une plus grande flexibilité et expressivité dans la conception de nos programmes.</p>
+
+<p>Illustrons cela avec une classe <code class="language-python">ShoppingCart</code> qui implémente <code class="language-python">__len__</code> pour retourner le nombre d'articles dans le panier, <code class="language-python">__getitem__</code> pour permettre l'accès aux articles via l'opérateur <code class="language-python">[]</code>, et <code class="language-python">__delitem__</code> pour permettre la suppression d'articles via <code class="language-python">del</code>:</p>
+
+<pre><code class="language-python">
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+
+    def __len__(self):
+        # Returns the number of items in the shopping cart
+        return len(self.items)
+
+    def __getitem__(self, index):
+        # Allows access to items using the [] operator
+        return self.items[index]
+
+    def __delitem__(self, index):
+        # Allows deletion of items using the del operator
+        del self.items[index]
+
+
+# Example Usage
+cart = ShoppingCart()
+cart.add_item("Laptop")
+cart.add_item("Mouse")
+cart.add_item("Keyboard")
+
+print("Number of items in the cart:", len(cart)) # Output: Number of items in the cart: 3
+print("First item:", cart[0]) # Output: First item: Laptop
+
+del cart[1] # Delete the second item (Mouse)
+print("Number of items after deletion:", len(cart)) # Output: Number of items after deletion: 2
+#print("Second item after deletion:", cart[1]) # Output: Keyboard
+</code></pre>
+
+<p>Ici, <code class="language-python">len(cart)</code> appelle implicitement <code class="language-python">cart.__len__()</code>, <code class="language-python">cart[0]</code> appelle <code class="language-python">cart.__getitem__(0)</code>, et <code class="language-python">del cart[1]</code> appelle <code class="language-python">cart.__delitem__(1)</code>. Ces méthodes spéciales permettent à la classe <code class="language-python">ShoppingCart</code> de se comporter comme une collection standard Python, démontrant une fois de plus le polymorphisme en action et l'adaptation du comportement des opérateurs standards à nos propres classes.</p>
+
+<p>En conclusion, les méthodes spéciales sont un outil puissant pour implémenter le polymorphisme en Python. Elles permettent de définir le comportement des opérateurs et des fonctions intégrées pour nos propres classes, offrant ainsi une grande flexibilité et expressivité dans la conception de nos programmes et permettant de créer des abstractions élégantes et intuitives.</p>
+</p>
+    <h3>3.3 Exemple: Surcharge de l'opérateur '+'</h3>
+    <p><p>En Python, les méthodes spéciales, souvent appelées "magic methods" ou "dunder methods" (pour "double underscore"), permettent de définir le comportement des opérateurs lorsqu'ils sont utilisés avec des objets de classes spécifiques. L'une des applications les plus courantes est la surcharge d'opérateur, qui consiste à redéfinir le comportement d'un opérateur comme <code class="language-python">+</code>, <code class="language-python">-</code>, <code class="language-python">*</code>, etc., pour qu'il effectue une action spécifique lorsqu'il est appliqué à des instances de notre classe.</p>
+
+<p>Prenons l'exemple de l'opérateur <code class="language-python">+</code>. Par défaut, il est utilisé pour l'addition numérique ou la concaténation de chaînes de caractères. Nous allons créer deux classes, <code class="language-python">Longueur</code> (pour représenter une longueur en mètres) et <code class="language-python">Masse</code> (pour représenter une masse en kilogrammes), et surcharger l'opérateur <code class="language-python">+</code> pour qu'il permette d'additionner une longueur et une masse. Bien que conceptuellement étrange, cela illustrera la flexibilité de la surcharge d'opérateur.</p>
+
+<pre><code class="language-python">
+class Longueur:
+    """
+    Represents a length in meters.
+    """
+    def __init__(self, metres):
+        """
+        Initializes the Longueur object.
+        :param metres: The length in meters.
+        """
+        self.metres = metres
+
+    def __add__(self, other):
+        """
+        Overloads the '+' operator to add a Longueur object with another object.
+        :param other: The other object to add.
+        :return: A string representing the addition of the two objects.
+        """
+        if isinstance(other, Masse):
+            return f"{self.metres} metres + {other.kilograms} kilograms"
+        return NotImplemented
+
+
+class Masse:
+    """
+    Represents a mass in kilograms.
+    """
+    def __init__(self, kilograms):
+        """
+        Initializes the Masse object.
+        :param kilograms: The mass in kilograms.
+        """
+        self.kilograms = kilograms
+
+    def __add__(self, other):
+         """
+        Overloads the '+' operator to add a Masse object with another object.
+        :param other: The other object to add.
+        :return: A string representing the addition of the two objects.
+        """
+         if isinstance(other, Longueur):
+            return f"{self.kilograms} kilograms + {other.metres} metres"
+         return NotImplemented
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">__add__</code> de la classe <code class="language-python">Longueur</code> est appelée lorsque l'opérateur <code class="language-python">+</code> est utilisé avec un objet <code class="language-python">Longueur</code> comme premier opérande. Elle prend un argument <code class="language-python">other</code>, qui représente l'autre opérande de l'addition. On vérifie si <code class="language-python">other</code> est une instance de la classe <code class="language-python">Masse</code>. Si c'est le cas, on retourne une chaîne de caractères formatée qui représente l'addition des deux objets.  Il est important de retourner <code class="language-python">NotImplemented</code> si l'opération n'est pas supportée, ce qui permet à Python d'essayer d'appeler la méthode <code class="language-python">__radd__</code> de l'autre opérande.</p>
+
+<pre><code class="language-python">
+# Create instances of Longueur and Masse
+longueur1 = Longueur(10)
+masse1 = Masse(5)
+
+# Use the overloaded '+' operator
+resultat = longueur1 + masse1
+print(resultat)  # Output: 10 metres + 5 kilograms
+
+resultat = masse1 + longueur1
+print(resultat)  # Output: 5 kilograms + 10 metres
+</code></pre>
+
+<p>Cet exemple illustre comment la méthode spéciale <code class="language-python">__add__</code> permet de personnaliser le comportement de l'opérateur <code class="language-python">+</code> et de définir des opérations spécifiques entre des objets de classes différentes.  La gestion de l'ordre des opérandes est cruciale.  Si l'opérateur <code class="language-python">+</code> est utilisé avec <code class="language-python">masse1</code> comme premier opérande et que la méthode <code class="language-python">__add__</code> de <code class="language-python">Masse</code> ne sait pas comment gérer l'addition avec un objet <code class="language-python">Longueur</code>, elle doit retourner <code class="language-python">NotImplemented</code>.  Python tentera alors d'appeler la méthode <code class="language-python">__radd__</code> (right addition) de la classe <code class="language-python">Longueur</code>. Si aucune des deux méthodes ne gère l'opération, une <code class="language-python">TypeError</code> sera levée.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">4. Héritage et Polymorphisme</h2>
+    <p><p>L'héritage et le polymorphisme sont deux concepts clés de la programmation orientée objet (POO). Ils permettent de structurer le code en hiérarchies de classes, favorisant la réutilisabilité et la flexibilité. L'héritage permet à une classe (appelée "classe enfant" ou "sous-classe") d'acquérir les propriétés et les méthodes d'une autre classe (appelée "classe parent" ou "super-classe"). Le polymorphisme, quant à lui, offre la possibilité de traiter des objets de classes différentes de manière uniforme, simplifiant ainsi le code et améliorant sa modularité.</p>
+
+<p>Prenons l'exemple des formes géométriques. On peut définir une classe de base <code class="language-python">Forme</code> qui contient les attributs communs à toutes les formes, comme une couleur. Ensuite, on peut créer des classes dérivées, telles que <code class="language-python">Cercle</code> et <code class="language-python">Carre</code>, qui héritent de <code class="language-python">Forme</code> et ajoutent des attributs spécifiques, comme le rayon pour un cercle et la longueur du côté pour un carré.  La classe <code class="language-python">Forme</code> contient une méthode abstraite <code class="language-python">aire()</code> qui sera implémentée différemment par chaque sous-classe.</p>
+
+<pre><code class="language-python">
+class Forme:
+    def __init__(self, couleur):
+        # Initializes the Forme object with a color.
+        self.couleur = couleur
+
+    def aire(self):
+        # Abstract method to calculate the area. Should be implemented in subclasses.
+        raise NotImplementedError("La méthode aire() doit être implémentée par les sous-classes.")
+
+    def __str__(self):
+        # Returns a string representation of the Forme object.
+        return f"Forme de couleur {self.couleur}"
+
+
+class Cercle(Forme):
+    def __init__(self, couleur, rayon):
+        # Initializes the Cercle object with a color and radius.
+        super().__init__(couleur)  # Call the parent class's constructor
+        self.rayon = rayon
+
+    def aire(self):
+        # Calculates the area of the circle.
+        return 3.14159 * self.rayon * self.rayon
+
+    def __str__(self):
+        # Returns a string representation of the Cercle object.
+        return f"Cercle de couleur {self.couleur} et de rayon {self.rayon}"
+
+
+class Carre(Forme):
+    def __init__(self, couleur, cote):
+        # Initializes the Carre object with a color and side length.
+        super().__init__(couleur)  # Call the parent class's constructor
+        self.cote = cote
+
+    def aire(self):
+        # Calculates the area of the square.
+        return self.cote * self.cote
+
+    def __str__(self):
+        # Returns a string representation of the Carre object.
+        return f"Carré de couleur {self.couleur} et de côté {self.cote}"
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">Forme</code> est la classe de base, et <code class="language-python">Cercle</code> et <code class="language-python">Carre</code> sont des sous-classes. Elles héritent de l'attribut <code class="language-python">couleur</code> et redéfinissent (override) la méthode <code class="language-python">__str__</code> pour fournir une représentation spécifique à chaque forme.  Chaque sous-classe implémente également sa propre version de la méthode <code class="language-python">aire()</code>.  C'est un exemple de polymorphisme par héritage.</p>
+
+<p>Le polymorphisme se manifeste lorsque nous manipulons des objets de ces classes de manière uniforme. Imaginons une liste d'objets <code class="language-python">Forme</code>, contenant à la fois des <code class="language-python">Cercle</code> et des <code class="language-python">Carre</code>. Nous pouvons alors calculer l'aire de chaque forme sans nous soucier de son type précis.</p>
+
+<pre><code class="language-python">
+# Create instances of the classes
+mon_cercle = Cercle("rouge", 5)
+mon_carre = Carre("bleu", 4)
+
+# Create a list of Forme objects
+formes = [mon_cercle, mon_carre]
+
+# Iterate through the list and calculate the area of each shape
+for forme in formes:
+    print(forme)
+    print(f"Aire: {forme.aire()}")
+</code></pre>
+
+<p>Dans ce code, la boucle <code class="language-python">for</code> parcourt une liste d'objets <code class="language-python">Forme</code>. Pour chaque objet, elle appelle la méthode <code class="language-python">aire()</code>.  Grâce au polymorphisme, la version appropriée de la méthode <code class="language-python">aire()</code> (celle de <code class="language-python">Cercle</code> ou de <code class="language-python">Carre</code>) est exécutée, en fonction du type réel de l'objet.  De même, la méthode <code class="language-python">__str__</code> est utilisée polymorphiquement. La résolution de la méthode à appeler se fait au moment de l'exécution, ce qui illustre le polymorphisme d'exécution.</p>
+
+<p>L'héritage et le polymorphisme sont des mécanismes puissants en programmation orientée objet. Ils permettent de créer du code modulaire, réutilisable et maintenable. En combinant ces concepts, il devient possible de concevoir des systèmes complexes avec une grande flexibilité et extensibilité. Ils sont essentiels pour structurer des applications de grande envergure et pour faciliter la collaboration entre développeurs.</p>
+</p>
+    <h3>4.1 Héritage simple et polymorphisme</h3>
+    <p><p>L'héritage est un mécanisme fondamental de la programmation orientée objet (POO) qui permet à une classe (dite classe enfant ou sous-classe) d'acquérir les propriétés (attributs) et le comportement (méthodes) d'une autre classe (dite classe parent ou super-classe). Ceci favorise la réutilisation du code, réduit la redondance et permet une organisation hiérarchique des classes, facilitant la modélisation du monde réel.</p>
+
+<p>Considérons un exemple simple pour illustrer l'héritage en Python :</p>
+
+<pre><code class="language-python">
+# Define a base class called Shape
+class Shape:
+    def __init__(self, color):
+        # Initialize the color attribute
+        self.color = color
+
+    def get_color(self):
+        # Return the color of the shape
+        return self.color
+
+# Define a derived class called Square that inherits from Shape
+class Square(Shape):
+    def __init__(self, color, side):
+        # Call the constructor of the parent class (Shape)
+        super().__init__(color)
+        # Initialize the side attribute
+        self.side = side
+
+    def area(self):
+        # Calculate and return the area of the square
+        return self.side * self.side
+</code></pre>
+
+<p>Dans cet exemple, la classe <code class="language-python">Square</code> hérite de la classe <code class="language-python">Shape</code>. Elle hérite donc de l'attribut <code class="language-python">color</code> et de la méthode <code class="language-python">get_color()</code>. La méthode <code class="language-python">super().__init__(color)</code> assure que le constructeur de la classe parent est appelé, initialisant ainsi l'attribut hérité <code class="language-python">color</code>.  Il est crucial d'appeler le constructeur de la classe parente pour initialiser correctement les attributs hérités. La classe <code class="language-python">Square</code> ajoute également un nouvel attribut, <code class="language-python">side</code>, et une nouvelle méthode, <code class="language-python">area()</code>, spécifique aux carrés.  Cela démontre comment l'héritage permet d'étendre et de spécialiser le comportement d'une classe existante.</p>
+
+<p>Le polymorphisme, dans le contexte de l'héritage, signifie qu'un objet d'une classe enfant peut être traité comme un objet de sa classe parent.  Cela permet d'écrire du code plus générique et flexible, capable de travailler avec différents types d'objets de manière uniforme.</p>
+
+<p>Reprenons l'exemple précédent et ajoutons une fonction qui accepte un objet de type <code class="language-python">Shape</code> :</p>
+
+<pre><code class="language-python">
+def display_color(shape):
+    # Print the color of the shape
+    print(f"The shape's color is: {shape.get_color()}")
+
+# Create an instance of Shape
+my_shape = Shape("Red")
+# Create an instance of Square
+my_square = Square("Blue", 5)
+
+# Call the function with both instances
+display_color(my_shape)
+display_color(my_square)
+</code></pre>
+
+<p>Dans ce cas, la fonction <code class="language-python">display_color</code> accepte un objet de type <code class="language-python">Shape</code>.  Comme <code class="language-python">Square</code> hérite de <code class="language-python">Shape</code>, un objet de type <code class="language-python">Square</code> peut être passé à cette fonction sans problème. C'est le polymorphisme en action : <code class="language-python">my_square</code> est traité comme un <code class="language-python">Shape</code> dans le contexte de la fonction <code class="language-python">display_color</code>.  La fonction n'a pas besoin de connaître le type exact de l'objet, elle sait seulement qu'il s'agit d'un <code class="language-python">Shape</code> et qu'il possède une méthode <code class="language-python">get_color()</code>. L'exécution de ce code affichera:</p>
+
+<pre><code class="language-python">
+The shape's color is: Red
+The shape's color is: Blue
+</code></pre>
+
+<p>L'héritage simple, combiné au polymorphisme, permet de créer des hiérarchies de classes où les objets peuvent être traités de manière uniforme, facilitant ainsi la conception, la maintenance et l'extensibilité du code. Le polymorphisme offre une flexibilité considérable en permettant d'utiliser des objets de classes différentes de manière interchangeable, tant qu'ils partagent une interface commune (c'est-à-dire, qu'ils héritent d'une même classe de base ou implémentent les mêmes méthodes). Cela simplifie l'écriture de code modulaire et réutilisable, un principe clé de la programmation orientée objet.</p>
+</p>
+    <h3>4.2 Surcharge de méthodes</h3>
+    <p><p>La surcharge de méthodes (<em>method overriding</em>) est un mécanisme clé de la programmation orientée objet qui permet à une classe enfant (ou sous-classe) de redéfinir une méthode héritée de sa classe parent (ou super-classe). Lorsqu'une méthode est surchargée, l'implémentation de la classe enfant remplace celle de la classe parent pour les instances de la classe enfant. Cela permet de spécialiser le comportement des objets en fonction de leur type réel au moment de l'exécution.</p>
+
+<p>Prenons un exemple concret avec une classe de base nommée <code class="language-python">Animal</code> qui possède une méthode <code class="language-python">make_sound()</code>. Les classes dérivées, comme <code class="language-python">Dog</code> et <code class="language-python">Cat</code>, peuvent surcharger cette méthode pour émettre des sons spécifiques à chaque animal.</p>
+
+<pre><code class="language-python">
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        print("Generic animal sound")
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof!")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
+
+# Creating instances of each class
+animal = Animal("Generic Animal")
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Calling the make_sound() method on each instance
+animal.make_sound()  # Output: Generic animal sound
+dog.make_sound()     # Output: Woof!
+cat.make_sound()     # Output: Meow!
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code class="language-python">make_sound()</code> est surchargée dans les classes <code class="language-python">Dog</code> et <code class="language-python">Cat</code>.  Lorsque <code class="language-python">make_sound()</code> est appelée sur un objet <code class="language-python">Dog</code>, c'est l'implémentation de <code class="language-python">Dog</code> qui est exécutée, et de même pour <code class="language-python">Cat</code>. L'instance <code class="language-python">animal</code>, étant de la classe <code class="language-python">Animal</code>, utilise l'implémentation de la classe parente.</p>
+
+<p>La surcharge de méthodes permet de définir une interface commune dans une classe de base, tout en laissant aux classes dérivées la liberté de fournir leur propre implémentation.  C'est un mécanisme puissant pour implémenter le polymorphisme, car il permet de traiter des objets de différentes classes de manière uniforme via l'interface définie par la classe parent, tout en conservant un comportement spécifique à chaque classe.</p>
+</p>
+    <h3>4.3 Exemple d'héritage et de surcharge</h3>
+    <p><p>L'héritage permet à une classe (la classe enfant ou sous-classe) d'acquérir les propriétés (attributs) et les comportements (méthodes) d'une autre classe (la classe parent ou super-classe). Le polymorphisme, lorsqu'il est combiné avec l'héritage, offre la possibilité à une sous-classe de redéfinir (surcharger ou *override*) les méthodes héritées de sa super-classe. Cette redéfinition permet d'adapter ou d'étendre le comportement de ces méthodes pour répondre aux besoins spécifiques de la sous-classe. Cette capacité illustre une forme de polymorphisme : une méthode peut se comporter différemment selon la classe de l'objet sur lequel elle est invoquée.</p>
+
+<p>Prenons l'exemple de la gestion des employés dans une entreprise. On peut définir une classe de base <code class="language-python">Employee</code> et des classes dérivées telles que <code class="language-python">Manager</code> et <code class="language-python">Developer</code>. Chaque classe implémentera une méthode <code class="language-python">calculate_salary</code> adaptée à la logique de calcul des salaires propre à chaque type d'employé.</p>
+
+<pre><code class="language-python">
+class Employee:
+    def __init__(self, name, employee_id, base_salary):
+        """
+        Constructor for the Employee class.
+
+        Args:
+            name (str): The name of the employee.
+            employee_id (str): The unique identifier for the employee.
+            base_salary (float): The base salary of the employee.
+        """
+        self.name = name
+        self.employee_id = employee_id
+        self.base_salary = base_salary
+
+    def calculate_salary(self):
+        """
+        Calculates the salary of the employee.  This is the base implementation.
+
+        Returns:
+            float: The base salary.
+        """
+        return self.base_salary
+
+    def get_employee_details(self):
+        """
+        Returns a string containing the employee's details.
+
+        Returns:
+            str: Employee details (name, ID, salary).
+        """
+        return f"Name: {self.name}, ID: {self.employee_id}, Salary: {self.calculate_salary()}"
+
+
+class Manager(Employee):
+    def __init__(self, name, employee_id, base_salary, bonus):
+        """
+        Constructor for the Manager class, inheriting from Employee.
+
+        Args:
+            name (str): The name of the manager.
+            employee_id (str): The unique identifier for the manager.
+            base_salary (float): The base salary of the manager.
+            bonus (float): The bonus for the manager.
+        """
+        # Call the constructor of the parent class (Employee)
+        super().__init__(name, employee_id, base_salary)
+        self.bonus = bonus
+
+    def calculate_salary(self):
+        """
+        Calculates the salary for managers (base salary + bonus).  Overrides the Employee method.
+
+        Returns:
+            float: The calculated salary for the manager.
+        """
+        # Salary calculation for managers (base salary + bonus)
+        return self.base_salary + self.bonus
+
+    def manage_team(self):
+        """
+        Returns a string indicating the manager is managing the team.
+
+        Returns:
+            str: A message indicating team management.
+        """
+        return f"{self.name} is managing the team."
+
+
+class Developer(Employee):
+    def __init__(self, name, employee_id, base_salary, programming_language):
+        """
+        Constructor for the Developer class, inheriting from Employee.
+
+        Args:
+            name (str): The name of the developer.
+            employee_id (str): The unique identifier for the developer.
+            base_salary (float): The base salary of the developer.
+            programming_language (str): The programming language used by the developer.
+        """
+        # Call the constructor of the parent class (Employee)
+        super().__init__(name, employee_id, base_salary)
+        self.programming_language = programming_language
+
+    def calculate_salary(self):
+        """
+        Calculates the salary for developers (base salary + additional compensation based on language). Overrides the Employee method.
+
+        Returns:
+            float: The calculated salary for the developer.
+        """
+        # Salary calculation for developers (base salary + additional compensation based on language)
+        if self.programming_language == "Python":
+            return self.base_salary * 1.2
+        else:
+            return self.base_salary * 1.1
+
+    def write_code(self):
+        """
+        Returns a string indicating the developer is writing code in their specific language.
+
+        Returns:
+            str: A message indicating the coding activity.
+        """
+        return f"{self.name} is writing code in {self.programming_language}."
+
+
+# Create instances of each class
+employee1 = Employee("Alice Smith", "ES123", 50000)
+manager1 = Manager("Bob Johnson", "MJ456", 70000, 20000)
+developer1 = Developer("Charlie Brown", "DB789", 60000, "Python")
+
+# Demonstrate polymorphism
+employees = [employee1, manager1, developer1]
+
+for employee in employees:
+    print(employee.get_employee_details())
+</code></pre>
+
+<p>Dans cet exemple concret :</p>
+<ul>
+    <li>La classe <code class="language-python">Employee</code> sert de classe de base et définit une méthode <code class="language-python">calculate_salary</code> qui effectue un calcul de salaire de base.</li>
+    <li>Les classes <code class="language-python">Manager</code> et <code class="language-python">Developer</code> héritent de la classe <code class="language-python">Employee</code> et redéfinissent (surchargent) la méthode <code class="language-python">calculate_salary</code>.  Chaque sous-classe implémente alors une logique de calcul de salaire spécifique à son rôle.</li>
+    <li>La boucle <code class="language-python">for</code> illustre le polymorphisme en action : l'appel à <code class="language-python">employee.get_employee_details()</code>, qui à son tour appelle <code class="language-python">employee.calculate_salary()</code>, exécutera la version appropriée de la méthode <code class="language-python">calculate_salary</code> en fonction du type réel (la classe) de l'objet <code class="language-python">employee</code>.  Ainsi, pour un objet de type <code class="language-python">Manager</code>, c'est la méthode <code class="language-python">calculate_salary</code> de la classe <code class="language-python">Manager</code> qui sera exécutée, et de même pour un objet de type <code class="language-python">Developer</code>.</li>
+</ul>
+
+<p>En résumé, le polymorphisme permet d'écrire du code qui peut traiter des objets de différentes classes de manière uniforme, à condition que ces classes partagent une interface commune, c'est-à-dire qu'elles implémentent les mêmes méthodes (ici, la méthode <code class="language-python">calculate_salary</code>), même si l'implémentation de ces méthodes diffère d'une classe à l'autre.  Ceci favorise la flexibilité et la maintenabilité du code.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">5. Classes Abstraites et Méthodes Abstraites</h2>
+    <p><p>En Python, les classes abstraites et les méthodes abstraites sont des mécanismes puissants pour définir des interfaces et imposer une structure dans une hiérarchie de classes. Elles permettent de garantir que les classes dérivées implémentent un ensemble spécifique de méthodes, assurant ainsi une uniformité et une prédictibilité du comportement.</p>
+
+<p>Une classe abstraite est une classe qui ne peut pas être instanciée directement. Elle sert de modèle ou de plan pour d'autres classes. Pour définir une classe abstraite en Python, on utilise le module <code class="language-python">abc</code> (Abstract Base Classes) et le décorateur <code class="language-python">@abstractmethod</code>.</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+
+class BaseClass(ABC):
+    @abstractmethod
+    def my_abstract_method(self):
+        # This method must be implemented by subclasses
+        pass
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">BaseClass</code> est une classe abstraite car elle hérite de <code class="language-python">ABC</code>. La méthode <code class="language-python">my_abstract_method</code> est une méthode abstraite, ce qui signifie que toute classe qui hérite de <code class="language-python">BaseClass</code> doit implémenter cette méthode. Si une classe dérivée n'implémente pas <code class="language-python">my_abstract_method</code>, une erreur sera levée lors de la tentative d'instanciation.</p>
+
+<pre><code class="language-python">
+class ConcreteClass(BaseClass):
+    def my_abstract_method(self):
+        # Implementation of the abstract method
+        print("Abstract method implemented")
+
+# Correct usage
+instance = ConcreteClass()
+instance.my_abstract_method()
+
+class IncorrectClass(BaseClass):
+    # Missing implementation of my_abstract_method
+    pass
+
+# Incorrect usage, will raise a TypeError
+# instance = IncorrectClass() # TypeError: Can't instantiate abstract class IncorrectClass with abstract methods my_abstract_method
+</code></pre>
+
+<p>Les classes abstraites et les méthodes abstraites sont particulièrement utiles pour:</p>
+
+<ul>
+    <li>Définir des interfaces communes pour un ensemble de classes apparentées, assurant qu'elles partagent un ensemble de méthodes de base.</li>
+    <li>S'assurer que les classes dérivées implémentent un ensemble de méthodes spécifiques, garantissant un comportement uniforme.</li>
+    <li>Faciliter l'extensibilité et la maintenabilité du code en fournissant une structure claire et en réduisant les risques d'erreurs dues à des interfaces incompatibles.</li>
+</ul>
+
+<p>Prenons un exemple concret avec une classe abstraite <code class="language-python">Shape</code> et des classes dérivées comme <code class="language-python">Circle</code> et <code class="language-python">Square</code>.  La classe <code class="language-python">Shape</code> pourrait définir une méthode abstraite <code class="language-python">area()</code>, obligeant ainsi chaque forme à implémenter sa propre méthode de calcul de surface.</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+import math
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius * self.radius
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+
+    def area(self):
+        return self.side * self.side
+
+# Usage
+circle = Circle(5)
+print(f"Circle area: {circle.area()}")  # Output: Circle area: 78.53981633974483
+square = Square(4)
+print(f"Square area: {square.area()}")  # Output: Square area: 16
+</code></pre>
+
+<p>En résumé, l'utilisation des classes abstraites et des méthodes abstraites en Python permet d'écrire un code plus structuré, plus robuste et plus facile à maintenir. Elles permettent de définir des contrats clairs entre les classes, améliorant ainsi la qualité et la lisibilité du code. Elles encouragent aussi une meilleure conception orientée objet en forçant les développeurs à réfléchir à l'interface et au comportement de leurs classes.</p>
+</p>
+    <h3>5.1 Introduction aux classes abstraites</h3>
+    <p><p>Pour définir une classe abstraite en Python, on utilise le module <code class="language-python">abc</code> (Abstract Base Classes). Ce module fournit le décorateur <code class="language-python">@abstractmethod</code>, utilisé pour déclarer des méthodes abstraites. Une méthode abstraite est une méthode qui doit être implémentée par toute sous-classe concrète. Si une classe contient au moins une méthode abstraite, elle doit être déclarée comme abstraite en héritant de la classe <code class="language-python">ABC</code> du module <code class="language-python">abc</code>.</p>
+
+<p>Voici un exemple illustrant le concept :</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    """
+    Abstract base class for shapes.
+    It defines the basic structure that all shapes should follow.
+    """
+
+    @abstractmethod
+    def area(self):
+        """
+        Abstract method to calculate the area of the shape.
+        Subclasses must implement this method.
+        """
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        """
+        Abstract method to calculate the perimeter of the shape.
+        Subclasses must implement this method.
+        """
+        pass
+
+
+class Circle(Shape):
+    """
+    Concrete class representing a circle.
+    It inherits from Shape and provides implementations for area and perimeter.
+    """
+
+    def __init__(self, radius):
+        """
+        Initializes the circle with a given radius.
+        :param radius: The radius of the circle.
+        """
+        self.radius = radius
+
+    def area(self):
+        """
+        Calculates the area of the circle.
+        :return: The area of the circle.
+        """
+        return 3.14159 * self.radius * self.radius
+
+    def perimeter(self):
+        """
+        Calculates the perimeter of the circle.
+        :return: The perimeter of the circle.
+        """
+        return 2 * 3.14159 * self.radius
+
+
+# Attempting to instantiate the abstract class Shape will raise a TypeError
+# shape = Shape()  # This will raise a TypeError: Can't instantiate abstract class Shape with abstract methods area, perimeter
+
+my_circle = Circle(5)
+print(f"Area of the circle: {my_circle.area()}")
+print(f"Perimeter of the circle: {my_circle.perimeter()}")
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">Shape</code> est une classe abstraite avec deux méthodes abstraites : <code class="language-python">area</code> et <code class="language-python">perimeter</code>. La classe <code class="language-python">Circle</code> hérite de <code class="language-python">Shape</code> et implémente ces deux méthodes. Tenter d'instancier directement <code class="language-python">Shape</code> résulterait en une erreur (<code class="language-python">TypeError</code>), car elle est abstraite. En revanche, <code class="language-python">Circle</code>, étant une classe concrète (c'est-à-dire qu'elle implémente toutes les méthodes abstraites de sa classe parente), peut être instanciée.</p>
+
+<p>Les classes abstraites sont particulièrement utiles pour définir des hiérarchies de classes et garantir que certaines méthodes soient implémentées par toutes les sous-classes.  Elles permettent d'assurer une interface commune et un comportement prévisible au sein de la hiérarchie. Elles aident à imposer une structure, à prévenir les erreurs potentielles liées à des interfaces inconsistantes et favorisent un code plus maintenable et évolutif.</p>
+</p>
+    <h3>5.2 Définition de méthodes abstraites</h3>
+    <p><p>Les méthodes abstraites sont des méthodes déclarées au sein d'une classe abstraite, mais qui ne possèdent pas d'implémentation. Elles servent de modèle ("blueprint") pour les méthodes que les sous-classes doivent obligatoirement implémenter. En d'autres termes, une méthode abstraite force toutes les classes dérivées à fournir une implémentation spécifique pour cette méthode, garantissant ainsi un comportement uniforme à travers différentes classes.</p>
+
+<p>Pour définir une méthode abstraite en Python, on utilise le décorateur <code class="language-python">@abstractmethod</code> du module <code class="language-python">abc</code> (Abstract Base Classes). Lorsqu'une classe contient au moins une méthode abstraite, elle doit être déclarée comme une classe abstraite en héritant de <code class="language-python">ABC</code>. Cela empêche l'instanciation directe de la classe abstraite elle-même, assurant que seules les classes concrètes (celles qui implémentent toutes les méthodes abstraites) peuvent être instanciées.</p>
+
+<p>Voici un exemple illustrant le concept :</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+
+class DataExporter(ABC):
+    """
+    Abstract class defining an interface for data export.
+    This class cannot be instantiated directly.
+    """
+
+    @abstractmethod
+    def export_data(self, data, filename):
+        """
+        Abstract method to export data to a file.
+        Subclasses must implement this method.
+        """
+        pass
+
+class CsvExporter(DataExporter):
+    """
+    Concrete class implementing data export to CSV format.
+    This class provides a specific implementation for export_data.
+    """
+
+    def export_data(self, data, filename):
+        """
+        Implementation of data export to CSV.
+        This method writes the given data to a CSV file.
+        """
+        import csv
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerows(data)
+        print(f"Data exported to {filename} in CSV format.")
+
+class JsonExporter(DataExporter):
+    """
+    Concrete class implementing data export to JSON format.
+    This class provides a specific implementation for export_data.
+    """
+
+    def export_data(self, data, filename):
+        """
+        Implementation of data export to JSON.
+        This method writes the given data to a JSON file.
+        """
+        import json
+        with open(filename, 'w') as jsonfile:
+            json.dump(data, jsonfile, indent=4)
+        print(f"Data exported to {filename} in JSON format.")
+
+
+# Usage example
+data = [['Name', 'Age', 'City'], ['Alice', 30, 'Paris'], ['Bob', 25, 'London']]
+
+csv_exporter = CsvExporter()
+csv_exporter.export_data(data, 'data.csv')
+
+json_exporter = JsonExporter()
+json_exporter.export_data(data, 'data.json')
+
+# Trying to instantiate DataExporter would raise an error:
+# TypeError: Can't instantiate abstract class DataExporter with abstract methods export_data
+# data_exporter = DataExporter() # This line would cause an error
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">DataExporter</code> est une classe abstraite avec une méthode abstraite <code class="language-python">export_data</code>.  Les classes <code class="language-python">CsvExporter</code> et <code class="language-python">JsonExporter</code> héritent de <code class="language-python">DataExporter</code> et fournissent une implémentation concrète pour la méthode <code class="language-python">export_data</code>, chacune adaptant l'export de données à un format spécifique (CSV et JSON respectivement). Si une classe enfant ne fournit pas d'implémentation pour toutes les méthodes abstraites de la classe mère, une erreur de type <code class="language-python">TypeError</code> sera levée lors de l'instanciation de cette classe enfant, garantissant ainsi le respect du contrat défini par la classe abstraite.</p>
+</p>
+    <h3>5.3 Utilisation du module 'abc'</h3>
+    <p><p>Le module <code class="language-python">abc</code> (Abstract Base Classes) fournit un outil puissant pour la création de classes abstraites en Python. Une classe abstraite est une classe qui ne peut pas être instanciée directement. Elle sert de plan ou de modèle pour d'autres classes, en définissant une interface commune que les sous-classes doivent implémenter.</p>
+
+<p>Pour définir une classe abstraite, on hérite de la classe <code class="language-python">ABC</code> (Abstract Base Class) fournie par le module <code class="language-python">abc</code>. Les méthodes abstraites sont ensuite marquées à l'aide du décorateur <code class="language-python">@abstractmethod</code>. Une méthode abstraite n'a pas d'implémentation dans la classe de base; elle est destinée à être implémentée par les sous-classes.</p>
+
+<p>Voici un exemple qui illustre l'utilisation du module <code class="language-python">abc</code> pour définir une classe abstraite appelée <code class="language-python">FormeGeometrique</code>, avec une méthode abstraite <code class="language-python">calculer_aire</code> :</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+import math
+
+class FormeGeometrique(ABC):
+    """
+    Abstract base class for geometric shapes.
+    Defines a contract for all subclasses to implement the 'calculer_aire' method.
+    """
+
+    @abstractmethod
+    def calculer_aire(self):
+        """
+        Abstract method to calculate the area of the shape.
+        Subclasses must provide their own implementation.
+        """
+        raise NotImplementedError("Subclasses must implement this method")
+
+class Rectangle(FormeGeometrique):
+    """
+    Concrete class representing a rectangle.
+    """
+    def __init__(self, longueur, largeur):
+        """
+        Initializes a Rectangle object.
+        :param longueur: The length of the rectangle.
+        :param largeur: The width of the rectangle.
+        """
+        self.longueur = longueur
+        self.largeur = largeur
+
+    def calculer_aire(self):
+        """
+        Calculates the area of the rectangle.
+        """
+        return self.longueur * self.largeur
+
+class Cercle(FormeGeometrique):
+    """
+    Concrete class representing a circle.
+    """
+    def __init__(self, rayon):
+        """
+        Initializes a Circle object.
+        :param rayon: The radius of the circle.
+        """
+        self.rayon = rayon
+
+    def calculer_aire(self):
+        """
+        Calculates the area of the circle.
+        """
+        return math.pi * self.rayon ** 2
+
+# Attempting to instantiate the abstract class directly will raise an error.
+# forme = FormeGeometrique()  # This line would raise a TypeError
+
+# Creating instances of the concrete classes.
+rectangle = Rectangle(longueur=10, largeur=5)
+cercle = Cercle(rayon=7)
+
+print(f"L'aire du rectangle est : {rectangle.calculer_aire()}")
+print(f"L'aire du cercle est : {cercle.calculer_aire()}")
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">FormeGeometrique</code> est une classe abstraite. Toute tentative d'instanciation directe de <code class="language-python">FormeGeometrique</code> résultera en une exception <code class="language-python">TypeError</code>. Les classes <code class="language-python">Rectangle</code> et <code class="language-python">Cercle</code> héritent de <code class="language-python">FormeGeometrique</code> et fournissent une implémentation concrète de la méthode <code class="language-python">calculer_aire</code>. Si une classe enfant omet d'implémenter une ou plusieurs méthodes abstraites de sa classe de base, elle sera également considérée comme une classe abstraite et ne pourra pas être instanciée.</p>
+
+<p>L'utilisation de classes et de méthodes abstraites permet de définir une interface commune pour un ensemble de classes apparentées, en garantissant que chaque classe dérivée implémente un ensemble spécifique de méthodes. Cela se traduit par une meilleure organisation du code, une maintenabilité accrue et un polymorphisme plus fiable. De plus, l'utilisation de <code class="language-python">raise NotImplementedError</code> dans la méthode abstraite permet de fournir un message d'erreur plus clair si la méthode n'est pas implémentée dans une sous-classe.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">6. Interfaces Implicites</h2>
+    <p><p>En Python, le polymorphisme se révèle fréquemment à travers les interfaces implicites. Contrairement à d'autres langages qui exigent une définition explicite des interfaces, Python s'appuie sur le principe du "duck typing". L'adage <em>"if it walks like a duck and quacks like a duck, then it must be a duck"</em> illustre parfaitement cette approche : si un objet se comporte comme un canard, il est considéré comme tel, indépendamment de sa classification formelle. Cette flexibilité inhérente simplifie le processus de développement et favorise un code plus adaptable.</p>
+
+<p>Pour mettre en lumière cette notion, examinons deux classes distinctes partageant une méthode de même nom :</p>
+
+<pre><code class="language-python">
+class Book:
+    def __init__(self, title, author):
+        # Initializes a Book object with a title and author.
+        self.title = title
+        self.author = author
+
+    def display_info(self):
+        # Displays the book's title and author.
+        print(f"Title: {self.title}, Author: {self.author}")
+
+class MusicAlbum:
+    def __init__(self, album_name, artist):
+        # Initializes a MusicAlbum object with an album name and artist.
+        self.album_name = album_name
+        self.artist = artist
+
+    def display_info(self):
+        # Displays the album's name and artist.
+        print(f"Album: {self.album_name}, Artist: {self.artist}")
+</code></pre>
+
+<p>Bien que les classes <code class="language-python">Book</code> et <code class="language-python">MusicAlbum</code> ne dérivent pas d'une interface commune, elles possèdent toutes deux une méthode nommée <code class="language-python">display_info</code>. Grâce au duck typing, nous pouvons exploiter ces objets de manière polymorphe :</p>
+
+<pre><code class="language-python">
+def display_item(item):
+    # Displays information about the given item using its display_info method.
+    item.display_info()
+
+my_book = Book("The Python Handbook", "John Smith")
+my_album = MusicAlbum("Python Melodies", "Jane Doe")
+
+display_item(my_book)
+display_item(my_album)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">display_item</code> accepte n'importe quel objet doté d'une méthode <code class="language-python">display_info</code>. Le polymorphisme se manifeste par le fait que cette même fonction peut interagir avec des objets de types différents, à condition qu'ils mettent en œuvre l'interface implicite, c'est-à-dire la méthode <code class="language-python">display_info</code>.</p>
+
+<p>Les interfaces implicites en Python favorisent un paradigme de programmation plus flexible et dynamique. Elles permettent de privilégier le comportement des objets plutôt que leur typage strict, ce qui simplifie la réutilisation du code et la construction de systèmes adaptables. Il est néanmoins essentiel de veiller à ce que les objets implémentent correctement les méthodes requises, car les erreurs potentielles ne seront détectées qu'au moment de l'exécution.  L'utilisation de <code class="language-python">try...except</code> peut aider à gérer ces situations de manière élégante.</p>
+</p>
+    <h3>6.1 Qu'est-ce qu'une interface implicite ?</h3>
+    <p><p>En Python, le polymorphisme au runtime s'appuie fortement sur les interfaces implicites. Contrairement à d'autres langages qui requièrent la déclaration explicite d'une interface via un mot-clé dédié tel que <code class="language-python">interface</code>, Python adopte une approche plus souple grâce au "duck typing".</p>
+
+<p>Le principe du "duck typing" est simple : "Si ça marche comme un canard et que ça cancane comme un canard, alors c'est un canard".  L'important n'est pas de savoir si un objet hérite d'une certaine classe ou implémente une interface spécifique, mais plutôt s'il possède les méthodes et les attributs nécessaires pour accomplir une tâche donnée.</p>
+
+<p>Illustrons ce concept avec un exemple.  Supposons que nous ayons besoin d'une fonction capable d'afficher le contenu de différents types d'objets, à condition qu'ils possèdent une méthode <code class="language-python">display()</code>.</p>
+
+<pre><code class="language-python">
+class Webpage:
+    def __init__(self, content):
+        self.content = content
+
+    def display(self):
+        print(f"Displaying webpage: {self.content}")
+
+
+class Image:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def display(self):
+        print(f"Displaying image from: {self.file_path}")
+
+
+class Video:
+    def __init__(self, video_url):
+        self.video_url = video_url
+
+    def display(self):
+        print(f"Displaying video from: {self.video_url}")
+
+
+def display_content(item):
+    """
+    Displays the content of an item, assuming it has a 'display' method.
+    """
+    item.display()
+
+
+# Example Usage
+webpage = Webpage("Welcome to my website!")
+image = Image("path/to/my/image.jpg")
+video = Video("https://example.com/my_video.mp4")
+
+display_content(webpage)
+display_content(image)
+display_content(video)
+</code></pre>
+
+<p>Dans cet exemple, les classes <code class="language-python">Webpage</code>, <code class="language-python">Image</code> et <code class="language-python">Video</code> ne partagent aucune hiérarchie d'héritage commune ni n'implémentent une interface explicite.  Cependant, elles possèdent toutes une méthode <code class="language-python">display()</code>. La fonction <code class="language-python">display_content()</code> fonctionne donc parfaitement avec ces trois types d'objets, se basant uniquement sur la présence de cette méthode. C'est l'essence même d'une interface implicite en Python.</p>
+
+<p>Cette approche offre une grande souplesse, permettant d'intégrer facilement des objets de classes différentes tant qu'ils respectent l'interface implicite définie par les méthodes et attributs utilisés.  Toutefois, elle place également une plus grande responsabilité sur les épaules du développeur, qui doit s'assurer que les objets passés à une fonction possèdent bien les membres attendus. En effet, les erreurs ne seront détectées qu'au moment de l'exécution (runtime), sous la forme d'une exception <code class="language-python">AttributeError</code> si une méthode est manquante. Des outils comme les linters et les tests unitaires peuvent aider à prévenir ces erreurs.</p>
+</p>
+    <h3>6.2 Créer et utiliser des interfaces implicites</h3>
+    <p><p>En Python, même s'il n'existe pas de mot-clé <code class="language-python">interface</code> comme dans d'autres langages, on peut implémenter un concept similaire grâce aux interfaces implicites, souvent appelées "duck typing". L'idée maîtresse est la suivante : si un objet se comporte comme un canard (c'est-à-dire, "quacks like a duck"), alors il est traité comme un canard. En d'autres termes, c'est la présence et le comportement des méthodes qui importent, et non l'héritage d'une classe spécifique.</p>
+
+<p>Pour définir une interface implicite, il suffit de définir un ensemble de méthodes attendues. Aucune déclaration explicite d'implémentation d'une interface n'est nécessaire. Python se fie à la présence et au comportement des méthodes pour déterminer si un objet adhère à l'interface.</p>
+
+<p>Par exemple, supposons que nous ayons besoin d'objets capables d'être sérialisés au format JSON. Nous pouvons définir une interface implicite avec une méthode <code class="language-python">to_json</code>:</p>
+
+<pre><code class="language-python">
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def to_json(self):
+        # Convert object to JSON format
+        return {
+            'name': self.name,
+            'price': self.price
+        }
+
+class Customer:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def to_json(self):
+        # Convert object to JSON format
+        return {
+            'name': self.name,
+            'age': self.age
+        }
+</code></pre>
+
+<p>Ici, <code class="language-python">Product</code> et <code class="language-python">Customer</code> implémentent l'interface implicite "JSONSerializable" en fournissant une méthode <code class="language-python">to_json</code>. On peut alors écrire une fonction qui utilise cette interface sans se soucier du type exact de l'objet, en se fiant à la présence de la méthode <code class="language-python">to_json</code>:</p>
+
+<pre><code class="language-python">
+import json
+
+def serialize_to_json(obj):
+    # Serialize an object to JSON using the to_json method
+    return json.dumps(obj.to_json())
+
+product = Product("Téléphone", 999.99)
+customer = Customer("Alice", 30)
+
+product_json = serialize_to_json(product)
+customer_json = serialize_to_json(customer)
+
+print(f"Product JSON: {product_json}")
+print(f"Customer JSON: {customer_json}")
+</code></pre>
+
+<p>Pour vérifier si une classe implémente l'interface implicite, on peut utiliser un bloc <code class="language-python">try...except</code> pour intercepter une éventuelle exception <code class="language-python">AttributeError</code>, qui se produira si la méthode attendue n'existe pas:</p>
+
+<pre><code class="language-python">
+class Address:
+    def __init__(self, street, city):
+        self.street = street
+        self.city = city
+
+def serialize_to_json_safe(obj):
+    # Serialize to JSON, handling potential AttributeError
+    try:
+        return json.dumps(obj.to_json())
+    except AttributeError:
+        return None  # Or raise a custom exception
+
+address = Address("123 Main Street", "Montreal")
+address_json = serialize_to_json_safe(address)
+
+if address_json is None:
+    print("The Address object cannot be serialized to JSON because it does not have a to_json method.")
+else:
+    print(f"Address JSON: {address_json}")
+</code></pre>
+
+<p>Cette approche flexible permet de travailler avec différents types d'objets tant qu'ils fournissent les méthodes attendues, ce qui est un exemple puissant de polymorphisme au runtime. L'absence de vérification de type stricte rend le code plus adaptable et moins rigide.</p>
+</p>
+    <h3>6.3 Avantages des interfaces implicites</h3>
+    <p><p>Les interfaces implicites en Python offrent une approche souple et intuitive du polymorphisme, se distinguant des interfaces explicites que l'on retrouve dans des langages comme Java ou C#. Elles permettent d'atteindre un comportement polymorphe sans exiger la définition formelle de contrats (interfaces) que les classes doivent obligatoirement implémenter.</p>
+
+<p>Un avantage majeur réside dans la <strong>flexibilité</strong> qu'elles procurent. Puisqu'il n'est pas nécessaire de déclarer explicitement l'implémentation d'une interface par une classe, on peut aisément utiliser des objets de différentes classes de manière interchangeable, à condition qu'ils possèdent les méthodes et attributs requis. Cette caractéristique est particulièrement précieuse lorsqu'on interagit avec des bibliothèques tierces ou du code existant que l'on ne peut pas modifier directement.</p>
+
+<p>Considérons cet exemple illustratif :</p>
+
+<pre><code class="language-python">
+class TextFormatter:
+    def __init__(self, text):
+        self.text = text
+
+    def format(self):
+        return self.text.upper()  # Convert text to uppercase
+
+class HTMLFormatter:
+    def __init__(self, text):
+        self.text = text
+
+    def format(self):
+        return f"&ltp&gt{self.text}&lt/p&gt"  # Wrap text in HTML paragraph tags
+
+def display(formatter):
+    print(formatter.format())  # Call the format method of the given object
+
+# Usage examples
+text_formatter = TextFormatter("hello world")
+html_formatter = HTMLFormatter("hello world")
+
+display(text_formatter)  # Output: HELLO WORLD
+display(html_formatter)  # Output: &ltp&gthello world&lt/p&gt
+</code></pre>
+
+<p>Dans cet exemple, ni <code class="language-python">TextFormatter</code>, ni <code class="language-python">HTMLFormatter</code> n'implémentent une interface spécifique. Cependant, les deux classes définissent une méthode nommée <code class="language-python">format()</code>. La fonction <code class="language-python">display()</code> peut donc les utiliser de manière polymorphe. Python se base sur la présence de l'attribut ou de la méthode nécessaire au moment de l'exécution, et non sur une déclaration d'interface explicite. On parle de "duck typing": "If it walks like a duck and quacks like a duck, then it must be a duck".</p>
+
+<p>Un autre avantage notable est la <strong>simplicité</strong>. L'absence de déclarations d'interface réduit la quantité de code répétitif (boilerplate) et améliore la lisibilité et la maintenabilité du code. Cela facilite un développement plus rapide et une meilleure compréhension globale du code.</p>
+
+<p>Il est important de souligner que, bien que les interfaces implicites offrent une grande flexibilité, elles nécessitent une documentation claire et des tests rigoureux pour garantir que les objets utilisés possèdent bien les méthodes et attributs attendus. L'absence de vérification statique des types peut entraîner des erreurs au moment de l'exécution si un objet ne fournit pas l'interface implicite requise. On peut utiliser des outils comme MyPy pour ajouter une vérification statique.</p>
+
+<p>En résumé, les interfaces implicites constituent un atout majeur du polymorphisme en Python, offrant une flexibilité et une simplicité qui facilitent le développement et la maintenance du code. Il est cependant crucial de compenser l'absence de vérification statique par des tests unitaires exhaustifs et une documentation de qualité, incluant potentiellement des docstrings avec des types annotés.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">7. Cas d'utilisation pratiques</h2>
+    <p><p>Le polymorphisme au runtime offre une flexibilité considérable dans la conception de logiciels. Explorons quelques cas d'utilisation pratiques où cette approche se révèle particulièrement avantageuse.</p>
+
+<p><strong>Gestion de différents types de fichiers</strong></p>
+
+<p>Imaginez un système qui doit traiter différents types de fichiers (texte, CSV, JSON, etc.). Au lieu d'écrire des fonctions distinctes pour chaque format, le polymorphisme au runtime permet d'utiliser une interface commune et de déléguer le traitement spécifique à la classe appropriée. Cela simplifie la maintenance et l'extension du code.</p>
+
+<pre><code class="language-python">
+class FileReader:
+    def __init__(self, filename):
+        self.filename = filename
+
+    def read_data(self):
+        raise NotImplementedError("Subclasses must implement read_data method")
+
+class TextFileReader(FileReader):
+    def read_data(self):
+        try:
+            with open(self.filename, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"Error: File {self.filename} not found"
+
+
+class CSVFileReader(FileReader):
+    import csv  # Import inside the class to avoid unnecessary global import
+
+    def read_data(self):
+        try:
+            with open(self.filename, 'r') as f:
+                reader = csv.reader(f)
+                return list(reader)
+        except FileNotFoundError:
+            return f"Error: File {self.filename} not found"
+
+class JSONFileReader(FileReader):
+    import json  # Import inside the class to avoid unnecessary global import
+
+    def read_data(self):
+        try:
+            with open(self.filename, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return f"Error: File {self.filename} not found"
+
+# Example usage
+text_file = TextFileReader("data.txt")
+csv_file = CSVFileReader("data.csv")
+json_file = JSONFileReader("data.json")
+
+files = [text_file, csv_file, json_file]
+
+for file in files:
+    data = file.read_data()
+    print(f"Data from {file.filename}: {data}")
+</code></pre>
+
+<p>Dans cet exemple, la classe <code class="language-python">FileReader</code> définit une interface commune avec la méthode <code class="language-python">read_data()</code>. Chaque sous-classe (<code class="language-python">TextFileReader</code>, <code class="language-python">CSVFileReader</code>, <code class="language-python">JSONFileReader</code>) implémente cette méthode pour traiter un type de fichier spécifique. Au runtime, le programme peut traiter n'importe quel type de fichier en utilisant la même interface, sans avoir à connaître le type spécifique à l'avance. L'ajout de blocs <code class="language-python">try...except</code> permet une gestion d'erreurs plus robuste.</p>
+
+<p><strong>Systèmes de paiement</strong></p>
+
+<p>Un autre cas d'utilisation courant est la gestion de différents systèmes de paiement. On peut définir une interface commune pour effectuer un paiement et déléguer l'implémentation spécifique à chaque type de paiement (carte de crédit, PayPal, virement bancaire, etc.). Cela permet d'ajouter facilement de nouveaux modes de paiement sans modifier le reste du système.</p>
+
+<pre><code class="language-python">
+class PaymentProcessor:
+    def __init__(self, payment_method):
+        self.payment_method = payment_method
+
+    def process_payment(self, amount):
+        return self.payment_method.pay(amount)
+
+class PaymentMethod:
+    def pay(self, amount):
+        raise NotImplementedError("Subclasses must implement pay method")
+
+class CreditCardPayment(PaymentMethod):
+    def __init__(self, card_number, expiry_date, cvv):
+        self.card_number = card_number
+        self.expiry_date = expiry_date
+        self.cvv = cvv
+
+    def pay(self, amount):
+        # Simulate credit card payment processing
+        print(f"Processing credit card payment of {amount} using card {self.card_number}")
+        return True  # Indicate successful payment
+
+class PayPalPayment(PaymentMethod):
+    def __init__(self, email):
+        self.email = email
+
+    def pay(self, amount):
+        # Simulate PayPal payment processing
+        print(f"Processing PayPal payment of {amount} using email {self.email}")
+        return True  # Indicate successful payment
+
+# Example Usage
+credit_card = CreditCardPayment("1234-5678-9012-3456", "12/24", "123")
+paypal = PayPalPayment("test@example.com")
+
+processor1 = PaymentProcessor(credit_card)
+processor2 = PaymentProcessor(paypal)
+
+processor1.process_payment(100) # Output: Processing credit card payment of 100 using card 1234-5678-9012-3456
+processor2.process_payment(50)  # Output: Processing PayPal payment of 50 using email test@example.com
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">PaymentProcessor</code> utilise une instance de <code class="language-python">PaymentMethod</code> (qui peut être <code class="language-python">CreditCardPayment</code> ou <code class="language-python">PayPalPayment</code>) pour effectuer le paiement. Le polymorphisme au runtime garantit que la méthode <code class="language-python">pay</code> correcte est appelée en fonction du type de paiement.</p>
+
+<p><strong>Gestion d'événements</strong></p>
+
+<p>Dans les applications pilotées par les événements, le polymorphisme au runtime peut être utilisé pour gérer différents types d'événements. On peut définir une classe de base pour les événements et des sous-classes pour chaque type d'événement. Les gestionnaires d'événements peuvent ensuite être écrits pour traiter l'événement de base, et le polymorphisme au runtime s'assurera que le gestionnaire correct est appelé en fonction du type d'événement.</p>
+
+<pre><code class="language-python">
+class Event:
+    def __init__(self, data):
+        self.data = data
+
+    def process(self):
+        print("Processing generic event")
+
+
+class UserRegisteredEvent(Event):
+    def __init__(self, user_id, username):
+        super().__init__({"user_id": user_id, "username": username})
+        self.user_id = user_id
+        self.username = username
+
+    def process(self):
+        print(f"Processing user registration event for user: {self.username} with ID: {self.user_id}")
+
+
+class ProductPurchasedEvent(Event):
+    def __init__(self, product_id, user_id, quantity):
+        super().__init__({"product_id": product_id, "user_id": user_id, "quantity": quantity})
+        self.product_id = product_id
+        self.user_id = user_id
+        self.quantity = quantity
+
+    def process(self):
+        print(f"Processing product purchase event for product ID: {self.product_id}, user ID: {self.user_id}, quantity: {self.quantity}")
+
+
+def handle_event(event):
+    event.process()  # Polymorphic call
+
+# Example usage:
+event1 = UserRegisteredEvent(user_id=123, username="john_doe")
+event2 = ProductPurchasedEvent(product_id=456, user_id=123, quantity=2)
+event3 = Event(data="Generic event data")
+
+
+handle_event(event1) # Output: Processing user registration event for user: john_doe with ID: 123
+handle_event(event2) # Output: Processing product purchase event for product ID: 456, user ID: 123, quantity: 2
+handle_event(event3) # Output: Processing generic event
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">handle_event</code> prend un objet <code class="language-python">Event</code> en entrée et appelle sa méthode <code class="language-python">process()</code>.  Le polymorphisme au runtime garantit que la méthode <code class="language-python">process()</code> appropriée est appelée en fonction du type d'événement réel (par exemple, <code class="language-python">UserRegisteredEvent</code> ou <code class="language-python">ProductPurchasedEvent</code>).</p>
+
+<p>Ces exemples illustrent la puissance du polymorphisme au runtime pour créer des systèmes flexibles et extensibles. En utilisant une interface commune et en déléguant l'implémentation spécifique aux classes appropriées, on peut simplifier le code, réduire la duplication, améliorer la maintenabilité et faciliter l'ajout de nouvelles fonctionnalités. Cela permet de concevoir des applications plus robustes et adaptées aux changements futurs.</p>
+</p>
+    <h3>7.1 Polymorphisme dans les frameworks Web (ex: Django)</h3>
+    <p><p>Le polymorphisme est un concept puissant qui trouve de nombreuses applications dans les frameworks web Python, comme Django. Il permet de concevoir des systèmes flexibles et extensibles, où les objets de différentes classes peuvent être traités de manière uniforme.</p>
+
+<p>Un cas d'utilisation courant est la gestion des modèles dans un système de base de données. Prenons l'exemple d'une application de gestion de contenu (CMS) où l'on souhaite stocker différents types de contenus (articles de blog, pages, événements) dans une même table, tout en conservant des champs spécifiques à chaque type.</p>
+
+<p>On peut utiliser une approche de "modèles abstraits" et de "tables héritées" pour implémenter ce comportement avec Django. Voici un exemple simplifié:</p>
+
+<pre><code class="language-python">
+from django.db import models
+
+class Content(models.Model):
+    title = models.CharField(max_length=200)
+    publication_date = models.DateTimeField('date published')
+
+    class Meta:
+        abstract = True  # This is an abstract model
+
+    def display_content(self):
+        # Default implementation for displaying content
+        return f"Title: {self.title}, Published: {self.publication_date}"
+
+class Article(Content):
+    body = models.TextField()
+
+    def display_content(self):
+        # Specific implementation for articles
+        return f"&lt;h1&gt;{self.title}&lt;/h1&gt;&lt;p&gt;{self.body}&lt;/p&gt;"
+
+class Event(Content):
+    location = models.CharField(max_length=200)
+    event_date = models.DateTimeField('event date')
+
+    def display_content(self):
+        # Specific implementation for events
+        return f"&lt;h2&gt;{self.title}&lt;/h2&gt;&lt;p&gt;Location: {self.location}, Date: {self.event_date}&lt;/p&gt;"
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">Content</code> est une classe abstraite qui définit les champs communs à tous les types de contenu.  La classe <code class="language-python">Meta</code> avec <code class="language-python">abstract = True</code> indique à Django de ne pas créer de table de base de données pour ce modèle. Les classes <code class="language-python">Article</code> et <code class="language-python">Event</code> héritent de <code class="language-python">Content</code> et ajoutent leurs propres champs spécifiques. La méthode <code class="language-python">display_content</code> est un exemple de polymorphisme: chaque sous-classe fournit sa propre implémentation de cette méthode, adaptée à son type de contenu.</p>
+
+<p>Dans la vue Django, on peut récupérer une liste d'objets <code class="language-python">Content</code> (en réalité des instances d'<code class="language-python">Article</code> ou d'<code class="language-python">Event</code>) et les traiter de manière uniforme grâce à leur méthode <code class="language-python">display_content</code>:</p>
+
+<pre><code class="language-python">
+from django.shortcuts import render
+from .models import Article, Event
+
+def content_list(request):
+    articles = Article.objects.all()
+    events = Event.objects.all()
+    contents = list(articles) + list(events) # Combine different content types
+    context = {'contents': contents}
+    return render(request, 'content_list.html', context)
+</code></pre>
+
+<p>Et dans le template Django:</p>
+
+<pre><code class="language-python" class="language-html">
+&lt;ul&gt;
+    {% for content in contents %}
+        &lt;li&gt;{{ content.display_content|safe }}&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Le template ne se soucie pas du type réel de chaque objet <code class="language-python">content</code>. Il appelle simplement la méthode <code class="language-python">display_content</code>, et le polymorphisme assure que la version correcte de la méthode est exécutée pour chaque type de contenu, produisant ainsi l'affichage approprié. La balise <code class="language-python">|safe</code> est utilisée ici car la méthode <code class="language-python">display_content</code> retourne du HTML, et on souhaite éviter l'échappement automatique de Django, qui transformerait les balises HTML en texte brut.</p>
+
+<p>Il est important de noter que cette approche, bien que simple pour illustrer le polymorphisme, peut devenir complexe à gérer pour des modèles avec de nombreuses différences.  Dans ces cas, des stratégies alternatives comme les champs JSON ou les tables séparées avec une relation "one-to-one" peuvent être plus appropriées.  Cependant, cet exemple illustre clairement comment le polymorphisme permet de simplifier le code et d'améliorer sa maintenabilité dans certains scénarios.</p>
+
+<p>En définissant une interface commune (la méthode <code class="language-python">display_content</code>) et en laissant chaque sous-classe implémenter cette interface à sa manière, on peut créer un système flexible et extensible, où de nouveaux types de contenus peuvent être ajoutés sans modifier le code existant.  Le polymorphisme contribue ainsi à l'application du principe "ouvert/fermé" de la conception orientée objet, qui encourage l'extension du comportement d'un système sans nécessiter la modification du code existant.</p>
+</p>
+    <h3>7.2 Polymorphisme dans les bibliothèques graphiques (ex: Matplotlib)</h3>
+    <p><p>Le polymorphisme se manifeste de manière élégante dans les bibliothèques graphiques comme Matplotlib, offrant une grande flexibilité dans la création de visualisations. Matplotlib utilise le polymorphisme pour gérer différents types de graphiques (courbes, barres, nuages de points, etc.) de manière uniforme.</p>
+
+<p>Prenons l'exemple de la méthode <code class="language-python">plot()</code> de Matplotlib. Cette méthode peut accepter différents types de données en entrée et les afficher de manière appropriée. Le type de graphique affiché dépend des arguments passés à <code class="language-python">plot()</code>. Ce comportement illustre clairement le polymorphisme de méthode.</p>
+
+<p>Considérons le code suivant :</p>
+
+<pre><code class="language-python">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Example 1: Plotting a simple line graph
+x = np.array([1, 2, 3, 4, 5])
+y = x**2  # y = x squared
+plt.figure()  # create a new figure
+plt.plot(x, y)  # plot x and y
+plt.xlabel("X-axis")  # set x axis label
+plt.ylabel("Y-axis")  # set y axis label
+plt.title("Simple Line Graph")  # set title
+plt.show()
+
+# Example 2: Plotting a scatter plot
+x = np.random.rand(50)  # 50 random numbers between 0 and 1
+y = np.random.rand(50)  # 50 random numbers between 0 and 1
+colors = np.random.rand(50)  # 50 random colors
+sizes = 100 * np.random.rand(50)  # 50 random sizes
+
+plt.figure()  # create a new figure
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5)  # scatter plot
+plt.xlabel("X-axis")  # set x axis label
+plt.ylabel("Y-axis")  # set y axis label
+plt.title("Scatter Plot")  # set title
+plt.show()
+</code></pre>
+
+<p>Dans le premier exemple, <code class="language-python">plot()</code> est utilisée pour créer un graphique linéaire à partir de deux tableaux NumPy. Dans le second exemple, <code class="language-python">scatter()</code> est utilisée pour afficher un nuage de points.  Bien que conceptuellement nous utilisions des méthodes différentes, l'idée sous-jacente est que Matplotlib gère différents types de données et les affiche visuellement de manière appropriée, illustrant ainsi le polymorphisme.  La bibliothèque s'adapte aux données fournies.</p>
+
+<p>Un autre exemple de polymorphisme dans Matplotlib est la gestion des différents types d'axes. On peut avoir des axes linéaires, logarithmiques, polaires, etc. La bibliothèque utilise des classes différentes pour représenter ces axes, mais elles partagent une interface commune. Ainsi, le code qui interagit avec un axe peut fonctionner de manière polymorphe, sans avoir à se soucier du type spécifique d'axe. Cela simplifie grandement l'utilisation de la bibliothèque.</p>
+
+<pre><code class="language-python">
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate some data
+x = np.logspace(0.1, 1, 100)
+y = np.exp(x)
+
+# Create a figure and a set of subplots for linear scale
+fig, ax = plt.subplots()
+
+# Plot the data on a linear scale
+ax.plot(x, y)
+ax.set_xlabel('X (linear)')
+ax.set_ylabel('Y (linear)')
+ax.set_title('Linear Scale')
+
+# Create a new figure and a set of subplots for logarithmic scale
+plt.figure()
+fig, ax = plt.subplots()
+
+# Plot the data on a logarithmic scale
+ax.plot(x, y)
+ax.set_xscale('log')  # Set x-axis to logarithmic scale
+ax.set_yscale('log')  # Set y-axis to logarithmic scale
+ax.set_xlabel('X (logarithmic)')
+ax.set_ylabel('Y (logarithmic)')
+ax.set_title('Logarithmic Scale')
+
+# Show the plot
+plt.show()
+</code></pre>
+
+<p>Dans cet exemple, nous créons deux graphiques, l'un avec des axes linéaires et l'autre avec des axes logarithmiques. Les méthodes <code class="language-python">plot()</code>, <code class="language-python">set_xlabel()</code>, <code class="language-python">set_ylabel()</code> et <code class="language-python">set_title()</code> fonctionnent de la même manière pour les deux types d'axes, même si leur implémentation interne est différente. Cela illustre le polymorphisme de sous-type, où différents objets (axes linéaires et logarithmiques) répondent de la même manière à un appel de méthode commun, permettant une abstraction puissante et une flexibilité accrue dans la création de visualisations.</p>
+</p>
+    <h3>7.3 Polymorphisme dans les opérations sur les fichiers</h3>
+    <p><p>Le polymorphisme offre une approche élégante pour traiter différents types de fichiers de manière uniforme. Au lieu de recourir à des fonctions spécifiques pour chaque format (texte, binaire, etc.), on peut définir une interface commune, permettant à chaque type de fichier d'implémenter cette interface de manière appropriée. Cela favorise la flexibilité et la maintenabilité du code.</p>
+
+<p>Considérons un programme devant lire et potentiellement traiter des données issues de divers types de fichiers. Une solution possible est de définir une classe abstraite <code class="language-python">Fichier</code> avec une méthode <code class="language-python">lire_données</code>. Chaque sous-classe, telle que <code class="language-python">FichierTexte</code> et <code class="language-python">FichierBinaire</code>, implémentera cette méthode en fonction de la structure du fichier qu'elle représente.</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+
+class Fichier(ABC):
+    """
+    Abstract base class representing a file.
+    """
+    def __init__(self, nom_fichier):
+        """
+        Initializes the file with its name.
+        """
+        self.nom_fichier = nom_fichier
+
+    @abstractmethod
+    def lire_données(self):
+        """
+        Abstract method to read data from the file.
+        """
+        pass
+
+class FichierTexte(Fichier):
+    """
+    Class representing a text file.
+    """
+    def lire_données(self):
+        """
+        Reads data from the text file and returns it as a string.
+        """
+        try:
+            with open(self.nom_fichier, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"Fichier non trouvé : {self.nom_fichier}"
+
+
+class FichierBinaire(Fichier):
+    """
+    Class representing a binary file.
+    """
+    def lire_données(self):
+        """
+        Reads data from the binary file and returns it as bytes.
+        """
+        try:
+            with open(self.nom_fichier, 'rb') as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"Fichier non trouvé : {self.nom_fichier}"
+
+def traiter_fichier(fichier):
+    """
+    Polymorphic function that processes a file, regardless of its type.
+    """
+    données = fichier.lire_données()
+    print(f"Données du fichier {fichier.nom_fichier}: {données}")
+
+# Example usage
+fichier_texte = FichierTexte("exemple.txt")
+fichier_binaire = FichierBinaire("exemple.bin")
+
+# Create an example text file
+with open("exemple.txt", "w") as f:
+    f.write("Ceci est un exemple de fichier texte.")
+
+# Create an example binary file
+with open("exemple.bin", "wb") as f:
+    f.write(b"\\x00\\x01\\x02\\x03")
+
+traiter_fichier(fichier_texte)
+traiter_fichier(fichier_binaire)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">traiter_fichier</code> accepte un objet de type <code class="language-python">Fichier</code> comme argument. Cette fonction n'a pas besoin de connaître le type spécifique du fichier (texte ou binaire) pour accéder à ses données. Le polymorphisme permet d'invoquer la méthode <code class="language-python">lire_données</code> appropriée en fonction du type réel de l'objet <code class="language-python">fichier</code>. De plus, une gestion des erreurs est intégrée pour afficher un message si le fichier est introuvable.</p>
+
+<p>Cette approche se traduit par un code plus simple et plus facile à maintenir. Si un nouveau type de fichier (par exemple, un fichier CSV) doit être pris en charge, il suffit d'ajouter une nouvelle sous-classe de <code class="language-python">Fichier</code> et d'implémenter sa propre version de la méthode <code class="language-python">lire_données</code>. La fonction <code class="language-python">traiter_fichier</code> fonctionnera alors automatiquement avec ce nouveau type de fichier, sans nécessiter de modifications supplémentaires.  Cela illustre la puissance du polymorphisme pour étendre les fonctionnalités d'un système sans impacter le code existant.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">8. Exercices avec code en Python</h2>
+    <p><p>Pour solidifier votre compréhension du polymorphisme au runtime, voici quelques exercices pratiques avec des exemples de code en Python.</p>
+
+<p><strong>Exercice 1: Polymorphisme avec des méthodes de même nom</strong></p>
+
+<p>Créez une classe de base nommée <code class="language-python">Animal</code> avec une méthode <code class="language-python">faire_son</code> qui affiche le son générique d'un animal. Créez ensuite deux classes filles, <code class="language-python">Lion</code> et <code class="language-python">Serpent</code>, qui héritent de la classe <code class="language-python">Animal</code> et redéfinissent la méthode <code class="language-python">faire_son</code> pour afficher le son spécifique de chaque animal.</p>
+
+<pre><code class="language-python">
+class Animal:
+    def faire_son(self):
+        print("Son générique d'animal") # Generic animal sound
+
+class Lion(Animal):
+    def faire_son(self):
+        print("Roar!") # Lion's roar
+
+class Serpent(Animal):
+    def faire_son(self):
+        print("Sifflement!") # Snake's hiss
+
+# Demonstrate runtime polymorphism
+animaux = [Animal(), Lion(), Serpent()]
+for animal in animaux:
+    animal.faire_son()
+</code></pre>
+
+<p>Cet exercice démontre le polymorphisme au runtime à travers la redéfinition de méthodes. La méthode <code class="language-python">faire_son</code> est définie différemment dans chaque sous-classe de <code class="language-python">Animal</code>, permettant à chaque objet de produire un son unique.</p>
+
+<p><strong>Exercice 2: Polymorphisme avec des classes abstraites</strong></p>
+
+<p>Utilisez le module <code class="language-python">abc</code> pour définir une classe abstraite <code class="language-python">FormeGeometrique</code> avec une méthode abstraite <code class="language-python">calculer_aire</code>. Créez ensuite deux classes, <code class="language-python">Cercle</code> et <code class="language-python">Rectangle</code>, qui héritent de <code class="language-python">FormeGeometrique</code> et implémentent la méthode <code class="language-python">calculer_aire</code>.</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+import math
+
+class FormeGeometrique(ABC):
+    @abstractmethod
+    def calculer_aire(self):
+        pass # Abstract method to be implemented by subclasses
+
+class Cercle(FormeGeometrique):
+    def __init__(self, rayon):
+        self.rayon = rayon # Initialize circle with radius
+
+    def calculer_aire(self):
+        return math.pi * self.rayon * self.rayon # Calculate circle area
+
+class Rectangle(FormeGeometrique):
+    def __init__(self, longueur, largeur):
+        self.longueur = longueur # Initialize rectangle with length
+        self.largeur = largeur # Initialize rectangle with width
+
+    def calculer_aire(self):
+        return self.longueur * self.largeur # Calculate rectangle area
+
+# Demonstrate runtime polymorphism
+formes = [Cercle(5), Rectangle(4, 6)]
+for forme in formes:
+    print(f"Aire: {forme.calculer_aire()}")
+</code></pre>
+
+<p>Dans cet exercice, on utilise une classe abstraite pour garantir que toutes les formes géométriques implémentent une méthode <code class="language-python">calculer_aire</code>. Le polymorphisme se manifeste lorsque nous appelons cette méthode sur différents types de formes, chacune calculant l'aire de manière appropriée.</p>
+
+<p><strong>Exercice 3: Polymorphisme avec Duck Typing</strong></p>
+
+<p>Créez deux classes, <code class="language-python">Oiseau</code> et <code class="language-python">Poisson</code>, avec une méthode <code class="language-python">voler</code> (même si un poisson ne vole pas réellement, implémentez une version appropriée). Créez une fonction <code class="language-python">faire_voler</code> qui accepte un objet et appelle sa méthode <code class="language-python">voler</code>. Le polymorphisme est réalisé ici car la fonction <code class="language-python">faire_voler</code> ne vérifie pas le type exact de l'objet, mais simplement si l'objet a une méthode nommée <code class="language-python">voler</code>.</p>
+
+<pre><code class="language-python">
+class Oiseau:
+    def voler(self):
+        print("L'oiseau vole dans le ciel.") # Bird flying
+
+class Poisson:
+    def voler(self):
+        print("Le poisson nage rapidement (simulant le vol dans l'eau).") # Fish swimming, simulating flight
+
+def faire_voler(creature):
+    creature.voler() # Calls the 'voler' method of the object
+
+# Demonstrate duck typing
+mon_oiseau = Oiseau()
+mon_poisson = Poisson()
+
+faire_voler(mon_oiseau)
+faire_voler(mon_poisson)
+</code></pre>
+
+<p>Cet exercice illustre le "Duck Typing" : si un objet a une méthode <code class="language-python">voler</code>, alors la fonction <code class="language-python">faire_voler</code> peut l'utiliser, peu importe le type réel de l'objet. C'est un exemple puissant de polymorphisme en Python.</p>
+
+<p>Ces exercices illustrent les différentes façons dont le polymorphisme peut être implémenté en Python, en mettant l'accent sur la flexibilité et l'adaptabilité du code. Ils mettent en évidence l'importance de la redéfinition de méthodes, des classes abstraites et du duck typing pour écrire du code plus générique et réutilisable.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">9. Résumé et Comparaisons</h2>
+    <p><p>En résumé, le polymorphisme au runtime en Python offre une grande souplesse, permettant à des objets de classes différentes d'être manipulés de manière uniforme. Cette flexibilité est rendue possible grâce au typage dynamique de Python, où la résolution du type d'un objet se fait lors de l'exécution du programme et non à la compilation.</p>
+
+<p>Prenons l'exemple d'un système de gestion de notifications. Différents types de notifications, tels que des e-mails, des SMS ou des notifications push, peuvent être envoyés. Chaque type de notification possède sa propre méthode d'envoi, mais l'interface pour initier l'envoi reste la même.</p>
+
+<pre><code class="language-python">
+class EmailNotification:
+    def __init__(self, recipient, message):
+        self.recipient = recipient
+        self.message = message
+
+    def send(self):
+        # Simulate sending an email
+        print(f"Sending email to {self.recipient} with message: {self.message}")
+
+class SMSNotification:
+    def __init__(self, phone_number, message):
+        self.phone_number = phone_number
+        self.message = message
+
+    def send(self):
+        # Simulate sending an SMS
+        print(f"Sending SMS to {self.phone_number} with message: {self.message}")
+
+class PushNotification:
+    def __init__(self, user_id, message):
+        self.user_id = user_id
+        self.message = message
+
+    def send(self):
+        # Simulate sending a push notification
+        print(f"Sending push notification to user {self.user_id} with message: {self.message}")
+
+def send_notification(notification):
+    notification.send()
+
+# Example usage:
+email = EmailNotification("john.doe@example.com", "Hello, John!")
+sms = SMSNotification("+15551234567", "Reminder: Your appointment is tomorrow.")
+push = PushNotification("user123", "New message received.")
+
+send_notification(email)
+send_notification(sms)
+send_notification(push)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">send_notification</code> accepte n'importe quel objet qui possède une méthode <code class="language-python">send</code>. Le type spécifique de l'objet n'est pas vérifié lors de l'appel de la fonction. C'est pendant l'exécution que la méthode <code class="language-python">send</code> appropriée est invoquée, en fonction du type réel de l'objet. C'est un exemple concret de polymorphisme au runtime.</p>
+
+<p><strong>Comparaisons avec d'autres langages:</strong></p>
+
+<ul>
+    <li><strong>Java/C#:</strong> Ces langages supportent également le polymorphisme, souvent à travers des interfaces ou des classes abstraites, ce qui impose une structure plus rigide au code.  Par exemple, en Java, on pourrait définir une interface <code class="language-python">Notification</code> avec une méthode <code class="language-python">send()</code> que chaque type de notification implémenterait.</li>
+    <li><strong>Python:</strong> Python offre une approche plus flexible grâce au "duck typing". Ce principe se résume par l'adage: "Si ça marche comme un canard et que ça cancane comme un canard, alors c'est un canard". En d'autres termes, la présence d'une méthode est plus importante que l'héritage ou l'implémentation d'une interface.  Cela permet d'écrire du code plus concis et adaptable.  Par exemple, tant qu'un objet a une méthode <code class="language-python">send()</code>, la fonction <code class="language-python">send_notification</code> peut l'utiliser.</li>
+</ul>
+
+<p>En conclusion, le polymorphisme au runtime est une caractéristique puissante de Python qui encourage la flexibilité et la réutilisabilité du code. Bien que d'autres langages offrent des mécanismes similaires, l'approche dynamique de Python le rend particulièrement bien adapté aux situations où la flexibilité et l'adaptabilité sont essentielles.  Le "duck typing" permet une plus grande liberté dans la conception et l'évolution du code, en réduisant la nécessité de déclarations de types explicites et d'héritages stricts.</p>
+</p>
+    <h3>9.1 Résumé des concepts clés</h3>
+    <p><p>Ce voyage au cœur du polymorphisme en Python nous a permis d'appréhender plusieurs concepts fondamentaux. Récapitulons-les :</p>
+
+<ul>
+    <li>Le <strong>polymorphisme</strong>, c'est-à-dire la capacité pour des classes différentes de répondre de manière spécifique à un même appel de méthode.</li>
+    <li>Le <strong>duck typing</strong>, une philosophie selon laquelle le type exact d'un objet n'a pas d'importance tant qu'il possède les méthodes et propriétés requises. L'adage souvent cité est : "Si ça marche comme un canard et que ça fait coin-coin comme un canard, alors c'est un canard".</li>
+    <li>Les <strong>méthodes spéciales</strong> (ou méthodes magiques), telles que <code class="language-python">__len__()</code> ou <code class="language-python">__add__()</code>, qui permettent de définir le comportement des objets avec les opérateurs natifs de Python, offrant ainsi une syntaxe plus intuitive et naturelle.</li>
+    <li>Les <strong>classes abstraites</strong>, qui servent de modèles pour d'autres classes et qui, grâce au module <code class="language-python">abc</code>, peuvent imposer l'implémentation de certaines méthodes, garantissant ainsi une structure cohérente et prévisible pour les classes dérivées.</li>
+</ul>
+
+<p>Pour illustrer ces concepts, prenons un exemple concret de formatage de données :</p>
+
+<pre><code class="language-python">
+from abc import ABC, abstractmethod
+
+class DataFormatter(ABC):
+    """
+    Abstract base class for data formatters.
+    This class defines the interface for all data formatters.
+    """
+    @abstractmethod
+    def format_data(self, data):
+        """
+        Abstract method to format data.
+        Subclasses must implement this method to provide specific formatting logic.
+        """
+        pass
+
+class CSVFormatter(DataFormatter):
+    """
+    Formats data into CSV (Comma Separated Values) format.
+    Each data item is converted to a string and joined with commas.
+    """
+    def format_data(self, data):
+        """
+        Formats the given data as a CSV string.
+        """
+        return ",".join(str(item) for item in data)
+
+class JSONFormatter(DataFormatter):
+    """
+    Formats data into JSON (JavaScript Object Notation) format.
+    Each data item is assigned a key (its index) and formatted as a JSON object.
+    """
+    def format_data(self, data):
+        """
+        Formats the given data as a JSON string.
+        """
+        return "{" + ", ".join(f'"{i}": "{data[i]}"' for i in range(len(data))) + "}"
+
+# Example usage demonstrating polymorphism
+data = ["John", "Doe", 30]
+
+# Create instances of different data formatters
+csv_formatter = CSVFormatter()
+json_formatter = JSONFormatter()
+
+# Demonstrate polymorphism by calling the same method on different objects
+print(f"CSV Format: {csv_formatter.format_data(data)}")
+print(f"JSON Format: {json_formatter.format_data(data)}")
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">DataFormatter</code> est une classe abstraite qui définit une interface pour le formatage de données. Les classes <code class="language-python">CSVFormatter</code> et <code class="language-python">JSONFormatter</code> implémentent cette interface en fournissant des formatages spécifiques. Le polymorphisme se manifeste clairement dans l'appel à la méthode <code class="language-python">format_data</code> sur différents objets, chacun effectuant une action distincte et adaptée à son format.</p>
+
+<p>Ce résumé souligne la flexibilité et la puissance du polymorphisme au runtime en Python, permettant d'écrire du code adaptable, évolutif et maintenable, tout en favorisant la réutilisation et l'abstraction.</p>
+</p>
+    <h3>9.2 Comparaison avec d'autres langages (Java, C++)</h3>
+    <p><p>Le polymorphisme en Python se distingue notablement de celui mis en œuvre dans des langages comme Java et C++, principalement en raison de son typage dynamique. En Java et C++, le polymorphisme est souvent statique (résolu au moment de la compilation) ou dynamique (résolu au moment de l'exécution), mais il reste lié à un système de types statique. Python, en revanche, offre un polymorphisme exclusivement dynamique grâce à son typage dynamique et au "duck typing". Cette particularité influence la manière dont les objets interagissent et dont les erreurs sont gérées.</p>
+
+<p>En Java, le polymorphisme est géré via l'héritage et les interfaces. La surcharge (<em>overloading</em>) est une forme de polymorphisme statique, où plusieurs méthodes avec le même nom mais des signatures différentes peuvent coexister dans une même classe. La redéfinition (<em>overriding</em>) de méthodes dans des sous-classes est une forme de polymorphisme dynamique. La vérification du type se fait principalement au moment de la compilation, assurant une certaine sécurité et prévisibilité.</p>
+
+<pre><code class="language-python" class="language-java">
+// Java example
+class Animal {
+    public void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        Animal myCat = new Cat();
+        Animal myDog = new Dog();
+
+        myAnimal.makeSound(); // Prints "Generic animal sound"
+        myCat.makeSound();    // Prints "Meow"
+        myDog.makeSound();    // Prints "Woof"
+    }
+}
+</code></pre>
+
+<p>En C++, le polymorphisme est réalisé grâce aux fonctions virtuelles et à l'héritage. Si une fonction est déclarée comme <code class="language-python">virtual</code> dans une classe de base, elle peut être redéfinie dans les classes dérivées.  Comme en Java, le typage est statique, mais l'utilisation de fonctions virtuelles permet de résoudre l'appel de méthode au moment de l'exécution, offrant ainsi un polymorphisme dynamique.  Sans le mot-clé <code class="language-python">virtual</code>, le polymorphisme est statique, et la méthode appelée est déterminée au moment de la compilation en fonction du type de la variable.</p>
+
+<pre><code class="language-python" class="language-cpp">
+// C++ example
+#include &lt;iostream&gt;
+
+class Animal {
+public:
+    virtual void makeSound() {
+        std::cout << "Generic animal sound" << std::endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        std::cout << "Meow" << std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        std::cout << "Woof" << std::endl;
+    }
+};
+
+int main() {
+    Animal* myAnimal = new Animal();
+    Animal* myCat = new Cat();
+    Animal* myDog = new Dog();
+
+    myAnimal->makeSound(); // Prints "Generic animal sound"
+    myCat->makeSound();    // Prints "Meow"
+    myDog->makeSound();    // Prints "Woof"
+
+    delete myAnimal;
+    delete myCat;
+    delete myDog;
+
+    return 0;
+}
+</code></pre>
+
+<p>Python, en revanche, se repose sur le "duck typing". Si un objet possède les méthodes et les attributs attendus, il est considéré comme compatible, indépendamment de son type formel ou de son héritage. Cela offre une flexibilité considérable, permettant d'utiliser des objets de classes différentes de manière interchangeable, à condition qu'ils implémentent les mêmes interfaces (au sens large).  Cependant, cela reporte la détection d'erreurs de type à l'exécution, ce qui peut rendre le débogage plus complexe.</p>
+
+<pre><code class="language-python">
+# Python example
+class Animal:
+    def make_sound(self):
+        print("Generic animal sound")
+
+class Cat:
+    def make_sound(self):
+        print("Meow")
+
+class Dog:
+    def make_sound(self):
+        print("Woof")
+
+def animal_sound(animal):
+    animal.make_sound()
+
+my_animal = Animal()
+my_cat = Cat()
+my_dog = Dog()
+
+animal_sound(my_animal)  # Prints "Generic animal sound"
+animal_sound(my_cat)     # Prints "Meow"
+animal_sound(my_dog)     # Prints "Woof"
+
+# Duck typing example:
+class Robot:
+    def make_sound(self):
+        print("Bleep Bloop")
+
+my_robot = Robot()
+animal_sound(my_robot) # Prints "Bleep Bloop" - works because Robot has a make_sound method
+</code></pre>
+
+<p>La différence clé réside dans le moment de la vérification du type. Java et C++ effectuent une vérification statique du type (avant l'exécution), ce qui permet de détecter les erreurs plus tôt et d'optimiser le code pour des performances accrues. Python, avec son typage dynamique, effectue une vérification du type au moment de l'exécution. Cela rend le code Python plus flexible et plus facile à écrire, favorisant le prototypage rapide et l'utilisation de bibliothèques externes, mais peut potentiellement masquer les erreurs jusqu'à ce que le code soit exécuté. Le polymorphisme en Python est donc plus implicite et basé sur la présence des méthodes, plutôt que sur une hiérarchie de types explicite comme en Java et C++. Des annotations de type (introduites dans Python 3.5) peuvent aider à améliorer la vérification statique, mais elles restent optionnelles et n'affectent pas le comportement d'exécution.</p>
+
+<p>En conclusion, bien que les trois langages supportent le polymorphisme, ils le font avec des mécanismes et des philosophies différents. Java et C++ offrent un contrôle plus strict et une détection précoce des erreurs grâce à leur typage statique, tandis que Python offre une plus grande flexibilité et une plus grande rapidité de développement grâce à son typage dynamique et son approche "duck typing". Le choix du langage dépend donc des exigences spécifiques du projet et des compromis souhaités entre sécurité, flexibilité et performance.  Python, avec son polymorphisme dynamique, se prête bien aux applications où la flexibilité et la rapidité de développement sont prioritaires, tandis que Java et C++ peuvent être préférés pour les applications critiques où la robustesse et la performance sont essentielles.</p>
+</p>
+  </section>
+</div>
+
+
+<div class="content_box">
+  <section>
+    <h2 class="heading">Conclusion</h2>
+    <p><p>Le polymorphisme au runtime est un concept fondamental en Python, offrant une grande flexibilité et adaptabilité dans la conception d'applications complexes. Il permet de créer des systèmes qui réagissent dynamiquement aux types d'objets rencontrés, ce qui favorise la réutilisation du code et simplifie la maintenance.</p>
+<p>Python, grâce à son typage dynamique et au <em>duck typing</em>, simplifie l'implémentation de comportements polymorphes. Le <em>duck typing</em> permet à une fonction d'opérer sur différents types d'objets tant qu'ils implémentent les méthodes attendues. Cette caractéristique est une force majeure du langage, permettant d'écrire du code plus générique et adaptable.</p>
+<p>Considérons un exemple classique : le calcul du prix total d'un panier d'achats. Ce panier peut contenir différents types d'articles, chacun ayant sa propre logique de calcul du prix (par exemple, des articles avec ou sans remise).</p>
+<pre><code class="language-python">
+class StandardArticle:
+    def __init__(self, price, quantity):
+        self.price = price
+        self.quantity = quantity
+
+    def calculate_total_price(self):
+        return self.price * self.quantity
+
+class DiscountedArticle:
+    def __init__(self, price, quantity, discount):
+        self.price = price
+        self.quantity = quantity
+        self.discount = discount
+
+    def calculate_total_price(self):
+        return (self.price * self.quantity) * (1 - self.discount)
+
+def calculate_cart_total(articles):
+    total = 0
+    for article in articles:
+        total += article.calculate_total_price()
+    return total
+
+# Example usage:
+article1 = StandardArticle(10, 2)
+article2 = DiscountedArticle(20, 1, 0.1)
+cart = [article1, article2]
+total_price = calculate_cart_total(cart)
+print(f"Total price of the cart: {total_price}")
+</code></pre>
+<p>Dans cet exemple, la fonction <code class="language-python">calculate_cart_total</code> fonctionne avec des objets de type <code class="language-python">StandardArticle</code> et <code class="language-python">DiscountedArticle</code>, car les deux implémentent la méthode <code class="language-python">calculate_total_price</code>. C'est un exemple concret de <em>duck typing</em> : si un objet se comporte comme un canard (implémente les méthodes attendues), alors il est traité comme tel, indépendamment de son type réel.  Cette approche simplifie le code et le rend plus flexible.</p>
+<p>De plus, l'héritage et les méthodes spéciales (méthodes "dunder" ou "magic methods"), telles que <code class="language-python">__str__</code> ou <code class="language-python">__len__</code>, renforcent la flexibilité du polymorphisme. Elles permettent de définir des comportements standardisés pour différentes classes d'objets, ce qui facilite l'écriture de code générique et réutilisable. Par exemple, la méthode <code class="language-python">__str__</code> permet de définir une représentation en chaîne de caractères d'un objet, tandis que <code class="language-python">__len__</code> permet de définir la longueur d'un objet.</p>
+<p>En conclusion, maîtriser le polymorphisme au runtime en Python est essentiel pour développer du code propre, maintenable et évolutif. L'adoption de ces principes permet de construire des applications robustes, adaptées aux besoins changeants des projets modernes, et plus faciles à comprendre et à maintenir à long terme.</p>
+</p>
+  </section>
+</div>
+
+
+<!-- End of Course Marker -->
+<div class="course-end-marker" style="margin: 4rem auto; text-align: center; max-width: 600px">
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #fb5168 50%, transparent); margin: 2rem auto;"></div>
+  <p style="color: #fb5168; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; opacity: 0.9;">
+    That's all folks
+  </p>
+</div></div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>

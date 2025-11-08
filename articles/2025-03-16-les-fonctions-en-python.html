@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html class="style-orange-3 custom_fonts comps live_website" lang="fr">
+  <head>
+    <!------------------- Essential Meta Tags ------------------>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="website" />
+    <!------------------- Essential Meta Tags ------------------>    
+
+    <!-------------------- Core SEO Elements -------------------->    
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <title>Les fonctions en Python | Formateur</title>
+    <meta name="description" content="Découvrez tout sur Les fonctions en Python dans cet article détaillé." />
+    <meta property="og:title" content="Les fonctions en Python | Formateur" />
+    <meta property="og:description" content="Découvrez tout sur Les fonctions en Python dans cet article détaillé." />
+    <meta name="twitter:title" content="Les fonctions en Python | Formateur" />
+    <meta name="twitter:description" content="Découvrez tout sur Les fonctions en Python dans cet article détaillé." />
+    <!-- Essential Title and SEO Meta Tags PLACEHOLDER -->
+    <!-------------------- Core SEO Elements -------------------->    
+
+    <!-- Structured Data PLACEHOLDER -->
+    <!-- Structured Data -->
+
+    <!-- End Structured Data -->
+    <!-- Structured Data PLACEHOLDER -->
+
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+    <!-------------- Canonical and Alternate Links ------------->
+
+    <!-------------- Canonical and Alternate Links ------------->
+    <!-------------- Canonical and Alternate Links PLACEHOLDER ------------->
+
+    <!----------------- Favicon and Assets ------------------->
+    <!-- Favicon and Social Media Images -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.clearcode.fr/assets/icons/favicon.ico"
+      sizes="48x48"
+    />
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="ClearCode - Formations en mathématiques et programmation IT"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <!-- Fallback image format -->
+    <meta
+      property="og:image"
+      content="https://www.clearcode.fr/assets/images/og-image.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.clearcode.fr/assets/images/og-image.png"
+    />
+    <!----------------- Favicon and Assets ------------------->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link rel="stylesheet" href="/src/css/dropdown.css" />
+    <link rel="stylesheet" href="/src/css/mobile-course-navbar.css" />
+
+    <!-- Prism.js core script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <!-- Prism.js language support for Python -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"
+      defer
+    ></script>
+    <script 
+      src="/src/js/reduce-prism-dom.js" 
+      defer>
+    </script>
+
+
+    <!-- Python Code CSS -->
+    <link rel="stylesheet" href="/src/css/python-code.css" />
+
+    <!-- Scripts -->
+  </head>
+
+  <body class="comps">
+    <main class="container">
+      <!-- 0. TITRE -->
+      <div class="content_box">
+        <h1 class="heading heading--accent">Les fonctions en Python</h1>
+      </div><div class="content_box">
+  <section>
+    <h2 class="heading">Introduction</h2>
+    <p><p>Les fonctions sont un pilier central de la programmation en Python. Elles offrent un mécanisme robuste pour encapsuler des blocs de code, les rendant réutilisables et contribuant à un code plus clair, plus facile à lire et à maintenir. Les fonctions permettent de décomposer des problèmes complexes en tâches plus petites et gérables, améliorant ainsi la structure globale et la compréhension du code.</p>
+
+<p>En Python, la définition d'une fonction se fait grâce au mot-clé <code class="language-python">def</code>, suivi du nom de la fonction, d'une paire de parenthèses (pouvant contenir des paramètres) et de deux points. Le corps de la fonction, obligatoirement indenté, renferme les instructions à exécuter. L'instruction <code class="language-python">return</code> permet de spécifier la valeur que la fonction doit renvoyer. En l'absence de <code class="language-python">return</code>, la fonction retourne implicitement <code class="language-python">None</code>.</p>
+
+<pre><code class="language-python">
+# Define a function to calculate the power of a number
+def calculate_power(base, exponent):
+    """
+    Calculates the power of a base number raised to an exponent.
+    Args:
+        base (float): The base number.
+        exponent (int): The exponent.
+    Returns:
+        float: The result of base raised to the power of exponent.
+    """
+    result = base ** exponent
+    return result
+
+# Example usage
+base_number = 2.0
+exponent_value = 3
+power = calculate_power(base_number, exponent_value)
+print(f"{base_number} raised to the power of {exponent_value} is: {power}")
+</code></pre>
+
+<p>Ce guide vous propose un voyage progressif à travers l'univers des fonctions en Python. Nous partirons des concepts de base, tels que la définition et l'appel de fonctions, pour explorer ensuite des techniques avancées, comme les fonctions lambda, les décorateurs et les générateurs. Une attention particulière sera également portée à la documentation et aux tests unitaires, éléments essentiels pour garantir la qualité et la fiabilité de vos fonctions.</p>
+
+<p>Que vous soyez un novice en programmation ou un développeur expérimenté, ce parcours structuré vous donnera les compétences nécessaires pour maîtriser l'utilisation des fonctions en Python et améliorer significativement votre façon de coder. L'objectif est de vous outiller pour écrire du code Python élégant, performant et facile à comprendre, en exploitant pleinement la puissance et la flexibilité offertes par les fonctions.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">1. Définition et appel d'une fonction en Python</h2>
+    <p><p>En Python, la définition d'une fonction s'effectue grâce au mot-clé <code class="language-python">def</code>. Cette définition est suivie du nom que vous souhaitez donner à votre fonction, d'une paire de parenthèses qui peuvent contenir les paramètres (ou arguments) attendus par la fonction, et enfin, du caractère deux-points <code class="language-python">:</code>.  Le bloc de code qui constitue le corps de la fonction doit impérativement être indenté.</p>
+
+<pre><code class="language-python">
+# Define a function named 'calculate_volume' that accepts three arguments: length, width, and height.
+def calculate_volume(length, width, height):
+    # Calculate the volume.
+    volume = length * width * height
+    # Return the computed volume to the caller.
+    return volume
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction appelée <code class="language-python">calculate_volume</code>. Elle prend trois paramètres : <code class="language-python">length</code> (longueur), <code class="language-python">width</code> (largeur) et <code class="language-python">height</code> (hauteur). La fonction effectue le calcul du volume en multipliant ces trois valeurs et retourne le résultat en utilisant le mot-clé <code class="language-python">return</code>.</p>
+
+<p>Pour utiliser, ou plus précisément, pour appeler une fonction, vous devez écrire son nom suivi d'une paire de parenthèses. Si la fonction attend des arguments, il est nécessaire de fournir les valeurs correspondantes à l'intérieur des parenthèses.</p>
+
+<pre><code class="language-python">
+# Call the 'calculate_volume' function with the arguments 5, 4, and 6.
+result = calculate_volume(5, 4, 6)
+
+# Print the value returned by the function (which is the volume).
+print(result)  # Output: 120
+</code></pre>
+
+<p>Ici, nous appelons la fonction <code class="language-python">calculate_volume</code> en lui fournissant les valeurs <code class="language-python">5</code>, <code class="language-python">4</code> et <code class="language-python">6</code> comme arguments. La valeur que la fonction renvoie est ensuite stockée dans la variable <code class="language-python">result</code>, et finalement affichée à l'écran grâce à la fonction <code class="language-python">print()</code>.</p>
+
+<p>Il est tout à fait possible de définir des fonctions qui ne prennent aucun argument. Dans ce cas, les parenthèses doivent tout de même être présentes, mais elles restent vides.</p>
+
+<pre><code class="language-python">
+# Define a function that prints a simple greeting message.
+def greet():
+    print("Hello, world!")
+
+# Call the 'greet' function to execute its code.
+greet()  # Output: Hello, world!
+</code></pre>
+
+<p>De même, une fonction n'est pas obligée de retourner explicitement une valeur. Si l'instruction <code class="language-python">return</code> est absente, la fonction retournera implicitement la valeur <code class="language-python">None</code>.</p>
+
+<pre><code class="language-python">
+# Define a function that prints a message but doesn't explicitly return a value.
+def print_message(message):
+    print(message)
+
+# Call the function and store its return value.
+result = print_message("This is a test message.")
+print(result)  # Output: None
+</code></pre>
+</p>
+    <h3>1.1 Syntaxe de base d'une fonction</h3>
+    <p><p>En Python, la définition d'une fonction s'effectue grâce au mot-clé <code class="language-python">def</code>. Ce mot-clé est suivi du nom que vous choisissez pour votre fonction, de parenthèses <code class="language-python">()</code> qui peuvent contenir des arguments, et enfin, du caractère deux-points <code class="language-python">:</code>. Le bloc de code qui sera exécuté lors de l'appel de la fonction doit être indenté sous cette ligne de définition.</p>
+
+<p>La syntaxe de base pour définir une fonction est la suivante :</p>
+
+<pre><code class="language-python">
+def function_name():
+    # Code block to be executed
+    # You can add any Python code here
+    pass  # 'pass' statement for an empty function
+</code></pre>
+
+<p>Il est essentiel de respecter les conventions de nommage définies dans le <a href="https://peps.python.org/pep-0008/">PEP 8</a>, le guide de style pour le code Python. Les noms de fonctions doivent être en minuscules, avec les mots séparés par des tirets bas (underscores), par exemple : <code class="language-python">calculate_average</code>, <code class="language-python">display_message</code>.</p>
+
+<p>Voici un exemple simple d'une fonction qui affiche un message de salutation :</p>
+
+<pre><code class="language-python">
+def greet():
+    # This function prints a greeting message
+    print("Hello!")
+
+# Calling the function
+greet()
+</code></pre>
+
+<p>Dans cet exemple, la fonction nommée <code class="language-python">greet</code> ne prend aucun argument.  Lorsqu'elle est appelée, elle affiche simplement "Hello!".</p>
+
+<p>Une fonction peut également renvoyer une valeur en utilisant le mot-clé <code class="language-python">return</code>. L'exemple ci-dessous montre une fonction qui calcule le carré d'un nombre et retourne le résultat :</p>
+
+<pre><code class="language-python">
+def calculate_square(number):
+    # This function calculates the square of a number
+    square = number * number
+    return square
+
+# Calling the function and storing the returned value
+result = calculate_square(5)
+print(result)  # Output: 25
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">calculate_square</code> prend un argument, <code class="language-python">number</code>. Elle calcule ensuite le carré de ce nombre et le renvoie en utilisant <code class="language-python">return square</code>. La valeur retournée est stockée dans la variable <code class="language-python">result</code> et affichée.</p>
+
+<p>En résumé, la définition d'une fonction en Python est une méthode simple et flexible pour créer des blocs de code réutilisables et structurés. L'utilisation du mot-clé <code class="language-python">def</code>, le respect des conventions de nommage (PEP 8), et l'utilisation de <code class="language-python">return</code> pour renvoyer des valeurs sont les éléments fondamentaux de la syntaxe des fonctions en Python.</p>
+</p>
+    <h3>1.2 Appel de fonction et portée</h3>
+    <p><p>L'appel d'une fonction correspond à l'exécution du bloc de code qu'elle contient. Pour appeler une fonction, on utilise son nom suivi de parenthèses. Si la fonction attend des arguments, ils doivent être placés entre ces parenthèses.</p>
+
+<p>Python utilise un système de portée pour gérer la visibilité des variables, c'est-à-dire les portions de code où une variable est accessible. On distingue principalement deux types de portée : la portée locale et la portée globale.</p>
+
+<p>Une variable définie à l'intérieur d'une fonction a une portée <strong>locale</strong>. Elle est uniquement accessible depuis l'intérieur de cette fonction. À l'inverse, une variable définie à l'extérieur de toute fonction a une portée <strong>globale</strong>. Elle est accessible depuis n'importe quelle partie du code, y compris depuis l'intérieur des fonctions.</p>
+
+<p>Illustrons ces concepts avec un exemple concret :</p>
+
+<pre><code class="language-python">
+# Global variable
+message = "Hello from outside the function!"
+
+def show_message():
+    # Local variable (with the same name as the global variable, but different)
+    message = "Hello from inside the function!"
+    print(message)  # Displays the local variable
+
+# Function call
+show_message()
+
+# Displays the global variable (it was not modified by the function)
+print(message)
+
+def modify_global():
+    # Use the keyword 'global' to modify the global variable
+    global message
+    message = "Global message modified!"
+    print("Inside modify_global:", message)
+
+
+modify_global()
+print("After modify_global:", message)
+
+# Define a new local variable
+def example_local():
+    number = 10  # Local variable to example_local
+    print("Inside example_local:", number)
+
+example_local()
+
+# Attempt to access the local variable outside the function (will cause an error)
+# print(number)  # NameError: name 'number' is not defined
+</code></pre>
+
+<p>Dans cet exemple :</p>
+<ul>
+    <li>La première variable <code>message</code> est une variable globale.</li>
+    <li>La fonction <code>show_message()</code> définit une variable locale <code>message</code>. Cette variable locale "masque" la variable globale du même nom à l'intérieur de la fonction.</li>
+    <li>La fonction <code>modify_global()</code> utilise le mot-clé <code>global</code> pour indiquer qu'elle souhaite modifier la variable globale <code>message</code>. Sans le mot-clé <code>global</code>, une nouvelle variable locale serait créée, laissant la variable globale inchangée.</li>
+    <li>La fonction <code>example_local()</code> montre comment définir une variable locale et démontre qu'elle n'est pas accessible en dehors de la fonction. Tenter d'y accéder provoque une erreur <code>NameError</code>.</li>
+</ul>
+
+<p>Il est crucial de bien comprendre la portée des variables pour éviter des erreurs potentielles et écrire un code propre et maintenable. Utiliser des noms de variables distincts pour les variables globales et locales peut améliorer la lisibilité du code. L'utilisation du mot-clé <code>global</code> doit être envisagée avec prudence, car modifier des variables globales depuis l'intérieur des fonctions peut rendre le code plus difficile à comprendre, à maintenir et à déboguer. Il est souvent préférable de passer des variables comme arguments aux fonctions et de retourner des valeurs plutôt que de modifier directement des variables globales.</p>
+</p>
+    <h3>1.3 Documentation de fonction (docstrings)</h3>
+    <p><p>En Python, la documentation des fonctions est primordiale pour la compréhension et la maintenabilité du code. Les <em>docstrings</em> jouent un rôle central à cet égard. Une docstring est une chaîne de caractères littérale, délimitée par des triples guillemets (<code>'''</code> ou <code>"""</code>), placée immédiatement après la définition de la fonction. Elle sert à décrire le rôle de la fonction, ses paramètres, et sa valeur de retour.</p>
+
+<p>Voici un exemple de fonction avec une docstring:</p>
+
+<pre><code class="language-python">
+def calculate_rectangle_area(length, width):
+    '''
+    Calculates the area of a rectangle.
+
+    Args:
+        length (float): The length of the rectangle.
+        width (float): The width of the rectangle.
+
+    Returns:
+        float: The area of the rectangle.
+    '''
+    area = length * width
+    return area
+</code></pre>
+
+<p>Dans cet exemple, la docstring de la fonction <code>calculate_rectangle_area</code> détaille son objectif (calculer l'aire d'un rectangle), précise le type des arguments (<code>length</code> et <code>width</code>, de type <code>float</code>), et indique que la fonction renvoie également un <code>float</code>, représentant l'aire calculée.</p>
+
+<p>Pour consulter la docstring d'une fonction, Python met à disposition la fonction intégrée <code>help()</code>. Son utilisation est simple :</p>
+
+<pre><code class="language-python">
+help(calculate_rectangle_area)
+</code></pre>
+
+<p>L'exécution de ce code affichera la docstring de la fonction <code>calculate_rectangle_area</code> directement dans la console. C'est une méthode rapide pour accéder à la documentation d'une fonction sans explorer son code source.</p>
+
+<p>Il est également possible d'accéder à la docstring en utilisant l'attribut spécial <code>__doc__</code> de la fonction :</p>
+
+<pre><code class="language-python">
+print(calculate_rectangle_area.__doc__)
+</code></pre>
+
+<p>L'adoption de docstrings claires et précises est une pratique de programmation essentielle qui améliore considérablement la lisibilité et la maintenabilité de vos projets Python.</p>
+
+<p>Voici un exemple plus avancé, intégrant des valeurs par défaut et la documentation des exceptions potentielles :</p>
+
+<pre><code class="language-python">
+def divide(dividend, divisor=1):
+    '''
+    Divides two numbers.
+
+    Args:
+        dividend (float): The number to be divided.
+        divisor (float, optional): The divisor. Defaults to 1.
+
+    Returns:
+        float: The result of the division.
+
+    Raises:
+        TypeError: If the dividend or divisor are not numbers.
+        ZeroDivisionError: If the divisor is equal to zero.
+    '''
+    if not isinstance(dividend, (int, float)) or not isinstance(divisor, (int, float)):
+        raise TypeError("Dividend and divisor must be numbers.")
+    if divisor == 0:
+        raise ZeroDivisionError("Division by zero is not allowed.")
+    return dividend / divisor
+</code></pre>
+
+<p>Dans cet exemple, la docstring contient une section <code>Raises</code> qui documente les exceptions potentielles (<code>TypeError</code> et <code>ZeroDivisionError</code>) que la fonction peut lever, fournissant ainsi une information cruciale pour les utilisateurs de la fonction.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">2. Arguments de fonction en Python</h2>
+    <p><p>Les arguments de fonction sont les valeurs que nous passons à une fonction lors de son appel. Ils permettent de personnaliser son comportement en lui fournissant les données nécessaires à son exécution. Python offre une grande flexibilité dans la manière de définir et d'utiliser ces arguments, ce qui permet d'écrire des fonctions adaptées à divers contextes.</p>
+
+<p>Il existe plusieurs types d'arguments en Python : les arguments positionnels, les arguments nommés (ou par mot-clé), les arguments par défaut et les arguments variables (<code>*args</code> et <code>**kwargs</code>). Chacun a un rôle spécifique et contribue à la polyvalence des fonctions Python.</p>
+
+<p>Les arguments positionnels sont les plus fondamentaux. Ils sont passés à la fonction selon l'ordre dans lequel ils sont définis dans la signature de la fonction. L'ordre est donc crucial, car Python associe chaque valeur à l'argument correspondant en se basant sur sa position.</p>
+
+<pre><code class="language-python">
+def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+
+describe_pet('hamster', 'Harry')  # positional arguments: 'hamster' is assigned to animal_type, 'Harry' to pet_name
+</code></pre>
+
+<p>Les arguments nommés, aussi appelés arguments par mot-clé, permettent de passer les arguments à une fonction en spécifiant explicitement le nom du paramètre auquel la valeur doit être assignée. Cela rend l'appel de la fonction plus clair et permet de s'affranchir de l'ordre défini dans la signature. L'utilisation d'arguments nommés améliore considérablement la lisibilité du code, surtout lorsque la fonction prend un grand nombre d'arguments.</p>
+
+<pre><code class="language-python">
+def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+
+describe_pet(pet_name='Harry', animal_type='hamster')  # keyword arguments: explicitly assigning values to parameters
+</code></pre>
+
+<p>Les arguments par défaut permettent de spécifier une valeur par défaut pour un argument. Si cet argument est omis lors de l'appel de la fonction, la valeur par défaut est automatiquement utilisée. Cela simplifie l'appel de la fonction lorsque certaines valeurs sont fréquemment les mêmes. Il est important de noter que les arguments avec valeurs par défaut doivent être définis après les arguments positionnels dans la signature de la fonction, sans quoi une erreur <code>SyntaxError</code> sera levée.</p>
+
+<pre><code class="language-python">
+def describe_pet(pet_name, animal_type='dog'):
+    """Display information about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+
+describe_pet('Willie')  # Uses the default value 'dog' for animal_type
+describe_pet('Snowball', animal_type='cat')  # Overrides the default value, animal_type is now 'cat'
+</code></pre>
+
+<p>Python offre également la possibilité de gérer un nombre variable d'arguments grâce aux arguments <code>*args</code> et <code>**kwargs</code>. L'argument <code>*args</code> permet de passer un nombre variable d'arguments positionnels à une fonction. Ces arguments sont regroupés dans un tuple à l'intérieur de la fonction.  L'argument <code>**kwargs</code> permet de passer un nombre variable d'arguments nommés à une fonction. Ces arguments sont regroupés dans un dictionnaire à l'intérieur de la fonction.  Ceci est particulièrement utile pour créer des fonctions flexibles capables de s'adapter à différents besoins.</p>
+
+<pre><code class="language-python">
+def make_pizza(*toppings):
+    """Print the list of toppings that have been requested."""
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
+print(user_profile)
+</code></pre>
+
+<p>La maîtrise des différents types d'arguments de fonction est essentielle pour écrire du code Python clair, flexible et réutilisable. Comprendre quand et comment utiliser chaque type d'argument permet de concevoir des fonctions adaptées à différents cas d'utilisation, d'améliorer la lisibilité du code et de faciliter sa maintenance. En tirant parti de ces fonctionnalités, vous pouvez créer des fonctions robustes et élégantes qui contribuent à la qualité globale de vos programmes Python.</p>
+</p>
+    <h3>2.1 Arguments positionnels et nommés</h3>
+    <p><p>En Python, lors de l'appel d'une fonction, les arguments peuvent être fournis de deux manières principales : par position (arguments positionnels) ou par nom (arguments nommés ou "keyword arguments"). La distinction entre ces deux méthodes est essentielle pour développer un code clair, lisible et maintenable.</p>
+
+<p>Les arguments positionnels sont identifiés par leur ordre d'apparition lors de l'appel de la fonction. L'interpréteur Python associe chaque argument à un paramètre de la fonction selon cette position. Par conséquent, l'ordre dans lequel ces arguments sont fournis est crucial. Un ordre incorrect peut entraîner un comportement inattendu de la fonction, voire des erreurs logiques.</p>
+
+<pre><code class="language-python">
+def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+
+describe_pet('hamster', 'Harry')  # Positional arguments
+# Output:
+# I have a hamster.
+# My hamster's name is Harry.
+
+describe_pet('Harry', 'hamster')  # Incorrect order leads to incorrect output
+# Output:
+# I have a Harry.
+# My Harry's name is hamster.
+</code></pre>
+
+<p>Dans cet exemple, intervertir les arguments <code>'hamster'</code> et <code>'Harry'</code> modifie complètement le sens de l'appel de la fonction, illustrant l'importance de l'ordre des arguments positionnels.</p>
+
+<p>Les arguments nommés permettent de spécifier explicitement à quel paramètre de la fonction chaque argument est destiné, en utilisant le nom du paramètre suivi de la valeur de l'argument. Cette approche améliore la clarté du code et réduit le risque d'erreurs liées à un ordre incorrect des arguments. L'ordre des arguments nommés n'a pas d'importance.</p>
+
+<pre><code class="language-python">
+def describe_pet(animal_type, pet_name):
+    """Display information about a pet."""
+    print(f"I have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name}.")
+
+describe_pet(animal_type='hamster', pet_name='Harry')  # Keyword arguments
+# Output:
+# I have a hamster.
+# My hamster's name is Harry.
+
+describe_pet(pet_name='Harry', animal_type='hamster')  # Order doesn't matter with keyword arguments
+# Output:
+# I have a hamster.
+# My hamster's name is Harry.
+</code></pre>
+
+<p>L'utilisation d'arguments nommés élimine la contrainte de l'ordre, rendant le code plus facile à lire et à comprendre.</p>
+
+<p>Il est possible de combiner arguments positionnels et nommés lors d'un appel de fonction. Toutefois, une règle stricte doit être respectée : tous les arguments positionnels doivent impérativement précéder les arguments nommés. Le non-respect de cette règle entraînera une exception <code>SyntaxError</code> en Python.</p>
+
+<pre><code class="language-python">
+def greet(name, greeting="Hello"):
+    """Greets a person with an optional greeting message."""
+    print(f"{greeting}, {name}!")
+
+greet("Alice")  # Positional argument
+# Output: Hello, Alice!
+
+greet(name="Bob", greeting="Good morning")  # Keyword arguments
+# Output: Good morning, Bob!
+
+greet("Charlie", greeting="Good evening")  # Mixed positional and keyword arguments
+# Output: Good evening, Charlie!
+
+# The following line would cause a SyntaxError:
+# greet(greeting="Hi", "David")  # positional argument follows keyword argument
+</code></pre>
+
+<p>En conclusion, le choix entre arguments positionnels et nommés dépend de l'équilibre souhaité entre concision et clarté du code. Les arguments positionnels sont plus courts et directs, mais les arguments nommés améliorent significativement la lisibilité et la compréhension du code, en particulier pour les fonctions avec un grand nombre de paramètres ou des paramètres ayant des valeurs par défaut.</p>
+</p>
+    <h3>2.2 Arguments par défaut</h3>
+    <p><p>Python offre une fonctionnalité puissante pour simplifier l'appel de fonctions : les arguments par défaut. Cela permet de définir une valeur par défaut pour un ou plusieurs arguments d'une fonction. Si, lors de l'appel de la fonction, l'appelant ne fournit pas de valeur pour un argument ayant une valeur par défaut, la valeur par défaut est utilisée. C'est un excellent moyen d'améliorer la flexibilité et la lisibilité de votre code.</p>
+
+<p>Voici comment définir une fonction avec un argument par défaut :</p>
+
+<pre><code class="language-python">
+def greet(name, greeting="Hello"):
+    # This function takes a name and a greeting,
+    # with "Hello" as the default greeting.
+    print(greeting + ", " + name + "!")
+
+# Calling the function with both arguments
+greet("Alice", "Good evening")
+
+# Calling the function with only one argument (the name)
+# The default greeting will be used
+greet("Bob")
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, la fonction <code class="language-python">greet</code> prend deux arguments : <code class="language-python">name</code> et <code class="language-python">greeting</code>. L'argument <code class="language-python">greeting</code> a une valeur par défaut de "Hello". Si nous appelons la fonction <code class="language-python">greet</code> avec seulement un argument, la valeur par défaut de "Hello" sera utilisée pour <code class="language-python">greeting</code>. Les arguments par défaut permettent de rendre une fonction plus adaptable aux différents cas d'utilisation.</p>
+
+<p>Il est crucial de noter que les arguments avec des valeurs par défaut doivent toujours être définis après les arguments sans valeur par défaut dans la définition de la fonction. Le non-respect de cette règle entraînera une erreur de syntaxe. Par exemple, la définition suivante serait invalide :</p>
+
+<pre><code class="language-python">
+# This is incorrect because the argument without a default value 'name'
+# follows the argument with a default value 'greeting'.
+def greet(greeting="Hello", name):
+    print(greeting + ", " + name + "!")
+</code></pre>
+
+<p>L'interpréteur Python lèvera une exception <code class="language-python">SyntaxError: non-default argument follows default argument</code> si vous essayez de définir une fonction de cette manière. Cette règle garantit que l'interpréteur sait toujours comment associer les arguments aux paramètres de la fonction.</p>
+
+<p>L'utilisation des arguments par défaut rend vos fonctions plus flexibles et plus faciles à utiliser, car elle permet aux appelants d'omettre les arguments qui ont des valeurs raisonnables par défaut. Considérez l'exemple d'une fonction calculant le prix total d'un article avec une taxe. On peut définir un taux de taxe par défaut :</p>
+
+<pre><code class="language-python">
+def calculate_total_price(price_ht, tax_rate=0.20):
+    # Calculates the total price (tax included) from the pre-tax price and the tax rate.
+    # The default tax rate is 20%.
+    price_ttc = price_ht * (1 + tax_rate)
+    return price_ttc
+
+# Calculation of the price with the default tax rate
+price_with_tax = calculate_total_price(100)
+print(f"Price with default tax: {price_with_tax}")
+
+# Calculation of the price with a specific tax rate
+price_with_reduced_tax = calculate_total_price(100, 0.05)
+print(f"Price with reduced tax: {price_with_reduced_tax}")
+</code></pre>
+
+<p>Les arguments par défaut peuvent être de n'importe quel type, y compris des nombres, des chaînes de caractères, des listes, des dictionnaires et même d'autres fonctions. Cependant, il faut faire attention aux objets mutables (comme les listes ou les dictionnaires) utilisés comme valeurs par défaut, car ils peuvent conduire à un comportement inattendu si la fonction modifie l'objet par défaut. Dans ce cas, il est préférable d'utiliser <code class="language-python">None</code> comme valeur par défaut et de créer un nouvel objet mutable à l'intérieur de la fonction si nécessaire. Par exemple:</p>
+
+<pre><code class="language-python">
+def append_to_list(element, my_list=None):
+    # Appends an element to a list.
+    # If no list is provided, a new list is created.
+    if my_list is None:
+        my_list = []
+    my_list.append(element)
+    return my_list
+
+# Example usage:
+list1 = append_to_list(1)
+print(list1)
+
+list2 = append_to_list(2)
+print(list2)
+</code></pre>
+
+<p>En conclusion, les arguments par défaut sont un outil puissant pour rendre les fonctions Python plus adaptables et intuitives. Ils permettent de simplifier l'interface de la fonction et de réduire la quantité de code nécessaire pour appeler la fonction dans de nombreux cas, tout en offrant une grande flexibilité.  En comprenant comment les utiliser correctement, vous pouvez écrire du code Python plus propre et plus maintenable.</p>
+</p>
+    <h3>2.3 Arguments variables (*args et **kwargs)</h3>
+    <p><p>Python offre une flexibilité remarquable dans la gestion des arguments de fonction, notamment grâce aux constructions spéciales <code>*args</code> et <code>**kwargs</code>. Elles permettent de définir des fonctions acceptant un nombre variable d'arguments, qu'ils soient positionnels ou nommés, offrant ainsi une grande adaptabilité. Ces outils sont essentiels pour écrire du code Python plus générique et réutilisable.</p>
+
+<p>L'argument <code>*args</code> est utilisé pour passer un nombre variable d'arguments <b>positionnels</b> à une fonction. À l'intérieur de la fonction, <code>args</code> est traité comme un tuple contenant tous les arguments positionnels supplémentaires passés lors de l'appel. Le nom <code>args</code> est une convention, mais c'est l'astérisque <code>*</code> qui le précède qui est déterminant. Il permet de "collecter" tous les arguments positionnels excédentaires dans un tuple.</p>
+
+<pre><code class="language-python">
+def additionner(*args):
+    """
+    Adds all the numbers passed as arguments.
+
+    Args:
+        *args: A variable number of numerical arguments.
+
+    Returns:
+        The sum of all the arguments.
+    """
+    somme = 0
+    for nombre in args:
+        somme += nombre
+    return somme
+
+# Example usage
+resultat = additionner(1, 2, 3, 4, 5)
+print(resultat) # Output: 15
+
+resultat = additionner(10, 20)
+print(resultat) # Output: 30
+
+resultat = additionner()
+print(resultat) # Output: 0
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, la fonction <code>additionner</code> peut prendre n'importe quel nombre d'arguments numériques, et elle les additionnera tous. Sans <code>*args</code>, il faudrait définir une fonction différente pour chaque nombre possible d'arguments, ce qui serait peu pratique. Remarquez que la fonction fonctionne même sans argument, car <code>args</code> sera alors un tuple vide.</p>
+
+<p>L'argument <code>**kwargs</code>, quant à lui, est utilisé pour passer un nombre variable d'arguments <b>nommés</b> (ou "keyword arguments") à une fonction. À l'intérieur de la fonction, <code>kwargs</code> est traité comme un dictionnaire où les clés sont les noms des arguments et les valeurs sont leurs valeurs correspondantes. Comme pour <code>args</code>, le nom <code>kwargs</code> est une convention, l'important étant le double astérisque <code>**</code>. Il permet de collecter les arguments nommés non explicitement définis dans la signature de la fonction.</p>
+
+<pre><code class="language-python">
+def afficher_informations(**kwargs):
+    """
+    Displays information about a person based on keyword arguments.
+
+    Args:
+        **kwargs: A variable number of keyword arguments, where keys are information fields
+                  (e.g., 'nom', 'age', 'ville') and values are their corresponding values.
+    """
+    for cle, valeur in kwargs.items():
+        print(f"{cle}: {valeur}")
+
+# Example usage
+afficher_informations(nom="Alice", age=30, ville="Paris")
+# Output:
+# nom: Alice
+# age: 30
+# ville: Paris
+
+afficher_informations(nom="Bob", profession="Ingénieur")
+# Output:
+# nom: Bob
+# profession: Ingénieur
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>afficher_informations</code> peut recevoir n'importe quel nombre d'arguments nommés. Cela permet de créer des fonctions très flexibles qui peuvent s'adapter à différents ensembles de données. Par exemple, on pourrait ajouter d'autres informations comme "profession" ou "pays" sans modifier la définition de la fonction. Le dictionnaire <code>kwargs</code> permet d'accéder facilement aux valeurs de ces arguments.</p>
+
+<p>Il est possible de combiner <code>*args</code> et <code>**kwargs</code> dans la même définition de fonction. Dans ce cas, il est important de respecter l'ordre : d'abord les arguments positionnels obligatoires, puis <code>*args</code>, et enfin <code>**kwargs</code>. Cette ordre est crucial pour que Python puisse correctement interpréter les arguments passés à la fonction. Le non-respect de cet ordre lèvera une exception <code>SyntaxError</code>.</p>
+
+<pre><code class="language-python">
+def fonction_mixte(arg1, arg2, *args, nom="Inconnu", **kwargs):
+    """
+    A function that accepts positional, variable positional, named, and variable named arguments.
+
+    Args:
+        arg1: A mandatory positional argument.
+        arg2: Another mandatory positional argument.
+        *args: Variable number of positional arguments.
+        nom: A named argument with a default value.
+        **kwargs: Variable number of named arguments.
+    """
+    print(f"Arg1: {arg1}")
+    print(f"Arg2: {arg2}")
+    print(f"Args (tuple): {args}")
+    print(f"Nom: {nom}")
+    print(f"Kwargs (dictionary): {kwargs}")
+
+# Example usage
+fonction_mixte(1, 2, 3, 4, nom="Bob", ville="Lyon", pays="France")
+# Output:
+# Arg1: 1
+# Arg2: 2
+# Args (tuple): (3, 4)
+# Nom: Bob
+# Kwargs (dictionary): {'ville': 'Lyon', 'pays': 'France'}
+
+fonction_mixte(1, 2, nom="Alice")
+# Output:
+# Arg1: 1
+# Arg2: 2
+# Args (tuple): ()
+# Nom: Alice
+# Kwargs (dictionary): {}
+</code></pre>
+
+<p>L'utilisation de <code>*args</code> et <code>**kwargs</code> offre une grande puissance et flexibilité dans la conception de fonctions Python, permettant d'écrire du code plus adaptable et réutilisable. Cependant, il est important de les utiliser judicieusement pour maintenir la lisibilité et la maintenabilité du code. Une documentation claire de la fonction, expliquant le rôle attendu des arguments variables, est essentielle. De plus, il faut veiller à ne pas abuser de cette flexibilité, car une utilisation excessive peut rendre le code plus difficile à comprendre et à déboguer.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">3. Valeurs de retour en Python</h2>
+    <p><p>En Python, les fonctions peuvent renvoyer des valeurs à l'aide du mot-clé <code class="language-python">return</code>. La valeur retournée peut être de n'importe quel type de données Python valide, comme un entier, une chaîne de caractères, une liste, un dictionnaire, ou même une autre fonction. Si aucune instruction <code class="language-python">return</code> n'est explicitement présente dans une fonction, elle renvoie implicitement <code class="language-python">None</code>.</p>
+
+<p>Voici un exemple simple de fonction qui renvoie la somme de deux nombres:</p>
+
+<pre><code class="language-python">
+def addition(x, y):
+    # This function returns the sum of two numbers
+    return x + y
+
+somme = addition(5, 3)
+print(somme)  # Output: 8
+</code></pre>
+
+<p>Une fonction peut retourner plusieurs valeurs en les regroupant dans un tuple. Ces valeurs peuvent ensuite être décompressées et affectées à des variables lors de l'appel de la fonction. C'est une manière élégante de renvoyer plusieurs résultats distincts.</p>
+
+<pre><code class="language-python">
+def obtenir_coordonnees():
+    # This function returns x and y coordinates as a tuple
+    x = 10
+    y = 20
+    return x, y
+
+x, y = obtenir_coordonnees()
+print(f"x = {x}, y = {y}")  # Output: x = 10, y = 20
+</code></pre>
+
+<p>Il est également possible de renvoyer des structures de données plus complexes, comme des listes ou des dictionnaires, ce qui est particulièrement utile pour transmettre une quantité d'informations structurées importante.</p>
+
+<pre><code class="language-python">
+def creer_liste_carres(n):
+    # This function returns a list of squares from 1 to n
+    carres = [i**2 for i in range(1, n+1)]
+    return carres
+
+liste_carres = creer_liste_carres(5)
+print(liste_carres)  # Output: [1, 4, 9, 16, 25]
+</code></pre>
+
+<p>L'instruction <code class="language-python">return</code> met immédiatement fin à l'exécution de la fonction. Toute instruction suivant <code class="language-python">return</code> dans le même bloc de code ne sera pas exécutée. C'est un point crucial à comprendre pour éviter des comportements inattendus.</p>
+
+<pre><code class="language-python">
+def exemple_return():
+    # This function demonstrates the return statement behavior
+    print("Avant le return")
+    return 10
+    print("Après le return")  # This line will not be executed
+
+resultat = exemple_return()
+print(resultat)  # Output: 10
+</code></pre>
+
+<p>Enfin, il est courant d'utiliser des instructions <code class="language-python">return</code> conditionnelles, ce qui permet à une fonction de renvoyer différentes valeurs en fonction de conditions spécifiques. Cela offre une grande flexibilité dans la logique de la fonction.</p>
+
+<pre><code class="language-python">
+def est_pair(nombre):
+    # This function checks if a number is even and returns a boolean
+    if nombre % 2 == 0:
+        return True
+    else:
+        return False
+
+print(est_pair(4))  # Output: True
+print(est_pair(7))  # Output: False
+</code></pre>
+</p>
+    <h3>3.1 Retour simple et multiple</h3>
+    <p><p>En Python, une fonction peut retourner une seule valeur ou, de manière très pratique, plusieurs valeurs simultanément. Comprendre les mécanismes de retour est essentiel pour écrire du code Python propre, efficace et facile à maintenir.</p>
+
+<p>Lorsqu'une fonction renvoie une seule valeur, l'instruction <code class="language-python">return</code> est suivie de cette valeur unique. Cette valeur peut être de n'importe quel type de données Python : un entier, une chaîne de caractères, un booléen, une liste, un dictionnaire, etc.</p>
+
+<pre><code class="language-python">
+def calculer_carre(nombre):
+    # This function returns the square of a given number
+    carre = nombre * nombre
+    return carre
+
+resultat = calculer_carre(5)
+print(resultat)  # Output: 25
+</code></pre>
+
+<p>L'exemple ci-dessus illustre une fonction simple qui calcule le carré d'un nombre et renvoie le résultat. La variable <code class="language-python">resultat</code> reçoit alors cette valeur, qui peut être utilisée ultérieurement dans le programme.</p>
+
+<p>Python offre une flexibilité remarquable en permettant à une fonction de renvoyer plusieurs valeurs simultanément. Dans ce cas, ces valeurs sont automatiquement regroupées dans un tuple. Un tuple est une séquence immuable et ordonnée d'éléments. Pour renvoyer plusieurs valeurs, il suffit de les séparer par des virgules après l'instruction <code class="language-python">return</code>.</p>
+
+<pre><code class="language-python">
+def diviser_et_obtenir_reste(dividende, diviseur):
+    # This function returns both the quotient and the remainder of a division
+    quotient = dividende // diviseur
+    reste = dividende % diviseur
+    return quotient, reste
+
+resultat = diviser_et_obtenir_reste(10, 3)
+print(resultat)  # Output: (3, 1)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">diviser_et_obtenir_reste</code> renvoie simultanément le quotient et le reste d'une division entière. La variable <code class="language-python">resultat</code> contient alors un tuple composé de ces deux valeurs.</p>
+
+<p>L'un des principaux avantages de renvoyer un tuple réside dans la possibilité de décomposer (ou "dépaqueter") ses éléments directement dans des variables distinctes. Cette opération est appelée affectation multiple ou "unpacking".</p>
+
+<pre><code class="language-python">
+def obtenir_coordonnees():
+    # This function returns x and y coordinates
+    x = 5
+    y = 10
+    return x, y
+
+x_coordonnee, y_coordonnee = obtenir_coordonnees()
+print(f"x: {x_coordonnee}, y: {y_coordonnee}")  # Output: x: 5, y: 10
+</code></pre>
+
+<p>Dans cet exemple, les valeurs renvoyées par <code class="language-python">obtenir_coordonnees</code> sont directement affectées aux variables <code class="language-python">x_coordonnee</code> et <code class="language-python">y_coordonnee</code>. Cela améliore significativement la lisibilité du code et évite d'avoir à accéder aux éléments du tuple par leur indice (par exemple, <code class="language-python">resultat[0]</code> et <code class="language-python">resultat[1]</code>), ce qui rendrait le code moins clair et plus susceptible d'erreurs.</p>
+
+<p>L'affectation multiple est un outil puissant qui permet de manipuler les valeurs de retour des fonctions Python de manière élégante, concise et intuitive, contribuant ainsi à un code plus propre et maintenable.  Elle encourage une programmation plus expressive et réduit le risque d'erreurs liées à l'accès incorrect aux éléments d'un tuple.</p>
+</p>
+    <h3>3.2 L'instruction 'return' et sa signification</h3>
+    <p><p>L'instruction <code class="language-python">return</code> est un pilier fondamental des fonctions en Python. Elle remplit deux rôles essentiels : elle permet de renvoyer une valeur depuis la fonction à son appelant, et elle provoque l'arrêt immédiat de l'exécution de la fonction.</p>
+
+<p>Lorsqu'une instruction <code class="language-python">return</code> est rencontrée, Python stoppe l'exécution de la fonction à cet endroit précis.  La valeur spécifiée après le mot-clé <code class="language-python">return</code> (si une valeur est fournie) est alors transmise à l'appelant de la fonction. Dans le cas où aucune valeur n'est explicitement spécifiée, Python renvoie implicitement la valeur <code class="language-python">None</code>.</p>
+
+<p>Considérons l'exemple simple suivant :</p>
+
+<pre><code class="language-python">
+def multiply(x, y):
+    # This function multiplies two numbers and returns the result.
+    product = x * y
+    return product
+
+result = multiply(5, 3)
+print(result)  # Output: 15
+</code></pre>
+
+<p>Ici, la fonction <code class="language-python">multiply</code> accepte deux arguments, <code class="language-python">x</code> et <code class="language-python">y</code>. Elle calcule leur produit, et l'instruction <code class="language-python">return</code> renvoie ce produit. La valeur retournée est ensuite affectée à la variable <code class="language-python">result</code>, et finalement affichée.</p>
+
+<p>L'instruction <code class="language-python">return</code> offre également la possibilité de sortir d'une boucle de manière anticipée, typiquement lorsqu'une condition particulière est satisfaite :</p>
+
+<pre><code class="language-python">
+def find_first_even(numbers_list):
+    # This function searches for the first even number in a list.
+    # If an even number is found, it returns that number.
+    # If no even number is found, it returns None.
+    for number in numbers_list:
+        if number % 2 == 0:
+            return number  # Returns the first even number encountered.
+    return None  # Returns None if the loop completes without finding an even number.
+
+numbers = [1, 3, 5, 6, 8, 10]
+first_even = find_first_even(numbers)
+print(first_even)  # Output: 6
+
+odd_numbers = [1, 3, 5, 7, 9]
+first_even_odd = find_first_even(odd_numbers)
+print(first_even_odd) # Output: None
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">find_first_even</code> parcourt une liste de nombres. Dès qu'elle rencontre un nombre pair, elle le renvoie immédiatement à l'aide de l'instruction <code class="language-python">return</code>, ce qui interrompt l'exécution de la boucle <code class="language-python">for</code>. Si aucun nombre pair n'est trouvé après avoir examiné tous les éléments de la liste, la fonction renvoie <code class="language-python">None</code>.</p>
+
+<p>En conclusion, l'instruction <code class="language-python">return</code> est un outil indispensable pour contrôler le déroulement de l'exécution d'une fonction, pour communiquer des résultats à l'appelant, et pour optimiser le code en permettant des sorties de boucle conditionnelles. Une bonne compréhension de son fonctionnement est essentielle pour concevoir des fonctions Python à la fois efficaces et facilement lisibles.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">4. Fonctions Lambda (fonctions anonymes)</h2>
+    <p><p>Les fonctions lambda, également appelées fonctions anonymes, sont des fonctions définies sans nom. Elles sont particulièrement utiles pour créer des fonctions simples et concises, souvent utilisées une seule fois. En Python, on les définit à l'aide du mot-clé <code class="language-python">lambda</code>.</p>
+
+<p>La syntaxe générale d'une fonction lambda est la suivante:</p>
+<pre><code class="language-python">
+lambda arguments: expression
+</code></pre>
+<p>La partie <code class="language-python">arguments</code> représente les arguments d'entrée que la fonction lambda accepte (zéro ou plusieurs arguments, comme une fonction classique), et <code class="language-python">expression</code> est une seule expression qui est évaluée et renvoyée par la fonction. Une fonction lambda ne peut contenir qu'une seule expression, ce qui la différencie des fonctions classiques définies avec le mot-clé <code class="language-python">def</code>.</p>
+
+<p>Voici un exemple simple d'une fonction lambda qui additionne deux nombres:</p>
+<pre><code class="language-python">
+# Define a lambda function that adds two numbers
+addition = lambda x, y: x + y
+
+# Call the lambda function
+resultat = addition(5, 3)
+
+# Print the result
+print(resultat)  # Output: 8
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">addition</code> est une variable qui référence une fonction lambda. Cette fonction prend deux arguments, <code class="language-python">x</code> et <code class="language-python">y</code>, et renvoie leur somme. La fonction est ensuite appelée avec les arguments 5 et 3, et le résultat (8) est stocké dans la variable <code class="language-python">resultat</code>.  Il est important de noter que l'on affecte généralement une lambda à une variable uniquement pour la réutiliser, ce qui est parfois considéré comme un anti-pattern. L'intérêt principal des lambdas réside dans leur utilisation directe comme argument de fonction.</p>
+
+<p>Les fonctions lambda sont particulièrement efficaces lorsqu'elles sont utilisées avec des fonctions d'ordre supérieur comme <code class="language-python">map()</code>, <code class="language-python">filter()</code> et <code class="language-python">sorted()</code>. Ces fonctions prennent une autre fonction comme argument, et c'est là que les lambdas brillent en permettant de définir une fonction "à la volée".</p>
+
+<p>Par exemple, vous pouvez utiliser une fonction lambda avec la fonction <code class="language-python">map()</code> pour multiplier chaque élément d'une liste par un facteur:</p>
+<pre><code class="language-python">
+# Define a list of numbers
+nombres = [1, 2, 3, 4, 5]
+
+# Use map() with a lambda function to multiply each number by 2
+multiples = list(map(lambda x: x * 2, nombres))
+
+# Print the list of multiples
+print(multiples)  # Output: [2, 4, 6, 8, 10]
+</code></pre>
+<p>Ici, la fonction <code class="language-python">map()</code> applique la fonction lambda (qui multiplie son argument par 2) à chaque élément de la liste <code class="language-python">nombres</code>. Le résultat est un objet map, qu'on convertit ensuite en liste pour l'afficher.</p>
+
+<p>De même, vous pouvez utiliser une fonction lambda avec la fonction <code class="language-python">filter()</code> pour filtrer les éléments d'une liste selon un critère:</p>
+<pre><code class="language-python">
+# Define a list of numbers
+nombres = [1, 2, 3, 4, 5, 6]
+
+# Use filter() with a lambda function to filter odd numbers
+impairs = list(filter(lambda x: x % 2 != 0, nombres))
+
+# Print the list of odd numbers
+print(impairs)  # Output: [1, 3, 5]
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">filter()</code> utilise la fonction lambda pour tester si chaque nombre de la liste <code class="language-python">nombres</code> est impair. Seuls les nombres impairs sont inclus dans la liste résultante <code class="language-python">impairs</code>.</p>
+
+<p>Enfin, une fonction lambda peut être utilisée comme argument de la fonction <code class="language-python">sorted()</code> pour définir une logique de tri personnalisée.  Ceci est particulièrement utile lorsque l'on souhaite trier une liste d'objets selon un attribut spécifique.</p>
+
+<pre><code class="language-python">
+# Define a list of dictionaries
+personnes = [
+    {"nom": "Alice", "age": 30},
+    {"nom": "Bob", "age": 25},
+    {"nom": "Charlie", "age": 35}
+]
+
+# Sort the list of dictionaries based on the 'age' key
+personnes_triees = sorted(personnes, key=lambda personne: personne["age"])
+
+# Print the sorted list
+print(personnes_triees)
+# Output: [{'nom': 'Bob', 'age': 25}, {'nom': 'Alice', 'age': 30}, {'nom': 'Charlie', 'age': 35}]
+</code></pre>
+
+<p>Dans cet exemple, la liste de dictionnaires <code class="language-python">personnes</code> est triée en fonction de la valeur de la clé <code class="language-python">"age"</code> de chaque dictionnaire. La fonction <code class="language-python">lambda personne: personne["age"]</code> renvoie l'âge de chaque personne, qui est ensuite utilisé comme clé de tri.</p>
+
+<p>En résumé, les fonctions lambda offrent un moyen concis de créer de petites fonctions anonymes, ce qui est particulièrement utile lorsqu'elles sont utilisées avec des fonctions d'ordre supérieur. Elles permettent d'écrire du code plus lisible et plus compact pour effectuer des opérations sur des collections de données. Cependant, il est important de ne pas abuser des lambdas, car une fonction trop complexe gagnera à être définie de manière classique avec <code class="language-python">def</code> pour améliorer la lisibilité et la maintenabilité du code.</p>
+</p>
+    <h3>4.1 Syntaxe et utilité des fonctions lambda</h3>
+    <p><p>Les fonctions lambda, également appelées fonctions anonymes, sont une manière concise de créer de petites fonctions en Python. Contrairement aux fonctions définies avec le mot-clé <code class="language-python">def</code>, les lambdas sont souvent utilisées pour des opérations simples et rapides, en particulier lorsqu'une fonction est nécessaire comme argument pour une autre fonction.</p>
+
+<p>La syntaxe d'une fonction lambda est la suivante :</p>
+<pre><code class="language-python">
+lambda arguments: expression
+</code></pre>
+<p>Ici, <code class="language-python">arguments</code> représente les arguments d'entrée de la fonction, et <code class="language-python">expression</code> est une unique expression qui est évaluée et renvoyée. Une fonction lambda ne peut contenir qu'une seule expression, ce qui la différencie d'une fonction standard qui peut contenir plusieurs instructions.</p>
+
+<p>Voici un exemple simple de fonction lambda qui calcule le carré d'un nombre :</p>
+<pre><code class="language-python">
+# A lambda function to calculate the square of a number
+square = lambda x: x * x
+
+# Call the lambda function
+result = square(5)
+print(result)  # Output: 25
+</code></pre>
+
+<p>Les fonctions lambda sont particulièrement utiles avec des fonctions intégrées comme <code class="language-python">map()</code>, <code class="language-python">filter()</code>, et <code class="language-python">sorted()</code>. Ces fonctions acceptent une fonction comme argument, et l'utilisation d'une lambda peut rendre le code plus lisible et concis. Par exemple, pour calculer le carré de chaque élément d'une liste, on peut utiliser <code class="language-python">map()</code> avec une fonction lambda :</p>
+<pre><code class="language-python">
+# List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use map() with a lambda function to square each number
+squared_numbers = list(map(lambda x: x * x, numbers))
+
+# Print the result
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+</code></pre>
+
+<p>De même, on peut utiliser <code class="language-python">filter()</code> avec une fonction lambda pour sélectionner uniquement les nombres positifs d'une liste :</p>
+<pre><code class="language-python">
+# List of numbers
+numbers = [-2, -1, 0, 1, 2]
+
+# Use filter() with a lambda function to select positive numbers
+positive_numbers = list(filter(lambda x: x > 0, numbers))
+
+# Print the result
+print(positive_numbers)  # Output: [1, 2]
+</code></pre>
+
+<p>Un autre cas d'utilisation courant est avec la fonction <code class="language-python">sorted()</code> pour personnaliser le tri.  Considérons une liste de dictionnaires représentant des produits avec leur prix, et que l'on souhaite trier cette liste par prix :</p>
+<pre><code class="language-python">
+# List of dictionaries (product, price)
+products = [{"name": "Laptop", "price": 1200}, {"name": "Mouse", "price": 25}, {"name": "Keyboard", "price": 100}]
+
+# Sort the list by price using a lambda function as the key
+sorted_products = sorted(products, key=lambda product: product["price"])
+
+# Print the sorted list
+print(sorted_products)
+# Output:
+# [{'name': 'Mouse', 'price': 25}, {'name': 'Keyboard', 'price': 100}, {'name': 'Laptop', 'price': 1200}]
+</code></pre>
+
+<p>Les fonctions lambda peuvent également être utilisées pour créer des fonctions "factory" qui renvoient d'autres fonctions. Par exemple :</p>
+<pre><code class="language-python">
+def multiplier(n):
+    # Returns a lambda function that multiplies its argument by n
+    return lambda x: x * n
+
+# Create a function that multiplies by 3
+multiply_by_3 = multiplier(3)
+
+# Use the new function
+print(multiply_by_3(5))  # Output: 15
+</code></pre>
+
+<p>En résumé, les fonctions lambda offrent un moyen concis et expressif de définir des fonctions simples, en particulier lorsqu'elles sont utilisées avec d'autres fonctions telles que <code class="language-python">map()</code>, <code class="language-python">filter()</code>, et <code class="language-python">sorted()</code>. Bien qu'elles soient limitées à une seule expression, leur utilité pour des opérations simples et ponctuelles, ou comme arguments de fonctions d'ordre supérieur, est significative. Elles contribuent à un code Python plus propre et plus lisible dans de nombreux contextes.</p>
+</p>
+    <h3>4.2 Utilisation de lambda avec map(), filter() et reduce()</h3>
+    <p><p>Les fonctions lambda, aussi appelées fonctions anonymes, sont des fonctions définies sans nom en utilisant le mot-clé <code class="language-python">lambda</code>. Elles sont particulièrement utiles lorsqu'une fonction simple doit être utilisée une seule fois, souvent en combinaison avec d'autres fonctions comme <code class="language-python">map()</code>, <code class="language-python">filter()</code>, et <code class="language-python">reduce()</code>. Les fonctions lambda sont des expressions, et non des instructions, ce qui signifie qu'elles peuvent être utilisées partout où une expression est autorisée.</p>
+
+<p>La fonction <code class="language-python">map()</code> applique une fonction à chaque élément d'un itérable (comme une liste, un tuple ou un ensemble) et retourne un itérateur contenant les résultats.  L'utilisation d'une fonction lambda avec <code class="language-python">map()</code> permet d'appliquer une transformation de manière concise. Par exemple, pour doubler chaque nombre dans une liste:</p>
+
+<pre><code class="language-python">
+numbers = [1, 2, 3, 4, 5]
+
+# Double each number in the list using lambda and map
+doubled_numbers = list(map(lambda x: x * 2, numbers))
+
+print(doubled_numbers)  # Output: [2, 4, 6, 8, 10]
+</code></pre>
+
+<p>Ici, la fonction lambda <code class="language-python">lambda x: x * 2</code> prend un argument <code class="language-python">x</code> et retourne son double. La fonction <code class="language-python">map()</code> applique cette fonction lambda à chaque élément de la liste <code class="language-python">numbers</code>.  Enfin, <code class="language-python">list()</code> convertit l'itérateur résultant en une liste affichable.</p>
+
+<p>La fonction <code class="language-python">filter()</code> filtre les éléments d'un itérable en fonction d'une fonction de test (qui retourne une valeur booléenne). Une fonction lambda permet de définir facilement et rapidement le critère de filtrage. Par exemple, pour extraire les nombres pairs d'une liste:</p>
+
+<pre><code class="language-python">
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Filter out even numbers using lambda and filter
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(even_numbers)  # Output: [2, 4, 6]
+</code></pre>
+
+<p>Dans cet exemple, la fonction lambda <code class="language-python">lambda x: x % 2 == 0</code> vérifie si un nombre <code class="language-python">x</code> est pair.  La fonction <code class="language-python">filter()</code> applique cette fonction à chaque élément de <code class="language-python">numbers</code> et ne conserve que ceux pour lesquels la fonction lambda retourne <code class="language-python">True</code>.</p>
+
+<p>Enfin, la fonction <code class="language-python">reduce()</code> (qui se trouve dans le module <code class="language-python">functools</code>) applique cumulativement une fonction à une séquence d'éléments, de gauche à droite, réduisant ainsi la séquence à une seule valeur. Elle est particulièrement utile pour effectuer des calculs cumulatifs tels que la somme ou le produit des éléments d'une liste. Par exemple, pour calculer la somme de tous les éléments d'une liste:</p>
+
+<pre><code class="language-python">
+from functools import reduce
+
+numbers = [1, 2, 3, 4]
+
+# Calculate the sum of all elements using lambda and reduce
+sum_of_numbers = reduce(lambda x, y: x + y, numbers)
+
+print(sum_of_numbers)  # Output: 10
+</code></pre>
+
+<p>Ici, la fonction lambda <code class="language-python">lambda x, y: x + y</code> prend deux arguments, <code class="language-python">x</code> et <code class="language-python">y</code>, et retourne leur somme.  La fonction <code class="language-python">reduce()</code> applique cette fonction de manière cumulative : d'abord à 1 et 2 (1+2=3), puis au résultat (3) et 3 (3+3=6), et enfin au résultat (6) et 4 (6+4=10), donnant la somme finale de tous les éléments.</p>
+
+<p>En résumé, les fonctions lambda, utilisées avec <code class="language-python">map()</code>, <code class="language-python">filter()</code> et <code class="language-python">reduce()</code>, fournissent un moyen concis et puissant de manipuler des itérables en Python.  Elles permettent d'écrire du code plus expressif pour des opérations simples, tout en évitant de définir des fonctions complètes pour des tâches ponctuelles. Cependant, il est important de noter que pour des opérations complexes, il est souvent préférable d'utiliser des fonctions définies de manière classique pour maintenir la lisibilité du code.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">5. Fonctions récursives en Python</h2>
+    <p><p>Une fonction récursive est une fonction qui s'appelle elle-même durant son exécution. La récursion est une technique de programmation puissante, mais son utilisation nécessite de la prudence pour éviter les boucles infinies et le dépassement de la pile d'appels (stack overflow).</p>
+
+<p>Chaque appel récursif doit impérativement converger vers un cas de base, représentant une condition d'arrêt qui met fin à la récursion. En l'absence de cas de base, la fonction s'appellera indéfiniment, épuisant ainsi la pile d'appels et provoquant une erreur.</p>
+
+<p>Un exemple classique de fonction récursive est le calcul de la factorielle d'un entier naturel. La factorielle de n (notée n!) est le produit de tous les entiers positifs inférieurs ou égaux à n. Par exemple, 5! = 5 * 4 * 3 * 2 * 1 = 120.</p>
+
+<pre><code class="language-python">
+def factorial(n):
+    """
+    Calculate the factorial of a non-negative integer recursively.
+
+    Args:
+        n: The non-negative integer for which to calculate the factorial.
+
+    Returns:
+        The factorial of n.
+    """
+    if n == 0:
+        return 1  # Base case: factorial of 0 is 1
+    else:
+        return n * factorial(n-1)  # Recursive call
+
+# Example usage
+number = 5
+result = factorial(number)
+print(f"The factorial of {number} is {result}")  # Output: The factorial of 5 is 120
+</code></pre>
+
+<p>Dans cet exemple, le cas de base est atteint lorsque <code class="language-python">n</code> est égal à 0, auquel cas la fonction retourne 1. Sinon, la fonction s'appelle elle-même avec <code class="language-python">n-1</code> comme argument et multiplie le résultat par <code class="language-python">n</code>. Chaque appel récursif décrémente la valeur de <code class="language-python">n</code>, la rapprochant ainsi du cas de base.</p>
+
+<p>Un autre exemple pertinent est le calcul du n-ième nombre de Fibonacci. La suite de Fibonacci est définie comme suit : F(0) = 0, F(1) = 1, et F(n) = F(n-1) + F(n-2) pour n > 1.</p>
+
+<pre><code class="language-python">
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number recursively.
+
+    Args:
+        n: The index of the Fibonacci number to calculate (n >= 0).
+
+    Returns:
+        The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n  # Base cases: F(0) = 0 and F(1) = 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)  # Recursive call
+
+# Example usage
+number = 10
+result = fibonacci(number)
+print(f"The {number}th Fibonacci number is {result}")  # Output: The 10th Fibonacci number is 55
+</code></pre>
+
+<p>Dans cette fonction, les cas de base sont lorsque <code class="language-python">n</code> est égal à 0 ou 1. Dans ces cas, la fonction renvoie <code class="language-python">n</code>. Sinon, la fonction s'appelle elle-même deux fois avec <code class="language-python">n-1</code> et <code class="language-python">n-2</code> comme arguments, et additionne les résultats. Bien que conceptuellement simple, cette implémentation récursive de la suite de Fibonacci est inefficace.</p>
+
+<p>Il est crucial de noter que, bien que la récursion puisse être élégante et concise pour certains problèmes, elle peut s'avérer moins performante que les solutions itératives, notamment pour les grands ensembles de données. Ceci est dû au coût lié aux appels de fonction répétés. Dans le cas de la suite de Fibonacci, la version récursive recalcule plusieurs fois les mêmes valeurs, ce qui engendre une complexité temporelle exponentielle. Une approche itérative permettrait une amélioration significative des performances.</p>
+
+<p>Par ailleurs, il est important de considérer la profondeur maximale de récursion autorisée par Python. Cette limite, fixée pour prévenir les stack overflows, peut être consultée et modifiée (avec une grande prudence) à l'aide des fonctions du module <code class="language-python">sys</code> :</p>
+
+<pre><code class="language-python">
+import sys
+
+# Get the current recursion limit
+recursion_limit = sys.getrecursionlimit()
+print(f"The current recursion limit is: {recursion_limit}")
+
+# Modify the recursion limit (use with caution!)
+# sys.setrecursionlimit(2000) # Example: Set to 2000. Be careful not to set it too high.
+</code></pre>
+
+<p>En résumé, les fonctions récursives sont un outil puissant en Python, mais il est essentiel de bien comprendre leur fonctionnement et leurs limitations avant de les utiliser. Assurez-vous d'avoir un cas de base clairement défini et évaluez l'efficacité de votre solution récursive par rapport à une approche itérative, en particulier pour les problèmes de grande taille. Une utilisation judicieuse de la récursion, combinée à une compréhension de ses implications en termes de performance, vous permettra d'écrire du code Python élégant et efficace.</p>
+</p>
+    <h3>5.1 Principes de la récursion</h3>
+    <p><p>La récursion est une technique de programmation puissante où une fonction s'appelle elle-même pour résoudre un problème. Au lieu d'utiliser des boucles, une fonction récursive se divise en sous-problèmes plus petits et plus simples, jusqu'à atteindre un cas de base trivial à résoudre directement. Chaque appel récursif traite une portion réduite du problème initial.</p>
+
+<p>Une analogie courante est celle des poupées russes (Matriochkas). Chaque poupée contient une poupée plus petite, représentant la réduction du problème à chaque appel. La plus petite poupée, qui ne contient rien, symbolise le cas de base.</p>
+
+<p>Un élément essentiel de la récursion est la <strong>condition d'arrêt</strong>. Sans cette condition, la fonction s'appellerait indéfiniment, conduisant à une erreur de dépassement de pile (<em>stack overflow</em>). La condition d'arrêt est une condition booléenne qui, lorsqu'elle est vraie, interrompt les appels récursifs et renvoie une valeur, permettant ainsi de construire la solution finale en "déroulant" les appels précédents.</p>
+
+<p>Prenons l'exemple du calcul de la factorielle d'un nombre entier positif. La factorielle de n (notée n!) est le produit de tous les entiers positifs inférieurs ou égaux à n. Par exemple, 5! = 5 * 4 * 3 * 2 * 1 = 120.</p>
+
+<pre><code class="language-python">
+def factorial(n):
+    """
+    Calculate the factorial of a non-negative integer n recursively.
+    For example:
+    factorial(5) == 120
+    """
+    # Base case: if n is 0, return 1 (0! = 1)
+    if n == 0:
+        return 1
+    # Recursive case: n! = n * (n-1)!
+    else:
+        return n * factorial(n-1)
+
+# Example usage:
+number = 5
+result = factorial(number)
+print(f"The factorial of {number} is {result}")
+</code></pre>
+
+<p>Dans cet exemple, la condition d'arrêt est <code>n == 0</code>. Lorsque <code>n</code> est égal à 0, la fonction renvoie 1, ce qui arrête la récursion. Sinon, la fonction se rappelle elle-même avec <code>n-1</code>, réduisant progressivement le problème jusqu'à atteindre le cas de base.  Chaque appel de la fonction factorial met une nouvelle frame sur la stack. Lorsque la condition d'arrêt est atteinte, la stack se déroule, et chaque frame retourne le résultat de son calcul jusqu'à l'appel initial.</p>
+
+<p>Un autre exemple classique est le calcul du nième terme de la suite de Fibonacci. La suite de Fibonacci est définie de manière récursive: F(0) = 0, F(1) = 1, et F(n) = F(n-1) + F(n-2) pour n > 1.</p>
+
+<pre><code class="language-python">
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number recursively.
+    For example:
+    fibonacci(6) == 8
+    """
+    # Base cases: F(0) = 0, F(1) = 1
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    # Recursive case: F(n) = F(n-1) + F(n-2)
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# Example usage:
+number = 6
+result = fibonacci(number)
+print(f"The {number}th Fibonacci number is {result}")
+</code></pre>
+
+<p>Ici, les conditions d'arrêt sont <code>n == 0</code> et <code>n == 1</code>. La fonction renvoie directement 0 ou 1 respectivement. Sinon, elle se rappelle elle-même deux fois avec <code>n-1</code> et <code>n-2</code>, illustrant un exemple de récursion multiple. Chaque appel à fibonacci(n) entraîne deux nouveaux appels récursifs, ce qui peut rapidement devenir coûteux en termes de calcul.</p>
+
+<p>Bien que la récursion puisse être élégante et concise, il est important de noter qu'elle peut être moins efficace que les solutions itératives (boucles) en raison de l'overhead des appels de fonction et du risque de stack overflow pour des problèmes de grande taille. Cependant, pour certains problèmes, notamment ceux qui sont naturellement définis de manière récursive (comme les parcours d'arbres ou les algorithmes de type "diviser pour régner"), la récursion offre une solution plus claire et plus facile à comprendre. De plus, dans certains cas, la récursion peut être optimisée grâce à la mémoïsation (stockage des résultats intermédiaires) pour éviter des recalculs inutiles.</p>
+</p>
+    <h3>5.2 Exemples classiques de récursion (factorielle, Fibonacci)</h3>
+    <p><p>La récursion est une technique de programmation où une fonction s'appelle elle-même pour résoudre un problème. Elle repose sur la décomposition d'un problème complexe en sous-problèmes plus simples, jusqu'à atteindre un cas de base qui peut être résolu directement. C'est une approche élégante pour résoudre des problèmes qui peuvent être naturellement définis en termes d'eux-mêmes.</p>
+<p>Un exemple classique est le calcul de la factorielle d'un nombre. La factorielle de n (notée n!) est le produit de tous les entiers positifs inférieurs ou égaux à n. On peut définir la factorielle de manière récursive comme suit : n! = n * (n-1)!, avec comme cas de base 0! = 1.</p>
+<pre><code class="language-python">
+def factorielle(n):
+    """
+    Calculates the factorial of a non-negative integer n recursively.
+
+    Args:
+        n (int): A non-negative integer.
+
+    Returns:
+        int: The factorial of n.
+    
+    Raises:
+        TypeError: if n is not an integer.
+        ValueError: if n is a negative integer.
+    """
+    if not isinstance(n, int):
+        raise TypeError("Factorial is only defined for integers.")
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative integers.")
+    if n == 0:
+        return 1  # Base case: factorial of 0 is 1
+    else:
+        return n * factorielle(n-1)  # Recursive call
+</code></pre>
+<p>La fonction <code class="language-python">factorielle(n)</code> commence par valider que l'entrée est un entier non négatif.  Si <code class="language-python">n</code> est 0, elle renvoie 1, qui est le cas de base. Sinon, elle s'appelle elle-même avec un argument plus petit (<code>n-1</code>), multipliant le résultat par <code>n</code>.  Ce processus continue jusqu'à ce que <code>n</code> atteigne 0, moment où la chaîne d'appels récursifs commence à se dérouler, chaque appel renvoyant le produit calculé jusqu'à l'appel initial.</p>
+<p>Un autre exemple courant est la suite de Fibonacci. Chaque nombre de la suite est la somme des deux nombres précédents. La suite commence généralement par 0 et 1. On peut définir la suite de Fibonacci de manière récursive comme suit : F(n) = F(n-1) + F(n-2), avec F(0) = 0 et F(1) = 1 comme cas de base.</p>
+<pre><code class="language-python">
+def fibonacci(n):
+    """
+    Calculates the nth Fibonacci number recursively.
+
+    Args:
+        n (int): A non-negative integer.
+
+    Returns:
+        int: The nth Fibonacci number.
+
+    Raises:
+        TypeError: if n is not an integer.
+        ValueError: if n is a negative integer.
+    """
+    if not isinstance(n, int):
+        raise TypeError("Fibonacci numbers are only defined for integers.")
+    if n < 0:
+        raise ValueError("Fibonacci numbers are not defined for negative integers.")
+    if n <= 1:
+        return n  # Base cases: F(0) = 0, F(1) = 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)  # Recursive calls
+</code></pre>
+<p>La fonction <code class="language-python">fibonacci(n)</code> vérifie d'abord que l'entrée est un entier non négatif. Si <code>n</code> est inférieur ou égal à 1, elle renvoie <code>n</code> (0 ou 1), qui sont les cas de base. Sinon, elle s'appelle elle-même deux fois, avec <code>n-1</code> et <code>n-2</code>, et renvoie la somme des résultats.  Cette approche récursive peut être inefficace pour les grandes valeurs de <code>n</code> en raison du recalcul répété des mêmes valeurs de Fibonacci.</p>
+<p><strong>Avantages de la récursion:</strong></p>
+<ul>
+    <li>Lisibilité: peut rendre le code plus clair et concis pour certains problèmes, en particulier ceux qui ont une structure récursive inhérente.</li>
+    <li>Élégance: peut refléter la structure récursive naturelle de certains problèmes, conduisant à une solution plus intuitive.</li>
+    <li>Modularité: Chaque appel récursif résout un sous-problème, ce qui améliore la modularité du code.</li>
+</ul>
+<p><strong>Inconvénients de la récursion:</strong></p>
+<ul>
+    <li>Performance: peut être moins efficace que les solutions itératives en raison des appels de fonction répétés et de la gestion de la pile d'appels.  Chaque appel de fonction ajoute une nouvelle frame à la pile, ce qui prend du temps.</li>
+    <li>Risque de dépassement de la pile (stack overflow): si la profondeur de la récursion est trop importante (par exemple, si le cas de base n'est jamais atteint ou si la profondeur de la récursion est supérieure à la limite autorisée), cela peut entraîner une erreur de dépassement de la pile.</li>
+    <li>Consommation de mémoire: chaque appel récursif utilise de la mémoire pour stocker l'état de la fonction (variables locales, adresse de retour, etc.) sur la pile.</li>
+</ul>
+<p>En résumé, la récursion est un outil puissant, mais il est important de l'utiliser judicieusement, en tenant compte de ses avantages et inconvénients potentiels. Pour les problèmes où la récursion est naturelle et la profondeur de la récursion est limitée, elle peut conduire à un code élégant et lisible. Dans d'autres cas, une solution itérative (par exemple, utilisant une boucle <code>for</code> ou <code>while</code>) peut être plus appropriée, en particulier lorsque la performance est critique ou lorsque la profondeur de la récursion pourrait être importante.  Il est également possible d'optimiser les fonctions récursives en utilisant la mémoïsation pour éviter les calculs redondants, mais cela ajoute de la complexité au code.</p>
+</p>
+    <h3>5.3 Limites de la récursion et alternatives</h3>
+    <p><p>Bien que les fonctions récursives offrent une élégance indéniable pour résoudre certains problèmes, elles comportent une limitation notable en Python : le risque de dépassement de pile (<em>stack overflow</em>). Chaque appel récursif ajoute un nouvel élément à la pile d'exécution. Si la profondeur de la récursion excède la limite imposée par Python, une exception <code class="language-python">RecursionError</code> est déclenchée, interrompant l'exécution du programme.</p>
+
+<p>Cette limite est une mesure de sécurité, conçue pour prévenir des comportements indésirables tels que le blocage du programme ou une consommation excessive de mémoire. La profondeur maximale de récursion peut être consultée et modifiée (avec une extrême prudence !) via les fonctions <code class="language-python">sys.getrecursionlimit()</code> et <code class="language-python">sys.setrecursionlimit()</code> du module <code class="language-python">sys</code>.</p>
+
+<pre><code class="language-python">
+import sys
+
+# Get the current recursion limit
+current_limit = sys.getrecursionlimit()
+print(f"Current recursion limit: {current_limit}")
+
+# Example of a recursive function that might cause a stack overflow
+def recursive_function(n):
+    # Base case: stop recursion when n is 0
+    if n == 0:
+        return 0
+    # Recursive call: add n to the result of the function called with n-1
+    return n + recursive_function(n - 1)
+
+# Try calling the function with a large value
+try:
+    print(recursive_function(2000))  # May raise RecursionError
+except RecursionError as e:
+    print(f"RecursionError: Maximum recursion depth exceeded - {e}")
+</code></pre>
+
+<p>Pour contourner les dépassements de pile, il est souvent préférable d'opter pour des alternatives itératives aux fonctions récursives. Les boucles <code class="language-python">for</code> et <code class="language-python">while</code> permettent de réaliser les mêmes opérations sans accumuler d'appels de fonction dans la pile d'exécution.  Cette approche est particulièrement pertinente lorsque la profondeur de récursion potentielle est importante ou inconnue.</p>
+
+<p>Prenons l'exemple classique du calcul de la factorielle d'un nombre. Voici une implémentation récursive de cette fonction:</p>
+
+<pre><code class="language-python">
+def factorial_recursive(n):
+    # Base case: factorial of 0 is 1
+    if n == 0:
+        return 1
+    # Recursive call: multiply n by the factorial of n-1
+    return n * factorial_recursive(n - 1)
+
+print(factorial_recursive(5)) # Output: 120
+</code></pre>
+
+<p>L'implémentation itérative équivalente, qui utilise une boucle <code class="language-python">for</code>, est généralement plus robuste et élimine le risque de dépassement de pile:</p>
+
+<pre><code class="language-python">
+def factorial_iterative(n):
+    # Initialize result to 1
+    result = 1
+    # Iterate from 1 to n (inclusive)
+    for i in range(1, n + 1):
+        # Multiply result by i
+        result *= i
+    # Return the calculated factorial
+    return result
+
+print(factorial_iterative(5)) # Output: 120
+</code></pre>
+
+<p>Dans de nombreux scénarios, l'approche itérative est non seulement plus sûre, mais aussi plus performante, car elle évite la surcharge associée aux appels de fonction récursifs.  Le choix entre récursion et itération dépend intrinsèquement de la nature du problème à résoudre. Cependant, il est impératif de prendre en compte les limitations inhérentes à la récursion en Python et de privilégier une approche itérative chaque fois que cela est possible ou nécessaire pour assurer la stabilité et l'efficacité du code. Des techniques telles que la mémoïsation peuvent également être envisagées pour optimiser les fonctions récursives, mais elles ne résolvent pas fondamentalement le problème de la limite de récursion.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">6. Fonctions comme objets de première classe en Python</h2>
+    <p><p>En Python, les fonctions sont considérées comme des objets de première classe. Cela signifie qu'elles possèdent les mêmes droits que n'importe quelle autre variable: elles peuvent être affectées à des variables, passées comme arguments à d'autres fonctions et retournées comme valeur de retour d'une fonction. Cette particularité confère une flexibilité et une expressivité remarquables au langage.</p>
+
+<p>L'affectation d'une fonction à une variable est une pratique courante et utile. Voici un exemple pour illustrer ce concept:</p>
+
+<pre><code class="language-python">
+def greet(name):
+    # This function greets the person passed in as a parameter
+    return f"Bonjour, {name} !"
+
+# Assign the function to a variable
+my_function = greet
+
+# Call the function through the variable
+print(my_function("Alice"))  # Output: Bonjour, Alice !
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">greet</code> est affectée à la variable <code class="language-python">my_function</code>. Désormais, <code class="language-python">my_function</code> peut être utilisée exactement comme <code class="language-python">greet</code>, permettant ainsi d'invoquer la fonction en utilisant un nom différent.</p>
+
+<p>Un autre cas d'utilisation important est le passage de fonctions comme arguments à d'autres fonctions. C'est le principe des fonctions d'ordre supérieur, un concept puissant en programmation fonctionnelle.  Considérons l'exemple suivant :</p>
+
+<pre><code class="language-python">
+def apply_operation(x, y, operation):
+    # Applies a given operation to two numbers.
+    return operation(x, y)
+
+def multiply(x, y):
+    # Multiplies two numbers
+    return x * y
+
+def divide(x, y):
+    # Divides two numbers
+    return x / y
+
+# Call apply_operation with different operations
+print(apply_operation(5, 2, multiply))  # Output: 10
+print(apply_operation(10, 2, divide))   # Output: 5.0
+</code></pre>
+
+<p>Ici, la fonction <code class="language-python">apply_operation</code> prend une fonction (<code class="language-python">operation</code>) comme argument. Elle applique ensuite cette fonction aux arguments <code class="language-python">x</code> et <code class="language-python">y</code>. Cela permet de créer des fonctions génériques capables d'effectuer différentes actions en fonction de la fonction passée en argument.</p>
+
+<p>Enfin, les fonctions peuvent être retournées par d'autres fonctions. Cela permet de créer des usines à fonctions, où une fonction génère et retourne une nouvelle fonction, souvent en fonction de certains paramètres configurés lors de sa création :</p>
+
+<pre><code class="language-python">
+def create_multiplier(factor):
+    # Creates a function that multiplies its argument by a given factor.
+    def multiplier(x):
+        # Inner function that multiplies x by factor
+        return x * factor
+    return multiplier
+
+# Create functions that multiply by 2 and 3 respectively
+double = create_multiplier(2)
+triple = create_multiplier(3)
+
+# Use the created functions
+print(double(5))  # Output: 10
+print(triple(5))  # Output: 15
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">create_multiplier</code> retourne une nouvelle fonction (<code class="language-python">multiplier</code>) qui "encapsule" la valeur de <code class="language-python">factor</code>. On parle de closure. Cela permet de créer des fonctions personnalisées à la volée, adaptées à des besoins spécifiques.  Chaque fonction ainsi créée conserve en mémoire le <code class="language-python">factor</code> avec lequel elle a été créée.</p>
+
+<p>En conclusion, la capacité de traiter les fonctions comme des objets de première classe est une caractéristique fondamentale de Python.  Elle offre une grande flexibilité et permet d'écrire du code plus concis, modulaire et réutilisable. Cette fonctionnalité ouvre la porte à des concepts avancés tels que les décorateurs et les closures, et est essentielle pour maîtriser la programmation fonctionnelle en Python.</p>
+</p>
+    <h3>6.1 Passer des fonctions en argument</h3>
+    <p><p>En Python, les fonctions sont considérées comme des objets de première classe. Cela signifie qu'elles peuvent être manipulées de la même manière que n'importe quelle autre variable : affectées à des variables, stockées dans des structures de données, et surtout, passées en arguments à d'autres fonctions. Cette particularité offre une grande flexibilité et permet d'écrire du code plus modulaire et réutilisable.</p>
+
+<p>La capacité de passer des fonctions en arguments est particulièrement utile pour personnaliser le comportement d'une fonction existante. Un exemple classique est l'utilisation de la fonction <code class="language-python">sorted()</code>.  Elle permet de trier une liste, et l'argument <code class="language-python">key</code> permet de spécifier une fonction qui sera utilisée pour déterminer l'ordre de tri.</p>
+
+<p>Prenons l'exemple d'une liste de chaînes de caractères que l'on souhaite trier en fonction de leur longueur. On peut définir une fonction qui calcule la longueur d'une chaîne et la passer à <code class="language-python">sorted()</code>.</p>
+
+<pre><code class="language-python">
+def string_length(string):
+    # Returns the length of the string
+    return len(string)
+
+words = ["apple", "banana", "kiwi", "orange"]
+
+# Sort the list of words by their length
+sorted_words = sorted(words, key=string_length)
+
+print(sorted_words)  # Output: ['kiwi', 'apple', 'banana', 'orange']
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">string_length</code> est une fonction simple qui prend une chaîne de caractères en entrée et retourne sa longueur. Cette fonction est ensuite passée comme valeur de l'argument <code class="language-python">key</code> à la fonction <code class="language-python">sorted()</code>. La fonction <code class="language-python">sorted()</code> utilise alors <code class="language-python">string_length</code> pour déterminer l'ordre de tri des chaînes, triant ainsi la liste par longueur croissante.</p>
+
+<p>Il est également possible d'utiliser des fonctions anonymes, ou fonctions lambda, directement comme arguments. C'est particulièrement pratique pour des fonctions simples qui ne sont utilisées qu'une seule fois.  Cela évite de devoir définir une fonction nommée séparément.</p>
+
+<pre><code class="language-python">
+words = ["apple", "banana", "kiwi", "orange"]
+
+# Sort the list of words by their length using a lambda function
+sorted_words = sorted(words, key=lambda string: len(string))
+
+print(sorted_words)  # Output: ['kiwi', 'apple', 'banana', 'orange']
+</code></pre>
+
+<p>Ici, <code class="language-python">lambda string: len(string)</code> est une fonction anonyme (lambda) qui prend une chaîne <code class="language-python">string</code> en argument et retourne sa longueur. Cette fonction est directement passée à <code class="language-python">sorted()</code>.  L'utilisation d'une fonction lambda rend le code plus concis dans ce cas particulier.</p>
+
+<p>En conclusion, la possibilité de passer des fonctions comme arguments offre une flexibilité et une expressivité importantes en Python.  Cela permet de personnaliser le comportement des fonctions et d'écrire du code plus propre, plus modulaire et plus facile à maintenir. Cette caractéristique est un élément clé du paradigme de programmation fonctionnelle, bien supporté par Python.</p>
+</p>
+    <h3>6.2 Retourner des fonctions</h3>
+    <p><p>En Python, les fonctions sont des objets de première classe, ce qui signifie qu'elles peuvent être manipulées comme n'importe quelle autre variable. Cela inclut la possibilité de retourner une fonction depuis une autre fonction. Ce concept est fondamental pour la création de <em>closures</em> et de décorateurs, des outils puissants pour écrire du code plus propre et plus modulaire.</p>
+
+<p>Une closure se produit lorsqu'une fonction interne est définie à l'intérieur d'une fonction externe. Cette fonction interne conserve l'accès aux variables de la portée locale de la fonction externe, même après que celle-ci a terminé son exécution. En d'autres termes, la fonction interne "se souvient" de l'environnement dans lequel elle a été créée.</p>
+
+<p>Voici un exemple pour illustrer le mécanisme des closures:</p>
+
+<pre><code class="language-python">
+def create_multiplier(multiplier):
+    # Outer function taking 'multiplier' as argument
+    def multiply(x):
+        # Inner function (closure) multiplying 'x' by 'multiplier'
+        return x * multiplier
+    # Return the inner function
+    return multiply
+
+# Create functions that multiply by 2 and 3
+multiply_by_two = create_multiplier(2)
+multiply_by_three = create_multiplier(3)
+
+# Demonstrate the closures
+print(multiply_by_two(5))  # Output: 10
+print(multiply_by_three(5)) # Output: 15
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">create_multiplier</code> est la fonction externe qui prend un argument <code class="language-python">multiplier</code>. Elle définit une fonction interne <code class="language-python">multiply</code> qui prend un argument <code class="language-python">x</code> et retourne le produit de <code class="language-python">x</code> et <code class="language-python">multiplier</code>.  Lorsque <code class="language-python">create_multiplier</code> retourne <code class="language-python">multiply</code>, elle retourne une closure. Les variables <code class="language-python">multiply_by_two</code> et <code class="language-python">multiply_by_three</code> référencent des closures qui "se souviennent" des valeurs de <code class="language-python">multiplier</code> (2 et 3 respectivement) qui ont été passées à <code class="language-python">create_multiplier</code> lors de leur création.</p>
+
+<p>Les closures sont particulièrement utiles pour créer des décorateurs. Un décorateur est une fonction qui prend une autre fonction en argument, étend son comportement (par exemple, en ajoutant du logging ou de la gestion d'erreurs), et la retourne. Les décorateurs permettent d'éviter la duplication de code et de rendre le code plus lisible et maintenable.</p>
+
+<p>Voici un exemple simple de décorateur:</p>
+
+<pre><code class="language-python">
+def my_decorator(func):
+    # Decorator function taking 'func' as argument
+    def wrapper(*args, **kwargs):
+        # Wrapper function that adds behavior before and after 'func'
+        print("Something is happening before the function is called.")
+        result = func(*args, **kwargs)
+        print("Something is happening after the function is called.")
+        return result
+    # Return the wrapper function
+    return wrapper
+
+@my_decorator
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+say_hello("World")
+# Output:
+# Something is happening before the function is called.
+# Hello, World!
+# Something is happening after the function is called.
+</code></pre>
+
+<p>Dans cet exemple, <code class="language-python">my_decorator</code> est un décorateur qui prend une fonction <code class="language-python">func</code> en argument. Il définit une fonction interne <code class="language-python">wrapper</code> qui exécute du code avant et après l'appel de <code class="language-python">func</code>. La notation <code class="language-python">@my_decorator</code> au-dessus de la définition de <code class="language-python">say_hello</code> est un sucre syntaxique pour <code class="language-python">say_hello = my_decorator(say_hello)</code>. Lorsque <code class="language-python">say_hello("World")</code> est appelé, c'est en réalité la fonction <code class="language-python">wrapper</code> qui est exécutée, ce qui permet d'ajouter du comportement à <code class="language-python">say_hello</code> sans modifier directement son code source. L'utilisation de <code class="language-python">*args</code> et <code class="language-python">**kwargs</code> dans la définition de <code class="language-python">wrapper</code> permet de gérer des fonctions décorées avec n'importe quel nombre d'arguments positionnels et nommés.</p>
+
+<p>En résumé, la capacité des fonctions Python à retourner d'autres fonctions est une fonctionnalité puissante qui permet la création de closures et de décorateurs. Ces techniques permettent d'écrire du code plus modulaire, réutilisable et maintenable, et sont essentielles pour maîtriser la programmation avancée en Python.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">7. Décorateurs en Python</h2>
+    <p><p>Les décorateurs sont une fonctionnalité puissante de Python permettant d'étendre ou de modifier le comportement des fonctions ou des classes. Ils facilitent l'ajout de fonctionnalités telles que la journalisation (<em>logging</em>), l'authentification, la gestion des accès ou la mesure du temps d'exécution, sans altérer la structure interne des fonctions d'origine. Ils promeuvent la réutilisabilité et la séparation des préoccupations.</p>
+
+<p>Un décorateur est, par essence, une fonction qui reçoit une autre fonction en argument, y ajoute des fonctionnalités, et retourne une nouvelle fonction modifiée. L'application d'un décorateur se fait via le symbole <code>@</code>, placé juste avant la définition de la fonction à décorer.</p>
+
+<p>Voici un exemple fondamental de décorateur qui affiche un message avant et après l'exécution d'une fonction:</p>
+
+<pre><code class="language-python">
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+# Output:
+# Something is happening before the function is called.
+# Hello!
+# Something is happening after the function is called.
+</code></pre>
+
+<p>Dans cet exemple, <code>my_decorator</code> est la fonction décorateur. L'utilisation de <code>@my_decorator</code> au-dessus de <code>say_hello</code> est équivalente à remplacer <code>say_hello</code> par <code>my_decorator(say_hello)</code>. La fonction interne <code>wrapper</code> encapsule l'appel à la fonction d'origine et exécute du code additionnel avant et après cet appel.</p>
+
+<p>Pour les fonctions qui acceptent des arguments, le décorateur doit être adapté pour gérer ces arguments de manière flexible. L'utilisation de <code>*args</code> et <code>**kwargs</code> permet de capturer et de transmettre un nombre variable d'arguments positionnels et nommés à la fonction décorée:</p>
+
+<pre><code class="language-python">
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"Function {func.__name__} took {execution_time:.4f} seconds to execute.")
+        return result
+    return wrapper
+
+@timer
+def long_running_function(n):
+    total = 0
+    for i in range(n):
+        total += i
+    return total
+
+result = long_running_function(1000000)
+print(f"Result: {result}")
+</code></pre>
+
+<p>Ici, le décorateur <code>timer</code> calcule et affiche le temps d'exécution de <code>long_running_function</code>. L'utilisation de <code>*args</code> et <code>**kwargs</code> assure que le décorateur peut être appliqué à n'importe quelle fonction, indépendamment de ses arguments.</p>
+
+<p>Les décorateurs peuvent aussi accepter des arguments. Dans ce cas, le décorateur est une fonction qui, une fois appelée avec ses arguments, retourne une autre fonction décorateur:</p>
+
+<pre><code class="language-python">
+def repeat(num_times):
+    def decorator_repeat(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator_repeat
+
+@repeat(num_times=3)
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")
+# Output:
+# Hello, Alice!
+# Hello, Alice!
+# Hello, Alice!
+</code></pre>
+
+<p>Dans cet exemple, <code>repeat</code> est une fonction qui prend <code>num_times</code> comme argument et renvoie un décorateur, <code>decorator_repeat</code>. Ce dernier appelle la fonction décorée <code>num_times</code> fois.</p>
+
+<p>Les décorateurs représentent un mécanisme puissant pour rendre le code Python plus modulaire, lisible et réutilisable. Ils permettent d'ajouter des comportements transversaux aux fonctions sans modifier leur code source, contribuant ainsi à une meilleure organisation et maintenabilité du code.</p>
+</p>
+    <h3>7.1 Introduction aux décorateurs</h3>
+    <p><p>Les décorateurs sont une fonctionnalité élégante et puissante de Python. Ils permettent de modifier ou d'étendre le comportement de fonctions ou de méthodes, sans pour autant altérer leur code source.  Ils favorisent une approche modulaire et réutilisable en encapsulant des fonctionnalités additionnelles.</p>
+
+<p>Un décorateur est essentiellement une fonction qui prend une autre fonction en argument et retourne une nouvelle fonction "enrichie". Cette nouvelle fonction, souvent appelée "wrapper", enveloppe la fonction originale, permettant d'exécuter du code avant, après, ou même à la place de l'exécution de la fonction décorée. Considérez les décorateurs comme des amplificateurs de fonctions, leur conférant des capacités inédites.</p>
+
+<p>Illustrons ce concept avec un exemple simple. Supposons que nous voulions enregistrer le nombre d'appels d'une fonction.</p>
+
+<pre><code class="language-python">
+def compteur_appels(func):
+    # This is the decorator function
+    def wrapper(*args, **kwargs):
+        # This is the wrapper function that adds functionality
+        wrapper.compteur += 1
+        print(f"La fonction {func.__name__} a été appelée {wrapper.compteur} fois.")
+        return func(*args, **kwargs)
+    wrapper.compteur = 0
+    return wrapper
+
+@compteur_appels
+def dis_bonjour(nom):
+    # A simple function that greets someone
+    return f"Bonjour, {nom} !"
+
+# Calling the decorated function
+print(dis_bonjour("Alice"))
+print(dis_bonjour("Bob"))
+print(dis_bonjour("Charlie"))
+</code></pre>
+
+<p>Dans cet exemple :</p>
+
+<ul>
+    <li><code class="language-python">compteur_appels</code> est notre décorateur. Il reçoit une fonction <code class="language-python">func</code> en argument.</li>
+    <li>Il définit une fonction interne nommée <code class="language-python">wrapper</code>. Cette fonction <code class="language-python">wrapper</code> est celle qui sera exécutée lors de l'appel à la fonction décorée.</li>
+    <li>La fonction <code class="language-python">wrapper</code> incrémente un compteur à chaque appel et affiche le nombre d'appels total.</li>
+    <li>L'annotation <code class="language-python">@compteur_appels</code> placée juste avant la définition de <code class="language-python">dis_bonjour</code> applique le décorateur à cette fonction.  C'est une manière concise d'écrire: <code class="language-python">dis_bonjour = compteur_appels(dis_bonjour)</code>.</li>
+</ul>
+
+<p>Le décorateur <code class="language-python">compteur_appels</code> ajoute la fonctionnalité de comptage d'appels à la fonction <code class="language-python">dis_bonjour</code> sans modifier le code source de <code class="language-python">dis_bonjour</code> elle-même.  C'est un avantage majeur des décorateurs : ils permettent de séparer les préoccupations et d'éviter la duplication de code.</p>
+
+<p>Les décorateurs peuvent accepter des arguments, ce qui accroît encore leur flexibilité. Il est également possible d'enchaîner plusieurs décorateurs afin d'appliquer une série de transformations à une fonction.  Nous examinerons ces aspects plus sophistiqués dans les sections suivantes.</p>
+</p>
+    <h3>7.2 Création de décorateurs personnalisés</h3>
+    <p><p>Python offre une fonctionnalité puissante appelée décorateurs, qui permet d'étendre ou de modifier le comportement des fonctions existantes sans modifier directement leur code. Un décorateur est une fonction qui prend une autre fonction en argument et renvoie une nouvelle fonction, encapsulant ainsi la fonction d'origine.</p>
+
+<p>La syntaxe pour appliquer un décorateur est simple et élégante. On utilise le symbole <code>@</code> suivi du nom du décorateur, placé juste avant la définition de la fonction à décorer. Par exemple:</p>
+
+<pre><code class="language-python">
+def my_decorator(func):
+    def wrapper():
+        print("Before the function call.")
+        func()
+        print("After the function call.")
+    return wrapper
+
+@my_decorator
+def my_function():
+    print("Inside my function.")
+
+my_function()
+</code></pre>
+
+<p>Dans cet exemple, <code>my_decorator</code> est appliqué à <code>my_function</code>. Lorsque <code>my_function()</code> est appelée, le résultat est:</p>
+
+<pre><code>
+Before the function call.
+Inside my function.
+After the function call.
+</code></pre>
+
+<p>Pour comprendre comment cela fonctionne, il est crucial de voir ce qui se passe en interne. La syntaxe <code>@my_decorator</code> est équivalente à l'opération suivante:</p>
+
+<pre><code class="language-python">
+my_function = my_decorator(my_function)
+</code></pre>
+
+<p>Ainsi, <code>my_decorator</code> prend <code>my_function</code> comme argument, effectue des opérations (ici, envelopper la fonction dans une autre fonction qui affiche des messages avant et après son exécution), et renvoie une nouvelle fonction (ici, <code>wrapper</code>). Cette nouvelle fonction remplace l'ancienne <code>my_function</code>. Lorsqu'on appelle <code>my_function()</code>, c'est en réalité la fonction <code>wrapper()</code> retournée par le décorateur qui est exécutée.</p>
+
+<p>Créons un autre décorateur personnalisé, cette fois-ci pour mesurer le temps d'exécution d'une fonction :</p>
+
+<pre><code class="language-python">
+import time
+
+def measure_time(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Execution time of {func.__name__}: {end_time - start_time:.4f} seconds")
+        return result
+    return wrapper
+
+@measure_time
+def calculate_factorial(n):
+    # Calculates the factorial of n
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+factorial_of_1000 = calculate_factorial(1000)
+print(f"The factorial of 1000 is (truncated): {str(factorial_of_1000)[:100]}...")
+</code></pre>
+
+<p>Dans cet exemple, le décorateur <code>measure_time</code> prend une fonction quelconque (<code>func</code>) en entrée, définit une fonction interne <code>wrapper</code> qui enregistre le temps avant et après l'exécution de <code>func</code>, puis affiche le temps écoulé. Notez l'utilisation de <code>*args</code> et <code>**kwargs</code> dans la fonction <code>wrapper</code>. Ceci permet au décorateur de fonctionner avec n'importe quelle fonction, quels que soient ses arguments, la rendant ainsi plus générique et réutilisable.</p>
+
+<p>Les décorateurs offrent une manière propre et réutilisable de modifier le comportement des fonctions. Ils sont particulièrement utiles pour des tâches telles que la journalisation (logging), l'authentification et le contrôle d'accès, la validation des données, la mise en cache, ou, comme illustré ici, la mesure de la performance. Ils favorisent la séparation des préoccupations et améliorent la lisibilité du code.</p>
+</p>
+    <h3>7.3 Décorateurs avec arguments</h3>
+    <p><p>Il est possible de créer des décorateurs qui acceptent des arguments. Cela offre une flexibilité accrue et favorise la réutilisation des décorateurs. La structure générale d'un décorateur avec arguments implique une fonction englobante qui reçoit les arguments du décorateur, puis retourne une fonction décorateur, laquelle prend la fonction à décorer comme argument.</p>
+
+<p>Voici un exemple simple pour illustrer ce concept :</p>
+
+<pre><code class="language-python">
+def repeat(num_times):
+    # This is the outer function that receives the arguments for the decorator
+    def decorator_repeat(func):
+        # This is the actual decorator
+        def wrapper(*args, **kwargs):
+            # This is the wrapper function that calls the original function multiple times
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator_repeat
+
+@repeat(num_times=3)
+def greet(name):
+    # A simple function to greet someone
+    print(f"Hello, {name}!")
+
+greet("Alice")
+# Output:
+# Hello, Alice!
+# Hello, Alice!
+# Hello, Alice!
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code class="language-python">repeat</code> reçoit l'argument <code class="language-python">num_times</code>. Elle retourne ensuite la fonction <code class="language-python">decorator_repeat</code>, qui est le décorateur lui-même. Ce décorateur prend ensuite la fonction <code class="language-python">greet</code> comme argument. Enfin, la fonction <code class="language-python">wrapper</code> exécute la fonction originale (<code class="language-python">greet</code>) <code class="language-python">num_times</code> fois.</p>
+
+<p>Voici un autre exemple plus élaboré qui utilise des arguments de décorateur pour contrôler le comportement d'une fonction de journalisation (logging) :</p>
+
+<pre><code class="language-python">
+import functools
+
+def log(log_level="INFO"):
+    # Outer function: takes the log level as an argument
+    def decorator_log(func):
+        # Actual decorator
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # Wrapper function: logs the function call and its arguments
+            print(f"[{log_level}] Calling function: {func.__name__} with args: {args}, kwargs: {kwargs}")
+            value = func(*args, **kwargs)
+            print(f"[{log_level}] Function {func.__name__} returned: {value}")
+            return value
+        return wrapper
+    return decorator_log
+
+@log(log_level="DEBUG")
+def add(x, y):
+    # A simple function to add two numbers
+    return x + y
+
+result = add(5, 3)
+print(f"Result: {result}")
+# Output:
+# [DEBUG] Calling function: add with args: (5, 3), kwargs: {}
+# [DEBUG] Function add returned: 8
+# Result: 8
+</code></pre>
+
+<p>Dans cet exemple, le décorateur <code class="language-python">log</code> reçoit un argument <code class="language-python">log_level</code>. Il utilise ensuite <code class="language-python">functools.wraps</code> pour préserver les métadonnées (nom, documentation, etc.) de la fonction originale. La fonction <code class="language-python">wrapper</code> enregistre l'appel de la fonction, ses arguments et sa valeur de retour, en utilisant le niveau de journalisation spécifié. Ceci démontre comment les arguments du décorateur peuvent être utilisés pour configurer le comportement du décorateur.</p>
+
+<p>L'utilisation de décorateurs avec arguments permet de créer du code plus modulaire, flexible et réutilisable. Ils sont particulièrement utiles lorsque vous devez paramétrer finement le comportement d'un décorateur, comme dans les exemples de répétition d'une fonction un certain nombre de fois, de configuration du niveau de journalisation, ou encore de gestion des accès.</p>
+</p>
+  </section>
+</div>
+<div class="content_box">
+  <section>
+    <h2 class="heading">Conclusion</h2>
+    <p><p>Les fonctions sont véritablement la pierre angulaire de la programmation Python, permettant une organisation du code modulaire et une réutilisation efficace. Maîtriser la création et l'utilisation des fonctions personnalisées est indispensable pour tout développeur Python aspirant à produire un code propre, maintenable et extensible.</p>
+
+<p>Au-delà des aspects fondamentaux, l'exploration approfondie des différents types d'arguments (positionnels, nommés et variables), des possibilités offertes par les valeurs de retour multiples, de la concision des fonctions lambda et de la puissance des décorateurs pour étendre les fonctionnalités des fonctions existantes, ouvre un horizon de possibilités. Illustrons cela avec une fonction conçue pour valider une adresse e-mail :</p>
+
+<pre><code class="language-python">
+import re
+
+def validate_email(email):
+    """
+    Validates an email address using regular expressions.
+
+    Args:
+        email (str): The email address to validate.
+
+    Returns:
+        bool: True if the email is valid, False otherwise.
+    """
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return bool(re.match(pattern, email))
+
+# Example usage
+email_address = "test@example.com"
+if validate_email(email_address):
+    print(f"{email_address} is a valid email address")
+else:
+    print(f"{email_address} is not a valid email address")
+</code></pre>
+
+<p>L'utilisation judicieuse des fonctions lambda et des décorateurs peut radicalement transformer votre approche de la résolution de problèmes. Une fonction lambda peut, par exemple, être utilisée pour générer rapidement une fonction anonyme dédiée au filtrage d'éléments dans une liste :</p>
+
+<pre><code class="language-python">
+numbers = [1, 2, 3, 4, 5, 6]
+odd_numbers = list(filter(lambda x: x % 2 != 0, numbers))
+print(odd_numbers)  # Output: [1, 3, 5]
+</code></pre>
+
+<p>De même, un décorateur permet d'enrichir une fonction existante avec de nouvelles fonctionnalités, sans pour autant modifier son code source original :</p>
+
+<pre><code class="language-python">
+import time
+
+def timer(func):
+    """
+    A decorator that calculates the execution time of a function.
+    """
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"Function {func.__name__} took {execution_time:.4f} seconds to execute.")
+        return result
+    return wrapper
+
+@timer
+def my_long_function():
+    """
+    A dummy function that takes some time to execute.
+    """
+    time.sleep(2)
+
+my_long_function()
+</code></pre>
+
+<p>En conclusion, consacrer du temps à l'apprentissage et à la pratique des fonctions en Python représente un investissement direct dans votre aptitude à concevoir des solutions logicielles à la fois robustes et élégantes. Nous vous encourageons vivement à continuer d'explorer, d'expérimenter et d'appliquer ces concepts afin de devenir un développeur Python plus compétent et performant. N'hésitez pas à approfondir vos connaissances en explorant les générateurs, les fonctions récursives et les techniques de programmation fonctionnelle pour enrichir davantage votre boîte à outils Python.</p>
+</p>
+  </section>
+</div>
+<!-- End of Course Marker -->
+<div class="course-end-marker" style="margin: 4rem auto; text-align: center; max-width: 600px">
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, #fb5168 50%, transparent); margin: 2rem auto;"></div>
+  <p style="color: #fb5168; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px; opacity: 0.9;">
+    That's all folks
+  </p>
+</div></div>
+    </main>
+
+    <!-- (Non-critical JS after DOM parsing) -->
+    <script src="/src/js/back-to-top.js" type="module" defer></script>
+    <script src="/src/js/include-footer.js" type="module" defer></script>
+    <script src="/src/js/include-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/include-mobile-course-navbar.js" type="module" defer></script>
+    <script src="/src/js/slider.js" type="module" defer></script>
+    <script src="/src/js/copy-code-button.js" type="module" defer></script>
+    <!-- (Non-critical JS after DOM parsing) -->
+
+ </body>
+</html>
