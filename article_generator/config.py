@@ -15,7 +15,10 @@ from dotenv import load_dotenv
 from article_generator.colored_logging import setup_colored_logging
 
 # Configure colored logging
-setup_colored_logging(level=logging.INFO, format_str='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+setup_colored_logging(
+    level=logging.INFO,
+    format_str='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 # Load environment variables
@@ -47,7 +50,8 @@ class Config:
                     ],
         'gemini':   [   
                         # "gemini-2.0-flash",
-                        "gemini-3-flash-preview",
+                        "gemini-2.5-flash-lite",
+                        # "gemini-3-flash-preview",
                     ],
     }
     
@@ -62,7 +66,8 @@ class Config:
                     ],
         'gemini':   [   
                         # "gemini-2.0-flash",
-                        "gemini-3-flash-preview",
+                        "gemini-2.5-flash-lite",
+                        # "gemini-3-flash-preview",
                     ],
     }
     
@@ -77,12 +82,12 @@ class Config:
                     ],
         'gemini':   [   
                         # "gemini-2.0-flash",
-                        "gemini-3-flash-preview",
+                        "gemini-2.5-flash-lite",
+                        # "gemini-3-flash-preview",
                     ],
     }
     
     # Application Metadata
-    #APP_REFERER = "https://github.com/trae-ai/article_generator"
     APP_REFERER = ""
     APP_TITLE = "Article Generator"
     DEFAULT_DELAY_SECONDS = 0
