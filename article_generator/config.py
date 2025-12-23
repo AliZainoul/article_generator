@@ -42,10 +42,13 @@ class Config:
                         # "google/gemini-2.0-flash-thinking-exp:free",
                         # "google/gemini-2.0-flash-lite-preview-02-05:free",
                         # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1:free",
+                        "deepseek/deepseek-r1-0528:free",
                         # "qwen/qwq-32b:free",
                     ],
-        'gemini': ["gemini-2.0-flash"]
+        'gemini':   [   
+                        # "gemini-2.0-flash",
+                        "gemini-3-flash-preview",
+                    ],
     }
     
     ARTICLE_PLANNER_MODELS = {
@@ -54,10 +57,13 @@ class Config:
                         # "google/gemini-2.0-flash-thinking-exp:free",
                         # "google/gemini-2.0-flash-lite-preview-02-05:free",
                         # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1:free",
+                        "deepseek/deepseek-r1-0528:free",
                         # "qwen/qwq-32b:free",
                     ],
-        'gemini': ["gemini-2.0-flash"]
+        'gemini':   [   
+                        # "gemini-2.0-flash",
+                        "gemini-3-flash-preview",
+                    ],
     }
     
     ARTICLE_WRITER_MODELS = {
@@ -66,14 +72,18 @@ class Config:
                         # "google/gemini-2.0-flash-thinking-exp:free",
                         # "google/gemini-2.0-flash-lite-preview-02-05:free",
                         # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1:free",
+                        "deepseek/deepseek-r1-0528:free",
                         # "qwen/qwq-32b:free",
                     ],
-        'gemini': ["gemini-2.0-flash"]
+        'gemini':   [   
+                        # "gemini-2.0-flash",
+                        "gemini-3-flash-preview",
+                    ],
     }
     
     # Application Metadata
-    APP_REFERER = "https://github.com/trae-ai/article_generator"
+    #APP_REFERER = "https://github.com/trae-ai/article_generator"
+    APP_REFERER = ""
     APP_TITLE = "Article Generator"
     DEFAULT_DELAY_SECONDS = 0
 
