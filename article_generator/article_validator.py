@@ -228,9 +228,9 @@ class ArticleValidator:
             )
 
             # Get the validated response
-            validated_content = completion.choices[0].message.content
+            validated_content : str  = str(completion.choices[0].message.content)
             # Clean up the validated content
-            validated_content = self.clean_validated_content(validated_content, language)
+            validated_content : str  = self.clean_validated_content(validated_content, language)
             return validated_content
 
         except Exception as e:
