@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 class ArticlePlanner:
     """Class for generating article plans using Article AI via OpenRouter."""
 
-    def __init__(self, provider: str = None):
+    def __init__(self, provider: str = ""):
         """Initialize the ArticlePlanner with API client.
         
         Args:

@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 class ArticleValidator:
     """Class for validating and improving generated content using AI models."""
 
-    def __init__(self, provider: str = None):
+    def __init__(self, provider: str = ""):
         """Initialize the ArticleValidator with API client.
         
         Args:

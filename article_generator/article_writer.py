@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 class ArticleWriter:
     """Class for generating article content using Article Writer Model API via OpenRouter."""    
 
-    def __init__(self, provider: str = None):
+    def __init__(self, provider: str = ""):
         """Initialize the ArticleWriter with API client.
         
         Args:
