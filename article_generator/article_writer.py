@@ -13,7 +13,6 @@ import time
 import logging
 import re
 
-
 from random import choice
 from typing import Dict, Any
 
@@ -202,12 +201,14 @@ Avant de soumettre ta réponse, vérifie que:
         
         return prompt
 
-    def generate_section_content( self,
-                                  title: str,
-                                  topic: str,
-                                  section_title: str,
-                                  section_description: str,
-                                  language: str = "Python") -> str:
+    def generate_section_content( 
+        self,
+        title: str,
+        topic: str,
+        section_title: str,
+        section_description: str,
+        language: str = "Python"
+    ) -> str:
         """Generate content for a specific section using Article Writer Model.
         
         Args:

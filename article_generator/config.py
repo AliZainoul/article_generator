@@ -39,54 +39,55 @@ class Config:
     GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
     
     # Model Lists
-    CONTENT_VALIDATOR_MODELS = {
-        'openrouter': 
-                    [                        
-                        # "google/gemini-2.0-flash-thinking-exp:free",
-                        # "google/gemini-2.0-flash-lite-preview-02-05:free",
-                        # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1-0528:free",
-                        # "qwen/qwq-32b:free",
-                    ],
-        'gemini':   [   
-                        # "gemini-2.0-flash",
-                        "gemini-2.5-flash-lite",
-                        # "gemini-3-flash-preview",
-                    ],
-    }
-    
     ARTICLE_PLANNER_MODELS = {
         'openrouter': 
-                    [                        
-                        # "google/gemini-2.0-flash-thinking-exp:free",
-                        # "google/gemini-2.0-flash-lite-preview-02-05:free",
-                        # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1-0528:free",
-                        # "qwen/qwq-32b:free",
-                    ],
-        'gemini':   [   
-                        # "gemini-2.0-flash",
-                        "gemini-2.5-flash-lite",
-                        # "gemini-3-flash-preview",
-                    ],
+        [                        
+            # "google/gemini-2.0-flash-exp:free",
+            # "deepseek/deepseek-r1-0528:free",
+            # "qwen/qwq-32b:free",
+            "mistralai/mistral-7b-instruct:free",
+        ],
+        'gemini':   
+        [   
+            # "gemini-2.0-flash",
+            "gemini-2.5-flash-lite",
+            # "gemini-3-flash-preview",
+        ],
     }
     
     ARTICLE_WRITER_MODELS = {
-        'openrouter': 
-                    [                        
-                        # "google/gemini-2.0-flash-thinking-exp:free",
-                        # "google/gemini-2.0-flash-lite-preview-02-05:free",
-                        # "google/gemini-2.0-pro-exp-02-05:free",
-                        "deepseek/deepseek-r1-0528:free",
-                        # "qwen/qwq-32b:free",
-                    ],
-        'gemini':   [   
-                        # "gemini-2.0-flash",
-                        "gemini-2.5-flash-lite",
-                        # "gemini-3-flash-preview",
-                    ],
+        'openrouter':
+        [                        
+            # "google/gemini-2.0-flash-exp:free",
+            "meta-llama/llama-3.3-70b-instruct:free",
+            # "deepseek/deepseek-r1-0528:free",
+            # "qwen/qwq-32b:free",
+        ],
+        'gemini':   
+        [   
+            # "gemini-2.0-flash",
+            # "gemini-2.5-flash-lite",
+            "gemini-3-flash-preview",
+        ],
     }
     
+    CONTENT_VALIDATOR_MODELS = {
+        'openrouter': 
+        [                        
+            # "google/gemini-2.0-flash-exp:free",
+            # "deepseek/deepseek-r1-0528:free",
+            # "qwen/qwq-32b:free",
+            # "mistralai/mistral-7b-instruct:free",
+            "meta-llama/llama-3.2-3b-instruct:free",
+        ],
+        'gemini':   
+        [   
+            # "gemini-2.0-flash",
+            "gemini-2.5-flash-lite",
+            # "gemini-3-flash-preview",
+        ],
+    }
+
     # Application Metadata
     APP_REFERER = ""
     APP_TITLE = "Article Generator"

@@ -44,7 +44,7 @@ class ArticleValidator:
             section_title: str,
             content: str,
             language: str
-        ) -> str:
+    ) -> str:
         """Create a prompt for validating the generated content.
         
         Args:
