@@ -78,3 +78,9 @@ cython_debug/
 
 # DB
 *.db
+
+# Articles
+articles/*
+
+# output files
+output/*
