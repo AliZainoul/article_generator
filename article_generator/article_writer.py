@@ -239,11 +239,11 @@ Avant de soumettre ta réponse, vérifie que:
             )
 
             # Get the response
-            response_content = completion.choices[0].message.content
+            response_content : str = str(completion.choices[0].message.content)
             
             # Post-process to remove any remaining markdown or thinking process content
             # Remove markdown code blocks
-            response_content = re.sub(r'```(?:html|python)?([\s\S]*?)```', r'\1', response_content)
+            response_content : str = re.sub(r'```(?:html|python)?([\s\S]*?)```', r'\1', response_content)
             
             # Remove any lines that look like thinking process or planning
             lines = response_content.split('\n')

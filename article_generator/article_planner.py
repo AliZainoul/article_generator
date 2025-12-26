@@ -67,13 +67,12 @@ class ArticlePlanner:
         - Le plan doit OBLIGATOIREMENT inclure:
 
             1. Une introduction qui présente le sujet et son importance dans le contexte de {language}
-            2. Six sections principales avec des titres clairs, tous en rapport avec {language}
+            2. Quatre sections principales avec des titres clairs, tous en rapport avec {language}
             3. Pour chaque section principale, 2 à 3 sous-sections et des titres d'exemples
-            4. Trois sections additionnelles contenant chacune:
+            4. Deux sections additionnelles contenant chacune:
                 - Section Cas d'utilisation pratiques
                 - Section Exercices avec 3 exercices avec code en ANGLAIS et leurs corrigés (IMPORTANT !)
-                - Section Résumé et Comparaisons
-            7. Une conclusion qui résume les points clés
+            7. Une conclusion qui résume les points clés et comparaisons
             8. Les exemples ne doivent pas être similaires, pareil pour les exercices.
             9. Tout mot technique dans le langage {language} et tout exemple de code doit être en anglais,
                 et tout le contenu des sections doit être en français.
