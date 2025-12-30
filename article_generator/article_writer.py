@@ -138,19 +138,19 @@ def function():
 ```
 
 ❌ NE PAS UTILISER D'INDENTATION INCORRECTE:
-<pre><code class="language-python">
+<pre><code class="language-{language.lower()}">
 def incorrect_function():
 print("Indentation manquante")
 </code></pre>
 
 ❌ NE PAS UTILISER DE BALISES MAL FERMÉES:
-<code class="language-python">print("Hello")
+<code class="language-{language.lower()}">print("Hello")
 
-❌ NE PAS UTILISER DE BALISES code sans "language-python":
+❌ NE PAS UTILISER DE BALISES code sans "language-{language.lower()}":
 <code>print("Hello")</code>
 
 ❌ NE PAS UTILISER DE SYNTAXE PYTHON INVALIDE:
-<pre><code class="language-python">
+<pre><code class="language-{language.lower()}">
 if x = 5:  # Opérateur d'affectation au lieu de comparaison
     print(x)
 </code></pre>

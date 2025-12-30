@@ -159,8 +159,6 @@ class ArticlePlanner:
                 logger.error("Response content: %s", response_content)
                 return self._get_fallback_plan(title)
 
-            return article_plan
-
         except Exception as e:
             logger.error("Error generating article plan: %s", e)
             return self._get_fallback_plan(title)
